@@ -5,6 +5,8 @@
  * Notes:          Ensure stylesheet is set to (default) in profile settings when in use
  */
 
+
+
 :root {
     --DarkestColor: #121212; /* Header, Menu, Sidebar Main, Table Main */
 	--weirdwhite: #121212; /* Odd borders */
