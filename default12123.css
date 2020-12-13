@@ -18,16 +18,12 @@ ul {
 .showlinks li {
   list-style-type: none
 }
-.overlay-popupui:hover > .button,
-.spoiler:hover * {
-  visibility: visible
-}
 #showpage,
 #sitesearchsubmit,
 .spoiler:hover {
   background-color: transparent
 }
-#tabs > .tab,
+#tabs>.tab,
 .alert-box--notifications,
 .button,
 .button2,
@@ -37,7 +33,14 @@ ul {
 .show-header,
 .showseasons h2,
 .showseasons h3,
-.sortable:hover {
+.sortable:hover,
+div.lottery_fin_div1 input[type=submit],
+div.lottery_fin_div2 input[type=submit],
+div.lottery_fin_div3 input[type=radio],
+div.lottery_fin_div3 input[type=submit],
+div.lottery_fin_div3 label.radio_label,
+table.lottery_table input[type=submit],
+table.lottery_table2 input[type=submit] {
   cursor: pointer
 }
 .alert-box,
@@ -66,15 +69,6 @@ td[style="border: 1px black dashed"] {
   word-wrap: break-word;
   word-break: break-word
 }
-#imdbinfo td,
-.autocomplete-suggestion,
-body > table:first-of-type .embedded:nth-of-type(3) {
-  white-space: nowrap
-}
-.previewbox pre,
-.std-content pre {
-  white-space: pre-wrap
-}
 body {
   font-size: 11px;
   background-color: #7c98ae;
@@ -84,6 +78,7 @@ body {
   padding: 10px 20px 20px 0;
   background: var(--MainColor) url(https://i.hdbits.org/eOJKIzM.png)
 }
+.big,
 h2,
 h3 {
   font-size: 13px
@@ -143,7 +138,9 @@ table.header {
   background-color: #e2e2e2
 }
 .menu,
-table.message {
+.sources_table td.borderaround,
+table.message,
+td {
   border: 1px solid #000
 }
 table.browse,
@@ -151,10 +148,14 @@ table.interiortable,
 table.poll {
   background-color: #7c98ae
 }
+table.lottery_table2 td,
+table.lottery_table2 th,
 table.padding1 td,
 table.padding1 th {
   padding: 5px
 }
+.sources_table td,
+.sources_table th,
 table.padding2 td,
 table.padding2 th {
   padding: 3px 5px
@@ -205,13 +206,20 @@ table.invisible {
 .center {
   text-align: center
 }
-.left {
+.left,
+table.lottery_table td.left,
+table.lottery_table th.left {
   text-align: left
 }
 .right {
   text-align: right
 }
-.bold {
+#pager2>a,
+#pager>a,
+#searchselector>li.selected,
+.bold,
+.donamt,
+a.index {
   font-weight: 700
 }
 .unbold {
@@ -228,19 +236,8 @@ p.sig {
   border-top-style: dotted;
   margin-bottom: 2pt
 }
-td.menunavigation:hover,
-td.menunavigation_new:hover {
-  border-style: none solid;
-  border-width: 1px
-}
-td.bottom,
-td.embedded {
-  border: 0;
-  padding: 1px
-}
 #cast img.actorpic,
 #torrent-list,
-td,
 th {
   border: 1px solid #000
 }
@@ -258,10 +255,16 @@ th a:visited {
   font-weight: 700;
   color: #fff
 }
+a.altlink_white:hover,
 th a:hover {
   font-weight: 700;
   color: #fff;
   text-decoration: underline
+}
+td.bottom,
+td.embedded {
+  border: 0;
+  padding: 1px
 }
 td.comment,
 td.text {
@@ -320,9 +323,7 @@ td.title {
   font-size: 14pt
 }
 td.menunavigation,
-td.menunavigation:hover,
 td.menunavigation_new,
-td.menunavigation_new:hover,
 td.navigation {
   font-weight: 700;
   font-size: 13px
@@ -334,8 +335,12 @@ td.navigation {
   display: block;
   line-height: 19px
 }
-td.menunavigation {
-  /*! background:-webkit-linear-gradient(top,#e0e0e0 0,#e8e8e8 5%,#f7f7f7 46%,#f1f1f1 49%,#ddd 53%,#f6f6f6 100%); *//*! background:linear-gradient(to bottom,#e0e0e0 0,#e8e8e8 5%,#f7f7f7 46%,#f1f1f1 49%,#ddd 53%,#f6f6f6 100%); */
+td.menunavigation:hover,
+td.menunavigation_new:hover {
+  font-weight: 700;
+  font-size: 13px;
+  border-style: none solid;
+  border-width: 1px
 }
 .std-content {
   margin-left: auto;
@@ -353,9 +358,6 @@ td.clear {
 a:hover {
   color: #420202
 }
-a.index {
-  font-weight: 700
-}
 a.biglink {
   font-weight: 700;
   font-size: 12pt
@@ -371,7 +373,13 @@ a.altlink_blue:visited {
   color: #023147;
   text-decoration: none
 }
-a.altlink_blue:hover {
+#torrent-list a[href^="/details.php?id="]>font,
+.sortable:hover,
+a.altlink_blue:hover,
+a.altlink_green:hover,
+label.label_showhide span:active,
+label.label_showhide span:focus,
+label.label_showhide span:hover {
   text-decoration: underline
 }
 a.altlink_green:link,
@@ -380,40 +388,31 @@ a.altlink_green:visited {
   color: #007800;
   text-decoration: none
 }
-a.altlink_green:hover {
-  text-decoration: underline
-}
 a.altlink_white:link,
 a.altlink_white:visited {
   font-weight: 700;
   color: #fff;
   text-decoration: none
 }
-a.altlink_white:hover {
-  font-weight: 700;
-  color: #fff;
-  text-decoration: underline
+a.normal:link,
+a.normal:visited {
+  color: #000;
+  text-decoration: none
 }
-#showbannertext,
-#torrent-list tr > td:nth-child(3) > a[href^="/film/info?id="],
-.genres a,
-.tab > a,
 a.catlink:link,
 a.catlink:visited,
 a.normal:hover,
-a.normal:link,
-a.normal:visited {
+td.menunavigation a:active,
+td.menunavigation_new a:active {
   text-decoration: none
-}
-a.normal:link,
-a.normal:visited {
-  color: #000
 }
 .important {
   font-weight: 700;
   font-size: 11px
 }
-.red {
+.red,
+a.red_link:link,
+a.red_link:visited {
   color: #e00
 }
 .blue {
@@ -442,9 +441,6 @@ textarea {
 .small {
   font-size: 7pt
 }
-.big {
-  font-size: 13px
-}
 .spoiler {
   background-color: #fff;
   min-width: 70px;
@@ -462,6 +458,10 @@ textarea {
 .spoiler:hover {
   color: inherit
 }
+.overlay-popupui:hover>.button,
+.spoiler:hover * {
+  visibility: visible
+}
 .spoiler:hover:before {
   content: none
 }
@@ -473,6 +473,7 @@ li {
 ul {
   margin-left: 16pt
 }
+.sources_table td,
 img.border {
   border: 0 solid #000
 }
@@ -508,9 +509,6 @@ img.pollleft {
 .genres a:hover {
   color: #777
 }
-.donamt {
-  font-weight: 700
-}
 .backgroundspace {
   background-color: #7f98ae;
   border: 0
@@ -527,7 +525,8 @@ img.pollleft {
   padding: 2px
 }
 #cast,
-.contentlayout {
+.contentlayout,
+.std-content>tbody>tr>td>table {
   width: 100%
 }
 #rendererbutton {
@@ -542,6 +541,9 @@ img.pollleft {
 .genres {
   padding-left: 10px
 }
+.genres a {
+  text-decoration: none
+}
 .contentlayout td {
   border: 0
 }
@@ -552,7 +554,7 @@ img.pollleft {
   margin: -14px 0 5px 15px;
   color: gray
 }
-#tabs > .tab,
+#tabs>.tab,
 .content th {
   color: #000;
   font-weight: 700
@@ -595,6 +597,10 @@ table.lottery_table2 td.heading {
 }
 #imdbinfo {
   margin-left: 15px
+}
+#imdbinfo td,
+body>table:first-of-type .embedded:nth-of-type(3) {
+  white-space: nowrap
 }
 #imdbinfo #languages {
   white-space: normal
@@ -639,12 +645,6 @@ img.imdb {
   display: block;
   margin-top: 5px
 }
-#donate_bitcoin,
-#donate_paypal,
-#showbannertext,
-.showlinks {
-  display: inline-block
-}
 #torrent-list {
   min-width: 800px
 }
@@ -661,16 +661,22 @@ img.imdb {
 #torrent-list td {
   padding: 4px
 }
-#torrent-list td:hover button.tvdb_button {
+#torrent-list td:hover button.tvdb_button,
+.list-overview,
+.list-overview__img {
   display: block
 }
-.sortable:hover {
-  text-decoration: underline
+#donate_bitcoin,
+#donate_paypal,
+#showbannertext,
+.searchgenres>label,
+.showlinks {
+  display: inline-block
 }
-.actorresult > td:first-child {
+.actorresult>td:first-child {
   border-right-style: none
 }
-.actorresult > td:first-child + td {
+.actorresult>td:first-child+td {
   border-left-style: none
 }
 .pagerel:hover {
@@ -689,33 +695,30 @@ img.imdb {
 #showbannertext {
   font-size: 36px;
   text-align: center;
+  text-decoration: none;
   width: 785px;
   padding-left: 50px
 }
 #donate_bitcoin,
 #donate_paypal,
+form td.embedded,
 table.lottery_table .vtop,
 table.lottery_table2 .vtop {
   vertical-align: top
-}
-#showpage,
-#tv-episode-list,
-table.lottery_table td.left,
-table.lottery_table th.left {
-  text-align: left
 }
 .showlinks {
   margin: 0 2px 0 0;
   padding: 0
 }
-#showbannertext + .showlinks {
+#showbannertext+.showlinks {
   margin-top: 0!important
 }
 .showlinks li {
   margin-left: 8px
 }
 #showpage {
-  width: 930px
+  width: 930px;
+  text-align: left
 }
 #showpage .contentcontent {
   padding: 3px 3px 0 5px;
@@ -725,7 +728,8 @@ table.lottery_table th.left {
   margin-left: 0;
   padding-left: 0
 }
-.showseasons ul {
+.showseasons ul,
+html .statbox>* {
   margin: 0
 }
 .showseasons li {
@@ -747,8 +751,7 @@ table.lottery_table th.left {
   font-size: 13px;
   display: table
 }
-.searchgenres > label {
-  display: inline-block;
+.searchgenres>label {
   text-align: left;
   width: 63px
 }
@@ -784,14 +787,6 @@ table.lottery_table th.left {
   height: 29px;
   margin-left: 10px;
   background-image: url(/pic/donate_bitcoin.png)
-}
-#searchbox,
-div.footer,
-html,
-table.main,
-table.mainouter,
-td.embedded {
-  background: 0 0
 }
 .donor {
   width: 11px;
@@ -830,20 +825,22 @@ td.embedded {
   background-position: -21px -37px
 }
 #searchbox {
-  max-width: 800px
+  max-width: 800px;
+  background: 0 0
 }
 #tabs {
   margin: 0 0 10px;
   padding: 4px
 }
-#tabs > .tab {
+#tabs>.tab {
   border: 1px solid #000;
   display: inline-block;
   font-size: 16px;
   margin: 0 2px;
   min-width: 100px
 }
-.tab > a {
+.tab>a {
+  text-decoration: none;
   display: block;
   padding: 2px 17px
 }
@@ -861,7 +858,7 @@ td.embedded {
   left: 0;
   right: 0
 }
-.overlay-popupui > .button {
+.overlay-popupui>.button {
   visibility: hidden;
   float: right;
   clear: both;
@@ -898,7 +895,8 @@ table.lottery_table2 th.pad2 {
 #tv-episode-list {
   min-width: 400px;
   float: left;
-  background-color: #fff
+  background-color: #fff;
+  text-align: left
 }
 .show-preference {
   font-size: 12px;
@@ -909,14 +907,13 @@ table.lottery_table2 th.pad2 {
   font-size: 16px;
   border-top: 1px solid #ccc
 }
+.notification,
+.season-episode,
 .season-packs {
   margin: 5px 0
 }
 .season-torrents {
   margin: 5px 10px
-}
-.season-episode {
-  margin: 5px 0
 }
 .episode-title {
   font-size: 11px;
@@ -938,11 +935,6 @@ table.lottery_table2 th.pad2 {
   margin-left: 2px;
   cursor: pointer
 }
-.grid__50,
-.list-overview,
-.list-overview__img {
-  display: block
-}
 .season-watched,
 .tv-torrent-watched {
   background-image: url(/pic/accept.png);
@@ -957,9 +949,6 @@ table.lottery_table2 th.pad2 {
 #searchselector {
   padding: 0;
   margin: 0
-}
-#searchselector > li.selected {
-  font-weight: 700
 }
 #sitesearchform {
   width: 230px;
@@ -991,7 +980,8 @@ table.lottery_table2 th.pad2 {
 }
 .grid__50 {
   width: 50%;
-  float: left
+  float: left;
+  display: block
 }
 .list-overview__img-poster {
   width: auto
@@ -1029,11 +1019,12 @@ a.fl:visited {
 .tag.freeleech {
   background-color: #009
 }
-a > .tag {
+a>.tag {
   cursor: pointer;
   cursor: hand
 }
-.tag.moderate {
+.tag.moderate,
+.tag.tag_incomplete {
   background-color: #f22f22
 }
 .tag.tag_seeding {
@@ -1045,22 +1036,19 @@ a > .tag {
 .tag.tag_completed {
   background-color: #f29f29
 }
-.tag.tag_incomplete {
-  background-color: #f22f22
-}
 .submenu-highlight__link {
   color: #fff!important
 }
-.js-hidden {
+#subcell div span,
+#torrent-list>tbody>tr[style="visibility: collapse;"],
+.js-hidden,
+html .torrent .item-body>.torrent-banner {
   display: none
 }
 .notification-frame {
   border-width: 0 1px 1px;
   margin: auto;
   width: 600px
-}
-.notification {
-  margin: 5px 0
 }
 .notification:hover {
   background-color: rgba(0,0,0,.05)
@@ -1075,7 +1063,8 @@ a > .tag {
 .notification__body:hover {
   text-decoration: underline!important
 }
-.notification__body--nolink {
+.notification__body--nolink,
+table.tablesorter thead {
   cursor: default
 }
 .notification__body--nolink:hover {
@@ -1087,35 +1076,18 @@ a > .tag {
   text-decoration: underline;
   cursor: pointer
 }
-.noselect,
-table.tablesorter thead {
-  cursor: default
-}
 table.lottery_table,
 table.lottery_table2 {
   border-width: 1px;
   border-spacing: 0
-}
-.invite_notice,
-.sources_table td.borderaround,
-table.sources_table {
-  border: 1px solid #000
 }
 table.lottery_table td,
 table.lottery_table th {
   padding: 5px;
   text-align: center
 }
-table.lottery_table2 td,
-table.lottery_table2 th {
-  padding: 5px
-}
 table.lottery_table2 td.description td.embedded {
   padding: 1px
-}
-.grid__item,
-form td.embedded {
-  vertical-align: top
 }
 div.lottery_fin_div1 {
   width: 20%;
@@ -1145,19 +1117,6 @@ div.lottery_fin_div4 {
 select.lottery_select {
   width: 120px
 }
-div.lottery_fin_div1 input[type=submit],
-div.lottery_fin_div2 input[type=submit],
-div.lottery_fin_div3 input[type=radio],
-div.lottery_fin_div3 input[type=submit],
-div.lottery_fin_div3 label.radio_label,
-table.lottery_table2 input[type=submit],
-table.lottery_table input[type=submit] {
-  cursor: pointer
-}
-a.red_link:link,
-a.red_link:visited {
-  color: #e00
-}
 a.red_link:hover {
   color: #d20000
 }
@@ -1185,11 +1144,6 @@ label.label_showhide {
   font-size: 12px;
   font-weight: 700
 }
-#subcell div span,
-#torrent-list>tbody>tr[style="visibility: collapse;"],
-html .torrent .item-body > .torrent-banner {
-  display: none
-}
 label.label_showhide span {
   color: #444;
   font-size: 11px;
@@ -1208,7 +1162,7 @@ div.div_showhide {
   display: none;
   margin: 3px 0 5px
 }
-div.div_showhide > div {
+div.div_showhide>div {
   display: inline-block;
   border: 1px dashed #000;
   padding: 6px 6px 6px 7px
@@ -1243,25 +1197,12 @@ table.tablesorter thead tr .headerSortDown {
   color: red;
   background-color: #bccad6;
   width: 624px;
+  border: 1px solid #000;
   padding: 10px 7px
 }
 table.sources_table {
-  margin: 0 auto
-}
-.sources_table td,
-.sources_table th {
-  padding: 3px 5px
-}
-.sources_table td {
-  border: 0 solid #000
-}
-body>table.main,
-table.message,
-table[border="1"],
-td,
-td.embedded,
-th {
-  border: none
+  margin: 0 auto;
+  border: 1px solid #000
 }
 .sources_table select.normal_select {
   width: 100px
@@ -1282,7 +1223,8 @@ th.nopad {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none
+  user-select: none;
+  cursor: default
 }
 .float_button_right {
   float: right;
@@ -1292,7 +1234,8 @@ th.nopad {
   float: right;
   margin-top: -2px
 }
-.center_comments > table.main {
+.center_comments>table.main,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main>tbody>tr>td.embedded font[size="+3"]~table {
   margin: 0 auto
 }
 .autocomplete-suggestions {
@@ -1305,6 +1248,7 @@ th.nopad {
 }
 .autocomplete-suggestion {
   padding: 2px 5px;
+  white-space: nowrap;
   overflow: hidden
 }
 .autocomplete-selected {
@@ -1313,12 +1257,6 @@ th.nopad {
 .film-info {
   background-color: #bccad6
 }
-/*!
- * Theme Name:     Berlin
- * Version:        1.0
- * Last Updated:   10 December 2020
- * Notes:          Ensure stylesheet is set to (default) in profile settings when in use
- */
 :root {
   --MainColor: #072336;
   --UsernameColor: #ffd56b;
@@ -1347,7 +1285,7 @@ th.nopad {
   --hovernotifications: #4bdbff;
   --collapsables: #041824a4
 }
-#torrent-list tr > td:nth-child(3) > a[href^="/film/info?id="] {
+#torrent-list tr>td:nth-child(3)>a[href^="/film/info?id="] {
   background-color: var(--MainColor);
   color: var(--InternalColor);
   font-size: 10px;
@@ -1355,10 +1293,16 @@ th.nopad {
   align-self: center;
   padding-left: 1px;
   padding-right: 1px;
+  text-decoration: none;
   margin-left: 5px;
   border: 1px solid var(--InternalColor)
 }
-.label.collapsable {
+.contentlayout h3,
+.fl,
+.label.collapsable,
+a.fl:link,
+a.fl:visited,
+td#sidebar-container a.normal {
   color: var(--MenuFontColor)
 }
 .hideablecontent {
@@ -1366,6 +1310,30 @@ th.nopad {
   background: var(--collapsables);
   box-shadow: 0 0 1rem 1px rgba(0, 0, 0 , .5);
   border: thick double var(--MainColor)
+}
+#tabs>.tab a,
+.popup,
+html body table.main tbody tr td.bottom div.rc.js-rc,
+td#sidebar-container .embedded,
+td#sidebar-container .main,
+td.bottom:nth-child(2)>table:nth-child(4),
+td.bottom>table[width="500"]:first-of-type td a,
+td.bottom>table[width="800"]:first-of-type td a {
+  box-shadow: var(--borderShadow);
+  box-shadow: var(--borderShadow)
+}
+.show-preference,
+.sources_table td.borderaround,
+.statbox .statbanner,
+body>table.main,
+table.message,
+table.sources_table,
+table.tablesorter,
+table[border="1"],
+td,
+td.embedded,
+th {
+  border: none
 }
 .list-overview {
   display: hidden;
@@ -1385,22 +1353,63 @@ div.list-overview__overlay div.list-overview__text {
   width: auto;
   background-color: var(--collapsables)
 }
+#cast,
+#details table:not([class]),
+#details>tbody>tr:nth-of-type(even),
+#details~table.main:last-of-type table:not([class]) table.main table.main,
+#displayarea table.main,
+#list-add table,
+#list-container~table.main:last-of-type table:not([class]) table.main table.main,
+#menusides:hover,
+#profilesettings,
+.alert-box--nopms,
+.content,
+.contentlayout,
+.std-content>tbody>tr>td>table.main .main,
+.std-content>tbody>tr>td>table.readpost .main,
+.std-content>tbody>tr>td>table:not([class]),
+a[name=startcomments]~table.main:last-of-type table:not([class]) table.main table.main,
+body>table.main:nth-child(3)>tbody>tr>td.bottom:nth-child(2)>script[type="text/javascript"]:first-child+table.main,
+body>table.main:nth-child(3)>tbody>tr>td.bottom:nth-child(2)>table.main:nth-child(5),
+body>table.main:nth-child(3)>tbody>tr>td.bottom:nth-child(2)>table.main:nth-child(7),
+body>table.main:nth-child(3)>tbody>tr>td.bottom:nth-child(2)>table.main:nth-child(7)>tbody>tr>td>table>tbody>tr>td>table>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table,
+div.footer,
+form table table:not([class]),
+form>table.main,
+form[name=compose]>table.message,
+html,
+table.donate,
+table.main,
+table.mainouter,
+table.poll,
+td.bottom>table+h1~div>table:not([class])>tbody>tr,
+td.bottom>table+h1~div>table:not([class])>tbody>tr td>table:first-child,
+td.bottom>table+h1~div>table:not([class])>tbody>tr td>table:first-child td,
+td.bottom>table+h1~table:not([class])>tbody>tr,
+td.bottom>table+h1~table:not([class])>tbody>tr td>table:first-child,
+td.bottom>table+h1~table:not([class])>tbody>tr td>table:first-child td,
+td.bottom>table[width="500"]:first-of-type td.submenu-highlight,
+td.bottom>table[width="800"]:first-of-type td.submenu-highlight,
+td.bottom>table[width="800"]:first-of-type+table.main,
+td.comment table.main,
+td.embedded,
+td.embedded>table table:not([class]),
+td.embedded[bgcolor="#ECE9D8"],
+td.menunavigation:hover,
+td.menunavigation_new:hover,
+td.text table.main,
+td[bgcolor="#F4F4F0"],
+td[style$="background-color: #ECE9D8"]>table {
+  background: 0 0
+}
 .list-overview__img {
   width: auto;
   height: 150px
 }
-.buddylist,
-.mytorrents {
-  background-repeat: no-repeat;
-  background-size: 14px 14px;
-  height: 14px;
-  padding-left: 14px
-}
-#details tbody tr td table.main.tablesorter.table_other_copies tbody {
+#details tbody tr td table.main.tablesorter.table_other_copies tbody,
+.center_comments>table.main:only-of-type>tbody>tr>td>table>tbody>tr>td>p.sub+table.main,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main>tbody>tr>td.embedded>table[cellpadding="10"]:first-child>tbody>tr>td>table.main {
   border: 1px solid var(--DarkestColor)
-}
-td.bottom:nth-child(2) > table:nth-child(4) {
-  box-shadow: var(--borderShadow)
 }
 td.embedded {
   text-align: left;
@@ -1420,7 +1429,25 @@ html body table.main tbody tr td.bottom form ul#tabs li.tab {
   margin: none;
   padding-inline: 5px
 }
-table {
+.buddylist,
+.mytorrents {
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  height: 14px;
+  padding-left: 14px
+}
+#inboxbody>tr:nth-of-type(odd),
+#offerstable>tbody>tr:nth-of-type(odd),
+#table_open_requests>tbody>tr:nth-of-type(odd),
+#tabs~form+table>tbody>tr:nth-of-type(2n+2),
+#torrent-list>tbody>tr:nth-of-type(odd),
+#wishlist-items>tr,
+.actorresult:nth-of-type(odd),
+.js-source-data[data-source=bookmark]+#torrent-list>tbody>tr:nth-of-type(odd).featured,
+table,
+td.bottom>form[action="dox.php"]+p+table>tbody>tr:nth-of-type(2n+2),
+td.bottom>table+h1~div>table:not([class])>tbody>tr:nth-of-type(2n+2) td,
+td.bottom>table+h1~table:not([class])>tbody>tr:nth-of-type(2n+2) td {
   background-color: var(--TableCellColor2)
 }
 h2,
@@ -1432,8 +1459,13 @@ th {
   background-color: var(--DarkestColor);
   color: var(--white)
 }
+.season-title a,
+.show-title a,
 h2 a:link,
 h2 a:visited,
+h2>a[name=blocks],
+h2>a[name=friends],
+h2>a[name]:not([href]),
 td.colhead a:link,
 td.colhead a:visited,
 th a:link,
@@ -1441,6 +1473,42 @@ th a:visited {
   color: var(--white);
   text-decoration: none
 }
+.pagerel:active,
+.pagerel:focus,
+.pagerel:hover,
+.season-title a:active,
+.season-title a:focus,
+.season-title a:hover,
+.show-title a:active,
+.show-title a:focus,
+.show-title a:hover,
+a.altlink:active,
+a.altlink:focus,
+a.altlink:hover,
+a.altlink:link:active,
+a.altlink:link:focus,
+a.altlink:link:hover,
+a.altlink:visited:active,
+a.altlink:visited:focus,
+a.altlink:visited:hover,
+a.catlink:active,
+a.catlink:focus,
+a.catlink:hover,
+a.catlink:link:active,
+a.catlink:link:focus,
+a.catlink:link:hover,
+a.catlink:visited:active,
+a.catlink:visited:focus,
+a.catlink:visited:hover,
+a:active,
+a:focus,
+a:hover,
+a:link:active,
+a:link:focus,
+a:link:hover,
+a:visited:active,
+a:visited:focus,
+a:visited:hover,
 h2 a:link:active,
 h2 a:link:focus,
 h2 a:link:hover,
@@ -1498,13 +1566,6 @@ input[type=submit] {
   border-radius: 3px;
   box-shadow: none
 }
-#tabs > .tab a,
-#torrent-list,
-.popup,
-td#sidebar-container .embedded,
-td#sidebar-container .main {
-  box-shadow: var(--borderShadow)
-}
 .button:focus,
 button:focus,
 button[type=button]:focus,
@@ -1516,8 +1577,10 @@ input[type=submit]:focus {
   color: var(--searchDropdown)
 }
 .button:active,
+.overlay-popupui>.button:active,
 button:active,
 button[type=button]:active,
+html .list-links>a:active,
 input[type=button]:active,
 input[type=reset]:active,
 input[type=submit]:active {
@@ -1577,6 +1640,9 @@ html body table.main tbody tr td.bottom table.main tbody tr td.embedded h1 {
   padding-bottom: 5px
 }
 a,
+a.altlink,
+a.altlink:link,
+a.altlink:visited,
 a.catlink {
   color: var(--white);
   text-decoration: underline;
@@ -1590,17 +1656,16 @@ a:visited {
   text-decoration: none;
   color: #000
 }
+.pagerel:active,
+a.altlink:active,
+a.altlink:link:active,
+a.altlink:visited:active,
 a.catlink:active,
-a.catlink:focus,
-a.catlink:hover,
+a.catlink:link:active,
+a.catlink:visited:active,
 a:active,
-a:focus,
-a:hover {
-  color: var(--white);
-  text-decoration: underline
-}
-a.catlink:active,
-a:active {
+a:link:active,
+a:visited:active {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1616,85 +1681,16 @@ a:visited {
   -o-transition: color .2s linear;
   transition: color .2s linear
 }
-a.catlink:link:active,
-a.catlink:link:focus,
-a.catlink:link:hover,
-a.catlink:visited:active,
-a.catlink:visited:focus,
-a.catlink:visited:hover,
-a:link:active,
-a:link:focus,
-a:link:hover,
-a:visited:active,
-a:visited:focus,
-a:visited:hover {
-  color: var(--white);
-  text-decoration: underline
-}
-a.catlink:link:active,
-a.catlink:visited:active,
-a:link:active,
-a:visited:active {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none
-}
-a.altlink {
-  color: var(--white);
-  text-decoration: underline;
-  -webkit-transition: color .2s linear;
-  -moz-transition: color .2s linear;
-  -o-transition: color .2s linear;
-  transition: color .2s linear
-}
-a.altlink:active,
-a.altlink:focus,
-a.altlink:hover {
-  color: var(--white);
-  text-decoration: underline
-}
-a.altlink:active {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none
-}
-a.altlink:link,
-a.altlink:visited {
-  color: var(--white);
-  text-decoration: underline;
-  -webkit-transition: color .2s linear;
-  -moz-transition: color .2s linear;
-  -o-transition: color .2s linear;
-  transition: color .2s linear
-}
-a.altlink:link:active,
-a.altlink:link:focus,
-a.altlink:link:hover,
-a.altlink:visited:active,
-a.altlink:visited:focus,
-a.altlink:visited:hover {
-  color: var(--white);
-  text-decoration: underline
-}
-a.altlink:link:active,
-a.altlink:visited:active {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none
-}
-table.tablesorter {
-  border: none
-}
-.tablesorter > tbody > tr {
+#offerstable>tbody>tr,
+#table_open_requests>tbody>tr,
+#torrent-list>tbody>tr,
+.tablesorter>tbody>tr {
   -webkit-transition: background-color .2s ease-out;
   -moz-transition: background-color .2s ease-out;
   -o-transition: background-color .2s ease-out;
   transition: background-color .2s ease-out
 }
-.tablesorter > tbody > tr:hover {
+.tablesorter>tbody>tr:hover {
   background-color: var(--darkestcolor)
 }
 hr {
@@ -1731,7 +1727,7 @@ td.text {
 .tag {
   font-size: 10px
 }
-body > table:first-of-type {
+body>table:first-of-type {
   position: fixed;
   top: 0;
   left: 0;
@@ -1747,7 +1743,7 @@ body > table:first-of-type {
   color: var(--highlightmenutext);
   font-size: 11px
 }
-#searchselector > li {
+#searchselector>li {
   display: inline-block;
   font-weight: 700;
   font-size: 11px;
@@ -1755,7 +1751,7 @@ body > table:first-of-type {
   cursor: pointer;
   color: var(--MenuFontColor)
 }
-#searchselector > li:hover {
+#searchselector>li:hover {
   text-shadow: 0 0 6px var(--highlightmenutext);
   color: var(--highlightmenutext)
 }
@@ -1787,7 +1783,9 @@ input#sitesearchinput::placeholder {
 input#sitesearchinput:hover {
   border: 1px solid var(--highlightmenutext)
 }
-#sitesearchsubmit:hover {
+#sitesearchsubmit:hover,
+td.catcell,
+td[id^=codec] {
   opacity: 1
 }
 .button:focus,
@@ -1814,29 +1812,29 @@ textarea {
   background-color: var(--searchDropdown);
   color: var(--highlightmenutext)
 }
-body > table:first-of-type .embedded {
+body>table:first-of-type .embedded {
   text-align: right;
   padding: 0 5px
 }
-body > table:first-of-type .embedded:nth-of-type(1),
-body > table:first-of-type .embedded:nth-of-type(2) {
+body>table:first-of-type .embedded:nth-of-type(1),
+body>table:first-of-type .embedded:nth-of-type(2) {
   width: 33%
 }
-body > table:first-of-type .embedded .curuser-stats {
+body>table:first-of-type .embedded .curuser-stats {
   line-height: 24px;
   margin: 0 10px 0 0
 }
 a[name]:not([href]),
-p.sub > a[name]:target {
+p.sub>a[name]:target {
   padding-top: 90px;
   margin-top: -90px;
   pointer-events: none
 }
-body > table:first-of-type .embedded .curuser-stats:first-of-type {
+body>table:first-of-type .embedded .curuser-stats:first-of-type {
   display: inline;
   margin: 0
 }
-body > table:first-of-type .embedded .curuser-stats:nth-of-type(2) {
+body>table:first-of-type .embedded .curuser-stats:nth-of-type(2) {
   display: inline;
   margin: 0 6px 0 0
 }
@@ -1886,7 +1884,7 @@ div#logo {
 a[name]:not([href]) {
   display: block
 }
-p.sub > a[name]:target {
+p.sub>a[name]:target {
   outline: 0
 }
 .notification-overlay {
@@ -1903,6 +1901,7 @@ p.sub > a[name]:target {
   position: absolute;
   left: 0
 }
+#tabs>.tab,
 .notification-frame,
 .popup {
   border: none;
@@ -1939,12 +1938,6 @@ p.sub > a[name]:target {
   background-color: var(--highlightmenutext);
   color: var(--weirdwhite);
   padding: 6px 12px
-}
-#menusides:hover,
-.alert-box--nopms,
-td.menunavigation:hover,
-td.menunavigation_new:hover {
-  background: 0 0
 }
 .alert-box--notifications,
 .alert-box--pm {
@@ -2067,10 +2060,6 @@ td.menunavigation_new a:hover {
   color: var(--highlightmenutext);
   border-bottom: 2px solid var(--highlightmenutext)
 }
-td.menunavigation a:active,
-td.menunavigation_new a:active {
-  text-decoration: none
-}
 td#sidebar-container {
   position: fixed;
   display: block;
@@ -2122,13 +2111,7 @@ td#sidebar-container .main::before {
   opacity: 1;
   z-index: 1
 }
-#tabs>.tab.selected a,
-#tabs>.tab.selected a:hover,
-.submenu-highlight__link {
-  background-color: var(--DarkestColor)!important;
-  color: var(--highlightmenutext)!important
-}
-td#sidebar-container + * {
+td#sidebar-container+* {
   -webkit-transition: padding .15s;
   -moz-transition: padding .15s;
   -o-transition: padding .15s;
@@ -2149,7 +2132,7 @@ td#sidebar-container:hover .main {
     opacity: 0;
     z-index: -1
   }
-  td#sidebar-container + * {
+  td#sidebar-container+* {
     padding-left: 190px
   }
 }
@@ -2180,11 +2163,11 @@ td#sidebar-container:hover .main {
     opacity: 0;
     z-index: -1
   }
-  td#sidebar-container + * {
+  td#sidebar-container+* {
     padding-left: 177px
   }
 }
-td#sidebar-container form > select {
+td#sidebar-container form>select {
   width: 150px
 }
 td#sidebar-container .embedded {
@@ -2209,9 +2192,6 @@ td#sidebar-container .embedded h2 {
   padding: 5px 0;
   background: 0 0
 }
-td#sidebar-container a.normal {
-  color: var(--MenuFontColor)
-}
 td#sidebar-container a.normal:active,
 td#sidebar-container a.normal:focus,
 td#sidebar-container a.normal:hover {
@@ -2219,18 +2199,14 @@ td#sidebar-container a.normal:hover {
   color: var(--MenuFontColor);
   text-decoration: underline
 }
-td.bottom > table[width="500"]:first-of-type,
-td.bottom > table[width="800"]:first-of-type {
+td.bottom>table[width="500"]:first-of-type,
+td.bottom>table[width="800"]:first-of-type {
   background: 0 0;
   border-collapse: separate;
   margin-bottom: 5px
 }
-td.bottom > table[width="500"]:first-of-type td.submenu-highlight,
-td.bottom > table[width="800"]:first-of-type td.submenu-highlight {
-  background: 0 0
-}
-td.bottom > table[width="500"]:first-of-type td a,
-td.bottom > table[width="800"]:first-of-type td a {
+td.bottom>table[width="500"]:first-of-type td a,
+td.bottom>table[width="800"]:first-of-type td a {
   height: 23px;
   line-height: 23px;
   border-radius: 3px;
@@ -2243,18 +2219,17 @@ td.bottom > table[width="800"]:first-of-type td a {
   -moz-transition: background-color .2s ease-out,color .2s ease-out;
   -o-transition: background-color .2s ease-out,color .2s ease-out;
   transition: background-color .2s ease-out,color .2s ease-out;
-  border: none;
-  box-shadow: var(--borderShadow)
+  border: none
 }
-td.bottom > table[width="500"]:first-of-type td a:focus,
-td.bottom > table[width="500"]:first-of-type td a:hover,
-td.bottom > table[width="800"]:first-of-type td a:focus,
-td.bottom > table[width="800"]:first-of-type td a:hover {
+td.bottom>table[width="500"]:first-of-type td a:focus,
+td.bottom>table[width="500"]:first-of-type td a:hover,
+td.bottom>table[width="800"]:first-of-type td a:focus,
+td.bottom>table[width="800"]:first-of-type td a:hover {
   background-color: var(--DarkestColor);
   color: var(--highlightmenutext)
 }
-td.bottom > table[width="500"]:first-of-type td a:active,
-td.bottom > table[width="800"]:first-of-type td a:active {
+td.bottom>table[width="500"]:first-of-type td a:active,
+td.bottom>table[width="800"]:first-of-type td a:active {
   background-color: var(--DarkestColor);
   color: var(--maincolor);
   -webkit-transition: none;
@@ -2262,29 +2237,26 @@ td.bottom > table[width="800"]:first-of-type td a:active {
   -o-transition: none;
   transition: none
 }
-#tabs > .tab a,
-.fl,
-a.fl:link,
-a.fl:visited {
-  color: var(--MenuFontColor)
+#tabs>.tab.selected a,
+#tabs>.tab.selected a:hover,
+.submenu-highlight__link {
+  background-color: var(--DarkestColor)!important;
+  color: var(--highlightmenutext)!important
 }
-#tabs > .tab {
-  border: none;
-  background: 0 0
-}
-#tabs > .tab.selected {
-  border: none!important;
-  background: 0 0!important
-}
-#tabs > .tab a:active,
-#tabs > .tab a:focus,
-#tabs > .tab a:hover {
+#tabs>.tab a:active,
+#tabs>.tab a:focus,
+#tabs>.tab a:hover {
   color: var(--highlightmenutext);
   border-top: 2px solid var(--highlightmenutext)
 }
-#tabs > .tab a {
+#tabs>.tab.selected {
+  border: none!important;
+  background: 0 0!important
+}
+#tabs>.tab a {
   border-radius: 3px;
   background-color: #041824;
+  color: var(--MenuFontColor);
   text-decoration: none;
   -webkit-transition: background-color .2s ease-out,color .2s ease-out;
   -moz-transition: background-color .2s ease-out,color .2s ease-out;
@@ -2300,80 +2272,104 @@ a.fl:visited {
   line-height: 21px;
   border-top: 2px solid var(--DarkestColor)
 }
-#tabs > .tab a:focus,
-#tabs > .tab a:hover {
+#tabs>.tab a:focus,
+#tabs>.tab a:hover {
   background-color: var(--DarkestColor);
   text-decoration: none
 }
-#tabs > .tab a:active {
+#tabs>.tab a:active {
   margin-bottom: -2px!important;
   background-color: var(--MainColor)
 }
-#torrent-list {
+#offerstable,
+#table_open_requests,
+#torrent-list,
+#wishlist,
+form[action="inbox.php"]>table,
+td.bottom>form[action="dox.php"]+p+table,
+td.bottom>table+h1~div>table:not([class]),
+td.bottom>table+h1~table:not([class]) {
   background: 0 0;
   border: none;
+  box-shadow: var(--borderShadow);
   box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
 }
-#torrent-list > tbody > tr {
-  -webkit-transition: background-color .2s ease-out;
-  -moz-transition: background-color .2s ease-out;
-  -o-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out
-}
-#torrent-list>tbody>tr:nth-of-type(odd),
-.js-source-data[data-source=bookmark]+#torrent-list>tbody>tr:nth-of-type(odd).featured {
-  background-color: var(--TableCellColor2)
-}
+#inboxbody>tr:nth-of-type(even),
+#offerstable>tbody>tr:nth-of-type(even),
+#table_open_requests>tbody>tr:nth-of-type(even),
+#tabs~form+table>tbody>tr:nth-of-type(2n+3),
 #torrent-list>tbody>tr:nth-of-type(even),
-.js-source-data[data-source=bookmark]+#torrent-list>tbody>tr:nth-of-type(even).featured {
+.actorresult:nth-of-type(even),
+.js-source-data[data-source=bookmark]+#torrent-list>tbody>tr:nth-of-type(even).featured,
+td.bottom>form[action="dox.php"]+p+table>tbody>tr:nth-of-type(2n+3),
+td.bottom>table+h1~div>table:not([class])>tbody>tr:nth-of-type(2n+3) td,
+td.bottom>table+h1~table:not([class])>tbody>tr:nth-of-type(2n+3) td {
   background-color: var(--TableCellColor3)
 }
-#torrent-list font[color="#110000"] {
+#torrent-list font[color="#110000"],
+font[color="#110000"] {
   color: #d2cbd4
 }
-#torrent-list font[color="#220000"] {
+#torrent-list font[color="#220000"],
+font[color="#220000"] {
   color: #d5bdc5
 }
-#torrent-list font[color="#330000"] {
+#torrent-list font[color="#330000"],
+font[color="#330000"] {
   color: #d9aeb6
 }
-#torrent-list font[color="#440000"] {
+#torrent-list font[color="#440000"],
+font[color="#440000"] {
   color: #dca0a6
 }
-#torrent-list font[color="#550000"] {
+#torrent-list font[color="#550000"],
+font[color="#550000"] {
   color: #df9197
 }
-#torrent-list font[color="#660000"] {
+#torrent-list font[color="#660000"],
+font[color="#660000"] {
   color: #e28388
 }
-#torrent-list font[color="#770000"] {
+#torrent-list font[color="#770000"],
+font[color="#770000"] {
   color: #e57479
 }
-#torrent-list font[color="#880000"] {
+#torrent-list font[color="#880000"],
+font[color="#880000"] {
   color: #e9666a
 }
-#torrent-list font[color="#990000"] {
+#torrent-list font[color="#990000"],
+font[color="#990000"] {
   color: #ec575b
 }
-#torrent-list font[color="#aa0000"] {
+#torrent-list font[color="#aa0000"],
+font[color="#aa0000"] {
   color: #ef494c
 }
-#torrent-list font[color="#bb0000"] {
+#torrent-list font[color="#bb0000"],
+font[color="#bb0000"] {
   color: #f23a3d
 }
-#torrent-list font[color="#cc0000"] {
+#torrent-list font[color="#cc0000"],
+font[color="#cc0000"] {
   color: #f52c2d
 }
-#torrent-list font[color="#dd0000"] {
+#torrent-list font[color="#dd0000"],
+font[color="#dd0000"] {
   color: #f91d1e
 }
-#torrent-list font[color="#ee0000"] {
+#torrent-list font[color="#ee0000"],
+font[color="#ee0000"] {
   color: #fc0f0f
 }
 #torrent-list font[color="#ff0000"],
-#torrent-list font[color=red] {
+#torrent-list font[color=red],
+.tablesorter font[color="#ff0000"],
+.tablesorter font[color=red],
+font[color="#ff0000"],
+font[color=red] {
   color: red
 }
 #torrent-list button,
@@ -2388,23 +2384,11 @@ a.fl:visited {
   margin-top: 0;
   top: 4px
 }
-#offerstable>tbody>tr:nth-of-type(odd),
-#table_open_requests>tbody>tr:nth-of-type(odd),
-.actorresult:nth-of-type(odd),
-html #searchcriteria,
-html .statbox_films {
-  background-color: var(--TableCellColor2)
-}
-#offerstable,
-#table_open_requests,
 #tv-episode-list,
 #tv-show-list,
 .film-list-container,
-form > #searchbox,
 html #searchcriteria,
-html .list-description,
-html .statbox,
-html body table.main tbody tr td.bottom div.rc.js-rc {
+html .statbox {
   box-shadow: var(--borderShadow)
 }
 #torrent-list button.tvdb_button:active,
@@ -2412,7 +2396,13 @@ html body table.main tbody tr td.bottom div.rc.js-rc {
 #torrent-list button.tvdb_button:hover,
 #torrent-list button:active,
 #torrent-list button:focus,
-#torrent-list button:hover {
+#torrent-list button:hover,
+.overlay-popupui>.button:active,
+.overlay-popupui>.button:focus,
+.overlay-popupui>.button:hover,
+html .list-links>a:active,
+html .list-links>a:focus,
+html .list-links>a:hover {
   background-color: var(--weirdwhite);
   color: var(--searchDropdown);
   text-decoration: none
@@ -2421,15 +2411,25 @@ html body table.main tbody tr td.bottom div.rc.js-rc {
 #torrent-list button:active {
   top: 6px
 }
-#torrent-list a[href^="/details.php?id="] > font {
-  text-decoration: underline
-}
-#torrent-list a[href^="/details.php?id="]:active > font[color],
-#torrent-list a[href^="/details.php?id="]:focus > font[color],
-#torrent-list a[href^="/details.php?id="]:hover > font[color] {
+#torrent-list a[href^="/details.php?id="]:active>font[color],
+#torrent-list a[href^="/details.php?id="]:focus>font[color],
+#torrent-list a[href^="/details.php?id="]:hover>font[color],
+a.fl:active,
+a.fl:focus,
+a.fl:hover,
+a.internal:active,
+a.internal:focus,
+a.internal:hover,
+a.sublink,
+a:active .fl,
+a:focus .fl,
+a:hover .fl,
+font[color="#004E98"],
+font[color="#1D3953"],
+label.label_showhide span {
   color: var(--white)
 }
-#torrent-list a > font {
+#torrent-list a>font {
   color: var(--white);
   -webkit-transition: inherit;
   -moz-transition: inherit;
@@ -2457,44 +2457,15 @@ html body table.main tbody tr td.bottom div.rc.js-rc {
   content: "50%";
   color: rgba(51, 153, 255, .5)
 }
-#offerstable,
-#table_open_requests {
-  background: 0 0;
-  border: none;
-  box-sizing: border-box;
-  border-collapse: separate;
-  border-spacing: 0
-}
-#offerstable > tbody > tr,
-#table_open_requests > tbody > tr {
-  -webkit-transition: background-color .2s ease-out;
-  -moz-transition: background-color .2s ease-out;
-  -o-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out
-}
-#offerstable > tbody > tr:nth-of-type(even),
-#table_open_requests > tbody > tr:nth-of-type(even),
-.actorresult:nth-of-type(even) {
-  background-color: var(--TableCellColor3)
-}
-#offerstable > tbody > tr:hover,
-#table_open_requests > tbody > tr:hover {
+#inboxbody>tr:nth-of-type(odd).highlight,
+#offerstable>tbody>tr:hover,
+#table_open_requests>tbody>tr:hover,
+#wishlist-items>tr:hover {
   background-color: var(--HoverHighlight)
 }
 .internal,
 a.internal {
   color: #ffcd50
-}
-a.fl:active,
-a.fl:focus,
-a.fl:hover,
-a.internal:active,
-a.internal:focus,
-a.internal:hover,
-a:active .fl,
-a:focus .fl,
-a:hover .fl {
-  color: var(--white)
 }
 a .fl {
   text-decoration: underline;
@@ -2518,26 +2489,20 @@ a .fl {
 .rc__rating {
   font-size: 11px!important
 }
-.tag.new {
+.tag.moderate,
+.tag.new,
+.tag.tag_incomplete {
   background-color: var(--DownBonusRed)
 }
-.tag.freeleech {
+.tag.freeleech,
+.tag.tag_leeching {
   background-color: var(--RatioBlue)
-}
-.tag.moderate {
-  background-color: var(--DownBonusRed)
 }
 .tag.tag_seeding {
   background-color: var(--UploadGreen)
 }
-.tag.tag_leeching {
-  background-color: var(--RatioBlue)
-}
 .tag.tag_completed {
   background-color: var(--completed)
-}
-.tag.tag_incomplete {
-  background-color: var(--DownBonusRed)
 }
 #torrent-list .tag.new {
   float: left;
@@ -2557,20 +2522,27 @@ a .fl {
   color: var(--highlightmenutext);
   opacity: 1
 }
-td.catcell,
-td[id^=codec] {
-  opacity: 1
-}
-#searchbox > tbody > tr > td {
+#searchbox>tbody>tr>td {
   background: var(--TableCellColor2)
 }
-form > #searchbox {
+#tabs+table[width="800"],
+.center_comments>table.main:only-of-type>tbody>tr>td>table,
+.invite_notice+table,
+form>#searchbox,
+form[name=message],
+table.lottery_table,
+table.lottery_table2,
+table.sources_table,
+table.std-content,
+table.tableb {
   border: none;
+  box-shadow: var(--borderShadow);
   box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
 }
 html #searchcriteria {
+  background-color: var(--TableCellColor2);
   margin-bottom: 20px;
   border: none;
   box-sizing: border-box;
@@ -2589,19 +2561,14 @@ html .statbox {
   border-collapse: separate;
   border-spacing: 0
 }
-#tv-episode-list,
-#tv-show-list,
-.grid__item,
-html .list-description {
-  box-sizing: border-box
-}
-html .statbox > * {
-  margin: 0
-}
 html .statbox_films {
+  background-color: var(--TableCellColor2);
   border: none
 }
-html .film-notorrents {
+.showseasons .notorrents>h2,
+.showseasons .notorrents>h3,
+html .film-notorrents,
+html .info__title-nodownloads {
   color: rgba(207, 218, 227, .5)
 }
 html .rc__row {
@@ -2697,9 +2664,6 @@ img[src="/pic/info/icon_www.gif"] {
   background-repeat: no-repeat;
   width: 0
 }
-html .info__title-nodownloads {
-  color: rgba(207, 218, 227, .5)
-}
 .info__plot {
   display: block;
   margin-top: 4px;
@@ -2711,49 +2675,33 @@ html .info__title-nodownloads {
   display: block;
   margin-top: 2px
 }
-.pagerarrowhidden,
-.pagerel {
-  font-size: 11px
-}
-.pagerel,
-.pagerel:active,
-.pagerel:focus,
-.pagerel:hover {
-  color: var(--white);
-  text-decoration: underline
-}
 .grid__item {
   display: inline-block;
-  width: 100%
+  vertical-align: top;
+  width: 100%;
+  box-sizing: border-box
 }
 .pagerel {
+  font-size: 11px;
   font-weight: 700;
+  color: var(--white);
+  text-decoration: underline;
   -webkit-transition: color .2s linear;
   -moz-transition: color .2s linear;
   -o-transition: color .2s linear;
   transition: color .2s linear
 }
-.pagerarrowhidden,
+#pager b a,
+#pager2 b a,
 b .pagerel {
-  color: rgba(207, 218, 227, .5)
-}
-.overlay-popupui > .button,
-html .list-links > a {
-  background-color: var(--searchDropdown);
-  color: var(--weirdwhite);
-  top: 0;
-  position: relative
-}
-.pagerel:active {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none
-}
-b .pagerel {
+  color: rgba(207, 218, 227, .5);
   text-decoration: none;
   font-weight: 400;
   pointer-events: none
+}
+.pagerarrowhidden {
+  color: rgba(207, 218, 227, .5);
+  font-size: 11px
 }
 .tv-todownload {
   width: 950px
@@ -2765,6 +2713,7 @@ b .pagerel {
   overflow-x: hidden;
   width: 500px;
   border: none;
+  box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
 }
@@ -2772,32 +2721,24 @@ b .pagerel {
   margin-left: 35px;
   width: 400px;
   border: none;
+  box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
 }
-.overlay-popupui > .button {
+.overlay-popupui>.button,
+html .list-links>a {
+  background-color: var(--searchDropdown);
+  color: var(--weirdwhite);
   border: none;
   border-radius: 3px;
   box-shadow: none;
   text-decoration: none;
+  position: relative;
+  top: 0;
   -webkit-transition: background-color .2s ease-out,color .2s ease-out;
   -moz-transition: background-color .2s ease-out,color .2s ease-out;
   -o-transition: background-color .2s ease-out,color .2s ease-out;
   transition: background-color .2s ease-out,color .2s ease-out
-}
-.overlay-popupui > .button:active,
-.overlay-popupui > .button:focus,
-.overlay-popupui > .button:hover {
-  background-color: var(--weirdwhite);
-  color: var(--searchDropdown);
-  text-decoration: none
-}
-.overlay-popupui > .button:active {
-  top: 2px;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none
 }
 .show-banner-text {
   color: var(--white)
@@ -2807,23 +2748,6 @@ b .pagerel {
   border: none;
   background-color: var(--DarkestColor);
   color: var(--white)
-}
-.season-title a,
-.show-title a {
-  color: var(--white);
-  text-decoration: none
-}
-.season-title a:active,
-.season-title a:focus,
-.season-title a:hover,
-.show-title a:active,
-.show-title a:focus,
-.show-title a:hover {
-  color: var(--white);
-  text-decoration: underline
-}
-.show-preference {
-  border: none
 }
 div.statposter_views {
   background-color: var(--white);
@@ -2839,14 +2763,16 @@ a.tv_morelink {
   border-top-right-radius: 5px;
   border: 2px solid transparent
 }
-#list-add > table.form-input,
 #list-add-container,
-#tabs ~ form + table > tbody > tr:nth-of-type(2n+2),
+#list-add>table.form-input,
+#showpage,
 html .item .item-body,
-html .list-description,
-td.bottom>table+h1~div>table:not([class])>tbody>tr:nth-of-type(2n+2) td,
-td.bottom>table+h1~table:not([class])>tbody>tr:nth-of-type(2n+2) td {
+html .list-description {
   background-color: var(--TableCellColor2)
+}
+.content th,
+font[color="#000000"] {
+  color: inherit
 }
 a.film_morelink:active,
 a.film_morelink:focus,
@@ -2860,39 +2786,44 @@ a.tv_morelink:hover {
   border-left: 2px solid var(--highlightmenutext);
   border-right: 2px solid var(--highlightmenutext)
 }
-#pager b a,
-#pager2 b a,
-.showseasons .notorrents>h2,
-.showseasons .notorrents>h3 {
-  color: rgba(207, 218, 227, .5)
-}
 .stattitle {
   font-size: 14px;
   color: var(--MenuFontColor);
   padding: 10px
 }
-.statbox .statbanner {
-  border: none
-}
 html .list-description {
   max-width: 850px;
   margin: 30px 0 20px;
   border: none;
+  box-shadow: var(--borderShadow);
+  box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
 }
-html .item > h2,
-html .item > h2 + div.item-body {
+#news>h2,
+#news>h2+table,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child table.main>tbody>tr>td.embedded>h2,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child table.main>tbody>tr>td.embedded>h2+table:not([class]),
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h2,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h2+table:last-of-type,
+html .item>h2,
+html .item>h2+div.item-body {
   box-shadow: var(--borderShadow);
   border-left: none;
   border-right: none;
   box-sizing: border-box;
   border-collapse: separate
 }
-html .item > h2 {
+#news>h2,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child table.main>tbody>tr>td.embedded>h2,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h2,
+html .item>h2 {
   border-top: none
 }
-html .item > h2 + div.item-body {
+#news>h2+table,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child table.main>tbody>tr>td.embedded>h2+table:not([class]),
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h2+table:last-of-type,
+html .item>h2+div.item-body {
   border-bottom: none;
   margin-bottom: 20px
 }
@@ -2901,111 +2832,58 @@ html .item .item-body {
   height: auto;
   padding: 10px 5px
 }
-html .item .item-body > .description {
+html .item .item-body>.description {
   max-height: none;
   min-width: 500px
 }
-html .item .item-body > .comment {
+html .item .item-body>.comment {
   background-color: #383239;
   border: 1px dashed var(--white);
   position: static;
   margin-top: 10px
 }
-html .imdb .item-body > .comment {
+html .imdb .item-body>.comment {
   margin-left: 40px
 }
-html .tvdb .item-body > .comment {
+html .tvdb .item-body>.comment {
   margin-left: 37px
 }
-html .torrent .item-body > .description {
+html .torrent .item-body>.description {
   width: 620px
 }
-html .torrent .item-body > .comment {
+html .torrent .item-body>.comment {
   margin-left: 45px
 }
-html .list-links > a {
-  border: none;
-  border-radius: 3px;
-  box-shadow: none;
-  text-decoration: none;
-  -webkit-transition: background-color .2s ease-out,color .2s ease-out;
-  -moz-transition: background-color .2s ease-out,color .2s ease-out;
-  -o-transition: background-color .2s ease-out,color .2s ease-out;
-  transition: background-color .2s ease-out,color .2s ease-out
-}
-#list-add > table.form-input,
-#list-add-container,
-#tabs ~ form + table,
-td.bottom>table+h1~div>table:not([class]),
-td.bottom>table+h1~table:not([class]) {
+#list-add-container {
+  padding: 5px 20px 15px;
   border: none;
   box-shadow: var(--borderShadow);
   box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
-}
-html .list-links > a:active,
-html .list-links > a:focus,
-html .list-links > a:hover {
-  background-color: var(--weirdwhite);
-  color: var(--searchDropdown);
-  text-decoration: none
-}
-html .list-links > a:active {
-  top: 2px;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none
-}
-#list-add-container {
-  padding: 5px 20px 15px
 }
 #list-add-container .previewbox {
   width: 642px
 }
-#tabs ~ form + table {
+#tabs~form+table {
   background: 0 0;
-  margin-top: 20px
-}
-#tabs ~ form + table > tbody > tr:nth-of-type(2n+3) {
-  background-color: var(--TableCellColor3)
-}
-#displayarea table.main,
-.std-content>tbody>tr>td>table.main .main,
-.std-content>tbody>tr>td>table.readpost .main,
-.std-content>tbody>tr>td>table:not([class]),
-td.bottom>form[action="/log.php"]~table,
-td.bottom>table+h1~div>table:not([class]),
-td.bottom>table+h1~div>table:not([class])>tbody>tr,
-td.bottom>table+h1~div>table:not([class])>tbody>tr td>table:first-child,
-td.bottom>table+h1~div>table:not([class])>tbody>tr td>table:first-child td,
-td.bottom>table+h1~table:not([class]),
-td.bottom>table+h1~table:not([class])>tbody>tr,
-td.bottom>table+h1~table:not([class])>tbody>tr td>table:first-child,
-td.bottom>table+h1~table:not([class])>tbody>tr td>table:first-child td,
-td.comment table.main {
-  background: 0 0
-}
-td.bottom > table + h1 ~ div > table:not([class]) > tbody > tr:nth-of-type(2n+3) td,
-td.bottom > table + h1 ~ table:not([class]) > tbody > tr:nth-of-type(2n+3) td {
-  background-color: var(--TableCellColor3)
-}
-td[style="border: 1px black dashed"] {
-  border-color: var(--white)!important
-}
-table.std-content,
-td.bottom>form[action="/log.php"]~table {
+  margin-top: 20px;
   border: none;
   box-shadow: var(--borderShadow);
   box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
 }
-#searchbox td[style*="border:black solid 1px;"],
-form[action="dox.php"] td[style="border:black solid 1px;"],
-td[style*="border-left: 1px solid black;"] {
-  border: none!important
+#list-add>table.form-input,
+#showpage {
+  border: none;
+  box-shadow: var(--borderShadow);
+  box-sizing: border-box;
+  border-collapse: separate;
+  border-spacing: 0
+}
+td[style="border: 1px black dashed"] {
+  border-color: var(--white)!important
 }
 .std-content {
   max-width: none;
@@ -3018,14 +2896,19 @@ td[style*="border-left: 1px solid black;"] {
   width: 32px;
   height: 32px
 }
-.std-content > tbody > tr > td > table {
-  width: 100%
+.previewbox pre,
+.std-content pre {
+  white-space: pre-wrap
 }
-.std-content > tbody > tr > td > table.readpost {
+.std-content>tbody>tr>td>table.readpost,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child table.main>tbody>tr>td.embedded>h2+table:not([class])>tbody>tr>td>table.main,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child table[width="750"]>tbody>tr>td[align=center]>p+a>table.main,
+table.padding2,
+table.tableb table {
   background-color: var(--MainColor);
   border: 1px solid var(--DarkestColor)
 }
-.std-content > tbody > tr > td > table.main {
+.std-content>tbody>tr>td>table.main {
   background-color: var(--HoverHighlight);
   border: 1px solid #383239
 }
@@ -3067,14 +2950,22 @@ img[src="/pic/icon_latest_reply.gif"] {
   width: 0
 }
 td.bottom>form[action="/log.php"]~table {
+  background: 0 0;
   color: var(--white);
-  width: 850px
+  width: 850px;
+  border: none;
+  box-shadow: var(--borderShadow);
+  box-sizing: border-box;
+  border-collapse: separate;
+  border-spacing: 0
 }
-tr.logentry {
+td[style$="background-color: #ECE9D8"],
+tr.logentry,
+tr.logentry.edited {
   background-color: var(--TableCellColor2)!important
 }
-tr.logentry > td:nth-of-type(1),
-tr.logentry > td:nth-of-type(2) {
+tr.logentry>td:nth-of-type(1),
+tr.logentry>td:nth-of-type(2) {
   vertical-align: top;
   white-space: nowrap;
   width: 1px
@@ -3088,10 +2979,8 @@ tr.logentry.deleted {
 tr.logentry.offerallowed {
   background-color: #624b1d!important
 }
-tr.logentry.edited {
-  background-color: var(--TableCellColor2)!important
-}
-tr.logentry:nth-of-type(even) {
+tr.logentry:nth-of-type(even),
+tr.logentry:nth-of-type(even).edited {
   background-color: var(--TableCellColor3)!important
 }
 tr.logentry:nth-of-type(even).uploaded {
@@ -3103,181 +2992,65 @@ tr.logentry:nth-of-type(even).deleted {
 tr.logentry:nth-of-type(even).offerallowed {
   background-color: #68501f!important
 }
-tr.logentry:nth-of-type(even).edited {
-  background-color: var(--TableCellColor3)!important
-}
 table.interiortable {
   background-color: var(--TableCellColor2);
   box-shadow: 0 0 4px 1px #091120
 }
-#cast,
-#details > tbody > tr:nth-of-type(even),
-#details table:not([class]),
-#profilesettings,
-#wishlist,
-.content,
-.content th,
-.contentlayout,
-form>table.main,
-form[action="inbox.php"] > table,
-table.poll,
-td.bottom>form[action="dox.php"]+p+table,
-td.embedded[bgcolor="#ECE9D8"],
-td[bgcolor="#F4F4F0"],
-td[style$="background-color: #ECE9D8"]>table {
-  background: 0 0
-}
-#details,
-#news > h2,
-#news > h2 + table,
-#showpage,
-table.lottery_table,
-table.lottery_table2,
-table.sources_table {
-  box-shadow: var(--borderShadow);
-  box-sizing: border-box;
-  border-collapse: separate
-}
-#news > h2,
-#news > h2 + table {
-  border-left: none;
-  border-right: none
-}
-#news > h2 {
-  border-top: none
-}
-#news > h2 + table {
-  border-bottom: none;
-  margin-bottom: 20px
+#searchbox td[style*="border:black solid 1px;"],
+form[action="dox.php"] td[style="border:black solid 1px;"],
+td[style*="border-left: 1px solid black;"] {
+  border: none!important
 }
 #details {
-  border-spacing: 0
-}
-.content th {
-  color: inherit
-}
-.contentlayout h3 {
-  color: var(--MenuFontColor)
-}
-#inboxbody > tr:nth-of-type(odd),
-#showpage,
-#wishlist-items>tr,
-td.bottom>form[action="dox.php"]+p+table>tbody>tr:nth-of-type(2n+2) {
-  background-color: var(--TableCellColor2)
-}
-#showpage,
-.sources_table td.borderaround,
-table.sources_table {
-  border: none
-}
-tr[bgcolor="#436c80"] {
-  background-color: none
-}
-#showpage {
-  border-spacing: 0
-}
-#showpage .contentcontent > img[src*="chart.googleapis.com"] {
-  -webkit-filter: invert(100%);
-  -moz-filter: invert(100%);
-  -o-filter: invert(100%);
-  filter: invert(100%)
-}
-.showseasons ul ul > li:last-child {
-  padding-bottom: 10px
-}
-a.sublink,
-a.sublink:active,
-a.sublink:focus,
-a.sublink:hover,
-font[color="#004E98"],
-font[color="#1D3953"],
-label.label_showhide span {
-  color: var(--white)
-}
-table.lottery_table,
-table.lottery_table2,
-table.sources_table {
-  border: none;
-  border-spacing: 0
-}
-#pager,
-#pager2 {
-  padding: 10px 0!important
-}
-#pager2 > a,
-#pager > a {
-  font-weight: 700
-}
-#pager2 b a,
-#pager b a {
-  text-decoration: none;
-  font-weight: 400;
-  pointer-events: none
-}
-label.label_showhide span:active,
-label.label_showhide span:focus,
-label.label_showhide span:hover {
-  text-decoration: underline
-}
-div.div_showhide div {
-  border-color: var(--white)
-}
-#wishlist,
-form[action="inbox.php"] > table,
-table.tableb,
-td.bottom>form[action="dox.php"]+p+table {
-  border: none;
   box-shadow: var(--borderShadow);
   box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
 }
-body>table.menu+table.main>tbody>tr>td.bottom:last-child>h2,
-body>table.menu+table.main>tbody>tr>td.bottom:last-child table.main>tbody>tr>td.embedded>h2 {
-  border-top: none
+.content th {
+  background: 0 0
 }
-body>table.menu+table.main>tbody>tr>td.bottom:last-child>h2+table:last-of-type,
-body>table.menu+table.main>tbody>tr>td.bottom:last-child table.main>tbody>tr>td.embedded>h2+table:not([class]) {
-  border-bottom: none;
-  margin-bottom: 20px
+.invite_notice,
+font[color=darkred],
+font[color=red] {
+  color: var(--DownBonusRed)
 }
-form[action="inbox.php"] > input[name=action][value=forward] ~ table {
+tr[bgcolor="#436c80"] {
+  background-color: none
+}
+#showpage .contentcontent>img[src*="chart.googleapis.com"] {
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  -o-filter: invert(100%);
+  filter: invert(100%)
+}
+.showseasons ul ul>li:last-child {
+  padding-bottom: 10px
+}
+#pager,
+#pager2 {
+  padding: 10px 0!important
+}
+div.div_showhide div {
+  border-color: var(--white)
+}
+form[action="inbox.php"]>input[name=action][value=forward]~table {
   background: var(--TableCellColor2);
   width: 500px
 }
-#inboxbody > tr:nth-of-type(odd).highlight {
-  background-color: var(--HoverHighlight)
-}
-#inboxbody > tr:nth-of-type(even) {
-  background-color: var(--TableCellColor3)
-}
-#inboxbody > tr:nth-of-type(even).highlight {
+#inboxbody>tr:nth-of-type(even).highlight {
   background-color: #2e2a2f
 }
 a.sublink:active,
 a.sublink:focus,
 a.sublink:hover {
-  text-shadow: none
+  text-shadow: none;
+  color: var(--white)
 }
-td.bottom > form[action="dox.php"] + p + table > tbody > tr:nth-of-type(2n+3) {
-  background-color: var(--TableCellColor3)
-}
-h2>a[name=blocks],
-h2>a[name=friends],
-h2>a[name]:not([href]) {
-  color: var(--white);
-  text-decoration: none
-}
-td[style$="background-color: #ECE9D8"] {
-  background-color: var(--TableCellColor2)!important
-}
-#wishlist-items > tr:hover {
-  background-color: var(--HoverHighlight)
-}
-#wishlist-items > tr[style^="background-color: rgb(85,"] {
+#wishlist-items>tr[style^="background-color: rgb(85,"] {
   background-color: #2c2d3a!important
 }
-#wishlist-items > tr[style^="background-color: rgb(85,"]:hover {
+#wishlist-items>tr[style^="background-color: rgb(85,"]:hover {
   background-color: var(--HoverHighlight)!important
 }
 .default_avatar {
@@ -3288,70 +3061,29 @@ td[style$="background-color: #ECE9D8"] {
   background: url(https://i.imgur.com/ql0n02e.png) 0 0/100% 100% no-repeat;
   height: 82px
 }
-.center_comments>table.main:only-of-type>tbody>tr>td>table>tbody>tr>td>p.sub+table.main,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main > tbody > tr > td.embedded > table[cellpadding="10"]:first-child > tbody > tr > td > table.main,
-table.padding2,
-table.tableb table {
-  border: 1px solid var(--DarkestColor)
-}
-table.padding2,
-table.tableb table {
-  background-color: var(--MainColor)
-}
-#details~table.main:last-of-type table:not([class]) table.main table.main,
-#list-add table,
-#list-container~table.main:last-of-type table:not([class]) table.main table.main,
-a[name=startcomments]~table.main:last-of-type table:not([class]) table.main table.main,
-body > table.main:nth-child(3) > tbody > tr > td.bottom:nth-child(2) > script[type="text/javascript"]:first-child + table.main,
-body > table.main:nth-child(3) > tbody > tr > td.bottom:nth-child(2) > table.main:nth-child(5),
-body > table.main:nth-child(3) > tbody > tr > td.bottom:nth-child(2) > table.main:nth-child(7),
-body > table.main:nth-child(3) > tbody > tr > td.bottom:nth-child(2) > table.main:nth-child(7) > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td:nth-child(2) > table,
-form table table:not([class]),
-form[name=compose] > table.message,
-table.donate,
-td.bottom > table[width="800"]:first-of-type + table.main,
-td.embedded > table table:not([class]),
-td.text table.main {
-  background: 0 0
-}
-.center_comments>table.main:only-of-type>tbody>tr>td>table,
-.invite_notice,
-.invite_notice + table {
-  border: none;
-  box-sizing: border-box;
-  border-collapse: separate;
-  border-spacing: 0;
-  box-shadow: var(--borderShadow)
-}
 .invite_notice {
   background-color: var(--TableCellColor2);
-  color: var(--DownBonusRed)
-}
-td.bottom > table[width="800"] + table.main + h2:only-of-type {
-  width: 850px;
-  box-sizing: border-box
-}
-td.bottom > table[width="800"] + table.main + h2:only-of-type + table:last-of-type {
-  width: 850px
-}
-td.bottom > table[width="800"] + table.main + h2:only-of-type + table:last-of-type .comment img {
-  max-width: 650px
-}
-#details~table.main:last-of-type,
-#list-container~table.main:last-of-type,
-a[name=startcomments]~table.main:last-of-type,
-form[name=comment]+h3:only-of-type+table.main:last-of-type {
-  width: 850px
-}
-.center_comments > table.main:only-of-type {
-  width: 850px
-}
-form[name=message] {
   border: none;
   box-shadow: var(--borderShadow);
   box-sizing: border-box;
   border-collapse: separate;
   border-spacing: 0
+}
+td.bottom>table[width="800"]+table.main+h2:only-of-type {
+  width: 850px;
+  box-sizing: border-box
+}
+#details~table.main:last-of-type,
+#list-container~table.main:last-of-type,
+.center_comments>table.main:only-of-type,
+a[name=startcomments]~table.main:last-of-type,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main>tbody>tr>td.embedded>table[cellpadding="10"]:first-child,
+form[name=comment]+h3:only-of-type+table.main:last-of-type,
+td.bottom>table[width="800"]+table.main+h2:only-of-type+table:last-of-type {
+  width: 850px
+}
+td.bottom>table[width="800"]+table.main+h2:only-of-type+table:last-of-type .comment img {
+  max-width: 650px
 }
 .previewbox img {
   max-width: 100%
@@ -3398,59 +3130,8 @@ form[name=message] {
 .tablesorter font[color="#ee0000"] {
   color: #f00b05
 }
-.tablesorter font[color="#ff0000"],
-.tablesorter font[color=red],
-font[color="#ff0000"],
-font[color=red] {
-  color: red
-}
 .tablesorter font[color="#000000"] {
   color: #18aa50
-}
-font[color="#110000"] {
-  color: #d2cbd4
-}
-font[color="#220000"] {
-  color: #d5bdc5
-}
-font[color="#330000"] {
-  color: #d9aeb6
-}
-font[color="#440000"] {
-  color: #dca0a6
-}
-font[color="#550000"] {
-  color: #df9197
-}
-font[color="#660000"] {
-  color: #e28388
-}
-font[color="#770000"] {
-  color: #e57479
-}
-font[color="#880000"] {
-  color: #e9666a
-}
-font[color="#990000"] {
-  color: #ec575b
-}
-font[color="#aa0000"] {
-  color: #ef494c
-}
-font[color="#bb0000"] {
-  color: #f23a3d
-}
-font[color="#cc0000"] {
-  color: #f52c2d
-}
-font[color="#dd0000"] {
-  color: #f91d1e
-}
-font[color="#ee0000"] {
-  color: #fc0f0f
-}
-font[color="#000000"] {
-  color: inherit
 }
 font[color="#1900D1"] {
   color: var(--RatioBlue)
@@ -3458,34 +3139,22 @@ font[color="#1900D1"] {
 font[color=green] {
   color: var(--UploadGreen)
 }
-font[color=darkred],
-font[color=red] {
-  color: var(--DownBonusRed)
-}
 font.gray {
   color: rgba(207, 218, 227, .5);
   text-decoration: none
 }
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > h2,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > h2 + table:last-of-type {
-  box-shadow: var(--borderShadow);
-  border-left: none;
-  border-right: none;
-  box-sizing: border-box;
-  border-collapse: separate
-}
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > form > table,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > h1 + form[method=get] + p + p + table[cellpadding="5"],
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > h1:first-child + p + table[width="750"][cellpadding="10"],
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > h1:first-child + table:last-child,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > h1:first-child + table[width="660"][cellpadding="4"],
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > p + p + table[width="750"][cellpadding="10"],
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > script + script + h1 ~ table[width="930"],
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > script:first-child + h1 + table:last-child[cellpadding="5"],
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main > tbody > tr > td.embedded > table[cellpadding="10"]:first-child,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main:first-of-type + p + table.main > tbody > tr > td.embedded > table,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main:first-of-type + table.main > tbody > tr > td.embedded > table,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table[cellpadding="3"]:first-of-type {
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>form>table,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h1+form[method=get]+p+p+table[cellpadding="5"],
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h1:first-child+p+table[width="750"][cellpadding="10"],
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h1:first-child+table:last-child,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>h1:first-child+table[width="660"][cellpadding="4"],
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>p+p+table[width="750"][cellpadding="10"],
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>script+script+h1~table[width="930"],
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>script:first-child+h1+table:last-child[cellpadding="5"],
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main:first-of-type+p+table.main>tbody>tr>td.embedded>table,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main:first-of-type+table.main>tbody>tr>td.embedded>table,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main>tbody>tr>td.embedded>table[cellpadding="10"]:first-child,
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table[cellpadding="3"]:first-of-type {
   border: none;
   box-shadow: var(--borderShadow);
   box-sizing: border-box;
@@ -3494,7 +3163,7 @@ body > table.menu + table.main > tbody > tr > td.bottom:last-child > table[cellp
   width: 1000px;
   display: inline-block
 }
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > div[style="width: 900px; text-align: left"] > div[style*="background-color: #BCCAD6;"]:first-child {
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>div[style="width: 900px; text-align: left"]>div[style*="background-color: #BCCAD6;"]:first-child {
   background-color: var(--TableCellColor2)!important;
   border: none;
   box-shadow: var(--borderShadow);
@@ -3502,48 +3171,22 @@ body > table.menu + table.main > tbody > tr > td.bottom:last-child > div[style="
   border-collapse: separate;
   border-spacing: 0
 }
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main > tbody > tr > td.embedded > table[cellpadding="10"]:first-child {
-  width: 850px
-}
-body > table.menu + table.main > tbody > tr > td.bottom:last-child table.main > tbody > tr > td.embedded > h2,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child table.main > tbody > tr > td.embedded > h2 + table:not([class]) {
-  box-shadow: var(--borderShadow);
-  border-left: none;
-  border-right: none;
-  box-sizing: border-box;
-  border-collapse: separate
-}
-body > table.menu + table.main > tbody > tr > td.bottom:last-child table[width="800"] + h1 + table.main {
+body>table.menu+table.main>tbody>tr>td.bottom:last-child table[width="800"]+h1+table.main {
   background: 0 0;
   border: none
 }
-body > table.menu + table.main > tbody > tr > td.bottom:last-child table.main > tbody > tr > td.embedded > h2 + table:not([class]) > tbody > tr > td > table.main,
-body > table.menu + table.main > tbody > tr > td.bottom:last-child table[width="750"] > tbody > tr > td[align=center] > p + a > table.main {
-  background-color: var(--MainColor);
-  border: 1px solid var(--DarkestColor)
-}
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main > tbody > tr > td.embedded font[size="+3"] ~ * {
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main>tbody>tr>td.embedded font[size="+3"]~* {
   box-sizing: border-box;
   width: 800px
 }
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main > tbody > tr > td.embedded font[size="+3"] ~ h2 {
+body>table.menu+table.main>tbody>tr>td.bottom:last-child>table.main>tbody>tr>td.embedded font[size="+3"]~h2 {
   margin: 20px auto 0
-}
-body > table.menu + table.main > tbody > tr > td.bottom:last-child > table.main > tbody > tr > td.embedded font[size="+3"] ~ table {
-  margin: 0 auto
 }
 h2[style="width: 743px;"] {
   width: 750px!important;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box
-}
-#tabs + table[width="800"] {
-  border: none;
-  box-shadow: var(--borderShadow);
-  box-sizing: border-box;
-  border-collapse: separate;
-  border-spacing: 0
 }
 .film-info {
   margin-bottom: 15px;
