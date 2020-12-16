@@ -1420,6 +1420,29 @@ html body table.main tbody tr td.bottom h3 {
   padding: 15px;
   margin-bottom: 10px
 }
+.showseasons h2 {
+  cursor: pointer;
+  padding-left: 10px;
+}
+.showseasons h3 {
+  /* display: block; */
+  
+  /* white-space: nowrap; */
+	cursor: pointer !important;
+	margin: 0 0 0 15px !important;
+  padding: 2px !important;
+  font-size: 12px;
+  width: fit-content;
+}
+.showseasons h3:hover {
+  cursor: pointer !important;
+  background-color: var(--dark);
+  /* width: max-content; */
+
+}
+.showseasons ul {
+	padding: 2px 0 5px 20px;
+}
 .film-list-container {
   width: 900px;
   background-color: var(--main);
