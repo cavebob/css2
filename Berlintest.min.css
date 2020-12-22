@@ -1638,9 +1638,9 @@
    min-width: 500px
  }
  html .item .item-body > .comment {
-   background-color: #383239;
+   background-color: var(--main);
    border: 1px dashed var(--white);
-   position: static;
+   position: absolute;
    margin-top: 10px
  }
  html .imdb .item-body > .comment {
@@ -1656,8 +1656,8 @@
    margin-left: 45px
  }
  html .list-links > a {
-   background-color: var(--searchDropdown);
-   color: var(--weirdwhite);
+   background-color: var(--dark);
+   color: var(--menuFont);
    border: none;
    border-radius: 3px;
    box-shadow: none;
@@ -1669,6 +1669,20 @@
    -o-transition: background-color .2s ease-out,color .2s ease-out;
    transition: background-color .2s ease-out,color .2s ease-out
  }
+ html .list-links > a:hover {
+  background-color: var(--dark);
+  color: var(--menuHL);
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  text-decoration: none;
+  position: relative;
+  top: 0;
+  -webkit-transition: background-color .2s ease-out,color .2s ease-out;
+  -moz-transition: background-color .2s ease-out,color .2s ease-out;
+  -o-transition: background-color .2s ease-out,color .2s ease-out;
+  transition: background-color .2s ease-out,color .2s ease-out
+}
  #list-add > table.form-input,
  #list-add-container,
  #showpage,
@@ -2108,27 +2122,26 @@
  .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
    position: absolute;
    top: 2px;
-   right: 2px;
+   right: 4px;
    display: block;
-   width: 12px;
-   height: 12px;
-   background: url("/pic/chosen-sprite.png") -42px 2px no-repeat;
+   width: 10px;
+   height: 10px;
+   background: url("browsetags_bestanden/chosen-sprite.png") -42px 2px no-repeat;
    transform: scale(.92);
-   font-size: 1px;
    filter: grayscale(10%) brightness(30%) sepia(100%) hue-rotate(-190deg) saturate(700%) contrast(.5);
    padding: 5px
  }
  .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
    background-color: #698da8;
-   border: 2px solid #698da8;
-   top: 1px;
-   right: 1px;
+   border: 4px solid #698da8;
+   top: -1px;
+   right: -1px;
    opacity: 1;
    transform: scale(.92);
    background-position: -43px -10px;
-   width: 13px;
-   height: 13px;
-   filter: brightness(95%) saturate(100%) contrast(2)
+   width: 10px;
+   height: 10px;
+   filter: brightness(90%) saturate(100%) contrast(2);
  }
  .search-choice-close:after {
    content: '';
@@ -2159,7 +2172,7 @@
  .chosen-container-multi .chosen-choices li.search-choice {
    position: relative;
    margin: 2px;
-   padding: 2px 16px 3px 5px;
+   padding: 2px 20px 3px 5px;
    line-height: 11px;
    border: 1px solid var(--dark);
    max-width: 100%;
@@ -2213,3 +2226,7 @@
    border-bottom: 2px solid var(--menuHL);
    background-image: none
  }
+ #details .contentlayout h3 {
+	margin: -20px 0 -10px 10px !important;
+  color: var(--menuFont);
+}
