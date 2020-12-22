@@ -66,7 +66,7 @@
  .label.collapsable,
  a.fl:link,
  a.fl:visited,
- em a[href^="https://hdbits.org/tags"],
+ em a[href^="/tags"],
  td#sidebar-container a.normal {
    color: var(--menuFont)
  }
@@ -2045,18 +2045,16 @@
    font-weight: 700
  }
  .tag-content a {
-   color: var(--menuHL)!important;
+   color: var(--menuFont)!important;
    padding: 3px 5px!important;
    text-decoration: none!important
  }
  .tag-content:hover {
    background-color: var(--dark);
-   border: 1px solid var(--menuHL);
    text-decoration: none
  }
  .tag-content a:hover {
    color: var(--menuHL)!important;
-   align: center
  }
  #tagassociate {
    padding: 2px 4px;
