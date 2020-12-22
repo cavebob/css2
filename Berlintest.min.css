@@ -2146,7 +2146,7 @@
    width: 100%;
    height: auto;
    border: 1px solid var(--main);
-   background-color: var(--tableCell3);
+   background-color: var(--searchDropdown);
    background-image: none;
    cursor: text
  }
@@ -2192,7 +2192,7 @@
    -webkit-clip-path: none;
    clip-path: none;
    background-color: var(--dark);
-   border: 1px solid var(--tableCell3)
+   border: 2px solid var(--selected)
  }
  .chosen-container .chosen-results li {
    display: flex;
