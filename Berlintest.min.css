@@ -203,11 +203,14 @@ html body table.main tbody tr td.bottom form ul#tabs li.tab {
 #wishlist-items>tr,
 .actorresult:nth-of-type(odd),
 .js-source-data[data-source=bookmark]+#torrent-list>tbody>tr:nth-of-type(odd).featured,
-table,
 td.bottom>form[action="dox.php"]+p+table>tbody>tr:nth-of-type(2n+2),
 td.bottom>table+h1~div>table:not([class])>tbody>tr:nth-of-type(2n+2) td,
 td.bottom>table+h1~table:not([class])>tbody>tr:nth-of-type(2n+2) td {
   background-color: var(--tableCell2)
+}
+table {
+  background-color: var(--tableCell2);
+  /* box-shadow: var(--bs) */
 }
 h2,
 td.colhead,
@@ -1012,12 +1015,12 @@ td.bottom > table[width="800"]:first-of-type td a:active {
   -o-transition: none;
   transition: none
 }
-#tabs > .tab a,
+/* #tabs > .tab a,
 .overlay-popupui > .button {
   -webkit-transition: background-color .2s ease-out,color .2s ease-out;
   -moz-transition: background-color .2s ease-out,color .2s ease-out;
   -o-transition: background-color .2s ease-out,color .2s ease-out
-}
+} */
 #tabs>.tab.selected a,
 #tabs>.tab.selected a:hover,
 .submenu-highlight__link {
@@ -1425,20 +1428,14 @@ html body table.main tbody tr td.bottom h3 {
   padding-left: 10px;
 }
 .showseasons h3 {
-  /* display: block; */
-  
-  /* white-space: nowrap; */
 	cursor: pointer !important;
 	margin: 0 0 0 15px !important;
   padding: 2px !important;
   font-size: 12px;
-  width: fit-content;
 }
 .showseasons h3:hover {
   cursor: pointer !important;
   background-color: var(--dark);
-  /* width: max-content; */
-
 }
 .showseasons ul {
 	padding: 2px 0 5px 20px;
@@ -2061,3 +2058,172 @@ div.searchgenres {
   color: #fff;
   padding-left: 3px
 }
+.tag-content {
+  border: 1px solid var(--dark);
+  border-radius: 0;
+  position:relative;
+  margin: 0;
+  padding: 1px 0 2px 0;
+  /* margin:3px 3px 3px 0; */
+  /* padding:4px 6px 4px 6px; */
+  /* border:1px solid rgb(0, 0, 0); */
+  /* max-width:100%; */
+  /* border-radius:3px; */
+  background-color:var(--dark);
+  /* color: var(--menuFont) ; */
+  box-shadow: none;
+  background-image: none;
+  background-size: 0;
+  background-repeat: 0;
+  line-height: default;
+  font-size: 10px;
+  font-weight: 700;
+  /* background-clip:padding-box; */
+  /* -webkit-box-shadow:0 0 2px #fff inset,0 1px 0 rgba(0,0,0,0.05); */
+  /* box-shadow:0 0 2px #fff inset,0 1px 0 rgba(0,0,0,0.05); */
+  /* color:#333 !important; */
+  /* line-height:13px; */
+  /* cursor:default; */
+  /* display:inline-block; */
+  /* font-size:120% */
+  /* font-size: 25px; */
+ }
+ .tag-content a{
+   color: var(--menuHL) !important;
+   padding: 3px 5px 3px 5px !important;
+   text-decoration: none !important;
+ }
+ .tag-content:hover {
+   background-color: var(--dark);
+   border: 1px solid var(--menuHL);
+   text-decoration: none;
+ }
+ .tag-content a:hover {
+ color: var(--menuHL) !important;
+ align: center;
+ }
+ #tagassociate {
+   padding: 2px 4px;
+   width: 228px;
+ }
+ #tagassociate:hover {
+ border: 1px solid var(--menuHL);
+ }
+ #tagassociate::placeholder {
+ color: var(--menuHL); 
+ opacity: 0.4; 
+ }
+em a[href^="https://hdbits.org/tags"]{
+  color: var(--menuFont);
+}
+#details em {
+  box-sizing: border-box;
+  /* padding: 100px !important; */
+  /* margin-right: 100px !important; */
+}
+div.chosen-container.chosen-container-multi.chosen{
+	position: relative;
+  display: inline-block;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+  user-select: none;
+  background-color: var(--selected) !important;
+}
+div.chosen-container .search-choice{
+  color: var(--menuFont) !important;
+  background: var(--dark) !important;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+	position: absolute;
+	top: 3px;
+	right: 4px;
+	display: block;
+	width: 12px;
+  height: 12px;
+  /* width: 100%; */
+  background: url("browsetags_bestanden/chosen-sprite.png") -42px 1px no-repeat;
+  transform: scale(0.80);
+  font-size: 1px;
+  filter: grayscale(10%) brightness(30%) sepia(100%) hue-rotate(-190deg) saturate(700%) contrast(0.5);
+  padding: 5px;
+}
+.search-choice-close:after{
+  content: '';
+  position: absolute;
+  top: -55%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+.chosen-container-multi .chosen-choices {
+	position: relative;
+  overflow: hidden;
+  margin: 0;
+	padding: 3px 3px;
+	width: 100%;
+	height: auto;
+	border: none;
+	background-color: var(--tableCell3);
+	background-image: none;
+	cursor: text;
+}
+/* html body table.main tbody tr td.bottom form table#searchbox tbody tr#moresearch5 td select.chosen option */
+.chosen-container-multi .chosen-choices li.search-choice {
+	position: relative;
+	margin: 2px 2px;
+	padding: 3px 20px 3px 5px;
+	border: 1px solid var(--dark);
+	max-width: 100%;
+  border-radius: 0;
+  font-size: 10px;
+  font-weight: 600;
+	/* background-color: #eee; */
+	/* background-image: -webkit-gradient(linear,left top,left bottom,color-stop(20%,#f4f4f4),color-stop(50%,#f0f0f0),color-stop(52%,#e8e8e8),to(#eee)); */
+	background-image: 0;
+	background-size: 0;
+	background-repeat: 0;
+	background-clip: border-box;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	/* color: #333; */
+	cursor: default;
+}
+.chosen-container .chosen-results {
+  display: inline-flex;
+  color: var(--menuFont);
+  background-color: var(--dark);
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 2px;
+	padding: 0px;
+  max-height: auto;
+  font-size: 11px;
+  /* font-weight: 700; */
+  -webkit-overflow-scrolling: auto;
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+	clip: auto;
+	-webkit-clip-path: none;
+  clip-path: none;
+  background-color: var(--dark);
+  border: 1px solid var(--tableCell3);
+}
+.chosen-container .chosen-results li {
+	display: inline-flex;
+	margin: 0;
+	padding: 2px 9px;
+	list-style: none;
+	line-height: 18px;
+	word-wrap: break-word;
+  -webkit-touch-callout: none;
+  border: 2px solid var(--dark);
+}
+.chosen-container .chosen-results li.highlighted {
+  background-color: var(--dark);
+  color:var(--menuHL);
+  border: 2px solid var(--menuHL);
+  background-image: none
+ }
