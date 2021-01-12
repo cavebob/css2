@@ -1,0 +1,618 @@
+:root {
+  --main: #0c0e14;
+  --tableCell: #0c0e14;
+  --tableCell2: #0c0e14;
+  --tableCell3: #0c0e14;
+  --dark: #08080a;
+  --collapsables: #0c0e14a4;
+  --hoverHL: #08080a;
+  --weirdwhite: #08080a;
+  --white: #c9c9c9;
+  --shittyborder: #5990b9;
+  --searchDropdown: #10131d;
+  --selected: #356286;
+  --tagText: #000000;
+  --menuFont: #4c95cc;
+  --genres: #78baec;
+  --menuHL: #0cf;
+  --hovernotifications: #4bdbff;
+  --user: #ffd56b;
+  --completed: #ffb86c;
+  --internal: #ffcd50;
+  --RatioBlue: #1685ca;
+  --UploadGreen: #50fa7b;
+  --DownBonusRed: #ff5555;
+  --bs: 0px 8px 15px rgba(0, 0, 0, 0.5);
+}
+* {
+  margin: 0 0;
+  padding: 0 0;
+  color: var(--white);
+  text-decoration: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  background: var(--main); /*url(https://i.hdbits.org/eOJKIzM.png)*/
+  box-sizing: border-box;
+  width: 100%;
+}
+li {
+  color: var(--menuFont);
+  list-style: none;
+}
+
+a[href]{
+  color: var(--menuFont);
+}
+a:hover{
+  color: var(--menuHL);
+ }
+.menu {
+  border: none;
+  background: var(--dark);
+  position: sticky;
+  z-index: 50;
+  top: 104px;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+.menu a.normal{
+padding: 5px 0px;
+  display: block;
+	line-height: 15px;
+}
+.menunavigation_new,
+.menunavigation {
+  align-self: center;
+  flex-basis: 100px;
+  flex: 0 0 60px;
+  padding: 0px 5px;
+    border-bottom: 2px solid transparent;
+}
+.menunavigation:hover,
+.menunavigation_new:hover {
+ border-bottom: 2px solid var(--menuHL);
+}
+td.menunavigation_new a.normal:before {
+	content: "";
+	position: relative;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  height: 2px;
+  z-index: 99;
+	transform-origin: center;
+	transform: scaleX(1);
+	transition: transform .4s;
+	animation: 1.6s infinite alternate menuflash;
+}
+table.main:nth-child(3) {
+  position: relative;
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+.menu tbody tr {
+  position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  box-sizing: border-box;
+
+}
+#header {
+  margin-bottom: 0px !important;
+  padding: 0px;
+  background-color: var(--dark);
+  position: sticky;
+  min-height: 80px;
+  top: 0;
+  z-index: 50;
+}
+#header.main tr,
+#searchselector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+}
+ul#searchselector {
+  min-width: 277px;
+}
+#searchselector li{
+  font-weight: 700;
+flex: 1 0 auto;
+padding: 3px 5px;
+}
+li.selected{
+  color: var(--menuHL);
+}
+input,
+select,
+textarea,
+button {
+ font-family:tahoma,arial,helvetica,sans-serif;
+ font-size:9px;
+ /*outline: solid white;*/
+border: 1px solid var(--main);
+background-color: var(--searchDropdown);
+color: var(--menuHL);
+height: 20px;
+}
+
+#sitesearchinput, 
+#search {
+  width: 275px;
+  border-radius: 1rem;
+  height: 25px;
+  text-indent: 1em;
+  font-size: 11px;
+}
+#sitesearchinput:hover, #sitesearchinput:focus, 
+#search:hover, #search:focus {
+  border: 1px solid var(--menuHL);
+}
+.button:focus, button:focus, input#sitesearchinput:focus, textarea:focus {
+	border: 1px solid var(--menuHL);
+	background-color: var(--main);
+	color: var(--menuHL);
+	opacity: 1;
+	box-shadow: 0 0 5px 1px #5989ad;
+	/*transition: box-shadow .2s ease-out,color .2s ease-out,border .2s ease-out;*/
+}
+#sitesearchsubmit.searchicon {
+  /*float: center;*/
+  display: inline-block;
+	padding: 13px;
+	/*margin-top: 5px;*/
+	margin-left: -28px;
+	background: rgba(0, 0, 0, 0.25) center no-repeat url(https://i.hdbits.org/o8Ps0IT.png);
+	opacity: 0.5;
+	cursor: pointer;
+  /*border-radius: 50%;*/
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 1rem; 
+}
+#sitesearchsubmit.searchicon:hover {
+ opacity: 1;
+ border: 1px solid var(--menuHL)
+}
+
+#sitesearchform {
+  flex: 1 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+#header.main tbody tr td.embedded {
+  flex-grow: 1; /* it can grow */
+  flex-shrink: 1; /* it can shrink */
+  flex-basis: 220px; /* arbitrary depending on design */
+  min-width: 220px; /* equal to flex-basis */
+  margin-right: 20px;
+}
+div#logo {
+  background: url(https://i.hdbits.org/InMkvWS.png) left / contain no-repeat;
+  width: auto;
+  height: 80px;
+  max-width: 280px;
+  margin: 10px 15px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  text-align: 0;
+}
+div#sitesearch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin-bottom: 0;
+}
+#menusides {
+  display: none;
+}
+td.embedded:nth-child(3) {
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "user mail"
+    "stat stat";
+  grid-template-columns: 1fr 25px;
+  grid-template-rows: 31px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.inbox,
+.inboxnew {
+  display: block;
+  margin: auto;
+}
+div.curuser-stats:nth-child(3) {
+  grid-area: stat; 
+}
+div.curuser-stats:nth-child(1) {
+  grid-area: user;
+  display:grid;
+  grid-template-areas: "usr dnr profile logout";
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 10px 40px 40px;
+  align-items: center;
+justify-items: center;
+align-content: center;
+
+justify-self: end;
+}
+div.curuser-stats:nth-child(2) {
+  grid-area: mail;
+
+}
+.alert-box {
+  font-size: 0px;
+}
+.inbox,
+.inboxnew {
+  height: 16px;
+  width: 16px;
+  background-size: 16px 14px;
+}
+.inbox {
+  /*grid-area: mal;*/
+  mask: url(mail.svg) center no-repeat;
+  background: var(--menuFont);
+  height: 23px;
+  border-radius: 1rem;
+  width: 35px;
+  align-self: center;
+  margin-bottom: 13px;
+}
+.curuser-stats {
+  text-align: right;
+}
+div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="https://hdbits.org/userdetails.php?"] {
+  font-size: 13px;
+  padding: 5px 15px;
+  border: 1px solid var(--menuFont);
+  border-radius: 1rem;
+  grid-area: usr;
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="https://hdbits.org/userdetails.php?"]:hover {
+  border: 1px solid var(--menuFont);
+  background:var(--menuFont);
+  color: var(--dark)
+} 
+.inbox:hover, inboxnew:hover,
+div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/my.php"]:hover,
+div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/logout.php"]:hover {
+background: var(--menuHL);
+}
+div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/my.php"] {
+  grid-area: profile;
+  font-size: 0;
+  mask: url(profile.svg) center no-repeat;
+  background: var(--menuFont);
+  height: 20px;
+  border-radius: 1rem;
+  width: 35px;
+  border: 1px solid var(--menuFont);
+}
+div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/logout.php"] {
+  grid-area: logout;
+  font-size: 0;
+  mask: url(off1.svg) center no-repeat;
+  background: var(--menuFont);
+  height: 20px;
+  width: 35px;
+  margin-left: 0px;
+  border-radius: 1rem;
+  padding: 0; 
+}
+.donor{
+  grid-area: dnr;
+  background: transparent url(star2.png);
+  height: 10px;
+  width: 11px;
+  margin-left: -32px;
+}
+#tabs{
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 700;
+  font-size: 13px;
+  max-width: 850px;
+  padding: 10px;
+  margin: 15px 0;
+  justify-content: space-between;
+}
+#tabs > .tab a {
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid var(--menuFont);
+  border-radius: 1rem;
+  min-width: 100px;
+  padding: 5px 15px;
+}
+#tabs > .tab a:hover, .tab\ selected a:hover{
+  border: 1px solid var(--menuHL);
+  border-radius: 1rem;
+  color: var(--menuHL);
+}
+#searchbox {
+  display: flex;
+  border: 1px solid var(--menuFont);
+  border-radius: 1rem;
+  width: auto!important;
+  max-width: 850px;
+  justify-content: space-evenly;
+  /*padding: 10px;*/
+}
+#resultsarea {
+  display: flex;
+  flex-direction: column;
+}
+#torrent-list {
+  border: 1px solid var(--menuFont);
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 5px 0;
+}
+html body table.main tbody tr td.bottom div#resultsarea p {
+  margin: 10px 0;
+  font-size: 12px;
+}
+#searchbox > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(1){
+  padding: 8px 0;
+}
+#moresearch3 {
+  border-top: 1px solid var(--menuFont);
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#moresearch3 > td:nth-child(2) > select {
+  min-width: 130px;
+  border-radius: 1rem;
+  height: 22px;
+  /*align-self: center;*/
+}
+#moresearch3 table.bottom tbody:nth-child(1) {
+  padding: 0 !important;
+ display: grid;
+ align-items; center;
+ justify-content: center;
+ grid-template-areas: "cat codec med origin"
+                      "catoptions codecoptions medoptions originoptions";
+grid-template-rows: 25px;
+grid-template-columns: auto;
+}
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(1) {
+grid-area: cat;
+align-self: center;
+}
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(2){
+  grid-area: catoptions;
+  align-self: center;
+  display: grid;
+  grid-template: auto;
+}
+#moresearch3 a.catlink {
+  vertical-align: 3px;
+  margin-left: 2px;
+}
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(3) {
+  grid-area: codec;
+  align-self: center;
+}
+
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(4) {
+  grid-area: codecoptions;
+  align-self: center;
+  display: grid;
+  grid-template: auto;
+}
+
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(5) {
+  grid-area: med;
+  align-self: center;
+}
+
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(6) {
+  grid-area: medoptions;
+  align-self: center;
+  display: grid;
+  grid-template: auto;
+}
+
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(7) {
+  grid-area: origin;
+  align-self: center;
+  display: grid;
+  grid-template: auto;
+}
+#moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(8) {
+  grid-area: originoptions;
+  align-self: center;
+}
+input[type="checkbox"] {
+  height: 0;
+  align-self: center;
+  padding-bottom: -5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) {
+  color: transparent;
+}
+table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-child(1) > b:nth-child(1) {
+  padding: 6px 10px;
+  color: var(--menuFont);
+  background: var(--searchDropdown);
+  border-radius: 1rem;
+  height: 55px;
+}
+#moresearch3 > td:nth-child(2){
+  min-width: 130px;
+}
+  #moresearch1 > td:nth-child(1) {
+  padding: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+#fromCal, 
+#toCal{
+  width: 80px;
+  text-align: center;
+}
+#moresearch1 input {
+  border-radius: 1rem;
+  height: 22px;
+}
+#moresearch1 td select {
+  min-width: 40px;
+  text-align: center;
+}
+#searchbox > tbody:nth-child(1) > tr:nth-child(7) {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--menuFont);
+}
+#searchbox > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(1) {
+  flex: 4;
+  border: none !important;
+}
+#searchbox > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2) {
+  flex: 1;
+  min-width: 100px;
+  border: none !important;
+}
+#searchbox input[type="submit"], #searchbox input[type="button"] {
+  font-size: 11px;
+  padding: 0 10px;
+  min-width: 50px;
+  border-radius: 1rem;
+  height: 25px;
+  cursor: pointer;
+  
+}
+td.bottom:nth-child(9),
+table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(7),
+table.bottom > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(6){
+  padding-left: 0 !important;
+}
+#moresearch4 td{
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+#moresearch4 > td:nth-child(1) > label:nth-child(1) > select:nth-child(1) {
+  min-width: 120px;
+  height: 22px;
+  border-radius: 1rem;
+}
+#yeargt, #yearlt {
+  text-align: center;
+  height: 22px;
+  width: 75px;
+  border-radius: 1rem;
+}
+#moresearch1 input[name="uppedby"], #moresearch1 input[id="imdb"] {
+  text-align: center;
+  width: 100px;
+  height: 22px;
+}
+/* @media for other screensizes
+@media only screen and (max-width: 600px) {
+    div#logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background: url(https://i.hdbits.org/InMkvWS.png) contain no-repeat;
+    }
+    td.embedded:nth-child(3) {
+      align-content: space-around;
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 705px) {
+    .menu {
+      top: 125px;
+    }
+    div.curuser-stats:nth-child(1),
+    div.curuser-stats:nth-child(2) {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media only screen and (max-width: 576px) {
+    .menu {
+      top: 183px;
+    }
+    table#header.main tr {
+      flex-direction: column;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    td.menunavigation a.normal,
+    td.menunavigation_new a.normal,
+    td.menunavigation,
+    td.menunavigation_new,
+    td.menunavigation:hover,
+    td.menunavigation_new:hover {
+      font-size: 12px;
+      line-height: 5px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+    table#header.main tbody tr td.embedded:nth-child(1) {
+      flex: 2;
+    }
+    table#header.main tbody tr td.embedded:nth-child(2) {
+      flex: 2;
+    }
+    table#header.main tbody tr td.embedded:nth-child(3) {
+      flex: 1;
+    }
+    div.curuser-stats:nth-child(3) {
+      display: none;
+    }
+  }*/
