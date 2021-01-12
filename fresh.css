@@ -287,7 +287,7 @@ div.curuser-stats:nth-child(2) {
 .curuser-stats {
   text-align: right;
 }
-div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="https://hdbits.org/userdetails.php?"] {
+div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="/userdetails.php?"] {
   font-size: 13px;
   padding: 5px 15px;
   border: 1px solid var(--menuFont);
@@ -296,17 +296,17 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="https://hdbits.org/us
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 }
-div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="https://hdbits.org/userdetails.php?"]:hover {
+div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="/userdetails.php?"]:hover {
   border: 1px solid var(--menuFont);
   background:var(--menuFont);
   color: var(--dark)
 } 
 .inbox:hover, inboxnew:hover,
-div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/my.php"]:hover,
-div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/logout.php"]:hover {
+div.curuser-stats:nth-child(1) > a[href="/my.php"]:hover,
+div.curuser-stats:nth-child(1) > a[href="/logout.php"]:hover {
 background: var(--menuHL);
 }
-div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/my.php"] {
+div.curuser-stats:nth-child(1) > a[href="/my.php"] {
   grid-area: profile;
   font-size: 0;
   mask: url(profile.svg) center no-repeat;
@@ -316,7 +316,7 @@ div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/my.php"] {
   width: 35px;
   border: 1px solid var(--menuFont);
 }
-div.curuser-stats:nth-child(1) > a[href="https://hdbits.org/logout.php"] {
+div.curuser-stats:nth-child(1) > a[href="/logout.php"] {
   grid-area: logout;
   font-size: 0;
   mask: url(off1.svg) center no-repeat;
