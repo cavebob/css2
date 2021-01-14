@@ -22,23 +22,82 @@
   --RatioBlue: #1685ca;
   --UploadGreen: #50fa7b;
   --DownBonusRed: #ff5555;
-  --bs: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  --bs: 0px 4px 6px 0px rgba(0, 0, 0, 0.138);
+  --border: 1px solid var(--bordercolor);
+  --bordercolor: transparent;
+  --innerbordercolor: rgba(0, 45, 128, 0.2);
+  --borderhighlight: var(--menuHL);
 }
 * {
   margin: 0 0;
   padding: 0 0;
   color: var(--white);
   text-decoration: none;
+  list-style: none;
 }
+
 body {
   display: flex;
   flex-direction: column;
   font-size: 11px;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--white);
-  background: var(--main); /*url(https://i.hdbits.org/eOJKIzM.png)*/
+  background: var(--dark); /*url(https://i.hdbits.org/eOJKIzM.png)*/
   box-sizing: border-box;
-  width: 100%;
+  align-items: center;
+  margin: 15px;
+  align-content: center;
+  position: relative;
+
+}
+/* ======= GLOBALS =======*/ 
+#header,
+.menu,
+#sidebar-container,
+#news,
+.tab a, .tab\ selected a,
+#torrent-list,
+#searchbox,
+#details,
+table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) /*details page comment section*/,
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a /*forum top navigation*/, 
+#latest_posts > table:nth-child(1) /*latest post table*/,
+td.bottom:nth-child(2) > table:nth-child(5) /*forum table*/,
+table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1), /*profile edit*/
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1),
+.statbox/*browse 2*/,
+#tv-show-list, #tv-episode-list/*tv*/,
+td.bottom:nth-child(2) > form:nth-child(1) > table:nth-child(4)/* upload page */,
+table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > form:nth-child(3) > table:nth-child(1)/*subtitle searchbox*/  {
+  background-color: var(--main);
+  box-shadow: var(--bs);
+}
+
+table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) /*details page comment section*/,
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) /*forum top navigation*/, 
+#latest_posts > table:nth-child(1) /*latest post table*/,
+td.bottom:nth-child(2) > table:nth-child(5) /*forum table*/,
+td.bottom:nth-child(2) > table:nth-child(5) > tbody:nth-child(1),
+td.bottom:nth-child(2) > table:nth-child(5),
+.statbox,
+#tv-show-list, #tv-episode-list /*tv*/,
+td.bottom:nth-child(2) > form:nth-child(1) > table:nth-child(4)/* upload page */,
+table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > form:nth-child(3) > table:nth-child(1)/*subtitle searchbox*/  {
+  border: 1px solid var(--bordercolor);
+  border-radius: 1rem;
+}
+
+table, tr, td, th {
+  border: none;
+}
+/* ======= GLOBALS =======*/ 
+
+
+
+
+
+table, table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) {
+  border-radius: 1rem;
 }
 li {
   color: var(--menuFont);
@@ -53,13 +112,14 @@ a:hover{
  }
 .menu {
   border: none;
-  background: var(--dark);
+  background: var(--main);
   position: sticky;
   z-index: 50;
-  top: 104px;
+  top: 119px;
   min-width: 0;
   font-size: 13px;
   font-weight: 700;
+  border-radius: 0 0 1rem 1rem;
 }
 .menu a.normal{
 padding: 5px 0px;
@@ -91,9 +151,9 @@ td.menunavigation_new a.normal:before {
 	transition: transform .4s;
 	animation: 1.6s infinite alternate menuflash;
 }
-table.main:nth-child(3) {
+body > table.main:nth-child(3) {
   position: relative;
-  padding: 10px 5px;
+  margin-top: 15px;
   box-sizing: border-box;
 }
 .menu tbody tr {
@@ -103,18 +163,18 @@ table.main:nth-child(3) {
   justify-content: center;
   align-items: center;
   align-content: center;
-
   box-sizing: border-box;
-
 }
 #header {
+  border-radius: 1rem 1rem 0 0;
   margin-bottom: 0px !important;
   padding: 0px;
-  background-color: var(--dark);
+  background-color: var(--main);
   position: sticky;
   min-height: 80px;
-  top: 0;
+  top: 15px;
   z-index: 50;
+
 }
 #header.main tr,
 #searchselector {
@@ -142,7 +202,6 @@ textarea,
 button {
  font-family:tahoma,arial,helvetica,sans-serif;
  font-size:9px;
- /*outline: solid white;*/
 border: 1px solid var(--main);
 background-color: var(--searchDropdown);
 color: var(--menuHL);
@@ -159,10 +218,10 @@ height: 20px;
 }
 #sitesearchinput:hover, #sitesearchinput:focus, 
 #search:hover, #search:focus {
-  border: 1px solid var(--menuHL);
+  border: 1px solid var(--borderhighlight);
 }
 .button:focus, button:focus, input#sitesearchinput:focus, textarea:focus {
-	border: 1px solid var(--menuHL);
+	border: 1px solid var(--borderhighlight);
 	background-color: var(--main);
 	color: var(--menuHL);
 	opacity: 1;
@@ -184,7 +243,7 @@ height: 20px;
 }
 #sitesearchsubmit.searchicon:hover {
  opacity: 1;
- border: 1px solid var(--menuHL)
+ border: 1px solid var(--borderhighlight)
 }
 
 #sitesearchform {
@@ -200,7 +259,7 @@ height: 20px;
   flex-shrink: 1; /* it can shrink */
   flex-basis: 220px; /* arbitrary depending on design */
   min-width: 220px; /* equal to flex-basis */
-  margin-right: 20px;
+  margin-right: 27px;
 }
 div#logo {
   background: url(https://i.hdbits.org/InMkvWS.png) left / contain no-repeat;
@@ -210,12 +269,17 @@ div#logo {
   margin: 10px 15px;
 }
 .footer {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-content: center;
   align-items: flex-end;
   padding-bottom: 20px;
   text-align: 0;
+  color: var(--menuFont);
+  opacity: 0.8;
+  place-content: end center;
+  position: relative;
+  bottom: 0px;
 }
 div#sitesearch {
   display: flex;
@@ -287,26 +351,28 @@ div.curuser-stats:nth-child(2) {
 .curuser-stats {
   text-align: right;
 }
-div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="/userdetails.php?"] {
+div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"] {
   font-size: 13px;
   padding: 5px 15px;
-  border: 1px solid var(--menuFont);
+  border: 1px solid var(--bordercolor);
   border-radius: 1rem;
   grid-area: usr;
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 }
-div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href^="/userdetails.php?"]:hover {
-  border: 1px solid var(--menuFont);
+div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"]:hover {
+  border: 1px solid var(--bordercolor);
   background:var(--menuFont);
   color: var(--dark)
 } 
 .inbox:hover, inboxnew:hover,
-div.curuser-stats:nth-child(1) > a[href="/my.php"]:hover,
-div.curuser-stats:nth-child(1) > a[href="/logout.php"]:hover {
+div.curuser-stats:nth-child(1) > a[href*="my.php"]:hover,
+div.curuser-stats:nth-child(1) > a[href*="logout.php"]:hover,
+div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"]:hover,
+div.curuser-stats:nth-child(3) > a[href*="friends.php"]:hover {
 background: var(--menuHL);
 }
-div.curuser-stats:nth-child(1) > a[href="/my.php"] {
+div.curuser-stats:nth-child(1) > a[href*="my.php"] {
   grid-area: profile;
   font-size: 0;
   mask: url(profile.svg) center no-repeat;
@@ -314,9 +380,9 @@ div.curuser-stats:nth-child(1) > a[href="/my.php"] {
   height: 20px;
   border-radius: 1rem;
   width: 35px;
-  border: 1px solid var(--menuFont);
+  border: 1px solid var(--bordercolor);
 }
-div.curuser-stats:nth-child(1) > a[href="/logout.php"] {
+div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   grid-area: logout;
   font-size: 0;
   mask: url(off1.svg) center no-repeat;
@@ -325,7 +391,6 @@ div.curuser-stats:nth-child(1) > a[href="/logout.php"] {
   width: 35px;
   margin-left: 0px;
   border-radius: 1rem;
-  padding: 0; 
 }
 .donor{
   grid-area: dnr;
@@ -333,6 +398,26 @@ div.curuser-stats:nth-child(1) > a[href="/logout.php"] {
   height: 10px;
   width: 11px;
   margin-left: -32px;
+}
+div.curuser-stats:nth-child(3) > a[href*="friends.php"] {
+  mask: url(friends.svg) center no-repeat;
+  background: var(--menuFont);
+  height: 20px;
+  width: 35px;
+  margin-left: 0px;
+  margin-right: -1px;
+  border-radius: 1rem;
+  display: inline-block;
+}
+div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
+  mask: url(mytorrents.svg) center no-repeat;
+  background: var(--menuFont);
+  height: 20px;
+  width: 35px;
+  margin-left: 0px;
+  margin-right: -10px;
+  border-radius: 1rem;
+  display: inline-block;
 }
 #tabs{
   display: flex;
@@ -344,34 +429,39 @@ div.curuser-stats:nth-child(1) > a[href="/logout.php"] {
   margin: 15px 0;
   justify-content: space-between;
 }
-#tabs > .tab a {
+#tabs > .tab a,
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a {
   display: inline-block;
   margin: 5px;
-  border: 1px solid var(--menuFont);
+  border: 1px solid var(--bordercolor);
   border-radius: 1rem;
   min-width: 100px;
   padding: 5px 15px;
 }
 #tabs > .tab a:hover, .tab\ selected a:hover{
-  border: 1px solid var(--menuHL);
+  border: 1px solid var(--borderhighlight);
   border-radius: 1rem;
   color: var(--menuHL);
 }
 #searchbox {
-  display: flex;
-  border: 1px solid var(--menuFont);
+  display: inline-flex;
+  border: 1px solid var(--bordercolor);
   border-radius: 1rem;
   width: auto!important;
   max-width: 850px;
   justify-content: space-evenly;
-  /*padding: 10px;*/
+}
+#searchbox > tbody:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 #resultsarea {
   display: flex;
   flex-direction: column;
 }
 #torrent-list {
-  border: 1px solid var(--menuFont);
+  border: 1px solid var(--bordercolor);
   border-radius: 1rem;
   padding: 10px;
   margin: 5px 0;
@@ -384,7 +474,7 @@ html body table.main tbody tr td.bottom div#resultsarea p {
   padding: 8px 0;
 }
 #moresearch3 {
-  border-top: 1px solid var(--menuFont);
+  border-top: 1px solid var(--innerbordercolor);
   padding: 8px;
   display: flex;
   flex-direction: row;
@@ -400,7 +490,7 @@ html body table.main tbody tr td.bottom div#resultsarea p {
 #moresearch3 table.bottom tbody:nth-child(1) {
   padding: 0 !important;
  display: grid;
- align-items; center;
+ align-items: center;
  justify-content: center;
  grid-template-areas: "cat codec med origin"
                       "catoptions codecoptions medoptions originoptions";
@@ -464,16 +554,6 @@ input[type="checkbox"] {
 
 
 
-
-
-
-
-
-
-
-
-
-
 table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) {
   color: transparent;
 }
@@ -510,7 +590,7 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-ch
 #searchbox > tbody:nth-child(1) > tr:nth-child(7) {
   display: flex;
   align-items: center;
-  border-top: 1px solid var(--menuFont);
+  border-top: 1px solid var(--innerbordercolor);
 }
 #searchbox > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(1) {
   flex: 4;
@@ -559,6 +639,203 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(6){
   width: 100px;
   height: 22px;
 }
+
+
+/* ===== SIDEBAR ===== */
+#sidebar-container {
+  grid-area: sidebar;
+  display: inline-flex;
+  max-width: 178px;
+  border: 1px solid var(--bordercolor);
+  border-radius: 1rem;
+  padding-left: 0px !important;
+  position: fixed;
+  background-color: var(--main);
+}
+#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 10px;
+}
+#sidebar-container td.embedded h2 {
+  display: inline-flex;
+ justify-content: center;
+ flex-grow: 1;
+ min-width: 150px;
+ align-content: center;
+ border-top: 1px solid var(--innerbordercolor);
+ border-bottom: 1px solid var(--innerbordercolor);
+}
+#sidebar-container td.embedded a[href] {
+  min-width: 150px;
+  padding: 8px 0px !important;
+  text-align: center;
+}
+#sidebar-container table.message tbody tr td,
+#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
+#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1){
+
+  height: fit-content;
+  min-width: 150px;
+
+ color: transparent !important;
+}
+#sidebar-container table.message tbody tr td a[href],
+#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) a[href],
+#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) a[href]{
+  width: 150px;
+  padding: 5px 0 !important;
+  display: inline-block;
+  margin-left: -13px;
+}
+#sidebar-container td table tbody tr td a[href]:hover {
+  color: var(--dark);
+  background: var(--menuFont);
+}
+#sidebar-container td.embedded h2:hover {
+  border: 1px solid var(--borderhighlight);
+  border-radius: 10px;
+}
+table.message:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(5) {
+  font-size: 0;
+  margin: 2px 0px !important;
+}
+#sidebar-container select[name="forumid"] {
+text-align: center;
+font-size: 11px;
+width: 150px;
+border-radius: 8px;
+height: 23px;
+
+}
+/* ===== SIDEBAR ===== */
+
+/* ===== MAIN ===== */
+table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
+  display: grid;
+  grid-template-areas: "sidebar bottom";
+  grid-auto-columns: 180px auto;
+}
+
+table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2){
+  grid-area: bottom;
+  display: grid;
+  grid-template-areas: "userwelcome"
+                       "main";
+}
+table.main td.bottom font.small {
+  grid-area: userwelcome;
+}
+table.main td.bottom table.main {
+  width: auto !important;
+  grid-area: main;
+}
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1){
+  display: grid;
+  grid-template-areas: 'news .'
+                       'news .'
+                       'news .'
+                       'news .';
+  grid-auto-columns: auto minmax(100px, 15%);
+  justify-content: center;
+
+}
+#news {
+  grid-area: news;
+  display: flex;
+  flex-direction: column;
+background-color: var(--main);
+margin: 15px 10%;
+border: 1px solid var(--bordercolor);
+border-radius: 1rem;
+min-width: 30vw;
+height: max-content;
+justify-self: self-start;
+}
+#news h2 {
+  border-bottom: 1px solid var(--innerbordercolor);
+  min-width: 100%;
+  display: block;
+  text-align: center;
+  padding: 8px 0;
+  color: var(--menuFont);
+  font-size: 18px;
+}
+#news > table:nth-child(2), 
+#news > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+  border: 0 !important;
+}
+#news hr {
+display: none;
+}
+#news h1 {
+  font-size: 16px;
+  margin: 15px 25px;
+  color: var(--menuFont);
+}
+#news p[id^=news] {
+ margin: 0 15px;
+ padding: 0px 10px 15px 10px;
+ border-bottom: 1px solid var(--innerbordercolor);
+}
+#news #showmore a:nth-child(1){
+  border-top: 1px solid var(--innerbordercolor);
+  min-width: 100%;
+  display: block;
+  text-align: center;
+  padding: 8px 0;
+  color: var(--menuFont);
+  font-size: 13px;
+  margin-top: -1px;
+}
+#showmore b{
+  color: var(--menuFont);
+  opacity: 0.7;
+}
+#showmore b:hover{
+  color: var(--menuFont);
+  opacity: 1;
+}
+/* table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > h2:nth-child(2) {
+  grid-area: pollh2;
+}*/
+/* table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > h2:nth-child(4) { */
+  /*grid-area: statsh2;*/
+/*}*/
+/* table.main td.bottom table.main tbody tr td.embedded table:nth-child(3) { */
+ /* grid-area: poll;*/
+/*}
+table.main td.bottom table.main tbody tr td.embedded table:nth-child(5) {
+  /*grid-area: stats;*/
+/*} */
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1),
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1),
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(5),
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3),
+table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1){
+  border: 0!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== MAIN ===== */
+
+
+
+
 /* @media for other screensizes
 @media only screen and (max-width: 600px) {
     div#logo {
