@@ -2612,7 +2612,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 
 }
 /* POST SECTION */ 
-html body table.main tbody tr td.bottom table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
+html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1), 
 .std-content{
 max-width: 64rem;
 box-sizing: border-box;
@@ -2621,7 +2621,9 @@ display: flex;
 flex-direction: column;
 border-collapse: collapse;
 }
-html body table.main tbody tr td.bottom table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p.sub, 
+
+html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p.sub, 
 td.comment > p.sub {
   border-radius: 0.8rem 0.8rem 0 0;
   background-color: var(--innercardcolor);
@@ -2632,7 +2634,7 @@ td.comment > p.sub {
   border: 1px solid var(--innerbordercolor);
   border-bottom: 0;
 }
-html body table.main tbody tr td.bottom table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main, 
+html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main, 
 .readpost  {
   border-radius: 0 0 0.8rem 0.8rem;
   background-color:#0000003a;
