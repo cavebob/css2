@@ -2612,7 +2612,8 @@ table.tablesorter.table_other_copies > tbody > tr {
 
 }
 /* POST SECTION */ 
-html body table.main tbody tr td.bottom table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1){
+html body table.main tbody tr td.bottom table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
+.std-content{
 max-width: 64rem;
 box-sizing: border-box;
 padding: 1rem;
