@@ -2731,6 +2731,7 @@ html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-chil
   overflow: clip;
   min-height: 150px;
   min-width: 48rem;
+  max-width: 64rem;
 }
 .std-content >tbody >tr >td > table.main {
   border-radius: 0 0 0.8rem 0.8rem;
