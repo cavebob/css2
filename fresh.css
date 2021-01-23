@@ -2734,7 +2734,7 @@ html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-chil
 }
 .std-content >tbody >tr >td > table.main {
   border-radius: 0 0 0.8rem 0.8rem;
-  background-color:#0000003a;
+  background-color:rgba(57, 135, 199, 0.015);
   margin-bottom: 0.5rem;
   filter: drop-shadow(0 2px 5px black);
   border: 1px solid var(--innerbordercolor);
@@ -2758,9 +2758,9 @@ div.default_avatar {
   max-width: 150px;
   max-height: 150px;
   mask: url("defaultavatar.svg") center no-repeat;
-  
   background: rgba(51, 96, 133, 0.501);
   width: 150px;
+  height: 150px;
 }
 
 
