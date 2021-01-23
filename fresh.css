@@ -2751,7 +2751,7 @@ table.main > tbody > tr > td.text{
   object-fit: contain;
 }
 /* forum post image scaling & Hidden text image scaling */ 
-td.text > img, .div_showhide, img[alt="User Avatar"], p.sig img, img{
+td.text > img, .div_showhide, img[alt="User Avatar"], p.sig img{
   max-width: 100%;
 }
 div.default_avatar {
@@ -2790,7 +2790,7 @@ td[bgcolor="#F4F4F0"] {
  }
 /*main table styling*/
 td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),
-td.bottom:nth-child(2) > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
+td.bottom:nth-child(2) > table.main:nth-of-type(2) > tbody:nthimg-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
   background-color: var(--main); 
   filter: drop-shadow(0 5px 5px black);
   padding: 1rem;
