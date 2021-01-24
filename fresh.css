@@ -2729,16 +2729,7 @@ p.sig {
   padding: 0.5rem 1rem;
   box-sizing: border-box;
   border-top: 1px solid var(--innerbordercolor);
-  vertical-align: bottom;
-  display: flex;
-  align-items: flex-end;
 }
-/* a[href="#top"] { 
-  float: right;
-}
-td.comment > div:nth-last-child(2) {
-  position: relative; 
-} */
 td.embedded > div > a.js-watchtopic, td.embedded > div > p{
   padding-bottom: 0.5rem;
 }
@@ -2777,8 +2768,12 @@ table.main > tbody > tr > td.text{
   word-break: break-all;
   object-fit: contain;
 }
+input.btn {
+  border-radius: 1rem;
+  padding: 1px 4px;
+}
 /* forum post image scaling & Hidden text image scaling */ 
-td.text > img, .div_showhide, img[alt="User Avatar"], p.sig img{
+td.text > img, .div_showhide, img[alt="User Avatar"], p.sig img, td.comment > img{
   max-width: 100%;
 }
 div.default_avatar {
