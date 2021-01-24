@@ -2673,11 +2673,13 @@ background-color: var(--main);
 border-radius: 1rem; 
 }
 
+
 html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) 
 > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p.sub, 
 td.comment > p.sub,
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1),
-.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2){
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2),
+td[style="border: 1px black dashed"] > p.sub{
   border-radius: 0.8rem 0.8rem 0 0;
   background-color: var(--innercardcolor);
   height: 2rem;
@@ -2691,9 +2693,23 @@ td.comment > p.sub,
   padding: 0 1rem;
   margin: 0 !important;
 }
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1) > tbody > tr > td.embedded[width="1%"],
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2)  > tbody >  tr > td.embedded[width="1%"]{
+  justify-self: flex-end;
+}
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1) > tbody >tr,
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2)  > tbody >tr {
+  display: flex;
+  justify-content: space-between
+}
 td.comment > p.sub, 
 td[style="border: 1px black dashed"] > p.sub {
   width: max-content;
+/* padding: 1rem; */
+padding: 2px 0.5rem 6px 0.5rem;
+margin-bottom: -7px !important;
+overflow: auto;
+/* background-color: steelblue; */
 }
 td.comment {
   padding: 0.8rem;
@@ -2710,11 +2726,21 @@ p.sub {
   max-width: 64rem;
 }
 p.sig {
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   box-sizing: border-box;
-  /* Width: 100%; */
-margin-top: auto;
   border-top: 1px solid var(--innerbordercolor);
+  vertical-align: bottom;
+  display: flex;
+  align-items: flex-end;
+}
+/* a[href="#top"] { 
+  float: right;
+}
+td.comment > div:nth-last-child(2) {
+  position: relative; 
+} */
+td.embedded > div > a.js-watchtopic, td.embedded > div > p{
+  padding-bottom: 0.5rem;
 }
 table.readpost > tbody:nth-child(1) > tr:nth-child(2),
 .std-content > tbody>tr>td>table.main > tbody:nth-child(1) > tr:nth-child(2) /* back to top  - profile - pm bar */ {
@@ -2791,7 +2817,7 @@ td[bgcolor="#F4F4F0"] {
  }
 /*main table styling*/
 td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),
-td.bottom:nth-child(2) > table.main:nth-of-type(2) > tbody:nthimg-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
+td.bottom:nth-child(2) > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
   background-color: var(--main); 
   filter: drop-shadow(0 5px 5px black);
   padding: 1rem;
