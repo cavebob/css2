@@ -40,7 +40,7 @@
   list-style: none;
 }
 ::selection {
-  background-color: darkslateblue;
+  background-color: hsla(224, 29%, 30%, 0.501);
   color: floralwhite;
 }
 body {
@@ -70,11 +70,11 @@ body {
 td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a /*forum top navigation*/, 
 #latest_posts > table:nth-child(1) /*latest post table*/,
 td.bottom:nth-child(2) > table:nth-child(5) /*forum table*/,
-table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1), /*profile edit*/
+/* table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1),  */
 /* table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1), */ /* DISABLED FOR TORRENTCOMMENTS???*/
 .statbox/*browse 2*/,
 #tv-show-list, #tv-episode-list/*tv*/,
-td.bottom:nth-child(2) > form:nth-child(1) > table:nth-child(4)/* upload page */,
+/* td.bottom:nth-child(2) > form:nth-child(1) > table:nth-child(4)upload page, */
 table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > form:nth-child(3) > table:nth-child(1)/*subtitle searchbox*/ ,
 td.bottom > h1 {
   background-color: var(--main);
@@ -89,16 +89,27 @@ td.bottom:nth-child(2) > table:nth-child(5) > tbody:nth-child(1),
 td.bottom:nth-child(2) > table:nth-child(5),
 .statbox,
 #tv-show-list, #tv-episode-list /*tv*/,
-td.bottom:nth-child(2) > form:nth-child(1) > table:nth-child(4)/* upload page */,
+/* td.bottom:nth-child(2) > form:nth-child(1) > table:nth-child(4)upload page, */
 table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > form:nth-child(3) > table:nth-child(1)/*subtitle searchbox*/ {
   border: 1px solid var(--bordercolor);
   border-radius: 1rem;
 }
-
+ td.bottom > table{
+  background-color: inherit;
+  /* padding: 1rem; */
+  /* border-radius: 1rem;
+  padding: 0.5rem; */
+  box-sizing:border-box ;
+  max-width: 64rem;
+}
+td.embedded > table.std-content{
+  background-color: inherit;
+}
 table,
 tr,
 td,
 th {
+  box-sizing: border-box;
   border: none;
 }
 td.bottom:nth-child(2) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
@@ -188,6 +199,7 @@ body > table.main:nth-child(3) {
   align-items: center;
   align-content: center;
   box-sizing: border-box;
+  white-space: nowrap;
 }
 .menu a.normal {
   padding: 5px 0px;
@@ -491,6 +503,7 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   padding: 10px;
   margin: 15px 0;
   justify-content: space-between;
+  white-space: nowrap;
 }
 #tabs > .tab a,
 td.bottom:nth-child(2)
@@ -498,17 +511,40 @@ td.bottom:nth-child(2)
   > tbody:nth-child(1)
   > tr:nth-child(1)
   a {
+    background-color: var(--main);
   display: inline-block;
   margin: 5px;
   border: 1px solid var(--bordercolor);
   border-radius: 1rem;
   min-width: 100px;
   padding: 5px 15px;
+  box-shadow: var(--bs);
+  color: var(--menuFont);
 }
 #tabs > .tab a:hover,
-.tab\ selected a:hover {
+.tab\ selected a:hover, td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"]:hover  {
   border: 1px solid var(--borderhighlight);
   border-radius: 1rem;
+  color: var(--menuHL);
+}
+td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"] {
+  background-color: var(--main);
+  display: inline-block;
+  margin: 5px;
+  border-radius: 1rem;
+  box-shadow: var(--bs);
+  border: 1px solid var(--bordercolor);
+}
+td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"] > b {
+  padding: 5px 15px;
+  display: inline-block;
+  color: var(--menuFont);
+  font-size: 13px;
+  min-width: 100px;
+  border: 1px solid var(--bordercolor);
+}
+td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"] > b:hover {
+  /* display: block; */
   color: var(--menuHL);
 }
 #searchbox {
@@ -945,8 +981,8 @@ div.chosen-container .search-choice {
 /* ===== SIDEBAR ===== */
 #sidebar-container {
   grid-area: sidebar;
-  display: inline-flex;
-  max-width: 178px;
+  display: flex;
+  /* max-width: 178px; */
   border: 1px solid var(--bordercolor);
   border-radius: 1rem;
   padding-left: 0px !important;
@@ -1029,12 +1065,13 @@ div.chosen-container .search-choice {
   margin-left: -13px;
 }
 #sidebar-container td table tbody tr td a[href]:hover {
-  color: var(--dark);
-  background: var(--menuFont);
+  /* color: var(--dark); */
+  background: var(--innercardcolor);
 }
 #sidebar-container td.embedded h2:hover {
   border: 1px solid var(--borderhighlight);
   border-radius: 10px;
+  background: var(--innercardcolor);
 }
 table.message:nth-child(6)
   > tbody:nth-child(1)
@@ -1057,7 +1094,7 @@ table.message:nth-child(6)
 body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
   display: grid;
   grid-template-areas: "sidebar bottom";
-  grid-auto-columns: 180px auto;
+  grid-auto-columns: min-content auto;
   grid-gap: 1rem;
 }
   body
@@ -2217,7 +2254,7 @@ span.tag.freeleech {
   align-self: center;
   background-color: var(--main);
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
 }
 .main > tbody > tr > td.bottom > h1.internal {
   color: var(--internal);
@@ -2705,11 +2742,9 @@ td[style="border: 1px black dashed"] > p.sub{
 td.comment > p.sub, 
 td[style="border: 1px black dashed"] > p.sub {
   width: max-content;
-/* padding: 1rem; */
 padding: 2px 0.5rem 6px 0.5rem;
 margin-bottom: -7px !important;
 overflow: auto;
-/* background-color: steelblue; */
 }
 td.comment {
   padding: 0.8rem;
@@ -2784,14 +2819,70 @@ div.default_avatar {
   width: 150px;
   height: 150px;
 }
+/* FORUM PAGE  */  
+#latest_posts > table:nth-child(1), td.bottom:nth-child(2) > table:nth-child(5){
+  padding: 1rem;
+  line-height: 1rem;
+  max-width: 64rem;
+  /* border-spacing: 0.2rem; */
+}
+table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >td{
+  /* display: table-row; */
+  padding: 0.2rem;
+  border-top: 1px solid var(--innerbordercolor) !important;
+  /* background-color: var(--innercardcolor); */
+}
+#latest_posts > table:nth-child(1) > tbody > tr > th, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th{
+  padding: 0.3rem 0.2rem;
+  background-color: var(--innercardcolor);
+ border-top: 1px solid var(--innerbordercolor);
+}
+td.bottom:nth-child(2) > table:nth-last-child(10){
+  padding: 1rem;
+  background-color: var(--main);
+}
+td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:first-child, #latest_posts > table:nth-child(1) > tbody > tr > th:first-child,
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child {
+  border-left: 1px solid var(--innerbordercolor);
+  border-radius: 0.7rem 0 0 0;
+  text-indent: 0.2rem;
+}
+td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:last-child, #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child {
+  border-right: 1px solid var(--innerbordercolor);
+  border-radius: 0 0.7rem 0 0;
+}
 
-
-/*.contentlayout.fourcell .content tbody > tr > td {
-  flex: 1;
-}*/
-
-/* ======== DETAILS PAGE ==========*/
-
+/* PROFILE SETTINGS PAGE */
+#profilesettings {
+  background-color: var(--main);
+  border-radius: 1rem;
+  filter: drop-shadow(0 5px 5px black);
+  padding: 1rem;
+  line-height: 1rem;
+}
+#profilesettings > tbody > tr > td {
+  border-bottom: 1px solid var(--innerbordercolor);
+  padding: 0.5rem 1rem;
+}
+#profilesettings > tbody > tr > td.heading {
+white-space: nowrap;
+}
+#profilesettings input {
+ display: inline-block;
+ margin-bottom: -5px;
+ border-radius: 0.7rem;
+ text-indent: 0.5rem
+}
+#profilesettings select {
+  border-radius: 0.7rem;
+}
+textarea {
+  height: auto;
+  width: 100%;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
+}
 /* USERDETAIL PAGE */ 
 /* specific styling*/
 td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) 
@@ -2804,7 +2895,7 @@ td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-c
   border-radius: inherit;
 }
 td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) {
- background-color: inherit;
+ /* background-color: inherit; */
  box-shadow: none;
 }
 td[bgcolor="#F4F4F0"] {
@@ -2835,12 +2926,20 @@ td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-c
 
 
 
-/* UPLOAD PAGE */
-td.bottom:nth-child(2) > form[action="upload/upload"] > table{
+/* UPLOAD / OFFER FORM PAGE */
+td.bottom > form[action="upload/upload"] > table, td.bottom > form[action="takeoffer.php"] > table{
+  max-width: 64rem;
+  /* padding: 1rem; */
+  box-sizing: border-box;
+  line-height: 1rem;
+}
+td.bottom > form[action="takeoffer.php"] {
+  background-color: var(--main);
   max-width: 64rem;
   padding: 1rem;
   box-sizing: border-box;
   line-height: 1rem;
+  border-radius: 1rem;
 }
 
 /* INBOX PAGE */ 
