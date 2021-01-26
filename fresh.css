@@ -2837,8 +2837,8 @@ div.default_avatar {
 table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >td{
   /* display: table-row; */
   padding: 0.2rem;
-  border-top: 1px solid !important;
-  border-color: var(--innerbordercolor) ;
+  border-top: 1px solid var(--innerbordercolor) !important;
+  /* border-color: var(--innerbordercolor) ; */
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th{
   padding: 0.3rem 0.2rem;
