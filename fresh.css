@@ -1,36 +1,37 @@
 :root {
-  --main: #0c0e14  ;
-  --tableCell: #0c0e14;
-  --tableCell2: #0c0e14;
-  --tableCell3: #0c0e14;
+  --main: #0c0e14 /*hsl(220, 15%, 7%)*/ ;
   --dark: #08080a ; /*#0c0e14 #08080a*/
-  --collapsables: #0c0e14a4;
-  --hoverHL: #08080a;
-  --weirdwhite: #08080a;
+
+  /* text */ 
   --white: rgb(142, 165, 191);
-  --shittyborder: #5990b9;
-  --searchDropdown: #10131d;
-  --selected: #356286;
+  --headingnonclickable: #ffa94dd7;
+ 
   --tagText: #000000;
-  --menuFont: #4c95cc;
-  --genres: #78baec;
-  --menuHL: #0cf;
-  --hovernotifications: #4bdbff;
-  --user: #ffd56b;
-  --completed: #ffb86c;
+  --menuFont: hsla(206, 56%, 55%, 0.95);
+
+  --menuHL: hsl(200, 75%, 60%);
+
+  --input: rgba(255, 255, 255, 0.019);
+
+  --searchDropdown: #ffffff07; /* 5 items */
+  --selected: #356286; /* 8 items */
+
+  /* tags user */ 
+  --user: #ffd56b; /* 1 item */ 
+  --completed: #ffb86c; /* 2 items */
   --internal: #ffcd50;
   --RatioBlue: #1685ca;
   --UploadGreen: #50fa7b;
   --DownBonusRed: #ff5555;
+
+
   --bs: 0px 4px 6px 0px rgb(0, 0, 0);
   --border: 1px solid var(--bordercolor);
   --bordercolor: transparent;
   --innerbordercolor: rgba(57, 135, 199, 0.11);
   --innercardcolor: #0000007b;
   --borderhighlight: var(--menuHL);
-  --headerheight: 8vh;
-  --menubarheight: 8vh;
-  --headingnonclickable: #ffa94dd7;
+  
 }
 * {
   margin: 0 0;
@@ -40,7 +41,7 @@
   list-style: none;
 }
 ::selection {
-  background-color: hsla(224, 29%, 30%, 0.501);
+  background-color: hsla(224, 40%, 30%, 0.501);
   color: floralwhite;
 }
 body {
@@ -192,7 +193,7 @@ body > table.main:nth-child(3) {
 }
 .menu tbody tr {
   position: sticky;
-  top: var(--headerheight);
+  top: 8vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -247,13 +248,27 @@ select,
 textarea,
 button {
   font-family: tahoma, arial, helvetica, sans-serif;
-  font-size: 9px;
-  border: 1px solid var(--main);
-  background-color: var(--searchDropdown);
+  font-size: 0.688rem;
+  border: 1px solid var(--innerbordercolor);
+  background-color: var(--input);
   color: var(--menuFont);
   height: 20px;
+  border-radius: 0.7rem;
+ 
+  font-size: 0.688rem;
 }
-
+input[type=text]{
+  text-indent: 0.5rem;
+}
+input[type=submit], input[type=button], button, .btn {
+  border-radius: 0.7rem;
+  padding: 0 10px;
+  text-align: center;
+  height: 25px
+}
+select {
+  text-align: center;
+}
 #sitesearchinput,
 #search {
   width: 275px;
@@ -273,7 +288,7 @@ table.bottom
   > tr:nth-child(4)
   > td:nth-child(8)
   > a:nth-child(1)
-  > b:nth-child(1):hover {
+  > b:nth-child(1):hover, button:hover {
   border: 1px solid var(--borderhighlight);
 }
 input:focus,
@@ -292,10 +307,10 @@ textarea:focus {
 #sitesearchsubmit.searchicon {
   /*float: center;*/
   display: inline-block;
-  padding: 13px;
+  padding: 12px;
   /*margin-top: 5px;*/
   margin-left: -28px;
-  background: rgba(0, 0, 0, 0.25) center no-repeat
+  background: rgba(0, 0, 0, 0.13) center no-repeat
     url(https://i.hdbits.org/o8Ps0IT.png);
   filter: brightness(50%);
   cursor: pointer;
@@ -305,7 +320,7 @@ textarea:focus {
 }
 #sitesearchsubmit.searchicon:hover {
   filter: brightness(100%);
-  border: 1px solid var(--borderhighlight);
+  /* border: 1px solid var(--borderhighlight); */
 }
 
 #sitesearchform {
@@ -315,6 +330,13 @@ textarea:focus {
   align-items: center;
   justify-content: space-between;
   align-content: center;
+}
+.autocomplete-suggestions {
+  background-color: var(--innercardcolor);
+  color: var(--menuFont);
+  line-height: 1rem;
+  border: 0 1px 1px 1px solid var(--innerbordercolor);
+  position: relative !important;
 }
 #header.main tbody tr td.embedded {
   flex-grow: 1; /* it can grow */
@@ -500,8 +522,9 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   font-weight: 700;
   font-size: 13px;
   max-width: 850px;
+  width: 100%;
   padding: 10px;
-  margin: 15px 0;
+  margin: 1rem 0;
   justify-content: space-between;
   white-space: nowrap;
 }
@@ -522,12 +545,12 @@ td.bottom:nth-child(2)
   color: var(--menuFont);
 }
 #tabs > .tab a:hover,
-.tab\ selected a:hover, td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"]:hover  {
+.tab\ selected a:hover, td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover  {
   border: 1px solid var(--borderhighlight);
   border-radius: 1rem;
   color: var(--menuHL);
 }
-td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"] {
+td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] {
   background-color: var(--main);
   display: inline-block;
   margin: 5px;
@@ -535,7 +558,7 @@ td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"
   box-shadow: var(--bs);
   border: 1px solid var(--bordercolor);
 }
-td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"] > b {
+td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b {
   padding: 5px 15px;
   display: inline-block;
   color: var(--menuFont);
@@ -543,7 +566,7 @@ td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"
   min-width: 100px;
   border: 1px solid var(--bordercolor);
 }
-td.bottom > table > tbody > tr > td[width="20%"] > a[href^="https://hdbits.org/"] > b:hover {
+td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b:hover {
   /* display: block; */
   color: var(--menuHL);
 }
@@ -1108,19 +1131,9 @@ body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
   flex-direction: column;
   gap: 1rem;
   justify-self: center;
-  /* margin-left: -180px; */
-  /*display: grid;
-  grid-template-areas: "userwelcome"
-                       "main";*/
+  align-items:center;
+
 }
-/* font.small:nth-child(1) {
-  grid-area: userwelcome;
-} */
-/* td.bottom:nth-child(2) {
-  width: auto !important;
-  grid-area: main;
-} */
-/* html body table.main tbody tr td.bottom table.main tbody tr td.embedded */
 html > body > table.main > tbody > tr >td.bottom 
   > table.main[width="737"]:only-of-type:last-child:nth-child(2)
   > tbody:only-child
@@ -1131,8 +1144,6 @@ html > body > table.main > tbody > tr >td.bottom
     "news news"
     "pollh2 statsh2"
     "poll stats";
-  /*grid-auto-columns: auto minmax(100px, 15%);
-  justify-content: center;*/
   grid-gap: 1rem;
   justify-items: center;
 }
@@ -1785,7 +1796,7 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   width: 228px;
 }
 #tagassociate::placeholder {
-  color: var(--menuHL);
+  /* color: var(--menuHL); */
   filter: brightness(40%);
 }
 #details em {
@@ -1832,16 +1843,17 @@ div.chosen-container .search-choice {
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
   font-size: 1px;
   position: absolute;
-  top: 2px;
+  top: 3px;
   right: 4px;
   display: block;
-  width: 10px;
-  height: 10px;
-  background: url(https://i.hdbits.org/CWeZPVc.png) -42px 2px no-repeat;
-  transform: scale(0.92);
+  width: 11px;
+  height: 11px;
+  background: url(https://i.hdbits.org/CWeZPVc.png) -42px 0px no-repeat;
+  transform: scale(0.90);
   filter: grayscale(10%) brightness(30%) sepia(100%) hue-rotate(-190deg)
     saturate(700%) contrast(0.5);
   padding: 5px;
+  border-radius: 1rem;
 }
 .chosen-container-multi
   .chosen-choices
@@ -1865,6 +1877,7 @@ div.chosen-container .search-choice {
   left: -50%;
   width: 200%;
   height: 200%;
+
 }
 .chosen-container-multi .chosen-choices {
   position: relative;
@@ -2159,7 +2172,7 @@ table#torrent-list tbody td:nth-child(7) {
   font-family: Arial, Helvetica, sans-serif; /* to be changed @@@@@@@@@@@@@@@@@@@@@@ */
   text-align: top;
   filter: brightness(80%) drop-shadow(0 1px 3px var(--dark));
-  display: inline-block;
+  display: inline;
   /* width: max-content; */
 }
 .alert-box--pm,
@@ -2178,7 +2191,6 @@ span.tag.new {
 span.tag.internal {
   color: var(--internal);
   background-color: var(--tagText);
- 
 }
 span.tag.tag_seeding {
   color: var(--UploadGreen);
@@ -2456,11 +2468,11 @@ table.contentlayout > tbody:nth-child(1) > tr > td#plotcell  {
   display: inline-flex;
   border-radius: 1rem;
   overflow: clip;
-  box-shadow: 0px 5px 10px 5px rgb(0, 0, 0);
+  /* box-shadow: 0px 5px 10px 5px rgb(0, 0, 0); */
   background-color: var(--innercardcolor);
   border: 1px solid rgba(70, 131, 180, 0.082);
   box-sizing: border-box;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 #details > tbody:nth-child(1) > tr:nth-child(3) > td > div.hideablecontent > div.grid img {
   width: 8.4rem;
@@ -2480,7 +2492,7 @@ a.list-overview {
 	justify-content: end;
 }
 div.list-overview__overlay {
-  background-color:rgba(15, 12, 24, 0.857);
+  background-color:var(--innercardcolor);
   /* position: relative;
   width: 136px; */
   /* overflow: hidden; */
@@ -2494,7 +2506,7 @@ div.list-overview__text {
   box-sizing: border-box;
  text-align: center; 
  font-size: 0.7rem;
- color: var(--headingnonclickable);
+ color: var(--white);
  width: 7.5rem;
  overflow: hidden;
  text-overflow: ellipsis;
@@ -2803,10 +2815,6 @@ table.main > tbody > tr > td.text{
   word-break: break-all;
   object-fit: contain;
 }
-input.btn {
-  border-radius: 1rem;
-  padding: 1px 4px;
-}
 /* forum post image scaling & Hidden text image scaling */ 
 td.text > img, .div_showhide, img[alt="User Avatar"], p.sig img, td.comment > img{
   max-width: 100%;
@@ -2829,8 +2837,8 @@ div.default_avatar {
 table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >td{
   /* display: table-row; */
   padding: 0.2rem;
-  border-top: 1px solid var(--innerbordercolor) !important;
-  /* background-color: var(--innercardcolor); */
+  border-top: 1px solid !important;
+  border-color: var(--innerbordercolor) ;
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th{
   padding: 0.3rem 0.2rem;
@@ -2879,9 +2887,12 @@ white-space: nowrap;
 }
 textarea {
   height: auto;
-  width: 100%;
+  max-width: 100%;
   border-radius: 0.7rem;
   padding: 0.5rem;
+  font-size: 0.688rem;
+  box-sizing: border-box;
+  width: auto !important;
 }
 /* USERDETAIL PAGE */ 
 /* specific styling*/
@@ -2932,16 +2943,51 @@ td.bottom > form[action="upload/upload"] > table, td.bottom > form[action="takeo
   /* padding: 1rem; */
   box-sizing: border-box;
   line-height: 1rem;
+  background-color: --main;
 }
-td.bottom > form[action="takeoffer.php"] {
+td.bottom > form[action="takeoffer.php"], td.bottom > form[action="upload/upload"] > table, #list-add-container {
   background-color: var(--main);
   max-width: 64rem;
   padding: 1rem;
   box-sizing: border-box;
   line-height: 1rem;
   border-radius: 1rem;
+  filter: drop-shadow(0 5px 5px black);
+  border-spacing: 0.4rem;
+  margin: 1rem 0;
 }
-
+#list-add-container {
+  width: auto;
+}
+td.heading {
+  white-space: nowrap;
+}
+td.bottom > br {
+  display: none;
+}
+td.bottom > p:first-child > font > a, td.bottom > font, td.bottom > form > p, td.bottom > p {
+  background-color: var(--main);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 13px!important;
+  box-sizing: border-box;
+  /* display: block; */
+  width: min-content;
+  white-space: nowrap;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1rem;
+  justify-self: center;
+  align-self: center;
+  gap: 0.5rem;
+  /* margin: 0.5rem 0; */
+}
+td.bottom > form > p {
+  margin: 0.5rem 0;
+}
+font {
+  font-size: inherit !important
+}
 /* INBOX PAGE */ 
  td.embedded > form[action="inbox.php"] {
   max-width: 64rem;
@@ -3001,7 +3047,7 @@ a[href*="imdb.com/name/nm"] img:hover, ul.showlinks:hover {
   filter: brightness(100%)
 }
 hr, td[style="border: 1px black dashed"] {
-  border-color: var(--white) !important;
+  /* border-color: var(--white) !important; */
   border: 1px solid var(--innerbordercolor) !important;
  padding: 0.5rem;
  border-radius: 0.7rem;
