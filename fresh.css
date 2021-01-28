@@ -2821,7 +2821,7 @@ table.main > tbody > tr > td.text{
   object-fit: contain;
 }
 /* forum post image scaling & Hidden text image scaling */ 
-td.text > img, .div_showhide, img[alt="User Avatar"], p.sig img, td.comment > img{
+td.text img, .div_showhide img, img[alt="User Avatar"], p.sig img, td.comment img{
   max-width: 100%;
 }
 div.default_avatar {
