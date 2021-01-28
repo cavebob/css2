@@ -437,6 +437,7 @@ div.curuser-stats:nth-child(2) {
   width: 35px;
   align-self: center;
   margin-bottom: 13px;
+  -webkit-mask: url(mail.svg) center no-repeat;
 }
 .curuser-stats {
   text-align: right;
@@ -474,11 +475,13 @@ div.curuser-stats:nth-child(1) > a[href*="my.php"] {
   border-radius: 1rem;
   width: 35px;
   border: 1px solid var(--bordercolor);
+  -webkit-mask: url(profile.svg) center no-repeat;
 }
 div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   grid-area: logout;
   font-size: 0;
   mask: url(off1.svg) center no-repeat;
+  -webkit-mask: url(off1.svg) center no-repeat;
   background: var(--menuFont);
   height: 20px;
   width: 35px;
@@ -499,6 +502,7 @@ img[src*="starbig.gif"]{
 }
 div.curuser-stats:nth-child(3) > a[href*="friends.php"] {
   mask: url(friends.svg) center no-repeat;
+  -webkit-mask: url(friends.svg) center no-repeat;
   background: var(--menuFont);
   height: 20px;
   width: 35px;
@@ -509,6 +513,7 @@ div.curuser-stats:nth-child(3) > a[href*="friends.php"] {
 }
 div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   mask: url(mytorrents.svg) center no-repeat;
+  -webkit-mask: url(mytorrents.svg) center no-repeat;
   background: var(--menuFont);
   height: 20px;
   width: 35px;
@@ -1246,7 +1251,7 @@ html > body > table.main > tbody > tr >td.bottom
   > tr:only-child
   > td.embedded:only-child > table:nth-child(3) {
   grid-area: poll;
-  margin-top: -2.5em;
+  margin-top: -1rem;
   align-self: stretch;
   line-height: 15px;
   padding: 1rem 1rem 1rem 1rem;
@@ -1260,8 +1265,7 @@ html > body > table.main > tbody > tr >td.bottom
   > tr:only-child
   > td.embedded:only-child > table:nth-child(5) {
   grid-area: stats;
-  margin-top: -2.5em;
-  align-self: end;
+  margin-top: -1rem;
   line-height: 15px;
   padding: 1rem;
   background-color: var(--main);
@@ -2081,7 +2085,7 @@ button[onclick^="location"] {
   vertical-align: middle;
   font-size: 8px;
   text-transform: uppercase;
-  float: inline-end;
+  float: right;
   /* text-align:justify; */
   margin: 2px 0 0 2px;
   border-radius: 1em;
@@ -2141,7 +2145,7 @@ td.center span,
 }
 /* global username selector */
 #torrent-list a:nth-child(1)[href*="userdetails.php?"] {
-  float: inline-end;
+  float: right;
   color: var(--user);
 }
 /* snatched count text selector */
@@ -2823,6 +2827,7 @@ div.default_avatar {
   max-width: 150px;
   max-height: 150px;
   mask: url("defaultavatar.svg") center no-repeat;
+  -webkit-mask: url("defaultavatar.svg") center no-repeat;
   background: rgba(51, 96, 133, 0.501);
   width: 150px;
   height: 150px;
@@ -2932,7 +2937,12 @@ td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-c
   /* padding-left: ; */
 }
 
-
+td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:last-child > td,
+td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) 
+> td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:last-child > td {
+  border-bottom: 0;
+}
 
 
 
