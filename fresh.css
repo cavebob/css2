@@ -70,7 +70,7 @@ body {
 /* table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) details page comment section, */
 td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a /*forum top navigation*/, 
 #latest_posts > table:nth-child(1) /*latest post table*/,
-td.bottom:nth-child(2) > table:nth-child(5) /*forum table*/,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5) /*forum table*/,
 /* table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1),  */
 /* table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1), */ /* DISABLED FOR TORRENTCOMMENTS???*/
 .statbox/*browse 2*/,
@@ -258,7 +258,8 @@ button {
   font-size: 0.688rem;
 }
 input[type=text]{
-  text-indent: 0.5rem;
+  /* text-indent: 0.5rem; */
+  padding: 0 0.5rem;
 }
 input[type=submit], input[type=button], button, .btn {
   border-radius: 0.7rem;
@@ -2833,13 +2834,13 @@ div.default_avatar {
   height: 150px;
 }
 /* FORUM PAGE  */  
-#latest_posts > table:nth-child(1), td.bottom:nth-child(2) > table:nth-child(5){
+#latest_posts > table:nth-child(1), td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5){
   padding: 1rem;
   line-height: 1rem;
   max-width: 64rem;
   /* border-spacing: 0.2rem; */
 }
-table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >td{
+table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5):not(#details) > tbody > tr >td{
   /* display: table-row; */
   padding: 0.2rem;
   border-top: 1px solid var(--innerbordercolor) !important;
@@ -2858,7 +2859,8 @@ td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:first-child, #lates
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child {
   border-left: 1px solid var(--innerbordercolor);
   border-radius: 0.7rem 0 0 0;
-  text-indent: 0.2rem;
+  /* text-indent: 0.2rem; */
+  padding: 0 0.2rem;
 }
 td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:last-child, #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child {
@@ -2878,6 +2880,10 @@ td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child {
   border-bottom: 1px solid var(--innerbordercolor);
   padding: 0.5rem 1rem;
 }
+#profilesettings > tbody > tr:last-child > td {
+  border-bottom: 0;
+  padding: 0.5rem 1rem;
+}
 #profilesettings > tbody > tr > td.heading {
 white-space: nowrap;
 }
@@ -2885,7 +2891,7 @@ white-space: nowrap;
  display: inline-block;
  margin-bottom: -5px;
  border-radius: 0.7rem;
- text-indent: 0.5rem
+ padding: 0 0.5rem;
 }
 #profilesettings select {
   border-radius: 0.7rem;
