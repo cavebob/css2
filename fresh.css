@@ -481,7 +481,7 @@ div.curuser-stats:nth-child(1) > a[href*="my.php"] {
 div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   grid-area: logout;
   font-size: 0;
-  mask: url(off1.svg) center no-repeat;
+  mask: url(off1.svg) center no-repeat;  
   -webkit-mask: url(off1.svg) center no-repeat;
   background: var(--menuFont);
   height: 20px;
@@ -2823,6 +2823,7 @@ table.main > tbody > tr > td.text{
 /* forum post image scaling & Hidden text image scaling */ 
 td.text img, .div_showhide img, img[alt="User Avatar"], p.sig img, td.comment img{
   max-width: 100%;
+  max-height: 64rem;
 }
 div.default_avatar {
   max-width: 150px;
@@ -2840,30 +2841,37 @@ div.default_avatar {
   max-width: 64rem;
   /* border-spacing: 0.2rem; */
 }
-table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5):not(#details) > tbody > tr >td{
+table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, 
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >td,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > td {
   /* display: table-row; */
   padding: 0.2rem;
   border-top: 1px solid var(--innerbordercolor) !important;
   /* border-color: var(--innerbordercolor) ; */
 }
-#latest_posts > table:nth-child(1) > tbody > tr > th, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th, td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th{
+#latest_posts > table:nth-child(1) > tbody > tr > th, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th, 
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th {
   padding: 0.3rem 0.2rem;
   background-color: var(--innercardcolor);
  border-top: 1px solid var(--innerbordercolor);
 }
-td.bottom:nth-child(2) > table:nth-last-child(10){
+td.bottom:nth-child(2) > table:nth-last-child(10),
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) {
   padding: 1rem;
   background-color: var(--main);
 }
 td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:first-child, #latest_posts > table:nth-child(1) > tbody > tr > th:first-child,
-td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child {
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:first-child {
   border-left: 1px solid var(--innerbordercolor);
   border-radius: 0.7rem 0 0 0;
-  /* text-indent: 0.2rem; */
-  padding: 0 0.2rem;
-}
+    /* text-indent: 0.2rem; */
+    padding: 0 0.5rem;
+  }
 td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:last-child, #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
-td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child {
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:last-child {
   border-right: 1px solid var(--innerbordercolor);
   border-radius: 0 0.7rem 0 0;
 }
@@ -2898,12 +2906,12 @@ white-space: nowrap;
 }
 textarea {
   height: auto;
-  max-width: 100%;
+  max-width: 64rem;
   border-radius: 0.7rem;
   padding: 0.5rem;
   font-size: 0.688rem;
   box-sizing: border-box;
-  width: auto !important;
+  /* width: auto !important; */
 }
 /* USERDETAIL PAGE */ 
 /* specific styling*/
@@ -2949,8 +2957,9 @@ td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-c
 > td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:last-child > td {
   border-bottom: 0;
 }
-
-
+td.bottom > p:empty{
+  display: none;
+}
 
 
 /* UPLOAD / OFFER FORM PAGE */
