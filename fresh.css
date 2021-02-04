@@ -819,7 +819,7 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(6) {
   padding-left: 0 !important;
 }
 #moresearch4 td {
-  padding: 0 0.7rem;
+  padding: 0 0 0 0.7rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -832,15 +832,16 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(6) {
   height: var(--inputheight);
   border-radius: var(--inputborderradius);
 }
-#moresearch4,  {
-  display: flex !important;
+#moresearch4  {
+  /* display: flex !important; */
   width: 350px;
   flex: 1 1; 
+  white-space: nowrap;
 }
 #moresearch5 {
-  display: flex !important;
+  /* display: flex !important; */
   width: 400px;
-  flex: 2 1;
+  flex: 9999;
 
 }
 #yeargt,
@@ -1268,7 +1269,7 @@ td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(
 }
 #moresearch5 > td:nth-child(1) {
   max-width: 800px;
-  padding: 0.5em 1rem;
+  padding: 0.2rem 0.7rem;
   box-sizing: border-box;
   display: flex;
   /* grid-auto-flow: column; */
@@ -1290,12 +1291,12 @@ td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(
 div.chosen-container\ chosen-container-single {
   display: none !important;
 }
-div.chosen-container:nth-child(3)
+/* div.chosen-container:nth-child(3)
   > div:nth-child(2)
   > ul:nth-child(1)
   > li:nth-child(1) {
   border-radius: 0 0 0 1rem;
-}
+} */
 /* div.chosen-container.chosen-container-multi.chosen {
   min-width: 700px;
 } */
@@ -1662,7 +1663,7 @@ div.chosen-container.chosen-container-multi.chosen {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /*background-color: var(--tableCell3);*/
+  max-width: 320px;
 }
 div.chosen-container .search-choice {
   color: var(--menuFont) !important;
@@ -1681,7 +1682,7 @@ div.chosen-container .search-choice {
   filter: grayscale(10%) brightness(30%) sepia(100%) hue-rotate(-190deg)
     saturate(700%) contrast(0.5);
   padding: 5px;
-  border-radius: var(--inputborderradius);
+  /* border-radius: var(--inputborderradius); */
 }
 .chosen-container-multi
   .chosen-choices
@@ -1719,6 +1720,7 @@ div.chosen-container .search-choice {
   background-image: none;
   cursor: text;
   border-radius: var(--inputborderradius);
+  max-width: 320px;
 }
 .chosen-container-active .chosen-choices {
   border: 1px solid var(--selected);
@@ -1730,7 +1732,7 @@ div.chosen-container .search-choice {
 .chosen-container-multi .chosen-choices li.search-choice {
   position: relative;
   margin: 2px;
-  padding: 2px 20px 3px 5px;
+  padding: 2px 16px 3px 5px;
   line-height: 0.6875rem;
   border: 1px solid var(--main);
   max-width: 100%;
