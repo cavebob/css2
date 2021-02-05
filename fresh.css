@@ -1074,6 +1074,30 @@ html > body > table.main > tbody > tr >td.bottom
   color: var(--menuFont);
   filter: brightness(100%);
 }
+.text > form[method=post][action="/polls/answer"]:nth-child(2) {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+/* .text > form[method=post][action="/polls/answer"]:nth-child(2) label {
+  display: inline-flex;
+  align-content: center;
+  flex: 1 1;
+  text-align: center;
+
+} */
+input[type="radio"] {
+  /* vertical-align: baseline; */
+  vertical-align: text-bottom;
+margin-top: -1px;
+margin: -1px 0.2rem 0 0.2rem ;
+}
+.text label input[type="radio"] {
+
+  vertical-align: middle;
+
+margin: -2px 0.2rem 0 0.2rem ;
+}
 html > body > table.main > tbody > tr >td.bottom 
   > table.main:only-of-type:last-child:nth-child(2)
   > tbody:only-child
