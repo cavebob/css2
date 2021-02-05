@@ -1785,15 +1785,16 @@ div.chosen-container .search-choice {
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 1px 2px;
+  /* padding: 1px 2px; */
   width: 100%;
   height: auto;
-  border: 1px solid var(--main);
+  border: 1px solid var(--innerbordercolor);
   background-color: var(--searchDropdown);
   background-image: none;
   cursor: text;
   border-radius: var(--inputborderradius);
   max-width: 360px;
+  box-sizing: border-box;
 }
 .chosen-container-active .chosen-choices {
   border: 1px solid var(--selected);
@@ -2858,6 +2859,7 @@ textarea {
   padding: 0.5rem;
   font-size: var(--basefontsize);
   box-sizing: border-box;
+  width: 100%
 }
 /* USERDETAIL PAGE */ 
 /* specific styling*/
@@ -2957,6 +2959,17 @@ table.main > tbody > tr > td.bottom > form[action="/log"] > p {
   border-radius: 0.7rem;
   padding: 0.5rem;
 }
+td.bottom > form[action="takeoffer.php"] > table > tbody {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem 0;
+}
+td.bottom > form[action="takeoffer.php"] > table > tbody > tr:last-child {
+  align-self: center;
+}
+td.bottom > form[action="takeoffer.php"] > table > tbody td.heading, td.bottom > form[action="takeoffer.php"] > table > tbody td.rowhead {
+  min-width: 5rem;
+}
 /* INBOX PAGE */ 
  td.embedded > form[action="inbox.php"] {
   max-width: 64rem;
@@ -3033,7 +3046,11 @@ body > table.main > tbody > tr > td.bottom:nth-child(2) > table[cellpadding="5"]
 /* KINDA GLOBALS */ 
 div.div_showhide {
   display: none;
+  padding: 0.5rem;
+  border: 1px solid var(--innerbordercolor);
+  background: var(--innercardcolor);
   max-width: 64rem;
+  border-radius: var(--maincolortableborderradius);
 }
 .div_showhide > div:nth-child(1) {
   /* max-width: 64rem; */
