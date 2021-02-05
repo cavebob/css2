@@ -423,13 +423,17 @@ div.curuser-stats:nth-child(2) {
   font-size: 0.6875rem
 }
 .notification-overlay {
-  position: fixed;
-  z-index: 10;
-  overflow-y: auto;
-  top: 0;
-  left: 0;
-  right: -25px;
-  bottom: 0
+	position: absolute;
+	z-index: 100;
+	overflow-y: auto;
+	top: 1vh;
+	left: 25%;
+	right: 25%;
+	background-color: var(--main);
+	padding: 0.3rem 0.5rem;
+	border: 1px solid var(--innerbordercolor);
+	filter: drop-shadow(0 0px 20px black) brightness(120%);
+	border-radius: 0.5rem;
 }
 .notification-frame .notification__body,
 .notification-frame a,
@@ -453,21 +457,26 @@ div.curuser-stats:nth-child(2) {
   color: var(--menuHL);
   /* text-decoration: underline */
 }
-.notification-frame {
-  padding: 20px 0
-}
 .notification__body {
-  max-width: 520px
+  max-width: 48rem;
+  margin-right: 0.5rem;
 }
 .notification,
 .popup {
+  margin: 0.3rem 0;
   border-radius: var(--inputborderradius);
   background-color: #0C0C10;
   color: var(--white);
-  padding: 6px 12px
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--innerbordercolor);
+  display: flex;
 }
 .notification:hover, .popup:hover {
 	background-color: #0C0C10;
+}
+.notification__delete {
+	float: right;
+	margin-left: auto;
 }
 .inbox,
 .inboxnew {
@@ -2557,8 +2566,8 @@ img[src*="pic/flag"] {
 }
 img#showbanner {
   object-fit: cover;
-  border-radius: 1rem;
-  filter: drop-shadow(0 2px 5px black);
+  border-radius: .6rem;
+  /* filter: drop-shadow(0 2px 5px black); */
   margin: 0.4rem;
 }
 ul.showlinks {
@@ -2722,10 +2731,10 @@ p.sub {
   max-width: 64rem;
 }
 p.sig {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem;
   box-sizing: border-box;
   border-top: 1px solid var(--innerbordercolor);
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 td.embedded > div > a.js-watchtopic, td.embedded > div > p{
   padding-bottom: 0.5rem;
@@ -3022,9 +3031,12 @@ body > table.main > tbody > tr > td.bottom:nth-child(2) > table[cellpadding="5"]
 
 
 /* KINDA GLOBALS */ 
-
-.div_showhide > div:nth-child(1) {
+div.div_showhide {
+  display: none;
   max-width: 64rem;
+}
+.div_showhide > div:nth-child(1) {
+  /* max-width: 64rem; */
   max-width: 100%;
 }
 html >body >table.main >tbody > tr > td.bottom:nth-child(2) > table:nth-child(3) > tbody:nth-child(1) 
