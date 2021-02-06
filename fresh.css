@@ -98,6 +98,14 @@ table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)
 td.embedded > table.std-content{
   background-color: initial;
 }
+h1, h2:not(#sidebar-container h2, div#news h2), h3,
+body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
+> tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center {
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: var(--headingnonclickable);
+  padding: 0.7rem 1rem;
+}
 table,
 tr,
 td,
@@ -589,7 +597,7 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   max-width: 850px;
   width: 100%;
   /* padding: 10px; */
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
   justify-content: space-between;
   white-space: nowrap;
 }
@@ -604,10 +612,12 @@ td.bottom:nth-child(2)
   margin: 5px;
   border: 1px solid var(--bordercolor);
   border-radius: 1rem;
-  min-width: 5rem;
+  min-width: 7rem;
   padding: 0.4rem 1rem;
   box-shadow: var(--bs);
   color: var(--menuFont);
+  box-sizing: border-box;
+  font-weight: 700
 }
 #tabs > .tab a:hover,
 .tab\ selected a:hover, td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover,
@@ -637,7 +647,6 @@ td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b {
   border: 1px solid var(--bordercolor);
 }
 td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b:hover {
-  /* display: block; */
   color: var(--menuHL);
 }
 #searchbox {
@@ -1093,7 +1102,7 @@ html > body > table.main > tbody > tr >td.bottom
 }
 #news h1 {
   font-size: 16px;
-  margin: 15px 25px;
+  margin: 0 5px;
   color: var(--headingnonclickable);
 }
 #news p[id^="news"] {
@@ -1241,8 +1250,12 @@ table.main:nth-child(2)
 td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) {
   display:flex;
   flex-wrap:wrap;
-  justify-items: center;
+  justify-content: space-around;
   white-space:nowrap;
+  align-items:center;
+}
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) b {
+  box-sizing: border-box;
 }
 /* ===== MAIN ===== */
 
@@ -2851,6 +2864,9 @@ textarea {
 }
 /* USERDETAIL PAGE */ 
 /* specific styling*/
+td.embedded:nth-of-type(2)> img[src*="/pic/flag/"]:only-child {
+  margin-left: 0 !important
+}
 td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) 
 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.rowhead:nth-child(1), 
 td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.rowhead:nth-child(1){
@@ -2922,7 +2938,41 @@ td.bottom > form[action="takeoffer.php"], td.bottom > form[action="upload/upload
   /* margin: 1rem 0; */
 }
 #list-add-container {
+  width: auto !important;
+  /* width: auto !important; */
+}
+div.list-entry-row label:last-child{
   width: auto;
+  white-space: nowrap;
+  display: inline-block;
+  box-sizing: border-box;
+}
+div#list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0.5rem 0;
+}
+input[type=text][name="items[comment][]"]  {
+  width: 100%;
+}
+#list-add > input[type=submit] {
+  position: relative;
+  vertical-align: middle;
+  margin: auto;
+  float: right;
+}
+.list-add-description, .list-name {
+  margin: 0.5rem 0;
+}
+#list-add label {
+  padding: 0 0.2rem;
+}
+td.bottom > ul#tabs:nth-child(3) + h3:nth-child(4){
+  background-color: var(--main);
+  border-radius: var(--maincolortableborderradius);
+  padding: 0.5rem 1rem;
+  color: var(--headingnonclickable);
 }
 td.heading {
   white-space: nowrap;
@@ -2999,7 +3049,7 @@ body > table.main tbody>tr > td.bottom:nth-child(2) > table[width="800"][cellspa
   max-width: 64rem;
 }
 body > table.main tbody>tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
-> tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center, form[action="/requests?open"] > div, #table_open_requests, .lottery_table, .sources_table  {
+> tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center, form[action="/requests?open"] > div, #table_open_requests, .lottery_table, .sources_table, .lottery_table2  {
   background: var(--main);
   border-radius: var(--maincolortableborderradius);
   padding: 0.7rem;
@@ -3024,17 +3074,20 @@ body > table.main tbody>tr > td.bottom:nth-child(2) > table[width="800"][cellspa
   width: 50px;
 }
 .sources_table td:last-child {
-  max-width: min-content;
+  /* max-width: min-content; */
   white-space: nowrap;
 }
-#table_open_requests, .lottery_table {
+#table_open_requests, .lottery_table, .lottery_table2 {
   margin: 0.5rem 0;
   max-width: 64rem;
   box-sizing: border-box;
   border-spacing: 0;
 }
-#table_open_requests tr, .lottery_table tr {
+#table_open_requests tr, .lottery_table tr, .lottery_table2 tr{
   padding: 0 0.2rem;
+}
+.lottery_table2 td {
+  padding: 0.15rem 0.075rem;
 }
 #table_open_requests th:first-child, .lottery_table th:first-child {
   border-top-left-radius: var(--innercardborderradius);
