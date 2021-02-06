@@ -2930,6 +2930,12 @@ td.heading {
 td.bottom > br {
   display: none;
 }
+#details {
+  margin-top: 0.5rem;
+}
+#details + p {
+  display: none;
+}
 td.bottom > p:first-child > font > a, td.bottom > font, td.bottom > form > p, td.bottom > p {
   background-color: var(--main);
   border-radius: var(--inputborderradius);
