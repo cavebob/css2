@@ -32,6 +32,7 @@
   --maincolortableborderradius: 0.8rem;
   --inputheight: 1.5rem;
   --basefontsize: 0.6875rem;
+  --innercardborderradius: 0.5rem;
 }
 * {
   margin: 0 0;
@@ -946,7 +947,6 @@ select[name=imdblt] {
   border-bottom: 1px solid var(--innerbordercolor);
 }
 #sidebar-container td.embedded a[href] {
-  /* min-width: 250px; */
   padding: 0.5rem 0px !important;
   text-align: center;
   min-width: 9rem;
@@ -971,9 +971,7 @@ select[name=imdblt] {
   > tr:nth-child(1)
   > td:nth-child(1) {
   height: fit-content;
-  /* min-width: 150px; */
   font-size: 0;
-  /* color: transparent !important; */
 }
 #sidebar-container table.message tbody tr td a[href],
 #sidebar-container
@@ -996,19 +994,16 @@ select[name=imdblt] {
   > tr:nth-child(1)
   > td:nth-child(1)
   a[href] {
-  /* width: 150px; */
   padding: 5px 0 !important;
   display: inline-block;
-  /* margin-left: -13px; */
   font-size: var(--basefontsize);
 }
 #sidebar-container td table tbody tr td a[href]:hover {
-  /* color: var(--dark); */
   background: var(--innercardcolor);
 }
 #sidebar-container td.embedded h2:hover {
   border: 1px solid var(--borderhighlight);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--innercardborderradius);;
   background: var(--innercardcolor);
   box-sizing: border-box;
 }
@@ -1045,7 +1040,7 @@ body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-self: center;
   align-items:center;
     flex: 9999;
@@ -1083,7 +1078,7 @@ html > body > table.main > tbody > tr >td.bottom
   padding: 8px 0;
   color: var(--headingnonclickable);
   font-size: 18px;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.459);
+  /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.459); */
 }
 #news > table:nth-child(2),
 #news
@@ -1128,23 +1123,13 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 }
-/* .text > form[method=post][action="/polls/answer"]:nth-child(2) label {
-  display: inline-flex;
-  align-content: center;
-  flex: 1 1;
-  text-align: center;
-
-} */
 input[type="radio"] {
-  /* vertical-align: baseline; */
-  vertical-align: text-bottom;
+vertical-align: text-bottom;
 margin-top: -1px;
 margin: -1px 0.2rem 0 0.2rem ;
 }
 .text label input[type="radio"] {
-
   vertical-align: middle;
-
 margin: -2px 0.2rem 0 0.2rem ;
 }
 html > body > table.main > tbody > tr >td.bottom 
@@ -1387,11 +1372,7 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   top: 100%;
   z-index: 1010;
   width: 100%;
-  border: 1px solid #aaa;
   border-top: 0;
-  background: #fff;
-  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
   clip: rect(0, 0, 0, 0);
   -webkit-clip-path: inset(100% 100%);
   clip-path: inset(100% 100%);
@@ -1412,7 +1393,6 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 400;
-  color: #999;
 }
 .chosen-container .chosen-single .group-name:after,
 .chosen-container .search-choice .group-name:after {
@@ -1426,30 +1406,10 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   overflow: hidden;
   padding: 0 0 0 8px;
   height: var(--inputheight);
-  /* border: 1px solid #aaa;
-  border-radius: 5px;
-  background-color: #fff;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(20%, #fff),
-    color-stop(50%, #f6f6f6),
-    color-stop(52%, #eee),
-    to(#f4f4f4)
-  );
-  background: linear-gradient(#fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
-  background-clip: padding-box;
-  -webkit-box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
-  color: #444; */
   text-decoration: none;
   white-space: nowrap;
   line-height: 24px;
 }
-/* .chosen-container-single .chosen-default {
-  color: #999
-} */
 .chosen-container-single .chosen-single span {
   display: block;
   overflow: hidden;
@@ -1505,7 +1465,6 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   width: 100%;
   height: auto;
   outline: 0;
-  /* border: 1px solid #aaa; */
   background: url(/pic/chosen-sprite.png) 100% -20px no-repeat;
   font-size: 1em;
   font-family: sans-serif;
@@ -1523,11 +1482,6 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   -webkit-clip-path: inset(100% 100%);
   clip-path: inset(100% 100%);
 }
-/* .chosen-container .chosen-results {
-  color: #444;
-  max-height: 240px;
-  -webkit-overflow-scrolling: touch
-} */
 .chosen-container .chosen-results li.active-result {
   display: list-item;
   cursor: pointer;
@@ -1535,30 +1489,13 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 .chosen-container .chosen-results li.disabled-result,
 .chosen-container-multi .chosen-drop .result-selected {
   display: list-item;
-  /* color: #ccc; */
   cursor: default;
 }
-/* .chosen-container .chosen-results li.highlighted {
-  background-color: #3875d7;
-  color: #fff;
-} */
-/* .chosen-container .chosen-results li.no-results {
-  color: #777;
-  display: list-item;
-  background: #f4f4f4;
-} */
 .chosen-container .chosen-results li.group-result {
   display: list-item;
   font-weight: 500;
   cursor: default;
 }
-.chosen-container .chosen-results li.group-option {
-  padding-left: 15px;
-}
-/* .chosen-container .chosen-results li em {
-  font-style: normal;
-  text-decoration: underline;
-} */
 .chosen-container-multi .chosen-choices li {
   float: left;
   list-style: none;
@@ -1571,9 +1508,6 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 .chosen-container-multi .chosen-choices li.search-choice span {
   word-wrap: break-word;
 }
-/* .chosen-container-multi .chosen-choices li.search-choice-focus {
-  background: #d4d4d4;
-} */
 .chosen-container-active.chosen-with-drop .chosen-single div {
   border-left: 0;
   background: 0 0;
@@ -1581,9 +1515,6 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 .chosen-container-active.chosen-with-drop .chosen-single div b {
   background-position: -18px 2px;
 }
-/* .chosen-container-active .chosen-choices li.search-field input[type="text"] {
-  color: #222 !important;
-} */
 .chosen-disabled {
   filter: brightness(50%) !important;
   cursor: default;
@@ -1592,65 +1523,6 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 .chosen-disabled .chosen-single {
   cursor: default;
 }
-/* .chosen-rtl {
-  text-align: right;
-}
-.chosen-rtl .chosen-single {
-  overflow: visible;
-  padding: 0 8px 0 0;
-}
-.chosen-rtl .chosen-single span {
-  margin-right: 0;
-  margin-left: 26px;
-  direction: rtl;
-}
-.chosen-rtl .chosen-single-with-deselect span {
-  margin-left: 38px;
-}
-.chosen-rtl .chosen-single div {
-  right: auto;
-  left: 3px;
-}
-.chosen-rtl .chosen-single abbr {
-  right: auto;
-  left: 26px;
-}
-.chosen-rtl .chosen-choices li {
-  float: right;
-}
-.chosen-rtl .chosen-choices li.search-field input[type="text"] {
-  direction: rtl;
-}
-.chosen-rtl .chosen-choices li.search-choice {
-  margin: 3px 5px 3px 0;
-  padding: 3px 5px 3px 19px;
-}
-.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
-  right: auto;
-  left: 4px;
-}
-.chosen-rtl.chosen-container-single .chosen-results {
-  margin: 0 0 4px 4px;
-  padding: 0 4px 0 0;
-}
-.chosen-rtl .chosen-results li.group-option {
-  padding-right: 15px;
-  padding-left: 0;
-}
-.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
-  border-right: 0;
-}
-.chosen-rtl .chosen-search input[type="text"] {
-  padding: 4px 5px 4px 20px;
-  background: url(/pic/chosen-sprite.png) -30px -20px no-repeat;
-  direction: rtl;
-}
-.chosen-rtl.chosen-container-single .chosen-single div b {
-  background-position: 6px 2px;
-}
-.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
-  background-position: -12px 2px;
-} */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
   only screen and (min-resolution: 144dpi),
   only screen and (min-resolution: 1.5dppx) {
@@ -1755,7 +1627,6 @@ div.chosen-container .search-choice {
   filter: grayscale(10%) brightness(30%) sepia(100%) hue-rotate(-190deg)
     saturate(700%) contrast(0.5);
   padding: 5px;
-  /* border-radius: var(--inputborderradius); */
 }
 .chosen-container-multi
   .chosen-choices
@@ -1883,7 +1754,7 @@ div > div.dhtmlxcalendar_yahoolike {
 	height: auto;
 	padding: 0.3rem;
   z-index: 99;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--innercardborderradius);
   filter: drop-shadow(0 0 2rem black)
 }
 .dhtmlxcalendar_yahoolike table.entbox {
@@ -1963,7 +1834,7 @@ div.dhtmlxcalendar_yahoolike div.planeMonth:hover, div.dhtmlxcalendar_yahoolike 
   opacity: 1.0;
   font-weight: 500;
   box-sizing: border-box;
-  border-radius: var(--inputborderradius)
+  border-radius: var(--innercardborderradius);
 }
 .dhtmlxcalendar_yahoolike .dxcaldays > tbody > tr > td.othermonth {
   color: rgba(142, 165, 191, 0.274)
@@ -2076,6 +1947,16 @@ button[onclick^="ignoreShow"], #torrent-list td:hover
 button[onclick^="location"]  {
 	display: block;
 }
+#torrent-list tr.featured {
+  background: var(--innercardcolor)
+}
+#torrent-list tr:hover {
+  background: var(--innercardcolor)
+}
+#torrent-list tr.featured:hover {
+background: rgba(5, 5, 5, 0.66)
+}
+
 button[onclick^="hidetorrent"],
 button[onclick^="ignoreShow"],
 button[onclick^="location"] {
@@ -2116,7 +1997,7 @@ button[onclick^="location"]:hover {
   font-size: 10px;
   filter: brightness(80%);
   text-transform: uppercase;
-  border-radius: 0.5em;
+  border-radius: 0.25rem;
   border: 1px solid var(--innerbordercolor);
 }
 /* genres */
@@ -2165,7 +2046,7 @@ table#torrent-list tbody td:nth-child(7) {
   padding: 0.063rem 0.188rem;
   text-transform: uppercase;
   border: 1px solid;
-  border-radius: 0.7rem;
+  border-radius: 0.5rem;
   margin: 0 0 0px 4px;
   color: var(--dark);
   font-size: 8px;
@@ -2284,7 +2165,7 @@ h1.fl {
   background-color: var(--tagText);
   padding: 1px 4px;
   border: 1px solid;
-  border-radius: 0.7rem;
+  border-radius: 0.5rem;
   margin: -5px 0 0 0.5rem;
   font-size: 8px;
   font-weight: 500;
@@ -2324,15 +2205,13 @@ h1.fl {
 /* FIRST CHILD - TORRENT DOWNLOAD & LINKS */ 
 #details > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
   box-sizing: border-box;
- padding: 0 1rem;
+  padding: 0 1rem;
   text-align: center;
-  border-radius: 0.6rem;
-  /* box-shadow: inset 0 0 6px 3px black; */
-  /* flex-grow: 1; */
+  border-radius: var(--innercardborderradius);
+  background: var(--innercardcolor);
   display:flex;
   align-items: center;
   border: 1px solid var(--innerbordercolor);
-  /* justify-content: space-between; */
 }
 #details > tbody:nth-child(1) > tr:nth-child(1) > td > a.js-wishlistadd,
 #details > tbody:nth-child(1) > tr:nth-child(1) > td > a.js-bookmarkadd,
@@ -2350,11 +2229,10 @@ a.index.js-download {
   display: flex;
   padding: 0.3rem 0.2rem;
   background-image: none;
-
   text-align: center;
-  border-radius: 0.6rem;
   font-weight: 500;
   align-items: center;
+  filter: brightness(100%)
 }
 table#details > tbody > tr > td > span[style*="float:right"] {
   display: flex;
@@ -2446,13 +2324,11 @@ table.contentlayout > tbody:nth-child(1) > tr > td#plotcell  {
 /* THIRD CHILD - FEATURED IN USER LISTS  */
 #details > tbody:nth-child(1) > tr:nth-child(3) > td > div.hideablecontent > div.grid {
   display: inline-flex;
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   overflow: clip;
-  /* box-shadow: 0px 5px 10px 5px rgb(0, 0, 0); */
   background-color: var(--innercardcolor);
   border: 1px solid rgba(70, 131, 180, 0.082);
   box-sizing: border-box;
-  /* margin-bottom: 0.5rem; */
 }
 #details > tbody:nth-child(1) > tr:nth-child(3) > td > div.hideablecontent > div.grid img {
   width: 8.4rem;
@@ -2461,13 +2337,11 @@ table.contentlayout > tbody:nth-child(1) > tr > td#plotcell  {
 }
 div.grid__50 {
   display: flex;
-  /* flex: 0 1 135px; */
   box-sizing: border-box;
 }
 a.list-overview {
 	display: flex;
 	flex-direction: column;
-	/* align-items: flex-end; */
 	box-sizing: border-box;
 	justify-content: end;
 }
@@ -2490,7 +2364,7 @@ div.list-overview__text {
 #details div.hideablecontent{
   display: flex;
   border: 1px solid var(--innerbordercolor);
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   background-color: var(--innercardcolor);
   /* padding: 0.5rem; */
 }
@@ -2535,7 +2409,7 @@ div.list-overview__text {
   box-sizing: border-box;
   padding: 0 0.5rem;
   border: 1px solid var(--innerbordercolor);
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   background-color: var(--innercardcolor)
 }
 img[src*="pic/flag"] {
@@ -2556,7 +2430,6 @@ img[src*="pic/flag"] {
 }
 .label > a[href*="/details/mediainfo"] {
   padding: 2px;
-
   margin-bottom: 5px;
   box-sizing: border-box;
   display: inline-block;
@@ -2568,7 +2441,6 @@ img[src*="pic/flag"] {
 img#showbanner {
   object-fit: cover;
   border-radius: .6rem;
-  /* filter: drop-shadow(0 2px 5px black); */
   margin: 0.4rem;
 }
 ul.showlinks {
@@ -2584,9 +2456,8 @@ ul.showlinks {
 table.tablesorter.table_other_copies:nth-child(2) {
  padding: 0.5rem 0.8rem;
  background-color: var(--innercardcolor);
- border-radius: 1rem;
+ border-radius: var(--innercardborderradius);
  border: 1px solid var(--innerbordercolor);
-
 }
 #details th.header{
 text-align: center;
@@ -2609,7 +2480,6 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 /* FILE LIST */ 
 #details > tbody:nth-child(1) > tr:nth-last-of-type(4) > td > div.hideablecontent {
-  /* width: auto; */
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -2617,7 +2487,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 #table_detail_files{
   border: 1px solid var(--innerbordercolor);
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   padding: 0.5rem 0.8rem;
   background-color: var(--innercardcolor);
   line-height: 1rem;
@@ -2687,7 +2557,7 @@ td.comment > p.sub,
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1),
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2),
 td[style="border: 1px black dashed"] > p.sub{
-  border-radius: 0.8rem 0.8rem 0 0;
+  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
   background-color: var(--innerheadingrowcolor);
   height: 2rem;
   display: flex;
@@ -2747,7 +2617,7 @@ table.readpost > tbody:nth-child(1) > tr:nth-child(2),
 html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) 
 > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main, 
 .readpost  {
-  border-radius: 0 0 0.8rem 0.8rem;
+  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius) ;
   background-color:#0000003a;
   margin-bottom: 0.7rem;
   border: 1px solid var(--innerbordercolor);
@@ -2757,7 +2627,7 @@ html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-chil
   max-width: 64rem;
 }
 .std-content >tbody >tr >td > table.main {
-  border-radius: 0 0 0.8rem 0.8rem;
+  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius) ;
   background-color:rgba(57, 135, 199, 0.015);
   margin-bottom: 0.5rem;
   border: 1px solid var(--innerbordercolor);
@@ -2806,6 +2676,11 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr >
   background-color: var(--innercardcolor);
  border-top: 1px solid var(--innerbordercolor);
 }
+#torrent-list thead th {
+  background-color: var(--innerheadingrowcolor);
+  border-top: 1px solid var(--innerbordercolor);
+  white-space: nowrap;
+}
 td.bottom:nth-child(2) > table:nth-last-child(10),
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) {
   padding: 1rem;
@@ -2813,16 +2688,129 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) {
 }
 td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th:first-child, #latest_posts > table:nth-child(1) > tbody > tr > th:first-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child,
-td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:first-child {
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:first-child,
+#torrent-list thead th:first-child {
   border-left: 1px solid var(--innerbordercolor);
-  border-radius: 0.7rem 0 0 0;
+  border-radius: var(--innercardborderradius) 0 0 0;
     padding: 0 0.5rem;
+  }
+  #torrent-list thead th:first-child {
+    border-left: 1px solid var(--innerbordercolor);
+    border-radius: var(--innercardborderradius) 0 0 0;
   }
 td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:last-child, #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child,
-td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:last-child {
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:last-child,
+#torrent-list thead th:last-child  {
   border-right: 1px solid var(--innerbordercolor);
-  border-radius: 0 0.7rem 0 0;
+  border-radius: 0 var(--innercardborderradius) 0 0;
+}
+
+/* LOG */ 
+html > body > table.main > tbody > tr > td.bottom > form[action="/log"] ~ table > thead:first-child > tr:first-child > th{
+  background-color: var(--innerheadingrowcolor);
+  border-top: 1px solid var(--innerbordercolor);
+  white-space: nowrap;
+  line-height: 1rem;
+  padding: 0.2rem 0;
+  
+  /* border-radius: var(--innercardborderradius); */
+}
+tr.logentry {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  background-color: var(--main) !important;
+}
+/* tr.logentry:hover {
+ background-color: var(--innercardcolor) !important;
+ filter: brightness(120%);
+ border-top: 1px solid var(--innerbordercolor);
+ border-bottom: 1px solid transparent;
+ font-weight: 700;
+} */
+tr.logentry > td {
+  margin: 0.2rem;
+  padding: 0.33rem 0.5rem;
+}
+tr.logentry:last-child {
+  border-radius: 1rem;
+
+}
+tr.logentry > td {
+  border-top: 1px solid var(--innerbordercolor);
+}
+tr.logentry > td {
+  font-size: 0.6875rem;
+  /* font-weight: 400; */
+  letter-spacing: -0.0125rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+html > body > table.main > tbody > tr > td.bottom > table > thead:first-child > tr:first-child > th:first-child {
+  border-top-left-radius: var(--innercardborderradius);
+  border-left: 1px solid var(--innerbordercolor);
+}
+html > body > table.main > tbody > tr > td.bottom > table > thead:first-child > tr:first-child > th:last-child {
+  border-top-right-radius: var(--innercardborderradius);
+  border-right: 1px solid var(--innerbordercolor);
+}
+html > body > table.main > tbody > tr > td.bottom > form[action="/log"] ~ table:nth-child(4) {
+ background-color: var(--main);
+  padding: 1rem;
+}
+tr.logentry:hover {
+  background-color: var(--innercardcolor) !important;
+  filter: brightness(130%);
+  border-top: 1px solid var(--innerbordercolor);
+  border-bottom: 1px solid transparent;
+  font-weight: 700;
+ }
+/* RULES */ 
+html > body > table.main > tbody > tr > td.bottom > table.main > tbody> tr > td.embedded > h2 {
+
+}
+
+/* OFFERS */ 
+td.bottom > p:target font > a {
+  background: black;
+}
+div#pager{
+  display: none;
+}
+td.bottom > p:first-child ~ table[cellpadding="3"]:first-of-type {
+  background: var(--main);
+  padding: 0.5rem;
+  min-width: 16rem;
+}
+input#offersearch {
+  width: 100%
+}
+td.bottom > p:first-child ~ table[cellpadding="3"]:first-of-type > tbody > tr:nth-child(3) > td:nth-child(1) {
+  text-align: center;
+}
+td.bottom > p:first-child ~ table[cellpadding="3"]:first-of-type th {
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--innerbordercolor);
+}
+td.bottom > p:first-child ~ table[cellpadding="3"]:first-of-type table.bottom td.bottom {
+  text-align: center;
+}
+#offerstable > thead th  {
+  background: var(--innerheadingrowcolor);
+  border-top: 1px solid var(--innerbordercolor);
+  line-height: 1.5rem;
+}
+span.tag.new {
+  line-height: normal;
+}
+#offerstable tbody#offerbody > tr > td {
+  padding: 0.2rem 0.5rem;
+}
+#offerbody > tr:hover {
+ background-color: var(--innercardcolor)
+}
+#pager2 {
+  font-size: 0.75rem !important;
+  padding: 0 !important;
 }
 /* PROFILE SETTINGS PAGE */
 #profilesettings {
@@ -2905,6 +2893,16 @@ td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-c
 td.bottom > p:empty{
   display: none;
 }
+form[action="dox.php"] > table > tbody > tr > td[style="border:black solid 1px;"]  {
+  border: none !important;
+}
+form[action="dox.php"] > table {
+  padding: 0.5rem;
+}
+form[action="dox.php"] > table th {
+  border-bottom: 1px solid var(--innerbordercolor);
+  padding-bottom: 0.4rem;
+}
 /* UPLOAD / OFFER FORM PAGE */
 td.bottom > form[action="upload/upload"] > table, td.bottom > form[action="takeoffer.php"] > table{
   max-width: 64rem;
@@ -2921,7 +2919,7 @@ td.bottom > form[action="takeoffer.php"], td.bottom > form[action="upload/upload
   border-radius: var(--maincolortableborderradius);
   filter: var(--filterdropshadow);
   border-spacing: 0.4rem;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
 }
 #list-add-container {
   width: auto;
@@ -2934,9 +2932,9 @@ td.bottom > br {
 }
 td.bottom > p:first-child > font > a, td.bottom > font, td.bottom > form > p, td.bottom > p {
   background-color: var(--main);
-  border-radius: var(--maincolortableborderradius);
-  padding: 0.5rem 1rem;
-  font-size: 13px!important;
+  border-radius: var(--inputborderradius);
+  padding: 0.3rem 1rem;
+  font-size: 0.6875rem !important;
   box-sizing: border-box;
   width: min-content;
   white-space: nowrap;
@@ -2946,6 +2944,11 @@ td.bottom > p:first-child > font > a, td.bottom > font, td.bottom > form > p, td
   justify-self: center;
   align-self: center;
   gap: 0.5rem;
+}
+body td.bottom > font.small {
+  font-size: 0.56375rem !important;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--inputborderradius);
 }
 td.bottom > form > p {
   margin: 0.5rem 0;
@@ -3066,14 +3069,14 @@ img.actorpic, .cast__img {
   width: 55px;
   height: 75px;
   background-position: center;
-  border-radius: 0.5rem;
+  border-radius: 0.35rem;
   background-clip: content-box;
   border: 0;
 }
 a[href*="imdb.com/name/nm"] img {
   display: inline-block;
 margin: -4px 2px;
-border-radius: 0.3rem;
+border-radius: 0.2rem;
 padding: 1px 0;
 filter: brightness(50%);
 }
@@ -3083,7 +3086,7 @@ a[href*="imdb.com/name/nm"] img:hover, ul.showlinks:hover {
 hr, td[style="border: 1px black dashed"] {
   border: 1px solid var(--innerbordercolor) !important;
  padding: 0.5rem;
- border-radius: 0.4rem;
+ border-radius: var(--innercardborderradius);
  background-color: var(--innercardcolor);
 }
 pre {
