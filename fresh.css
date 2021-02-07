@@ -2752,6 +2752,9 @@ div.default_avatar {
   line-height: 1rem;
   max-width: 64rem;
 }
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] {
+  border-spacing: 0;
+}
 table.bottom > table.main table > tbody > tr > td, #latest_posts > table:nth-child(1) > tbody > tr > td, 
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >td:not(td[colspan="5"]),
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > td {
@@ -2760,9 +2763,10 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr >
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th, td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th, 
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th,
-td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th {
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th,
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > th{
   padding: 0.3rem 0.3rem;
-  background-color: var(--innercardcolor);
+  background-color: var(--innerheadingrowcolor);
  border-top: 1px solid var(--innerbordercolor);
 }
 #torrent-list thead th {
@@ -2771,26 +2775,29 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr >
   white-space: nowrap;
 }
 td.bottom:nth-child(2) > table:nth-last-child(10),
-td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) {
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9),
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] {
   padding: 1rem;
   background-color: var(--main);
 }
 td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th:first-child, #latest_posts > table:nth-child(1) > tbody > tr > th:first-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:first-child,
-#torrent-list thead th:first-child {
+#torrent-list thead th:first-child,
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > th:first-child {
   border-left: 1px solid var(--innerbordercolor);
   border-radius: var(--innercardborderradius) 0 0 0;
     padding: 0 0.5rem;
-  }
-  #torrent-list thead th:first-child {
+}
+  /* #torrent-list thead th:first-child {
     border-left: 1px solid var(--innerbordercolor);
     border-radius: var(--innercardborderradius) 0 0 0;
-  }
+  } */
 td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:last-child, #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:last-child,
-#torrent-list thead th:last-child  {
+#torrent-list thead th:last-child,
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > th:last-child  {
   border-right: 1px solid var(--innerbordercolor);
   border-radius: 0 var(--innercardborderradius) 0 0;
 }
@@ -3048,7 +3055,7 @@ input[type=text][name="items[comment][]"]  {
   padding: 0 0.2rem;
 }
 td.bottom > ul#tabs:nth-child(3) + h3:nth-child(4){
-  background-color: var(--main);
+  /* background-color: var(--main); */
   border-radius: var(--maincolortableborderradius);
   padding: 0.5rem 1rem;
   color: var(--headingnonclickable);
@@ -3176,6 +3183,20 @@ form[action="/requests?open"] > div, #table_open_requests, .lottery_table, .sour
 .lottery_table2 td:not(.contentlayout td) {
   padding: 0.15rem 0.075rem;
 }
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > td {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem
+}
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr {
+  text-align: right;
+}
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > td:first-child,
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > th:first-child  {
+  text-align: left;
+}
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > td > a[href*="/userdetails"]  {
+  color: var(--user)
+}
 #table_open_requests th:first-child, .lottery_table th:first-child {
   border-top-left-radius: var(--innercardborderradius);
 }
@@ -3187,7 +3208,8 @@ form[action="/requests?open"] > div, #table_open_requests, .lottery_table, .sour
   border-top: 1px solid var(--innerbordercolor);
   /* border-spacing: 0; */
 }
-#table_open_requests tr > td, .lottery_table tr > td  {
+#table_open_requests tr > td, .lottery_table tr > td,
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > td  {
   border-top: 1px solid var(--innerbordercolor);
 }
 #table_open_requests tbody, .lottery_table tr > th {
@@ -3196,8 +3218,12 @@ form[action="/requests?open"] > div, #table_open_requests, .lottery_table, .sour
   padding: 0 0.5rem;
   border: 0;
 }
-.lottery_table {
-  line-height: 1rem;
+td.bottom p[align="center"] > a[href*="&page"] > b {
+  color: var(--menuFont);
+}
+.lottery_table,
+td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cellpadding="5"] > tbody > tr > td{
+  line-height: 1.25rem;
 }
 .lottery_table tr > th , .lottery_table tr > td {
   padding: 0.2rem 0.5rem !important;
