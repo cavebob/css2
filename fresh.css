@@ -2531,7 +2531,8 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr >
   border-right: 1px solid var(--innerbordercolor);
   border-radius: 0 var(--innercardborderradius) 0 0
 }
-html > body > table.main > tbody > tr > td.bottom > form[action="/log"] ~ table > thead:first-child > tr:first-child > th {
+html > body > table.main > tbody > tr > td.bottom > form[action="/log"] ~ table > thead:first-child > tr:first-child > th,
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child tr:first-child > td.colhead  {
   background-color: var(--innerheadingrowcolor);
   border-top: 1px solid var(--innerbordercolor);
   white-space: nowrap;
@@ -2555,20 +2556,22 @@ tr.logentry:last-child {
 #table_open_requests tr>th:first-child,
 .lottery_table tr>th:first-child,
 html>body>table.main>tbody>tr>td.bottom>table>thead:first-child>tr:first-child>th:first-child,
-td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:nth-child(5)>tbody:nth-child(1)>tr:nth-child(1)>th:first-child {
+td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:nth-child(5)>tbody:nth-child(1)>tr:nth-child(1)>th:first-child,
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td.colhead:first-child {
   border-top-left-radius: var(--innercardborderradius);
   border-left: 1px solid var(--innerbordercolor)
 }
 #table_open_requests th:last-child,
 .lottery_table th:last-child,
 html>body>table.main>tbody>tr>td.bottom>table>thead:first-child>tr:first-child>th:last-child,
-td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:nth-child(5)>tbody:nth-child(1)>tr:nth-child(1)>th:last-child {
+td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:nth-child(5)>tbody:nth-child(1)>tr:nth-child(1)>th:last-child,
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td.colhead:last-child {
   border-top-right-radius: var(--innercardborderradius);
   border-right: 1px solid var(--innerbordercolor)
 }
 tr.logentry:hover {
   background-color: var(--innercardcolor)!important;
-  filter: brightness(130%);
+  filter: brightness(120%);
   border-top: 1px solid var(--innerbordercolor);
   font-weight: 700
 }
@@ -2793,11 +2796,40 @@ body > table.main tbody>tr > td.bottom:nth-child(2) > table[width="800"][cellspa
 .lottery_table2,
 .sources_table,
 div.lottery_forms,
-form[action="/requests?open"]>div {
+form[action="/requests?open"]>div, 
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child  {
   background: var(--main);
   border-radius: var(--maincolortableborderradius);
   padding: .7rem;
   max-width: 64rem
+}
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child {
+    line-height: 1.1rem;
+}
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child h2 {
+    text-align: center;
+    color: var(--headingnonclickable);
+    border-bottom: 1px solid var(--innerbordercolor);
+    margin-top: -0.5rem;
+}
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child h2 a{
+    color: var(--headingnonclickable);
+}
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child > tbody > tr > td.embedded > table:nth-child(2) div[align="left"] {
+    border-bottom: 1px solid var(--innerbordercolor);
+    padding-bottom: 0.5rem;
+}
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child > tbody > tr > td.embedded > table:nth-child(2) div[align="left"] ul li {
+    color: var(--white);
+    list-style: inside;
+}
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child > tbody > tr > td.embedded > table:nth-child(2) > tbody > tr > td:first-child > b:first-child {
+    padding: 0.33rem 0;
+    box-sizing: border-box;
+    display: block;
+}
+td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child > tbody > tr > td.embedded > table:nth-child(2) > tbody > tr > td:first-child > b:first-child + br {
+    display: none;
 }
 .sources_table input,
 .sources_table select {
@@ -2913,13 +2945,36 @@ td.bottom > table.tableb > tbody:nth-child(1) > tr:nth-child(2) > td[style="padd
 }
 body > table.main > tbody > tr > td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(3):last-child {
   display: flex;
-  padding: .5rem;
-  height: 55vh;
-  overflow-x: scroll;
+  padding: 1rem;
+  
+  /* overflow-y: scroll; */
   text-align: left;
   background: var(--main);
   border-radius: var(--maincolortableborderradius);
-  background-clip: border-box
+  background-clip: border-box;
+  line-height: 1rem;;
+}
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td{
+    text-align: right;
+    padding: 0.1rem 0.35rem;
+    border-top: 1px solid var(--innerbordercolor);
+
+}
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td:first-child{
+ text-align: left;
+}
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child tr:first-child td.colhead:first-child{
+    text-align: left;
+    /* padding-left: 1rem; */
+}
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child tr:first-child td.colhead {
+    padding: 0.25rem 0.5rem;
+}
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td font[color="green"] {
+    color: var(--UploadGreen);
+}
+body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td font[color="red"] {
+    color: var(--DownBonusRed);
 }
 input[type=text][border="0px;"][height=19px] {
   border: 1px solid var(--innerbordercolor)!important;
@@ -3015,4 +3070,19 @@ div[style="width: 900px; text-align: left"] a[href*="/lists/view"] + br {
 }
 div[style="width: 900px; text-align: left"] > a[href*="/lists/view"]:last-of-type {
     border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+}
+html body table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.bottom:nth-child(2) > table.main:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1):last-child{
+    width: 36rem;
+    white-space:wrap;
+}
+html body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.bottom:nth-child(2) > table.main:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1)  {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	white-space: normal;
+	align-items: center;
+    text-align: center;
+}
+td.bottom > form [action="dox.php"] ~ table.main:nth-of-type(3):last-child { 
+
 }
