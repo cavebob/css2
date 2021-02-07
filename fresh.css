@@ -59,6 +59,7 @@ body {
   position: relative;
   height: 100%;
   width: calc(100% - 2rem);
+  line-height: normal;
 }
 /* ======= GLOBALS =======*/
 #header,
@@ -98,7 +99,7 @@ table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)
 td.embedded > table.std-content{
   background-color: initial;
 }
-h1, h2:not(#sidebar-container h2, div#news h2), h3,
+h1:not(#details h1, .lottery_table2 h1, div.hideablecontent h1, .film-info h1), h2:not(#sidebar-container h2, div#news h2), h3:not(#details h3, .lottery_table2 h3, div.hideablecontent h3, .film-info h3),
 body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
 > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center {
   font-size: 1rem;
@@ -2199,7 +2200,9 @@ h1.fl {
   max-width: 64rem;
   width: auto!important;
 }
-#details > tbody {
+#details > tbody,
+.lottery_table2 > tbody,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody {
   display: flex;
   flex-direction: column;
   /* flex-wrap: wrap; */
@@ -2208,12 +2211,26 @@ h1.fl {
   text-align: left;
   max-width: 64rem;
 }
-#details > tbody tr td{
+#details > tbody tr td, 
+.lottery_table2 > tbody tr td,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody tr td{
   word-wrap: break-word;
   flex: 1;
+  align-self: center;
 }
-#details > tbody > tr {
+#details > tbody > tr,
+.lottery_table2 > tbody > tr,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody > tr{
   display: flex;
+}
+tr > td > div[id].label {
+  /* font-weight: bold; */
+  font-size: 0.75rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+div[id].label > text {
+ padding: 1rem
+
 }
 /* FIRST CHILD - TORRENT DOWNLOAD & LINKS */ 
 #details > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
@@ -2253,43 +2270,73 @@ table#details > tbody > tr > td > span[style*="float:right"] {
 justify-content: flex-end;
 align-items: center;
 }
+/* about tv show */ 
+.lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent {
+  padding: 0.5rem 0.7rem;
+  line-height: 1rem;
+}
+.lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent
 /* SECOND CHILD - ABOUT THIS FILM EXPANDABLE */ 
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout, 
+.film-info > table.contentlayout, 
+.lottery_table2 div.hideablecontent > table.contentlayout,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout {
   display: flex;
   border-radius: var(--innercardborderradius);
   height: 300px;
   overflow: clip;
-}
-#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] {
+} 
+#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"],
+.film-info > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"],
+.lottery_table2 .contentlayout tr > td > a[href*="imdb.com/title"],
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout tr > td > a[href*="imdb.com/title"]{
   box-sizing: border-box;
   display: block;
 }
-#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] > img {
+#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] > img, 
+.film-info > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] > img,
+.lottery_table2 .contentlayout tr > td > a[href*="imdb.com/title"] > img,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout tr > td > a[href*="imdb.com/title"] > img {
   height: 300px;
   width: auto;
   object-fit:cover;
   display: block;
 }
 /* header */ 
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1{
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1,
+.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1{
  margin: .5rem 1.5rem;
  font-size: 1rem;
  filter: brightness(80%);
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"] {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"]{
   font-size: 1.4rem;
   filter: brightness(100%);
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3 {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3,
+.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3{
   margin: -0.5rem 1.5rem 0 1.5rem;
-
 }
 /* info & plot */
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody,
+.lottery_table2 .contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody{
  display: flex;
  flex-direction: column;
  margin: 0 1.5rem;
- /* min-width: max-content; */
  gap: 0.2rem;
  flex-wrap: wrap;
  flex-basis: 300px;
@@ -2297,13 +2344,18 @@ align-items: center;
 #imdbinfo th {
   width: 4.4rem;
 }
-table.contentlayout > tbody:nth-child(1) > tr > td#plotcell  {
+table.contentlayout > tbody:nth-child(1) > tr > td#plotcell,
+.lottery_table2 .contentlayout  > tbody:nth-child(1) > tr > td#plotcell,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout  > tbody:nth-child(1) > tr > td#plotcell{
   display: flex;
- flex-direction: column;
- margin: 0 1.5rem;
+  flex-direction: column;
+  margin: 0 0.75rem;
 }
 /* actors */
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td,
+.lottery_table2 .contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td{
  display: block;
  margin: 0 1.5rem;
 } 
@@ -2374,17 +2426,26 @@ div.list-overview__text {
  white-space: nowrap;
 } 
 /* ABOUT TV SHOW ONLY */ 
-#details div.hideablecontent{
+#details div.hideablecontent, .lottery_table2 div.hideablecontent,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent,
+.film-info .contentlayout{
   display: flex;
   border: 1px solid var(--innerbordercolor);
   border-radius: var(--innercardborderradius);
   background-color: var(--innercardcolor);
   /* padding: 0.5rem; */
 }
+div.film-info {
+  padding: 0.6875rem;
+  background: var(--main);
+  border-radius: var(--maincolortableborderradius)
+}
 
 /* content layout - torrent upload info, stats, mediainfo and description */ 
 
-#details table.fourcell > tbody > tr {
+#details table.fourcell > tbody > tr,
+.lottery_table2 table.fourcell > tbody > tr,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] table.fourcell > tbody > tr {
   margin: 0.2rem;
   display: flex;
   /* width: 100%; */
@@ -2393,13 +2454,15 @@ div.list-overview__text {
   gap: 0.5rem;
   flex-wrap:wrap;
 }
-#details table.contentlayout.fourcell > tbody > tr > td{
+table.contentlayout.fourcell > tbody > tr > td {
   /* flex: 9999; */
   width: auto!important;
   padding: 0!important;
   border: 0!important;
 }
-#details table.fourcell > tbody > tr > td{
+#details table.fourcell > tbody > tr > td,
+.lottery_table2 table.fourcell > tbody > tr > td,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] table.fourcell > tbody > tr > td{
   display:block;
 }
 .contentlayout.fourcell .content, .contentlayout.fourcell .content tbody, .contentlayout.fourcell, .contentlayout.fourcell > tbody, .contentlayout.fourcell th {
@@ -2418,7 +2481,7 @@ div.list-overview__text {
  flex: 0 70px;
   /* max-width: 70px; */
 }
-.contentlayout.fourcell {
+.contentlayout.fourcell  {
   box-sizing: border-box;
   padding: 0 0.5rem;
   border: 1px solid var(--innerbordercolor);
@@ -2447,7 +2510,9 @@ img[src*="pic/flag"] {
   box-sizing: border-box;
   display: inline-block;
 }
-#details a[href*="/show.php?id="] {
+#details a[href*="/show.php?id="], 
+.lottery_table2 a[href*="/show.php?id="],
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] a[href*="/show.php?id="]{
   display: flex;
   justify-content: space-around;
 }
@@ -2455,6 +2520,8 @@ img#showbanner {
   object-fit: cover;
   border-radius: .6rem;
   margin: 0.4rem;
+  /* filter: drop-shadow(0px 2px 15px var(--dark)) */
+  /* border: 1px solid var(--innerbordercolor); */
 }
 ul.showlinks {
   margin: 0.4rem;
@@ -2464,6 +2531,12 @@ ul.showlinks {
   gap: 1rem;
   filter: brightness(70%);
   font-size: 10px;
+}
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] {
+  background: var(--main);
+  width: auto !important;
+  max-width: 64rem;
+  padding: 1rem;
 }
 /* OTHER COPIES */ 
 table.tablesorter.table_other_copies:nth-child(2) {
@@ -2862,6 +2935,9 @@ textarea {
   box-sizing: border-box;
   width: 100%
 }
+h3:empty {
+  display: none;
+}
 /* USERDETAIL PAGE */ 
 /* specific styling*/
 td.embedded:nth-of-type(2)> img[src*="/pic/flag/"]:only-child {
@@ -3082,11 +3158,12 @@ body > table.main tbody>tr > td.bottom:nth-child(2) > table[width="800"][cellspa
   max-width: 64rem;
   box-sizing: border-box;
   border-spacing: 0;
+  width: auto !important;
 }
 #table_open_requests tr, .lottery_table tr, .lottery_table2 tr{
   padding: 0 0.2rem;
 }
-.lottery_table2 td {
+.lottery_table2 td:not(.contentlayout td) {
   padding: 0.15rem 0.075rem;
 }
 #table_open_requests th:first-child, .lottery_table th:first-child {
@@ -3302,7 +3379,7 @@ hr, td[style="border: 1px black dashed"] {
  background-color: var(--innercardcolor);
 }
 pre {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   box-sizing: border-box;
   white-space: pre-wrap;
 }
