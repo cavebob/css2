@@ -65,6 +65,10 @@ span.genres:hover,
 ul.showlinks:hover {
   filter: brightness(100%)
 }
+#news h1,
+#news h2 {
+  color: var(--headingnonclickable)
+}
 .tag,
 body {
   font-family: Arial,Helvetica,sans-serif
@@ -160,14 +164,16 @@ table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)
 table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1),
 td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1),
 td.bottom:nth-child(2) > table:nth-child(5),
+td.bottom:nth-child(2) > table:nth-child(5),
 td.bottom:nth-child(2) > table:nth-child(5) > tbody:nth-child(1) {
   border: 1px solid var(--bordercolor);
   border-radius: var(--maincolortableborderradius)
 }
-body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align=center] + table.main:nth-of-type(2):last-child:nth-last-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center,
-h1:not(#detailsh1,.lottery_table2h1,div.hideablecontenth1,.film-infoh1),
-h2:not(#sidebar-containerh2,div#newsh2),
-h3:not(#detailsh3,.lottery_table2h3,div.hideablecontenth3,.film-infoh3) {
+body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
+> tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center,
+h1:not(#details h1, .lottery_table2 h1, div.hideablecontent h1, .film-info h1),
+h2:not(#sidebar-container h2, div#news h2),
+h3:not(#details h3, .lottery_table2 h3, div.hideablecontent h3, .film-info h3) {
   font-size: 1rem;
   box-sizing: border-box;
   color: var(--headingnonclickable);
@@ -181,7 +187,15 @@ tr {
   border: none
 }
 table,
-table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) {
+table.main:nth-child(3)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(2)
+  > table:nth-child(4)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  > form:nth-child(1) {
   border-radius: var(--maincolortableborderradius)
 }
 li {
@@ -321,7 +335,7 @@ input[type=submit] {
 }
 .inbox,
 .inboxnew,
-input[type=checkbox] {
+input[type="checkbox"] {
   height: 16px;
   width: 16px
 }
@@ -338,7 +352,12 @@ input[type=checkbox] {
 button:hover,
 input:focus,
 input:hover,
-table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-child(1) > b:nth-child(1):hover {
+table.bottom
+  > tbody:nth-child(1)
+  > tr:nth-child(4)
+  > td:nth-child(8)
+  > a:nth-child(1)
+  > b:nth-child(1):hover {
   border: 1px solid var(--borderhighlight)
 }
 .button:focus,
@@ -563,7 +582,9 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"] {
   grid-column: 3/4;
   grid-row: 1/2
 }
-div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"]:hover {
+div.curuser-stats:nth-child(1)
+  > b:nth-child(1)
+  > a[href*="userdetails.php?"]:hover {
   border: 1px solid var(--bordercolor);
   background: var(--menuFont);
   color: var(--dark)
@@ -622,7 +643,7 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   margin-right: -10px;
   display: inline-block
 }
-:focus-visible {
+*:focus-visible {
   outline: 0
 }
 #tabs {
@@ -634,7 +655,11 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   white-space: nowrap
 }
 #tabs > .tab a,
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a {
+td.bottom:nth-child(2)
+  > table:nth-child(1)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  a {
   background-color: var(--main);
   display: inline-block;
   margin: 5px;
@@ -650,7 +675,11 @@ td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(
 #tabs > .tab a:hover,
 .tab\ selected a:hover,
 td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover,
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a:hover {
+td.bottom:nth-child(2)
+  > table:nth-child(1)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  a:hover {
   border: 1px solid var(--borderhighlight);
   border-radius: 1rem;
   color: var(--menuHL)
@@ -801,7 +830,12 @@ tr#moresearch2 {
 table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) {
   color: transparent
 }
-table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-child(1) > b:nth-child(1) {
+table.bottom
+  > tbody:nth-child(1)
+  > tr:nth-child(4)
+  > td:nth-child(8)
+  > a:nth-child(1)
+  > b:nth-child(1) {
   font-weight: 400;
   padding: 4px 8px;
   color: var(--menuFont);
@@ -848,8 +882,8 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-ch
 form[action="dox.php"]>table>tbody>tr>td[style="border:black solid 1px;"] {
   border: none!important
 }
-#searchbox input[type=button],
-#searchbox input[type=submit],
+#searchbox input[type="button"],
+#searchbox input[type="submit"],
 #yeargt,
 #yearlt,
 select[name=imdbgt],
@@ -857,17 +891,17 @@ select[name=imdblt] {
   border-radius: var(--inputborderradius);
   height: var(--inputheight)
 }
-#searchbox input[type=button],
-#searchbox input[type=submit] {
+#searchbox input[type="button"],
+#searchbox input[type="submit"] {
   font-size: var(--basefontsize);
   padding: 0 10px;
   min-width: 50px;
   cursor: pointer;
   font-weight: 500
 }
-input#cflip[type=button],
-input#coflip[type=button],
-input#mflip[type=button] {
+input#cflip[type="button"],
+input#coflip[type="button"],
+input#mflip[type="button"] {
   height: var(--inputheight)
 }
 table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(7),
@@ -883,6 +917,13 @@ td.bottom:nth-child(9) {
   align-items: center;
   align-content: center;
   gap: 0.3rem
+}
+#news #showmore a:nth-child(1),
+#news h2 {
+  min-width: 100%;
+  display: block;
+  padding: 8px 0;
+  text-align: center
 }
 #moresearch4 > td:nth-child(1) > label:nth-child(1) > select:nth-child(1) {
   min-width: 120px;
@@ -909,8 +950,8 @@ select[name=imdblt] {
   width: auto;
   text-align: center
 }
-#moresearch1 input[id=imdb],
-#moresearch1 input[name=uppedby] {
+#moresearch1 input[id="imdb"],
+#moresearch1 input[name="uppedby"] {
   text-align: center;
   width: 100px;
   height: var(--inputheight)
@@ -928,7 +969,11 @@ select[name=imdblt] {
   background-color: var(--main);
   flex: 1 100px
 }
-#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
+#sidebar-container
+  > table:nth-child(1)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td.embedded {
   display: inline-flex;
   flex-direction: column;
   padding: 10px
@@ -946,14 +991,48 @@ select[name=imdblt] {
   text-align: center;
   min-width: 9rem
 }
-#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
-#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
+#sidebar-container
+  > table:nth-child(1)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  > table:nth-child(2)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1),
+#sidebar-container
+  > table:nth-child(1)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  > table:nth-child(4)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1),
 #sidebar-container table.message tbody tr td {
   height: fit-content;
   font-size: 0
 }
-#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) a[href],
-#sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) a[href],
+#sidebar-container
+  > table:nth-child(1)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  > table:nth-child(2)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  a[href],
+#sidebar-container
+  > table:nth-child(1)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  > table:nth-child(4)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  a[href],
 #sidebar-container table.message tbody tr td a[href] {
   padding: 5px 0!important;
   display: inline-block;
@@ -970,11 +1049,15 @@ select[name=imdblt] {
   background: var(--innercardcolor);
   box-sizing: border-box
 }
-table.message:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(5) {
+table.message:nth-child(6)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(1)
+  > div:nth-child(5) {
   font-size: 0;
   margin: 2px 0!important
 }
-#sidebar-container select[name=forumid] {
+#sidebar-container select[name="forumid"] {
   text-align: center;
   font-size: var(--basefontsize);
   width: 100%;
@@ -987,7 +1070,11 @@ body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
   grid-auto-columns: min-content auto;
   grid-gap: 1rem
 }
-body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
+body
+  > table.main:nth-child(3)
+  > tbody:nth-child(1)
+  > tr:nth-child(1)
+  > td:nth-child(2) {
   grid-area: bottom;
   display: flex;
   flex-wrap: wrap;
@@ -997,7 +1084,11 @@ body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-c
   align-items: center;
   flex: 9999
 }
-html > body > table.main > tbody > tr > td.bottom > table.main[width="737"]:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child {
+html > body > table.main > tbody > tr >td.bottom 
+  > table.main[width="737"]:only-of-type:last-child:nth-child(2)
+  > tbody:only-child
+  > tr:only-child
+  > td.embedded:only-child {
   display: grid;
   grid-template-areas: "news news" "pollh2 statsh2" "poll stats";
   grid-gap: 1rem;
@@ -1015,11 +1106,6 @@ html > body > table.main > tbody > tr > td.bottom > table.main[width="737"]:only
   justify-self: self-start
 }
 #news h2 {
-  min-width: 100%;
-  display: block;
-  text-align: center;
-  padding: 8px 0;
-  color: var(--headingnonclickable);
   font-size: 18px
 }
 #news>table:nth-child(2),
@@ -1034,19 +1120,14 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
 }
 #news h1 {
   font-size: 16px;
-  margin: 0 5px;
-  color: var(--headingnonclickable)
+  margin: 0 5px
 }
-#news p[id^=news] {
+#news p[id^="news"] {
   margin: 0 15px;
   padding: 0 10px 15px;
   border-bottom: 1px solid var(--innerbordercolor)
 }
 #news #showmore a:nth-child(1) {
-  min-width: 100%;
-  display: block;
-  text-align: center;
-  padding: 8px 0;
   color: var(--menuFont);
   font-size: 13px;
   margin-top: -1px
@@ -1063,15 +1144,20 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
   flex-direction: column;
   justify-content: center
 }
-input[type=radio] {
+input[type="radio"] {
   vertical-align: text-bottom;
   margin: -1px .2rem 0
 }
-.text label input[type=radio] {
+.text label input[type="radio"] {
   vertical-align: middle;
   margin: -2px .2rem 0
 }
-html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(2) {
+html > body > table.main > tbody > tr >td.bottom 
+  > table.main:only-of-type:last-child:nth-child(2)
+  > tbody:only-child
+  > tr:only-child
+  > td.embedded:only-child
+  > h2:nth-child(2) {
   grid-area: pollh2;
   column-gap: normal;
   background-color: var(--main);
@@ -1083,7 +1169,12 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
   color: var(--headingnonclickable);
   z-index: 1
 }
-html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(4) {
+html > body > table.main > tbody > tr >td.bottom 
+  > table.main:only-of-type:last-child:nth-child(2)
+  > tbody:only-child
+  > tr:only-child
+  > td.embedded:only-child
+  > h2:nth-child(4) {
   grid-area: statsh2;
   column-gap: normal;
   background-color: var(--main);
@@ -1095,7 +1186,11 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
   color: var(--headingnonclickable);
   z-index: 1
 }
-html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(3) {
+html > body > table.main > tbody > tr >td.bottom 
+  > table.main:only-of-type:last-child:nth-child(2)
+  > tbody:only-child
+  > tr:only-child
+  > td.embedded:only-child > table:nth-child(3) {
   grid-area: poll;
   margin-top: -1rem;
   align-self: stretch;
@@ -1105,7 +1200,11 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
   border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
   filter: var(--filterdropshadow)
 }
-html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(5) {
+html > body > table.main > tbody > tr >td.bottom 
+  > table.main:only-of-type:last-child:nth-child(2)
+  > tbody:only-child
+  > tr:only-child
+  > td.embedded:only-child > table:nth-child(5) {
   grid-area: stats;
   margin-top: -1rem;
   line-height: 15px;
@@ -1151,7 +1250,7 @@ td.bottom:nth-child(2)>table:nth-child(1)>tbody:nth-child(1)>tr:nth-child(1) b {
   align-items: center;
   gap: 0.3rem
 }
-#moresearch5 > td:nth-child(1) > select[name=tagsearchtype] {
+#moresearch5 > td:nth-child(1) > select[name="tagsearchtype"] {
   width: 100px;
   align-self: center;
   justify-self: end;
@@ -1233,7 +1332,10 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   background: url(/pic/chosen-sprite.png) -42px 1px no-repeat;
   font-size: 1px
 }
-.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close,
+.chosen-container-multi
+  .chosen-choices
+  li.search-choice-focus
+  .search-choice-close,
 .chosen-container-single .chosen-single abbr:hover,
 .chosen-container-single.chosen-disabled .chosen-single abbr:hover {
   background-position: -42px -10px
@@ -1259,7 +1361,7 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   padding: 3px 4px;
   white-space: nowrap
 }
-.chosen-container-single .chosen-search input[type=text] {
+.chosen-container-single .chosen-search input[type="text"] {
   margin: 1px 0;
   padding: 4px 16px 4px 5px;
   width: 100%;
@@ -1329,10 +1431,10 @@ only screen and (min-resolution:1.5dppx) {
   .chosen-container .chosen-results-scroll-down span,
   .chosen-container .chosen-results-scroll-up span,
   .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
-  .chosen-container-single .chosen-search input[type=text],
+  .chosen-container-single .chosen-search input[type="text"],
   .chosen-container-single .chosen-single abbr,
   .chosen-container-single .chosen-single div b,
-  .chosen-rtl .chosen-search input[type=text] {
+  .chosen-rtl .chosen-search input[type="text"] {
     background-image: url(/pic/chosen-sprite.png)!important;
     background-size: 52px 37px!important;
     background-repeat: no-repeat!important
@@ -1378,7 +1480,7 @@ only screen and (min-resolution:1.5dppx) {
   font-size: 10px;
   padding: 1px 45px 0 8px
 }
-.chosen-container-multi .chosen-choices li.search-field input[type=text] {
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   margin: 0;
   padding: 0 0 0 4px;
   height: var(--inputheight);
@@ -1395,7 +1497,7 @@ only screen and (min-resolution:1.5dppx) {
   border-radius: 0;
   width: 25px
 }
-.chosen-container-active .chosen-choices li.search-field input[type=text] {
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
   color: var(--menuHL)!important;
   filter: brightness(100%)
 }
@@ -1426,7 +1528,10 @@ div.chosen-container .search-choice {
   filter: grayscale(10%) brightness(30%) sepia(100%) hue-rotate(-190deg) saturate(700%) contrast(.5);
   padding: 5px
 }
-.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+.chosen-container-multi
+  .chosen-choices
+  li.search-choice
+  .search-choice-close:hover {
   background-color: #698da8;
   border: 4px solid #698da8;
   top: -1px;
@@ -1669,8 +1774,8 @@ div.dhtmlxcalendar_yahoolike .dxcaldlabel td {
   height: 20px;
   color: var(--menuFont)
 }
+div.dhtmlxcalendar_yahoolike .dxcaldays  tr,
 div.dhtmlxcalendar_yahoolike .dxcaldays td,
-div.dhtmlxcalendar_yahoolike .dxcaldays tr,
 div.dhtmlxcalendar_yahoolike .dxcaldays_ie td {
   border: 1px solid var(--innerbordercolor);
   background-color: inherit;
@@ -1752,9 +1857,9 @@ table.main>tbody>tr>td.bottom:nth-child(2)>h1[style="display:inline-block;"]:nth
 #torrent-list tr.featured:hover {
   background: rgba(5,5,5,.66)
 }
-button[onclick^=hidetorrent],
-button[onclick^=ignoreShow],
-button[onclick^=location] {
+button[onclick^="hidetorrent"],
+button[onclick^="ignoreShow"],
+button[onclick^="location"] {
   vertical-align: middle;
   font-size: 8px;
   text-transform: uppercase;
@@ -1768,9 +1873,9 @@ button[onclick^=location] {
   border: 1px solid var(--innerbordercolor);
   display: none
 }
-button[onclick^=hidetorrent]:hover,
-button[onclick^=ignoreShow]:hover,
-button[onclick^=location]:hover {
+button[onclick^="hidetorrent"]:hover,
+button[onclick^="ignoreShow"]:hover,
+button[onclick^="location"]:hover {
   filter: brightness(100%);
   background-color: rgba(0,0,0,.7);
   color: var(--menuFont);
@@ -1942,7 +2047,7 @@ h1.fl {
   margin-top: .5rem
 }
 #details > tbody,
-.lottery_table2 > tbody:not(form.lottery_table2>tbody,.lottery_forms),
+.lottery_table2 > tbody:not(form .lottery_table2 > tbody, .lottery_forms),
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody {
   display: flex;
   flex-direction: column;
@@ -1952,14 +2057,14 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
   max-width: 64rem
 }
 #details > tbody tr td,
-.lottery_table2 > tbody tr td:not(formtd,.lottery_forms),
+.lottery_table2 > tbody tr td:not(form td, .lottery_forms),
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody tr td {
   word-wrap: break-word;
   flex: 1;
   align-self: center
 }
 #details > tbody > tr,
-.lottery_table2 > tbody > tr:not(formtr,.lottery_forms),
+.lottery_table2 > tbody > tr:not(form tr, .lottery_forms),
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody > tr {
   display: flex
 }
@@ -1981,7 +2086,7 @@ tr > td > div[id].label {
 a.index.js-download {
   margin: 0
 }
-#details > tbody:nth-child(1) > tr:nth-child(1) > td > a[id^=rss] {
+#details > tbody:nth-child(1) > tr:nth-child(1) > td > a[id^="rss"] {
   background-image: url(rssadd.png);
   margin-right: 3px
 }
@@ -2006,7 +2111,9 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
   line-height: 1rem
 }
 .film-info > table.contentlayout,
-.lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent #details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout,
+.lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent
+ 
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout,
 .lottery_table2 div.hideablecontent > table.contentlayout,
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout {
   display: flex;
@@ -2043,10 +2150,14 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
   font-size: 1rem;
   filter: brightness(80%)
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"],
-.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"],
-.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"],
-table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"] {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(2) > h1 > a[href*="imdb.com/title"] {
   font-size: 1.4rem;
   filter: brightness(100%)
 }
@@ -2070,9 +2181,9 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
 #imdbinfo th {
   width: 4.4rem
 }
-.lottery_table2 .contentlayout > tbody:nth-child(1) > tr > td#plotcell,
+.lottery_table2 .contentlayout  > tbody:nth-child(1) > tr > td#plotcell,
 table.contentlayout > tbody:nth-child(1) > tr > td#plotcell,
-table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout > tbody:nth-child(1) > tr > td#plotcell {
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout  > tbody:nth-child(1) > tr > td#plotcell {
   display: flex;
   flex-direction: column;
   margin: 0 .75rem
@@ -2108,7 +2219,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
   text-align: center;
   margin-bottom: .1rem
 }
-#cast > tbody:nth-child(1) > tr:nth-child(1) > td > a:nth-child(3) {
+#cast > tbody:nth-child(1) > tr:nth-child(1) > td> a:nth-child(3) {
   place-self: center flex-end
 }
 #details > tbody:nth-child(1) > tr:nth-child(3) > td > div.hideablecontent > div.grid {
@@ -2352,7 +2463,8 @@ input#tagassociate {
 }
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1),
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2),
-html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p.sub,
+html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p.sub,
 td.comment > p.sub,
 td[style="border: 1px black dashed"] > p.sub {
   border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
@@ -2372,11 +2484,11 @@ tr.logentry:hover {
   border-bottom: 1px solid transparent
 }
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1) > tbody > tr > td.embedded[width="1%"],
-.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2) > tbody > tr > td.embedded[width="1%"] {
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2)  > tbody >  tr > td.embedded[width="1%"] {
   justify-self: flex-end
 }
-.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1) > tbody > tr,
-.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2) > tbody > tr {
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1) > tbody >tr,
+.std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2)  > tbody >tr {
   display: flex;
   justify-content: space-between
 }
@@ -2413,7 +2525,8 @@ td.bottom>p:first-child~table[cellpadding="3"]:first-of-type th {
   padding-bottom: 0.4rem
 }
 .readpost,
-html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main {
+html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) 
+> tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main {
   border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
   background-color: #0000003a;
   margin-bottom: .7rem;
@@ -2423,7 +2536,7 @@ html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-chil
   min-width: 48rem;
   max-width: 64rem
 }
-.std-content > tbody > tr > td > table.main {
+.std-content >tbody >tr >td > table.main {
   border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
   background-color: rgba(57,135,199,.015);
   margin-bottom: .5rem;
@@ -2468,14 +2581,14 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5) {
 }
 #latest_posts > table:nth-child(1) > tbody > tr > td,
 table.bottom > table.main table > tbody > tr > td,
-td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr > td:not(td[colspan="5"]),
+td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >td:not(td[colspan="5"]),
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > td {
   padding: .2rem;
   border-top: 1px solid var(--innerbordercolor)!important
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th,
-td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr > th,
+td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th {
   padding: .3rem;
@@ -2496,7 +2609,7 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) {
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th:first-child,
 #torrent-list thead th:first-child,
-td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr > th:first-child,
+td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th:first-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:first-child {
   border-left: 1px solid var(--innerbordercolor);
@@ -2509,7 +2622,7 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr >
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
 #torrent-list thead th:last-child,
-td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr > th:last-child,
+td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:last-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:last-child {
   border-right: 1px solid var(--innerbordercolor);
@@ -2621,11 +2734,12 @@ textarea {
   font-size: var(--basefontsize);
   box-sizing: border-box
 }
-td.embedded:nth-of-type(2) > img[src*="/pic/flag/"]:only-child {
+td.embedded:nth-of-type(2)> img[src*="/pic/flag/"]:only-child {
   margin-left: 0!important
 }
 td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.rowhead:nth-child(1),
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.rowhead:nth-child(1) {
+td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) 
+> table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.rowhead:nth-child(1) {
   display: table-cell;
   background-color: inherit;
   padding: .5rem 0 .5rem 1rem;
@@ -2646,8 +2760,10 @@ td.bottom:nth-child(2) > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth
   max-width: 64rem;
   box-sizing: border-box
 }
-td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:last-child > td,
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:last-child > td {
+td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) 
+> td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:last-child > td,
+td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) 
+> td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:last-child > td {
   border-bottom: 0
 }
 form[action="dox.php"] > table {
@@ -2763,7 +2879,7 @@ form[action="/requests?open"] {
   display: flex;
   justify-content: center
 }
-body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align=center] + table.main:nth-of-type(2):last-child:nth-last-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
+body > table.main tbody>tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
   background: 0;
   display: flex;
   flex-direction: column;
@@ -2805,7 +2921,7 @@ form[action="/requests?open"]>div {
   border-spacing: 0;
   width: auto!important
 }
-.lottery_table2 td:not(.contentlayouttd) {
+.lottery_table2 td:not(.contentlayout td) {
   padding: .15rem .075rem
 }
 #table_open_requests th:first-child,
@@ -2867,7 +2983,7 @@ table.tableb table {
   width: auto;
   padding: 0!important
 }
-tr.tableb > td[align=right] {
+tr.tableb > td[align="right"] {
   padding: 0 .5rem;
   box-sizing: border-box
 }
@@ -2907,7 +3023,8 @@ div.div_showhide {
 .div_showhide > div:nth-child(1) {
   max-width: 100%
 }
-html > body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) {
+html >body >table.main >tbody > tr > td.bottom:nth-child(2) > table:nth-child(3) > tbody:nth-child(1) 
+> tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) {
   max-width: 64rem
 }
 .cast__img,
