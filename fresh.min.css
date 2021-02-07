@@ -1,11 +1,90 @@
+*,
+body {
+  color: var(--white)
+}
+td.bottom>table,
+td.bottom:nth-child(2) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
+  max-width: 64rem;
+  box-sizing: border-box
+}
+#header,
+* {
+  padding: 0
+}
+a[href],
+li {
+  color: var(--menuFont)
+}
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(3),
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(5),
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(7),
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(9),
+div#sitesearch,
+select,
+td.bottom>p:first-child~table[cellpadding="3"]:first-of-type table.bottom td.bottom,
+td.bottom>p:first-child~table[cellpadding="3"]:first-of-type>tbody>tr:nth-child(3)>td:nth-child(1),
+td.embedded>h1.center {
+  text-align: center
+}
+#tabs,
+.menu {
+  font-weight: 500
+}
+#search,
+#sitesearchinput,
+body,
+button,
+input,
+select,
+textarea {
+  font-size: var(--basefontsize)
+}
+#header,
+.menu,
+.menu tbody tr {
+  position: sticky
+}
+#news h2,
+#sidebar-container td.embedded h2 {
+  border-bottom: 1px solid var(--innerbordercolor)
+}
+#showmore b:hover,
+#sitesearchsubmit.searchicon:hover,
+#torrent-list td:nth-child(3)>span.genres:hover,
+#torrent-list td>a[href^="https://hdbits.org/film/info"]:hover,
+.tag:hover,
+a.js-bookmarkadd:hover,
+a.js-bookmarkdel:hover,
+a.js-download:hover,
+a.js-rssadd:hover,
+a.js-rssdel:hover,
+a.js-wishlistadd:hover,
+a.js-wishlistdel:hover,
+a[href*="imdb.com/name/nm"] img:hover,
+span.genres:hover,
+ul.showlinks:hover {
+  filter: brightness(100%)
+}
+.tag,
+body {
+  font-family: Arial,Helvetica,sans-serif
+}
+#details,
+#searchbox {
+  width: auto!important
+}
+.dxcaldays,
+.std-content {
+  border-collapse: collapse
+}
 :root {
-  --main: #0c0e14;
-  --dark: #08080a;
+  --main: rgb(16, 17, 22);
+  --dark: rgb(6, 6, 7);
   --white: rgb(142, 165, 191);
   --headingnonclickable: #ffa94dd7;
   --tagText: #000000;
-  --menuFont: hsla(206, 56%, 55%, 0.95);
-  --menuHL: hsl(200, 75%, 60%);
+  --menuFont: #477CA4;
+  --menuHL: rgb(86, 182, 231);
   --input: rgba(255, 255, 255, 0.019);
   --searchDropdown: #ffffff07;
   --selected: #356286;
@@ -15,19 +94,24 @@
   --RatioBlue: #1685ca;
   --UploadGreen: #50fa7b;
   --DownBonusRed: #ff5555;
-  --bs: 0px 4px 6px 0px rgb(0, 0, 0);
   --border: 1px solid var(--bordercolor);
   --bordercolor: transparent;
-  --innerbordercolor: rgba(57, 135, 199, 0.11);
-  --innercardcolor: #0000007b;
-  --borderhighlight: var(--menuHL)
+  --innerbordercolor: rgba(57, 135, 199, 0.20);
+  --innercardcolor: rgba(5, 5, 5, 0.33);
+  --innerheadingrowcolor: rgba(2, 2, 5, 0.500);
+  --borderhighlight: var(--menuHL);
+  --filterdropshadow: 0;
+  --inputborderradius: 0.4rem;
+  --maincolortableborderradius: 0.8rem;
+  --inputheight: 1.5rem;
+  --basefontsize: 0.6875rem;
+  --innercardborderradius: 0.5rem
 }
 * {
   margin: 0;
-  padding: 0;
-  color: var(--white);
   text-decoration: none;
-  list-style: none
+  list-style: none;
+  scrollbar-color: rgb(18,18,26) rgb(10,10,10)
 }
 ::selection {
   background-color: hsla(224,40%,30%,.501);
@@ -36,16 +120,14 @@
 body {
   display: flex;
   flex-direction: column;
-  font-size: .688rem;
-  font-family: Arial,Helvetica,sans-serif;
-  color: var(--white);
   background: var(--dark);
   box-sizing: border-box;
   align-items: center;
   margin: 1rem auto;
   position: relative;
   height: 100%;
-  width: calc(100% - 2rem)
+  width: calc(100% - 2rem);
+  line-height: normal
 }
 #details,
 #header,
@@ -62,9 +144,13 @@ body {
 table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > form:nth-child(3) > table:nth-child(1),
 td.bottom > h1,
 td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a,
-td.bottom:nth-child(2) > table:nth-child(5) {
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5) {
   background-color: var(--main);
   box-shadow: var(--bs)
+}
+td.bottom>table,
+td.embedded>table.std-content {
+  background-color: initial
 }
 #latest_posts > table:nth-child(1),
 #tv-episode-list,
@@ -76,15 +162,16 @@ td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(
 td.bottom:nth-child(2) > table:nth-child(5),
 td.bottom:nth-child(2) > table:nth-child(5) > tbody:nth-child(1) {
   border: 1px solid var(--bordercolor);
-  border-radius: 1rem
+  border-radius: var(--maincolortableborderradius)
 }
-td.bottom > table {
-  background-color: inherit;
+body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align=center] + table.main:nth-of-type(2):last-child:nth-last-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center,
+h1:not(#detailsh1,.lottery_table2h1,div.hideablecontenth1,.film-infoh1),
+h2:not(#sidebar-containerh2,div#newsh2),
+h3:not(#detailsh3,.lottery_table2h3,div.hideablecontenth3,.film-infoh3) {
+  font-size: 1rem;
   box-sizing: border-box;
-  max-width: 64rem
-}
-td.embedded > table.std-content {
-  background-color: inherit
+  color: var(--headingnonclickable);
+  padding: .7rem 1rem
 }
 table,
 td,
@@ -93,21 +180,25 @@ tr {
   box-sizing: border-box;
   border: none
 }
-td.bottom:nth-child(2) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
-  max-width: 64rem;
-  box-sizing: border-box
-}
 table,
 table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) {
-  border-radius: 1rem
+  border-radius: var(--maincolortableborderradius)
 }
 li {
-  color: var(--menuFont);
   list-style: none
 }
-a[href] {
-  color: var(--menuFont)
-}
+.notification-frame .notification__body:active,
+.notification-frame .notification__body:focus,
+.notification-frame .notification__body:hover,
+.notification-frame a:active,
+.notification-frame a:focus,
+.notification-frame a:hover,
+.popup .notification__body:active,
+.popup .notification__body:focus,
+.popup .notification__body:hover,
+.popup a:active,
+.popup a:focus,
+.popup a:hover,
 a:hover,
 li.selected,
 td.bottom>table>tbody>tr>td[width="20%"]>a[href^="/"]>b:hover {
@@ -116,14 +207,13 @@ td.bottom>table>tbody>tr>td[width="20%"]>a[href^="/"]>b:hover {
 body > table.main:nth-child(3) {
   position: relative;
   margin-top: 1rem;
-  box-sizing: border-box
+  box-sizing: border-box;
+  border-collapse: collapse
 }
 #header {
-  border-radius: 1rem 1rem 0 0;
+  border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
   margin-bottom: 0!important;
-  padding: 0;
   background-color: var(--main);
-  position: sticky;
   min-height: 80px;
   top: 1rem;
   z-index: 50
@@ -151,16 +241,13 @@ body > table.main:nth-child(3) {
 .menu {
   border: none;
   background: var(--main);
-  position: sticky;
   z-index: 59;
   top: calc(118px + 1rem);
   font-size: 13px;
-  font-weight: 700;
   border-radius: 0 0 1rem 1rem;
-  filter: drop-shadow(0 9px 3px rgba(0, 0, 0, .582))
+  filter: drop-shadow(0 10px 4px var(--dark))
 }
 .menu tbody tr {
-  position: sticky;
   top: 8vh;
   display: flex;
   flex-wrap: wrap;
@@ -204,7 +291,7 @@ ul#searchselector {
   min-width: 277px
 }
 #searchselector li {
-  font-weight: 700;
+  font-weight: 500;
   flex: 1 0 auto;
   padding: 3px 5px
 }
@@ -216,32 +303,33 @@ textarea {
   border: 1px solid var(--innerbordercolor);
   background-color: var(--input);
   color: var(--menuFont);
-  height: 20px;
-  border-radius: .7rem;
-  font-size: .688rem
+  height: var(--inputheight);
+  border-radius: var(--inputborderradius);
+  box-sizing: border-box
 }
 input[type=text] {
-  text-indent: .5rem
+  padding: 0 .5rem
 }
 .btn,
 button,
 input[type=button],
 input[type=submit] {
-  border-radius: .7rem;
+  border-radius: var(--inputborderradius);
   padding: 0 10px;
   text-align: center;
-  height: 25px
+  height: var(--inputheight)
 }
-select {
-  text-align: center
+.inbox,
+.inboxnew,
+input[type=checkbox] {
+  height: 16px;
+  width: 16px
 }
 #search,
 #sitesearchinput {
   width: 275px;
-  border-radius: 1rem;
-  height: 25px;
-  text-indent: .688rem;
-  font-size: .688rem
+  border-radius: var(--inputborderradius);
+  height: var(--inputheight)
 }
 #search:focus,
 #search:hover,
@@ -267,29 +355,13 @@ textarea:focus {
 }
 #sitesearchsubmit.searchicon {
   display: inline-block;
-  padding: 12px;
-  margin-left: -28px;
+  padding: 10px;
+  margin-left: -22px;
   background: url(https://i.hdbits.org/o8Ps0IT.png) center no-repeat rgba(0,0,0,.13);
   filter: brightness(50%);
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 1rem
-}
-#sitesearchsubmit.searchicon:hover,
-#torrent-list td:nth-child(3)>span.genres:hover,
-#torrent-list td>a[href^="https://hdbits.org/film/info"]:hover,
-.tag:hover,
-a.js-bookmarkadd:hover,
-a.js-bookmarkdel:hover,
-a.js-download:hover,
-a.js-rssadd:hover,
-a.js-rssdel:hover,
-a.js-wishlistadd:hover,
-a.js-wishlistdel:hover,
-a[href*="imdb.com/name/nm"] img:hover,
-span.genres:hover,
-ul.showlinks:hover {
-  filter: brightness(100%)
+  border-radius: var(--inputborderradius)
 }
 #sitesearchform {
   flex: 1 0 auto;
@@ -300,11 +372,24 @@ ul.showlinks:hover {
   align-content: center
 }
 .autocomplete-suggestions {
-  background-color: var(--innercardcolor);
+  background-color: var(--main);
   color: var(--menuFont);
   line-height: 1rem;
-  border: 0 1px 1px 1px solid var(--innerbordercolor);
-  position: relative!important
+  border: 0 1px 1px 1px solid var(--innerbordercolor)
+}
+.alert-box,
+.notification,
+.popup {
+  border-radius: var(--inputborderradius)
+}
+.autocomplete-suggestion {
+  padding: .15rem .3rem;
+  white-space: nowrap;
+  overflow: hidden
+}
+.autocomplete-selected {
+  background-color: var(--dark);
+  color: var(--menuFont)
 }
 #header.main tbody tr td.embedded {
   flex-grow: 1;
@@ -315,7 +400,7 @@ ul.showlinks:hover {
 div#logo {
   height: 80px;
   margin: 1rem;
-  background-image: url(https://i.hdbits.org/InMkvWS.png);
+  background-image: url("https://i.hdbits.org/InMkvWS.png");
   background-repeat: no-repeat;
   background-size: contain
 }
@@ -332,9 +417,9 @@ div#sitesearch {
   align-items: center;
   justify-content: center;
   align-content: center;
-  text-align: center;
   margin-bottom: 0
 }
+#details+p,
 #menusides,
 #news hr,
 #subcell div span,
@@ -342,10 +427,16 @@ div#sitesearch {
 .js-source-data,
 .main>tbody>tr>td.bottom>span.tag.internal,
 .std-content>tbody>tr>td>table.main>tbody:nth-child(1)>tr:nth-child(2),
+div#pager,
+div.dhtmlxcalendar textarea.dhtmlxRichSelector,
+h3:empty,
 html .torrent .item-body>.torrent-banner,
 span.tag.tag_,
 table.readpost>tbody:nth-child(1)>tr:nth-child(2),
-td.bottom>br {
+td.bottom>br,
+td.bottom>p:empty,
+td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>br:last-of-type,
+tr.tableb:nth-child(8)>td:nth-child(3)>br {
   display: none
 }
 #header td.embedded:nth-child(3) {
@@ -362,8 +453,6 @@ td.bottom>br {
 .inboxnew {
   display: block;
   margin: auto;
-  height: 16px;
-  width: 16px;
   background-size: 16px 14px
 }
 div.curuser-stats:nth-child(3) {
@@ -383,19 +472,85 @@ div.curuser-stats:nth-child(1) {
 div.curuser-stats:nth-child(2) {
   grid-area: mail
 }
-.alert-box {
+.alert-box--nopms,
+.alert-box--pm {
   font-size: 0
+}
+.alert-box {
+  float: left
+}
+.alert-box--news {
+  background-color: #663399;
+  color: var(--white);
+  font-weight: 700;
+  font-size: .6875rem
+}
+.alert-box--notifications {
+  background-color: var(--UploadGreen);
+  color: var(--white);
+  font-weight: 700;
+  font-size: .6875rem
+}
+.notification-overlay {
+  position: absolute;
+  z-index: 100;
+  overflow-y: auto;
+  top: 1vh;
+  left: 25%;
+  right: 25%;
+  background-color: var(--main);
+  padding: .3rem .5rem;
+  border: 1px solid var(--innerbordercolor);
+  filter: drop-shadow(0 0px 20px black) brightness(120%);
+  border-radius: 0.5rem
+}
+.notification,
+.notification:hover,
+.popup,
+.popup:hover {
+  background-color: #0c0c10
+}
+.notification-frame .notification__body,
+.notification-frame a,
+.popup .notification__body,
+.popup a {
+  color: var(--menuFont);
+  text-decoration: none
+}
+.notification__body {
+  max-width: 48rem;
+  margin-right: .5rem
+}
+.notification,
+.popup {
+  margin: .3rem 0;
+  color: var(--white);
+  padding: .4rem .6rem;
+  border: 1px solid var(--innerbordercolor);
+  display: flex
+}
+.inbox,
+div.curuser-stats:nth-child(1) > a[href*="my.php"] {
+  background: var(--menuFont);
+  border-radius: var(--inputborderradius);
+  width: 35px
+}
+.notification__delete {
+  float: right;
+  margin-left: auto
 }
 .inbox {
   mask: url(mail.svg) center no-repeat;
-  background: var(--menuFont);
   height: 23px;
-  border-radius: 1rem;
-  width: 35px;
   align-self: center;
-  margin-bottom: 13px
+  margin-bottom: 13px;
+  -webkit-mask: url(mail.svg) center no-repeat
 }
-.chosen-rtl,
+#table_open_requests>tbody:nth-child(2)>tr>td:last-child,
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(10),
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(4),
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(6),
+#table_open_requests>tbody:nth-child(2)>tr>td:nth-child(8),
 .curuser-stats {
   text-align: right
 }
@@ -403,7 +558,7 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"] {
   font-size: 13px;
   padding: 5px 15px;
   border: 1px solid var(--bordercolor);
-  border-radius: 1rem;
+  border-radius: var(--inputborderradius);
   grid-area: usr;
   grid-column: 3/4;
   grid-row: 1/2
@@ -414,72 +569,67 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"]:ho
   color: var(--dark)
 }
 .inbox:hover,
+.inboxnew:hover,
 div.curuser-stats:nth-child(1) > a[href*="logout.php"]:hover,
 div.curuser-stats:nth-child(1) > a[href*="my.php"]:hover,
 div.curuser-stats:nth-child(3) > a[href*="friends.php"]:hover,
-div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"]:hover,
-inboxnew:hover {
+div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"]:hover {
   background: var(--menuHL)
 }
 div.curuser-stats:nth-child(1) > a[href*="my.php"] {
   grid-area: profile;
   font-size: 0;
   mask: url(profile.svg) center no-repeat;
+  height: 20px;
+  border: 1px solid var(--bordercolor);
+  -webkit-mask: url(profile.svg) center no-repeat
+}
+div.curuser-stats:nth-child(1) > a[href*="logout.php"],
+div.curuser-stats:nth-child(3) > a[href*="friends.php"],
+div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   background: var(--menuFont);
   height: 20px;
-  border-radius: 1rem;
   width: 35px;
-  border: 1px solid var(--bordercolor)
+  margin-left: 0;
+  border-radius: var(--inputborderradius)
 }
 div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   grid-area: logout;
   font-size: 0;
   mask: url(off1.svg) center no-repeat;
-  background: var(--menuFont);
-  height: 20px;
-  width: 35px;
-  margin-left: 0;
-  border-radius: 1rem
+  -webkit-mask: url(off1.svg) center no-repeat
 }
 .donor {
   grid-area: dnr;
   background: url(star2.png);
   height: 10px;
-  width: .688rem;
+  width: .6875rem;
   margin-left: -32px;
   opacity: 1
 }
 img[src*="starbig.gif"] {
-  background-image: url(star2.png)!important
+  background-image: url("star2.png")!important
 }
 div.curuser-stats:nth-child(3) > a[href*="friends.php"] {
   mask: url(friends.svg) center no-repeat;
-  background: var(--menuFont);
-  height: 20px;
-  width: 35px;
-  margin-left: 0;
+  -webkit-mask: url(friends.svg) center no-repeat;
   margin-right: -1px;
-  border-radius: 1rem;
   display: inline-block
 }
 div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   mask: url(mytorrents.svg) center no-repeat;
-  background: var(--menuFont);
-  height: 20px;
-  width: 35px;
-  margin-left: 0;
+  -webkit-mask: url(mytorrents.svg) center no-repeat;
   margin-right: -10px;
-  border-radius: 1rem;
   display: inline-block
+}
+:focus-visible {
+  outline: 0
 }
 #tabs {
   display: flex;
-  font-weight: 700;
   font-size: 13px;
   max-width: 850px;
   width: 100%;
-  padding: 10px;
-  margin: 1rem 0;
   justify-content: space-between;
   white-space: nowrap
 }
@@ -490,14 +640,17 @@ td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(
   margin: 5px;
   border: 1px solid var(--bordercolor);
   border-radius: 1rem;
-  min-width: 100px;
-  padding: 5px 15px;
+  min-width: 7rem;
+  padding: .4rem 1rem;
   box-shadow: var(--bs);
-  color: var(--menuFont)
+  color: var(--menuFont);
+  box-sizing: border-box;
+  font-weight: 700
 }
 #tabs > .tab a:hover,
 .tab\ selected a:hover,
-td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover {
+td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover,
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a:hover {
   border: 1px solid var(--borderhighlight);
   border-radius: 1rem;
   color: var(--menuHL)
@@ -521,15 +674,18 @@ td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b {
 #searchbox {
   display: inline-flex;
   border: 1px solid var(--bordercolor);
-  border-radius: 1rem;
-  width: auto!important;
+  border-radius: var(--maincolortableborderradius);
   max-width: 850px;
   justify-content: space-evenly
 }
 #searchbox > tbody:nth-child(1) {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center
+}
+#searchbox > tbody:nth-child(1) > tr:nth-child(1) {
+  justify-self: center
 }
 #resultsarea {
   display: flex;
@@ -537,7 +693,7 @@ td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b {
 }
 #torrent-list {
   border: 1px solid var(--bordercolor);
-  border-radius: 1rem;
+  border-radius: var(--maincolortableborderradius);
   padding: 10px
 }
 html body table.main tbody tr td.bottom div#resultsarea p {
@@ -545,20 +701,26 @@ html body table.main tbody tr td.bottom div#resultsarea p {
   font-size: 12px
 }
 #searchbox > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(1) {
-  padding: 8px 0
+  padding: .4rem 0
 }
 #moresearch3 {
   border-top: 1px solid var(--innerbordercolor);
   padding: .5em 1em;
-  display: flex;
+  display: flex!important;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  flex: 1 1 auto
+}
+#moresearch1,
+#moresearch2,
+.dxcalmonth>tbody>tr>td {
+  flex: 1
 }
 #moresearch3 > td:nth-child(2) > select {
   width: 102px!important;
-  border-radius: 1rem;
-  height: 22px;
+  border-radius: var(--inputborderradius);
+  height: var(--inputheight);
   text-align: center
 }
 #moresearch3 table.bottom tbody:nth-child(1) {
@@ -569,7 +731,7 @@ html body table.main tbody tr td.bottom div#resultsarea p {
   grid-template-areas: "cat catoptions catoptions catoptions" "codec codecoptions codecoptions codecoptions" "med medoptions origin originoptions";
   grid-template-rows: auto;
   grid-template-columns: auto;
-  grid-gap: .1em
+  grid-gap: 0.1em
 }
 #moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(1) {
   grid-area: cat;
@@ -599,7 +761,7 @@ html body table.main tbody tr td.bottom div#resultsarea p {
   margin-left: 2px
 }
 #moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td.bottom {
-  padding-bottom: 0!important
+  padding-bottom: 0px!important
 }
 #moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(5) {
   grid-area: med;
@@ -618,9 +780,6 @@ html body table.main tbody tr td.bottom div#resultsarea p {
 #moresearch3 table.bottom > tbody:nth-child(1) > tr:nth-child(8) {
   grid-area: originoptions;
   align-self: center
-}
-input[type=checkbox] {
-  height: 0
 }
 tr#moresearch2 {
   box-sizing: border-box;
@@ -643,19 +802,24 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) {
   color: transparent
 }
 table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-child(1) > b:nth-child(1) {
+  font-weight: 400;
   padding: 4px 8px;
   color: var(--menuFont);
-  background: var(--searchDropdown);
-  border-radius: 1rem;
-  border: 1px solid transparent
+  background: var(--input);
+  border-radius: var(--inputborderradius);
+  border: 1px solid var(--innerbordercolor);
+  box-sizing: border-box;
+  height: 1.5rem;
+  display: inline-block
 }
 #moresearch3 > td:nth-child(2) {
-  min-width: 130px
+  min-width: 130px;
+  text-align: right
 }
 #moresearch1 > td:nth-child(1) {
-  padding: 8px;
+  padding: .7rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   align-content: center
 }
@@ -665,8 +829,8 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-ch
   text-align: center
 }
 #moresearch1 input {
-  border-radius: 1rem;
-  height: 22px
+  border-radius: var(--inputborderradius);
+  height: var(--inputheight)
 }
 #moresearch1 td select {
   min-width: 40px;
@@ -675,31 +839,36 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-ch
 #searchbox > tbody:nth-child(1) > tr:nth-child(7) {
   display: flex;
   align-items: center;
-  border-top: 1px solid var(--innerbordercolor)
-}
-#searchbox > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(1) {
-  flex: 4;
-  border: none!important
-}
-#searchbox > tbody:nth-child(1) > tr:nth-child(7) > td:nth-child(2) {
+  border-top: 1px solid var(--innerbordercolor);
   flex: 1;
-  min-width: 100px;
+  justify-content: center
+}
+#searchbox>tbody:nth-child(1)>tr:nth-child(7)>td:nth-child(1),
+#searchbox>tbody:nth-child(1)>tr:nth-child(7)>td:nth-child(2),
+form[action="dox.php"]>table>tbody>tr>td[style="border:black solid 1px;"] {
   border: none!important
 }
 #searchbox input[type=button],
+#searchbox input[type=submit],
+#yeargt,
+#yearlt,
+select[name=imdbgt],
+select[name=imdblt] {
+  border-radius: var(--inputborderradius);
+  height: var(--inputheight)
+}
+#searchbox input[type=button],
 #searchbox input[type=submit] {
-  font-size: .688rem;
+  font-size: var(--basefontsize);
   padding: 0 10px;
   min-width: 50px;
-  border-radius: 1rem;
-  height: 25px;
   cursor: pointer;
-  font-weight: 700
+  font-weight: 500
 }
 input#cflip[type=button],
 input#coflip[type=button],
 input#mflip[type=button] {
-  height: 23px
+  height: var(--inputheight)
 }
 table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(7),
 table.bottom > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(6),
@@ -707,41 +876,57 @@ td.bottom:nth-child(9) {
   padding-left: 0!important
 }
 #moresearch4 td {
-  padding: 8px;
+  padding: 0 0 0 .7rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  align-content: center
+  align-content: center;
+  gap: 0.3rem
 }
 #moresearch4 > td:nth-child(1) > label:nth-child(1) > select:nth-child(1) {
   min-width: 120px;
-  height: 22px;
-  border-radius: 1rem
+  height: var(--inputheight);
+  border-radius: var(--inputborderradius)
+}
+#moresearch4 {
+  width: 350px;
+  flex: 1 1;
+  white-space: nowrap
+}
+#moresearch5 {
+  width: 400px;
+  flex: 9999;
+  box-sizing: border-box!important
 }
 #yeargt,
 #yearlt {
   text-align: center;
-  height: 22px;
-  width: 75px;
-  border-radius: 1rem
+  width: 3rem
+}
+select[name=imdbgt],
+select[name=imdblt] {
+  width: auto;
+  text-align: center
 }
 #moresearch1 input[id=imdb],
 #moresearch1 input[name=uppedby] {
   text-align: center;
   width: 100px;
-  height: 22px
+  height: var(--inputheight)
 }
 #sidebar-container {
   grid-area: sidebar;
   display: flex;
+  max-width: 200px;
   border: 1px solid var(--bordercolor);
-  border-radius: 1rem;
-  padding-left: 0!important;
+  border-radius: var(--maincolortableborderradius);
+  padding-left: 0px!important;
   top: calc(124px + 27px + 3em);
   height: min-content;
   position: sticky;
-  background-color: var(--main)
+  background-color: var(--main);
+  flex: 1 100px
 }
 #sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
   display: inline-flex;
@@ -754,36 +939,36 @@ td.bottom:nth-child(9) {
   flex-grow: 1;
   min-width: 150px;
   align-content: center;
-  border-top: 1px solid var(--innerbordercolor);
-  border-bottom: 1px solid var(--innerbordercolor)
+  border-top: 1px solid var(--innerbordercolor)
 }
 #sidebar-container td.embedded a[href] {
-  min-width: 150px;
-  padding: 8px 0!important;
-  text-align: center
+  padding: .5rem 0!important;
+  text-align: center;
+  min-width: 9rem
 }
 #sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
 #sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1),
 #sidebar-container table.message tbody tr td {
   height: fit-content;
-  min-width: 150px;
-  color: transparent!important
+  font-size: 0
 }
 #sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) a[href],
 #sidebar-container > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) a[href],
 #sidebar-container table.message tbody tr td a[href] {
-  width: 150px;
   padding: 5px 0!important;
   display: inline-block;
-  margin-left: -13px
+  font-size: var(--basefontsize)
 }
-#sidebar-container td table tbody tr td a[href]:hover {
+#sidebar-container td table tbody tr td a[href]:hover,
+#torrent-list tr.featured,
+#torrent-list tr:hover {
   background: var(--innercardcolor)
 }
 #sidebar-container td.embedded h2:hover {
   border: 1px solid var(--borderhighlight);
-  border-radius: 10px;
-  background: var(--innercardcolor)
+  border-radius: var(--innercardborderradius);
+  background: var(--innercardcolor);
+  box-sizing: border-box
 }
 table.message:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(5) {
   font-size: 0;
@@ -791,13 +976,13 @@ table.message:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child
 }
 #sidebar-container select[name=forumid] {
   text-align: center;
-  font-size: .688rem;
-  width: 150px;
-  border-radius: 8px;
-  height: 23px
+  font-size: var(--basefontsize);
+  width: 100%;
+  border-radius: var(--inputborderradius);
+  height: var(--inputheight)
 }
 body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
-  display: grid;
+  display: flex;
   grid-template-areas: "sidebar bottom";
   grid-auto-columns: min-content auto;
   grid-gap: 1rem
@@ -807,9 +992,10 @@ body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-c
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-self: center;
-  align-items: center
+  align-items: center;
+  flex: 9999
 }
 html > body > table.main > tbody > tr > td.bottom > table.main[width="737"]:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child {
   display: grid;
@@ -823,20 +1009,18 @@ html > body > table.main > tbody > tr > td.bottom > table.main[width="737"]:only
   flex-direction: column;
   background-color: var(--main);
   border: 1px solid var(--bordercolor);
-  border-radius: 1rem;
+  border-radius: var(--maincolortableborderradius);
   min-width: 30vw;
   height: max-content;
   justify-self: self-start
 }
 #news h2 {
-  border-bottom: 1px solid var(--innerbordercolor);
   min-width: 100%;
   display: block;
   text-align: center;
   padding: 8px 0;
   color: var(--headingnonclickable);
-  font-size: 18px;
-  text-shadow: 0 2px 2px rgba(0,0,0,.459)
+  font-size: 18px
 }
 #news>table:nth-child(2),
 #news>table:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1),
@@ -850,7 +1034,7 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
 }
 #news h1 {
   font-size: 16px;
-  margin: 15px 25px;
+  margin: 0 5px;
   color: var(--headingnonclickable)
 }
 #news p[id^=news] {
@@ -872,14 +1056,26 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
   filter: brightness(70%)
 }
 #showmore b:hover {
-  color: var(--menuFont);
-  filter: brightness(100%)
+  color: var(--menuFont)
+}
+.text > form[method=post][action="/polls/answer"]:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+input[type=radio] {
+  vertical-align: text-bottom;
+  margin: -1px .2rem 0
+}
+.text label input[type=radio] {
+  vertical-align: middle;
+  margin: -2px .2rem 0
 }
 html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(2) {
   grid-area: pollh2;
   column-gap: normal;
   background-color: var(--main);
-  border-radius: 1rem 1rem 0 0;
+  border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -891,7 +1087,7 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
   grid-area: statsh2;
   column-gap: normal;
   background-color: var(--main);
-  border-radius: 1rem 1rem 0 0;
+  border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -901,24 +1097,35 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
 }
 html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(3) {
   grid-area: poll;
-  margin-top: -2.5em;
+  margin-top: -1rem;
   align-self: stretch;
   line-height: 15px;
   padding: 1rem;
   background-color: var(--main);
-  border-radius: 0 0 1rem 1rem;
-  filter: drop-shadow(0 5px 5px #000)
+  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+  filter: var(--filterdropshadow)
 }
 html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(5) {
   grid-area: stats;
-  margin-top: -2.5em;
-  align-self: end;
+  margin-top: -1rem;
   line-height: 15px;
   padding: 1rem;
   background-color: var(--main);
   align-self: stretch;
-  border-radius: 0 0 1rem 1rem;
-  filter: drop-shadow(0 5px 5px #000)
+  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+  filter: var(--filterdropshadow)
+}
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  white-space: nowrap;
+  align-items: center
+}
+#inboxbody,
+.tableb input,
+td.bottom:nth-child(2)>table:nth-child(1)>tbody:nth-child(1)>tr:nth-child(1) b {
+  box-sizing: border-box
 }
 @media only screen and (max-width:64rem) {
   body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
@@ -935,38 +1142,30 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
     width: auto!important
   }
 }
-#moresearch5 {
-  box-sizing: border-box!important;
-  padding: .5em 1rem
-}
 #moresearch5 > td:nth-child(1) {
   max-width: 800px;
-  padding: .5em 1rem;
+  padding: .2rem .7rem;
   box-sizing: border-box;
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem
+  gap: 0.3rem
 }
 #moresearch5 > td:nth-child(1) > select[name=tagsearchtype] {
   width: 100px;
   align-self: center;
   justify-self: end;
-  height: 22px;
+  height: var(--inputheight);
   text-align: center;
-  border-radius: 1rem;
+  border-radius: var(--inputborderradius);
   margin-top: 0!important
 }
 div.chosen-container\ chosen-container-single {
   display: none!important
 }
-div.chosen-container:nth-child(3) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(1) {
-  border-radius: 0 0 0 1rem
-}
 div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-container-active {
   min-width: max-content;
-  border-radius: 1rem 1rem 0 0!important
+  border-radius: var(--inputborderradius) var(--inputborderradius) 0 0!important
 }
 .chosen-container * {
   -webkit-box-sizing: border-box;
@@ -977,18 +1176,13 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   top: 100%;
   z-index: 1010;
   width: 100%;
-  border: 1px solid #aaa;
   border-top: 0;
-  background: #fff;
-  -webkit-box-shadow: 0 4px 5px rgba(0,0,0,.15);
-  box-shadow: 0 4px 5px rgba(0,0,0,.15);
   clip: rect(0,0,0,0);
   -webkit-clip-path: inset(100% 100%);
   clip-path: inset(100% 100%);
-  border-radius: 0 0 1rem 1rem
+  border-radius: 0 0 var(--inputborderradius) var(--inputborderradius)
 }
 .chosen-container.chosen-with-drop .chosen-drop {
-  clip: auto;
   -webkit-clip-path: none;
   clip-path: none
 }
@@ -1001,8 +1195,7 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-weight: 400;
-  color: #999
+  font-weight: 400
 }
 .chosen-container .chosen-single .group-name:after,
 .chosen-container .search-choice .group-name:after {
@@ -1015,16 +1208,7 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   display: block;
   overflow: hidden;
   padding: 0 0 0 8px;
-  height: 25px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  background-color: #fff;
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(20%,#fff),color-stop(50%,#f6f6f6),color-stop(52%,#eee),to(#f4f4f4));
-  background: linear-gradient(#fff 20%,#f6f6f6 50%,#eee 52%,#f4f4f4 100%);
-  background-clip: padding-box;
-  -webkit-box-shadow: 0 0 3px #fff inset,0 1px 1px rgba(0,0,0,.1);
-  box-shadow: 0 0 3px #fff inset,0 1px 1px rgba(0,0,0,.1);
-  color: #444;
+  height: var(--inputheight);
   text-decoration: none;
   white-space: nowrap;
   line-height: 24px
@@ -1077,11 +1261,10 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 }
 .chosen-container-single .chosen-search input[type=text] {
   margin: 1px 0;
-  padding: 4px 20px 4px 5px;
+  padding: 4px 16px 4px 5px;
   width: 100%;
   height: auto;
   outline: 0;
-  border: 1px solid #aaa;
   background: url(/pic/chosen-sprite.png) 100% -20px no-repeat;
   font-size: 1em;
   font-family: sans-serif;
@@ -1106,29 +1289,12 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 .chosen-container .chosen-results li.disabled-result,
 .chosen-container-multi .chosen-drop .result-selected {
   display: list-item;
-  color: #ccc;
   cursor: default
-}
-.chosen-container .chosen-results li.highlighted {
-  background-color: #3875d7;
-  color: #fff
-}
-.chosen-container .chosen-results li.no-results {
-  color: #777;
-  display: list-item;
-  background: #f4f4f4
 }
 .chosen-container .chosen-results li.group-result {
   display: list-item;
-  font-weight: 700;
+  font-weight: 500;
   cursor: default
-}
-.chosen-container .chosen-results li.group-option {
-  padding-left: 15px
-}
-.chosen-container .chosen-results li em {
-  font-style: normal;
-  text-decoration: underline
 }
 .chosen-container-multi .chosen-choices li {
   float: left;
@@ -1142,18 +1308,12 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 .chosen-container-multi .chosen-choices li.search-choice span {
   word-wrap: break-word
 }
-.chosen-container-multi .chosen-choices li.search-choice-focus {
-  background: #d4d4d4
-}
 .chosen-container-active.chosen-with-drop .chosen-single div {
   border-left: 0;
   background: 0 0
 }
 .chosen-container-active.chosen-with-drop .chosen-single div b {
   background-position: -18px 2px
-}
-.chosen-container-active .chosen-choices li.search-field input[type=text] {
-  color: #222!important
 }
 .chosen-disabled {
   filter: brightness(50%)!important;
@@ -1162,62 +1322,6 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
 .chosen-disabled .chosen-choices .search-choice .search-choice-close,
 .chosen-disabled .chosen-single {
   cursor: default
-}
-.chosen-rtl .chosen-single {
-  overflow: visible;
-  padding: 0 8px 0 0
-}
-.chosen-rtl .chosen-single span {
-  margin-right: 0;
-  margin-left: 26px;
-  direction: rtl
-}
-.chosen-rtl .chosen-single-with-deselect span {
-  margin-left: 38px
-}
-.chosen-rtl .chosen-single div {
-  right: auto;
-  left: 3px
-}
-.chosen-rtl .chosen-single abbr {
-  right: auto;
-  left: 26px
-}
-.chosen-rtl .chosen-choices li {
-  float: right
-}
-.chosen-rtl .chosen-choices li.search-field input[type=text] {
-  direction: rtl
-}
-.chosen-rtl .chosen-choices li.search-choice {
-  margin: 3px 5px 3px 0;
-  padding: 3px 5px 3px 19px
-}
-.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
-  right: auto;
-  left: 4px
-}
-.chosen-rtl.chosen-container-single .chosen-results {
-  margin: 0 0 4px 4px;
-  padding: 0 4px 0 0
-}
-.chosen-rtl .chosen-results li.group-option {
-  padding-right: 15px;
-  padding-left: 0
-}
-.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
-  border-right: 0
-}
-.chosen-rtl .chosen-search input[type=text] {
-  padding: 4px 5px 4px 20px;
-  background: url(/pic/chosen-sprite.png) -30px -20px no-repeat;
-  direction: rtl
-}
-.chosen-rtl.chosen-container-single .chosen-single div b {
-  background-position: 6px 2px
-}
-.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
-  background-position: -12px 2px
 }
 @media only screen and (-webkit-min-device-pixel-ratio:1.5),
 only screen and (min-resolution:144dpi),
@@ -1247,7 +1351,7 @@ only screen and (min-resolution:1.5dppx) {
   background-repeat: 0;
   line-height: default;
   font-size: 10px;
-  font-weight: 700
+  font-weight: 500
 }
 .tag-content a {
   color: var(--menuFont)!important;
@@ -1277,7 +1381,7 @@ only screen and (min-resolution:1.5dppx) {
 .chosen-container-multi .chosen-choices li.search-field input[type=text] {
   margin: 0;
   padding: 0 0 0 4px;
-  height: 22px;
+  height: var(--inputheight);
   outline: 0;
   border: 0!important;
   background: 0 0!important;
@@ -1302,7 +1406,8 @@ div.chosen-container.chosen-container-multi.chosen {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none
+  user-select: none;
+  max-width: 360px
 }
 div.chosen-container .search-choice {
   color: var(--menuFont)!important;
@@ -1319,8 +1424,7 @@ div.chosen-container .search-choice {
   background: url(https://i.hdbits.org/CWeZPVc.png) -42px 0 no-repeat;
   transform: scale(.9);
   filter: grayscale(10%) brightness(30%) sepia(100%) hue-rotate(-190deg) saturate(700%) contrast(.5);
-  padding: 5px;
-  border-radius: 1rem
+  padding: 5px
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
   background-color: #698da8;
@@ -1346,39 +1450,41 @@ div.chosen-container .search-choice {
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 1px 2px;
   width: 100%;
   height: auto;
-  border: 1px solid var(--main);
+  border: 1px solid var(--innerbordercolor);
   background-color: var(--searchDropdown);
   background-image: none;
   cursor: text;
-  border-radius: 1rem
+  border-radius: var(--inputborderradius);
+  max-width: 360px;
+  box-sizing: border-box
 }
 .chosen-container-active .chosen-choices {
   border: 1px solid var(--selected);
   background: var(--main);
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-radius: 1rem 1rem 0 0
+  border-radius: var(--inputborderradius) var(--inputborderradius) 0 0
 }
 .chosen-container-multi .chosen-choices li.search-choice {
   position: relative;
   margin: 2px;
-  padding: 2px 20px 3px 5px;
-  line-height: .688rem;
+  padding: 2px 16px 3px 5px;
+  line-height: .6875rem;
   border: 1px solid var(--main);
   max-width: 100%;
-  border-radius: 1rem;
+  border-radius: 0;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 500;
   background-image: 0;
   background-size: 0;
   background-repeat: 0;
   background-clip: border-box;
   -webkit-box-shadow: none;
   box-shadow: none;
-  cursor: default
+  cursor: default;
+  border-radius: var(--inputborderradius)
 }
 .chosen-container .chosen-results {
   display: flex;
@@ -1390,9 +1496,9 @@ div.chosen-container .search-choice {
   margin: -2px -1px -1px;
   padding: 0;
   max-height: auto;
-  font-size: .688rem;
+  font-size: var(--basefontsize);
   -webkit-overflow-scrolling: auto;
-  border-radius: 0 0 1rem 1rem
+  border-radius: 0 0 var(--inputborderradius) var(--inputborderradius)
 }
 .chosen-container.chosen-with-drop .chosen-drop {
   clip: auto;
@@ -1423,6 +1529,154 @@ div.chosen-container .search-choice {
   border-bottom: 2px solid var(--menuHL);
   background-image: none
 }
+.dhtmlxcalendar.dhtmlxcalendar_yahoolike tr,
+div.dhtmlxcalendar.dhtmlxcalendar_yahoolike div,
+div.dhtmlxcalendar.dhtmlxcalendar_yahoolike table,
+div.dhtmlxcalendar.dhtmlxcalendar_yahoolike tbody,
+div.dhtmlxcalendar.dhtmlxcalendar_yahoolike td,
+div.dhtmlxcalendar_yahoolike .dxcaldays td,
+div.dhtmlxcalendar_yahoolike .dxcaldays_ie td,
+div.dhtmlxcalendar_yahoolike .dxcaldlabel td {
+  box-sizing: border-box;
+  background: var(--main);
+  font-family: Inconsolata,monospace;
+  font-size: var(--basefontsize);
+  text-align: center
+}
+div > div.dhtmlxcalendar_yahoolike {
+  background: var(--main);
+  border: 1px solid var(--innerbordercolor);
+  font-family: Inconsolata,monospace;
+  font-size: var(--basefontsize);
+  width: auto;
+  height: auto;
+  padding: .3rem;
+  z-index: 99;
+  border-radius: var(--innercardborderradius);
+  filter: drop-shadow(0 0 2rem black)
+}
+tr > td > div[id].label,
+tr.logentry > td {
+  font-family: 'Courier New',Courier,monospace
+}
+.dhtmlxcalendar_yahoolike table.entbox {
+  margin: auto;
+  width: 100%;
+  height: 100%
+}
+.dhtmlxcalendar_yahoolike .dxcaldays,
+.dhtmlxcalendar_yahoolike table {
+  background-color: var(--main)
+}
+.month_btn_left span,
+.month_btn_right span {
+  color: var(--menuFont);
+  font-size: .6875rem;
+  background: inherit
+}
+a.js-bookmarkadd,
+a.js-download,
+a.js-rssadd,
+a.js-rssdel,
+a.js-wishlistadd,
+a.js-wishlistdel {
+  background-repeat: no-repeat
+}
+.daynames,
+.dxcalmonth > tbody > tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center
+}
+div.dhtmlxcalendar_yahoolike div.planeMonth,
+div.dhtmlxcalendar_yahoolike div.planeYear {
+  height: auto;
+  overflow: auto;
+  font-size: .9rem;
+  font-weight: 700;
+  width: 70px;
+  padding: .28125rem;
+  color: var(--menuFont)
+}
+div.dhtmlxcalendar select.dhtmlxRichSelector {
+  font-family: Inconsolata,monospace;
+  position: absolute;
+  font-size: .6875rem;
+  min-height: 150px;
+  color: var(--menuFont);
+  background: #000;
+  z-index: 100;
+  border: 1px solid var(--innerbordercolor);
+  overflow: visible
+}
+select.dhtmlxRichSelector option:hover {
+  background-color: var(--menuHL);
+  color: #000
+}
+div.dhtmlxcalendar div.dhtmlxRichSelector {
+  z-index: 999;
+  display: block;
+  width: auto;
+  padding: 0 .3rem
+}
+#details,
+div[id].label > text {
+  padding: 1rem
+}
+body div.dhtmlxcalendar_yahoolike .dxcaldlabel td {
+  font-size: .8rem;
+  height: auto;
+  flex: 1 1;
+  opacity: 70%;
+  color: var(--white)
+}
+div.dhtmlxcalendar_yahoolike .dxcaldays > tbody > tr > td.hover,
+div.dhtmlxcalendar_yahoolike .dxcaldays > tbody > tr > td.selected {
+  border: 1px solid #4682b4;
+  background-color: #4682b4;
+  color: var(--main);
+  opacity: 1;
+  font-weight: 500;
+  box-sizing: border-box
+}
+div.dhtmlxcalendar_yahoolike div.planeMonth:hover,
+div.dhtmlxcalendar_yahoolike div.planeYear:hover {
+  background-color: #4682b4;
+  color: var(--dark);
+  opacity: 1;
+  font-weight: 500;
+  box-sizing: border-box;
+  border-radius: var(--innercardborderradius)
+}
+.dhtmlxcalendar_yahoolike .dxcaldays > tbody > tr > td.othermonth {
+  color: rgba(142,165,191,.274)
+}
+.entbox > tbody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: auto
+}
+div.dhtmlxcalendar_yahoolike .dxcaldays td,
+div.dhtmlxcalendar_yahoolike .dxcaldays_ie td,
+div.dhtmlxcalendar_yahoolike .dxcaldlabel td {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  color: var(--menuFont)
+}
+div.dhtmlxcalendar_yahoolike .dxcaldays td,
+div.dhtmlxcalendar_yahoolike .dxcaldays tr,
+div.dhtmlxcalendar_yahoolike .dxcaldays_ie td {
+  border: 1px solid var(--innerbordercolor);
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer
+}
 #torrent-list {
   box-sizing: border-box;
   margin: .5em
@@ -1439,9 +1693,6 @@ div.chosen-container .search-choice {
 }
 #torrent-list > tbody:nth-child(2) > tr[id^="t"] > td:nth-child(3) > b > a {
   vertical-align: middle
-}
-#torrent-list > tbody:nth-child(2) > tr[id^="t"]:hover {
-  background-color: rgba(0,0,0,.25)
 }
 img.minicon {
   opacity: 0
@@ -1463,33 +1714,27 @@ a[href*="javascript:delBookmark"] {
   vertical-align: bottom
 }
 a.js-download {
-  background-image: url(download.png);
-  background-repeat: no-repeat
+  background-image: url("download.png")
 }
 a.js-rssadd {
-  background-image: url(rssadd.png);
-  background-repeat: no-repeat
+  background-image: url("rssadd.png")
 }
 a.js-rssdel {
-  background-image: url(rssdel.png);
-  background-repeat: no-repeat
+  background-image: url("rssdel.png")
 }
 a.js-bookmarkadd {
-  background-image: url(bookmarkadd.png);
-  background-repeat: no-repeat
+  background-image: url("bookmarkadd.png")
 }
 a.js-bookmarkdel,
 a[href*="javascript:delBookmark"] {
-  background-image: url(bookmarkdel.png);
+  background-image: url("bookmarkdel.png");
   background-repeat: no-repeat
 }
 a.js-wishlistadd {
-  background-image: url(wishlist.png);
-  background-repeat: no-repeat
+  background-image: url("wishlist.png")
 }
 a.js-wishlistdel {
-  background-image: url(wishlistdel.png);
-  background-repeat: no-repeat
+  background-image: url("wishlistdel.png")
 }
 #details table.fourcell>tbody>tr>td,
 #torrent-list td:hover button[onclick^=hidetorrent],
@@ -1499,8 +1744,13 @@ a.js-wishlistdel {
 .contentlayout.fourcell .content,
 .contentlayout.fourcell .content tbody,
 .contentlayout.fourcell th,
-.contentlayout.fourcell>tbody {
+.contentlayout.fourcell>tbody,
+.lottery_table2 table.fourcell>tbody>tr>td,
+table.main>tbody>tr>td.bottom:nth-child(2)>h1[style="display:inline-block;"]:nth-child(5)~table[width="930"][cellpadding="5"] table.fourcell>tbody>tr>td {
   display: block
+}
+#torrent-list tr.featured:hover {
+  background: rgba(5,5,5,.66)
 }
 button[onclick^=hidetorrent],
 button[onclick^=ignoreShow],
@@ -1508,7 +1758,7 @@ button[onclick^=location] {
   vertical-align: middle;
   font-size: 8px;
   text-transform: uppercase;
-  float: inline-end;
+  float: right;
   margin: 2px 0 0 2px;
   border-radius: 1em;
   height: auto;
@@ -1528,6 +1778,15 @@ button[onclick^=location]:hover {
   border: 1px solid var(--menuFont);
   display: block
 }
+span.tag.freeleech,
+span.tag.internal,
+span.tag.new,
+span.tag.tag_completed,
+span.tag.tag_incomplete,
+span.tag.tag_leeching,
+span.tag.tag_seeding {
+  background-color: var(--tagText)
+}
 #torrent-list td > a[href*="/film/info"] {
   vertical-align: middle;
   margin: 0 1em 0 0;
@@ -1538,7 +1797,7 @@ button[onclick^=location]:hover {
   font-size: 10px;
   filter: brightness(80%);
   text-transform: uppercase;
-  border-radius: .5em;
+  border-radius: 0.25rem;
   border: 1px solid var(--innerbordercolor)
 }
 #torrent-list td:nth-child(3) > span.genres {
@@ -1558,7 +1817,7 @@ td.center span {
   text-align: end
 }
 #torrent-list a:nth-child(1)[href*="userdetails.php?"] {
-  float: inline-end;
+  float: right;
   color: var(--user)
 }
 table#torrent-list tbody td:nth-child(7) {
@@ -1567,7 +1826,7 @@ table#torrent-list tbody td:nth-child(7) {
   text-align: center
 }
 #torrent-list td:nth-child(7) > a:nth-child(1) {
-  font-size: .688rem;
+  font-size: var(--basefontsize);
   text-align: center
 }
 .genres a {
@@ -1577,12 +1836,11 @@ table#torrent-list tbody td:nth-child(7) {
   padding: .063rem .188rem;
   text-transform: uppercase;
   border: 1px solid;
-  border-radius: .7rem;
+  border-radius: 0.5rem;
   margin: 0 0 0 4px;
   color: var(--dark);
   font-size: 8px;
-  font-weight: 700;
-  font-family: Arial,Helvetica,sans-serif;
+  font-weight: 500;
   text-align: top;
   filter: brightness(80%) drop-shadow(0 1px 3px var(--dark));
   display: inline
@@ -1595,31 +1853,25 @@ table#torrent-list tbody td:nth-child(7) {
 span.tag.new {
   margin-top: -1px;
   color: var(--DownBonusRed);
-  background-color: var(--tagText);
   float: left;
   margin-right: 3px;
   margin-left: 0
 }
 span.tag.internal {
-  color: var(--internal);
-  background-color: var(--tagText)
+  color: var(--internal)
 }
 span.tag.tag_seeding {
-  color: var(--UploadGreen);
-  background-color: var(--tagText)
+  color: var(--UploadGreen)
 }
 span.tag.tag_completed {
-  color: var(--completed);
-  background-color: var(--tagText)
+  color: var(--completed)
 }
 span.tag.freeleech,
 span.tag.tag_leeching {
-  color: var(--RatioBlue);
-  background-color: var(--tagText)
+  color: var(--RatioBlue)
 }
 span.tag.tag_incomplete {
-  color: var(--DownBonusRed);
-  background-color: var(--tagText)
+  color: var(--DownBonusRed)
 }
 #torrent-list a.fl::after,
 #torrent-list a[title^="25%"]::after,
@@ -1660,7 +1912,7 @@ span.tag.tag_incomplete {
   align-self: center;
   background-color: var(--main);
   padding: .5rem 1rem;
-  border-radius: .7rem
+  border-radius: 0.5rem
 }
 .main > tbody > tr > td.bottom > h1.internal {
   color: var(--internal);
@@ -1676,40 +1928,50 @@ h1.fl {
   background-color: var(--tagText);
   padding: 1px 4px;
   border: 1px solid;
-  border-radius: .7rem;
+  border-radius: 0.5rem;
   margin: -5px 0 0 .5rem;
   font-size: 8px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: Arial,Helvetica,sans-serif;
   vertical-align: middle;
-  filter: drop-shadow(0 5px 5px #000)
+  filter: var(--filterdropshadow)
 }
 #details {
-  border-radius: 1rem;
-  padding: 1rem;
+  border-radius: var(--maincolortableborderradius);
   max-width: 64rem;
-  width: auto!important
+  margin-top: .5rem
 }
-#details > tbody {
+#details > tbody,
+.lottery_table2 > tbody:not(form.lottery_table2>tbody,.lottery_forms),
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: .6rem;
+  gap: 0.6rem;
   text-align: left;
   max-width: 64rem
 }
-#details > tbody tr td {
+#details > tbody tr td,
+.lottery_table2 > tbody tr td:not(formtd,.lottery_forms),
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody tr td {
   word-wrap: break-word;
-  flex: 1
+  flex: 1;
+  align-self: center
 }
-#details > tbody > tr {
+#details > tbody > tr,
+.lottery_table2 > tbody > tr:not(formtr,.lottery_forms),
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody > tr {
   display: flex
+}
+tr > td > div[id].label {
+  font-size: .75rem
 }
 #details > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
   box-sizing: border-box;
   padding: 0 1rem;
   text-align: center;
-  border-radius: .6rem;
+  border-radius: var(--innercardborderradius);
+  background: var(--innercardcolor);
   display: flex;
   align-items: center;
   border: 1px solid var(--innerbordercolor)
@@ -1728,9 +1990,9 @@ a.index.js-download {
   padding: .3rem .2rem;
   background-image: none;
   text-align: center;
-  border-radius: .6rem;
-  font-weight: 700;
-  align-items: center
+  font-weight: 500;
+  align-items: center;
+  filter: brightness(100%)
 }
 table#details > tbody > tr > td > span[style*="float:right"] {
   display: flex;
@@ -1738,51 +2000,87 @@ table#details > tbody > tr > td > span[style*="float:right"] {
   justify-content: flex-end;
   align-items: center
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout {
+.lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent {
+  padding: .5rem .7rem;
+  line-height: 1rem
+}
+.film-info > table.contentlayout,
+.lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent #details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout,
+.lottery_table2 div.hideablecontent > table.contentlayout,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout {
   display: flex;
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   height: 300px;
   overflow: clip
 }
-#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] {
+#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"],
+.film-info > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"],
+.lottery_table2 .contentlayout tr > td > a[href*="imdb.com/title"],
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout tr > td > a[href*="imdb.com/title"] {
   box-sizing: border-box;
   display: block
 }
-#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] > img {
+#details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] > img,
+.film-info > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"] > img,
+.lottery_table2 .contentlayout tr > td > a[href*="imdb.com/title"] > img,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout tr > td > a[href*="imdb.com/title"] > img {
   height: 300px;
   width: auto;
   object-fit: cover;
   display: block
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 {
+input#offersearch,
+input[type=text][name="items[comment][]"],
+textarea {
+  width: 100%
+}
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1,
+.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 {
   margin: .5rem 1.5rem;
   font-size: 1rem;
   filter: brightness(80%)
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"] {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"],
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h1 > a[href*="imdb.com/title"] {
   font-size: 1.4rem;
   filter: brightness(100%)
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3 {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3,
+.lottery_table2 div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > h3 {
   margin: -.5rem 1.5rem 0
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody,
+.lottery_table2 .contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout > tbody:nth-child(1) > tr:nth-child(2) > td > table#imdbinfo > tbody {
   display: flex;
   flex-direction: column;
   margin: 0 1.5rem;
-  gap: .2rem;
+  gap: 0.2rem;
   flex-wrap: wrap;
   flex-basis: 300px
 }
 #imdbinfo th {
   width: 4.4rem
 }
-table.contentlayout > tbody:nth-child(1) > tr > td#plotcell {
+.lottery_table2 .contentlayout > tbody:nth-child(1) > tr > td#plotcell,
+table.contentlayout > tbody:nth-child(1) > tr > td#plotcell,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout > tbody:nth-child(1) > tr > td#plotcell {
   display: flex;
   flex-direction: column;
-  margin: 0 1.5rem
+  margin: 0 .75rem
 }
-#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td {
+#details > tbody:nth-child(1) > tr:nth-child(2) > td > div.hideablecontent > table.contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td,
+.film-info > table.contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td,
+.lottery_table2 .contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout > tbody:nth-child(1) > tr:nth-child(3) > td {
   display: block;
   margin: 0 1.5rem
 }
@@ -1797,7 +2095,7 @@ table.contentlayout > tbody:nth-child(1) > tr > td#plotcell {
 #cast > tbody:nth-child(1) > tr:nth-child(1) > td {
   display: flex;
   flex-direction: column;
-  gap: .2rem;
+  gap: 0.2rem;
   justify-content: space-between;
   align-items: center
 }
@@ -1815,7 +2113,7 @@ table.contentlayout > tbody:nth-child(1) > tr > td#plotcell {
 }
 #details > tbody:nth-child(1) > tr:nth-child(3) > td > div.hideablecontent > div.grid {
   display: inline-flex;
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   overflow: clip;
   background-color: var(--innercardcolor);
   border: 1px solid rgba(70,131,180,.082);
@@ -1851,26 +2149,48 @@ div.list-overview__text {
   text-overflow: ellipsis;
   white-space: nowrap
 }
-#details div.hideablecontent {
+#details div.hideablecontent,
+.film-info .contentlayout,
+.lottery_table2 div.hideablecontent,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent {
   display: flex;
   border: 1px solid var(--innerbordercolor);
-  border-radius: 1rem;
-  background-color: var(--innercardcolor)
+  border-radius: var(--innercardborderradius);
+  background-color: var(--innercardcolor);
+  overflow: clip
 }
-#details table.fourcell > tbody > tr {
-  margin: 1rem 0;
+div.film-info {
+  padding: .6875rem;
+  background: var(--main);
+  border-radius: var(--maincolortableborderradius)
+}
+#details table.fourcell > tbody > tr,
+.lottery_table2 table.fourcell > tbody > tr,
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] table.fourcell > tbody > tr {
+  margin: .2rem;
   display: flex;
   align-items: flex-start;
-  gap: .5rem;
+  gap: 0.5rem;
   flex-wrap: wrap
 }
-#details table.contentlayout.fourcell > tbody > tr > td {
+table.contentlayout.fourcell > tbody > tr > td {
   width: auto!important;
   padding: 0!important;
   border: 0!important
 }
+#table_open_requests tr>td,
+#table_open_requests tr>th,
+.lottery_table tr>td,
+.lottery_table tr>th,
+.tableb>tbody>tr:nth-child(3)>td,
+.tableb>tbody>tr:nth-child(4)>td,
+p.sig,
+table.tablesorter.table_other_copies>tbody>tr>td {
+  border-top: 1px solid var(--innerbordercolor)
+}
 #profilesettings>tbody>tr>td.heading,
 .contentlayout.fourcell th,
+.sources_table td:last-child,
 td.heading {
   white-space: nowrap
 }
@@ -1885,16 +2205,21 @@ td.heading {
   box-sizing: border-box;
   padding: 0 .5rem;
   border: 1px solid var(--innerbordercolor);
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   background-color: var(--innercardcolor)
 }
 img[src*="pic/flag"] {
   height: 16px;
   object-fit: none;
   filter: grayscale(20%);
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   padding: 1px;
   filter: brightness(85%) grayscale(17%)
+}
+table.main > tbody > tr > td.text,
+td.comment {
+  padding: .8rem;
+  box-sizing: border-box
 }
 #subcell {
   display: flex;
@@ -1907,14 +2232,15 @@ img[src*="pic/flag"] {
   box-sizing: border-box;
   display: inline-block
 }
-#details a[href*="/show.php?id="] {
+#details a[href*="/show.php?id="],
+.lottery_table2 a[href*="/show.php?id="],
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] a[href*="/show.php?id="] {
   display: flex;
   justify-content: space-around
 }
 img#showbanner {
   object-fit: cover;
-  border-radius: 1rem;
-  filter: drop-shadow(0 2px 5px #000);
+  border-radius: .6rem;
   margin: .4rem
 }
 ul.showlinks {
@@ -1926,10 +2252,16 @@ ul.showlinks {
   filter: brightness(70%);
   font-size: 10px
 }
+table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] {
+  background: var(--main);
+  width: auto!important;
+  max-width: 64rem;
+  padding: 1rem
+}
 table.tablesorter.table_other_copies:nth-child(2) {
   padding: .5rem .8rem;
   background-color: var(--innercardcolor);
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   border: 1px solid var(--innerbordercolor)
 }
 #details th.header {
@@ -1944,9 +2276,6 @@ table.tablesorter.table_other_copies > tbody > tr > td:nth-last-child(4) {
   padding-left: 1rem;
   text-align: right
 }
-table.tablesorter.table_other_copies > tbody > tr > td {
-  border-top: 1px solid var(--innerbordercolor)
-}
 table.tablesorter.table_other_copies > tbody > tr {
   padding-top: 0;
   padding-bottom: 0
@@ -1959,7 +2288,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 #table_detail_files {
   border: 1px solid var(--innerbordercolor);
-  border-radius: 1rem;
+  border-radius: var(--innercardborderradius);
   padding: .5rem .8rem;
   background-color: var(--innercardcolor);
   line-height: 1rem
@@ -1970,7 +2299,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 #table_details_leechers,
 #table_details_seeders {
   line-height: 1rem;
-  border-spacing: 1rem .1rem;
+  border-spacing: 1rem 0.1rem;
   white-space: nowrap;
   padding: .4rem
 }
@@ -1982,16 +2311,16 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 #table_details_seeders.main.tablesorter > thead > tr > th {
   border-bottom: 1px solid var(--innerbordercolor);
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
   box-sizing: border-box
 }
 #details button,
 #details form:nth-child(2) > input {
   font-size: 10px;
-  border-radius: 1rem;
+  border-radius: var(--inputborderradius);
   padding: 1px 5px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   border: 1px solid var(--innerbordercolor);
   background-color: #0000007b
 }
@@ -2004,13 +2333,13 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 #details .js-tagcontent {
   display: flex;
-  gap: .2rem
+  gap: 0.2rem
 }
 #details .js-tagcontent > div.tag-content {
-  border-radius: .5rem
+  border-radius: 0.5rem
 }
 input#tagassociate {
-  border-radius: 1rem;
+  border-radius: var(--inputborderradius);
   text-indent: .5rem
 }
 .std-content {
@@ -2018,26 +2347,29 @@ input#tagassociate {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border-collapse: collapse;
   background-color: var(--main);
-  border-radius: 1rem
+  border-radius: var(--maincolortableborderradius)
 }
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1),
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2),
 html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p.sub,
 td.comment > p.sub,
 td[style="border: 1px black dashed"] > p.sub {
-  border-radius: .8rem .8rem 0 0;
-  background-color: var(--innercardcolor);
+  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  background-color: var(--innerheadingrowcolor);
   height: 2rem;
   display: flex;
   align-items: center;
   z-index: 1;
   border: 1px solid var(--innerbordercolor);
   border-bottom: 0;
-  gap: 0 .2rem;
+  gap: 0 0.2rem;
   padding: 0 1rem;
   margin: 0!important
+}
+tr.logentry,
+tr.logentry:hover {
+  border-bottom: 1px solid transparent
 }
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1) > tbody > tr > td.embedded[width="1%"],
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2) > tbody > tr > td.embedded[width="1%"] {
@@ -2048,16 +2380,14 @@ td[style="border: 1px black dashed"] > p.sub {
   display: flex;
   justify-content: space-between
 }
-td.comment > p.sub,
+body td.comment > p.sub,
 td[style="border: 1px black dashed"] > p.sub {
   width: max-content;
-  padding: 2px .5rem 6px;
-  margin-bottom: -7px!important;
-  overflow: auto
-}
-td.comment {
-  padding: .8rem;
-  box-sizing: border-box
+  padding: 0 .5rem;
+  height: 1.5rem;
+  margin: 0 0 -1px 3px!important;
+  overflow: auto;
+  border-radius: 0.4rem 0.4rem 0 0
 }
 p.sub > a[href*="/details.php?id="] {
   white-space: nowrap;
@@ -2070,20 +2400,23 @@ p.sub {
   max-width: 64rem
 }
 p.sig {
-  padding: .5rem 1rem;
+  padding: .5rem .8rem;
   box-sizing: border-box;
-  border-top: 1px solid var(--innerbordercolor)
+  margin-top: .8rem
 }
 td.embedded > div > a.js-watchtopic,
 td.embedded > div > p {
-  padding-bottom: .5rem
+  padding-bottom: 0.5rem
+}
+form[action="dox.php"] > table th,
+td.bottom>p:first-child~table[cellpadding="3"]:first-of-type th {
+  padding-bottom: 0.4rem
 }
 .readpost,
 html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main {
-  border-radius: 0 0 .8rem .8rem;
+  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
   background-color: #0000003a;
-  margin-bottom: .5rem;
-  filter: drop-shadow(0 2px 5px #000);
+  margin-bottom: .7rem;
   border: 1px solid var(--innerbordercolor);
   overflow: clip;
   min-height: 150px;
@@ -2091,80 +2424,173 @@ html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-chil
   max-width: 64rem
 }
 .std-content > tbody > tr > td > table.main {
-  border-radius: 0 0 .8rem .8rem;
+  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
   background-color: rgba(57,135,199,.015);
   margin-bottom: .5rem;
-  filter: drop-shadow(0 2px 5px #000);
   border: 1px solid var(--innerbordercolor);
   overflow: clip;
   min-height: 150px;
   min-width: 48rem
 }
+#profilesettings input,
+#profilesettings select,
+textarea {
+  border-radius: var(--inputborderradius)
+}
 table.main > tbody > tr > td.text {
-  box-sizing: border-box;
-  padding: .8rem;
   line-height: 1.1rem;
   word-wrap: break-word;
   word-break: break-all;
   object-fit: contain
 }
-.div_showhide,
+.div_showhide img,
 img[alt="User Avatar"],
 p.sig img,
-td.comment > img,
-td.text > img {
-  max-width: 100%
+td.comment img,
+td.text img {
+  max-width: 100%;
+  max-height: 64rem
 }
 div.default_avatar {
   max-width: 150px;
   max-height: 150px;
-  mask: url(defaultavatar.svg) center no-repeat;
+  mask: url("defaultavatar.svg") center no-repeat;
+  -webkit-mask: url("defaultavatar.svg") center no-repeat;
   background: rgba(51,96,133,.501);
   width: 150px;
   height: 150px
 }
 #latest_posts > table:nth-child(1),
-td.bottom:nth-child(2) > table:nth-child(5) {
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5) {
   padding: 1rem;
   line-height: 1rem;
   max-width: 64rem
 }
 #latest_posts > table:nth-child(1) > tbody > tr > td,
 table.bottom > table.main table > tbody > tr > td,
-td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr > td,
-td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td {
+td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr > td:not(td[colspan="5"]),
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > td,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > td {
   padding: .2rem;
-  border-top: 1px solid!important
+  border-top: 1px solid var(--innerbordercolor)!important
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th,
 td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr > th,
-td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th {
-  padding: .3rem .2rem;
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th {
+  padding: .3rem;
   background-color: var(--innercardcolor);
   border-top: 1px solid var(--innerbordercolor)
 }
-td.bottom:nth-child(2) > table:nth-last-child(10) {
-  padding: 1rem;
-  background-color: var(--main)
+#profilesettings,
+html > body > table.main > tbody > tr > td.bottom > form[action="/log"] ~ table:nth-child(4),
+td.bottom:nth-child(2) > table:nth-last-child(10),
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) {
+  background-color: var(--main);
+  padding: 1rem
+}
+#torrent-list thead th {
+  background-color: var(--innerheadingrowcolor);
+  border-top: 1px solid var(--innerbordercolor);
+  white-space: nowrap
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th:first-child,
-td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr > th:first-child,
-td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child {
+#torrent-list thead th:first-child,
+td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr > th:first-child,
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:first-child {
   border-left: 1px solid var(--innerbordercolor);
-  border-radius: .7rem 0 0;
-  text-indent: .2rem
+  border-radius: var(--innercardborderradius) 0 0 0;
+  padding: 0 .5rem
+}
+#torrent-list thead th:first-child {
+  border-left: 1px solid var(--innerbordercolor);
+  border-radius: var(--innercardborderradius) 0 0 0
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
+#torrent-list thead th:last-child,
 td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr > th:last-child,
-td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child {
+td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child,
+td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:last-child {
   border-right: 1px solid var(--innerbordercolor);
-  border-radius: 0 .7rem 0 0
+  border-radius: 0 var(--innercardborderradius) 0 0
+}
+html > body > table.main > tbody > tr > td.bottom > form[action="/log"] ~ table > thead:first-child > tr:first-child > th {
+  background-color: var(--innerheadingrowcolor);
+  border-top: 1px solid var(--innerbordercolor);
+  white-space: nowrap;
+  line-height: 1rem;
+  padding: .2rem 0
+}
+tr.logentry {
+  border-top: 1px solid transparent;
+  background-color: var(--main)!important
+}
+tr.logentry > td {
+  margin: .2rem;
+  padding: .33rem .5rem;
+  border-top: 1px solid var(--innerbordercolor);
+  font-size: .6875rem;
+  letter-spacing: -.0125rem
+}
+tr.logentry:last-child {
+  border-radius: 1rem
+}
+#table_open_requests tr>th:first-child,
+.lottery_table tr>th:first-child,
+html>body>table.main>tbody>tr>td.bottom>table>thead:first-child>tr:first-child>th:first-child,
+td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:nth-child(5)>tbody:nth-child(1)>tr:nth-child(1)>th:first-child {
+  border-top-left-radius: var(--innercardborderradius);
+  border-left: 1px solid var(--innerbordercolor)
+}
+#table_open_requests th:last-child,
+.lottery_table th:last-child,
+html>body>table.main>tbody>tr>td.bottom>table>thead:first-child>tr:first-child>th:last-child,
+td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:nth-child(5)>tbody:nth-child(1)>tr:nth-child(1)>th:last-child {
+  border-top-right-radius: var(--innercardborderradius);
+  border-right: 1px solid var(--innerbordercolor)
+}
+tr.logentry:hover {
+  background-color: var(--innercardcolor)!important;
+  filter: brightness(130%);
+  border-top: 1px solid var(--innerbordercolor);
+  font-weight: 700
+}
+.tableb > tbody > tr:first-child > th,
+.tableb table>tbody>tr,
+form[action="dox.php"] > table th,
+td.bottom>p:first-child~table[cellpadding="3"]:first-of-type th {
+  border-bottom: 1px solid var(--innerbordercolor)
+}
+td.bottom > p:target font > a {
+  background: #000
+}
+td.bottom > p:first-child ~ table[cellpadding="3"]:first-of-type {
+  background: var(--main);
+  padding: .5rem;
+  min-width: 16rem
+}
+#offerstable > thead th {
+  background: var(--innerheadingrowcolor);
+  border-top: 1px solid var(--innerbordercolor);
+  line-height: 1.5rem
+}
+span.tag.new {
+  line-height: normal
+}
+#offerstable tbody#offerbody > tr > td {
+  padding: .2rem .5rem
+}
+#offerbody > tr:hover {
+  background-color: var(--innercardcolor)
+}
+#pager2 {
+  font-size: .75rem!important;
+  padding: 0!important
 }
 #profilesettings {
-  background-color: var(--main);
-  border-radius: 1rem;
-  filter: drop-shadow(0 5px 5px #000);
-  padding: 1rem;
+  border-radius: var(--maincolortableborderradius);
+  filter: var(--filterdropshadow);
   line-height: 1rem
 }
 #profilesettings>tbody>tr>td,
@@ -2173,23 +2599,30 @@ td.bottom:nth-child(2)>table.main:nth-child(3)>tbody:nth-child(1)>tr:nth-child(1
   border-bottom: 1px solid var(--innerbordercolor);
   padding: .5rem 1rem
 }
+#profilesettings > tbody > tr:last-child > td {
+  border-bottom: 0;
+  padding: .5rem 1rem
+}
 #profilesettings input {
   display: inline-block;
   margin-bottom: -5px;
-  border-radius: .7rem;
-  text-indent: .5rem
+  padding: 0 .5rem
 }
-#profilesettings select {
-  border-radius: .7rem
+.list-add-description,
+.list-name,
+div#list-items,
+td.bottom>form>p {
+  margin: .5rem 0
 }
 textarea {
   height: auto;
-  max-width: 100%;
-  border-radius: .7rem;
+  max-width: 64rem;
   padding: .5rem;
-  font-size: .688rem;
-  box-sizing: border-box;
-  width: auto!important
+  font-size: var(--basefontsize);
+  box-sizing: border-box
+}
+td.embedded:nth-of-type(2) > img[src*="/pic/flag/"]:only-child {
+  margin-left: 0!important
 }
 td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.rowhead:nth-child(1),
 td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.rowhead:nth-child(1) {
@@ -2207,11 +2640,18 @@ td[bgcolor="#F4F4F0"] {
 td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),
 td.bottom:nth-child(2) > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
   background-color: var(--main);
-  filter: drop-shadow(0 5px 5px #000);
+  filter: var(--filterdropshadow);
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: var(--maincolortableborderradius);
   max-width: 64rem;
   box-sizing: border-box
+}
+td.bottom:nth-child(2) > table.main:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:only-child > table[width="100%"][cellspacing="0"]:nth-last-child(2) > tbody:nth-child(1) > tr:last-child > td,
+td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:last-child > td {
+  border-bottom: 0
+}
+form[action="dox.php"] > table {
+  padding: .5rem
 }
 td.bottom > form[action="takeoffer.php"] > table,
 td.bottom > form[action="upload/upload"] > table {
@@ -2228,60 +2668,243 @@ td.bottom > form[action="upload/upload"] > table {
   padding: 1rem;
   box-sizing: border-box;
   line-height: 1rem;
-  border-radius: 1rem;
-  filter: drop-shadow(0 5px 5px #000);
-  border-spacing: .4rem;
-  margin: 1rem 0
+  border-radius: var(--maincolortableborderradius);
+  filter: var(--filterdropshadow);
+  border-spacing: 0.4rem
+}
+td.bottom > .tableb,
+td.embedded > form[action="inbox.php"] {
+  background-color: var(--main);
+  line-height: 1.5rem;
+  box-sizing: border-box
 }
 #list-add-container {
-  width: auto
+  width: auto!important
+}
+div.list-entry-row label:last-child {
+  width: auto;
+  white-space: nowrap;
+  display: inline-block;
+  box-sizing: border-box
+}
+div#list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem
+}
+#list-add > input[type=submit] {
+  position: relative;
+  vertical-align: middle;
+  margin: auto;
+  float: right
+}
+#list-add label,
+#table_open_requests tr,
+#table_open_requests>tbody:nth-child(2)>tr>td,
+.lottery_table tr,
+.lottery_table2 tr {
+  padding: 0 .2rem
+}
+td.bottom > ul#tabs:nth-child(3) + h3:nth-child(4) {
+  background-color: var(--main);
+  border-radius: var(--maincolortableborderradius);
+  padding: .5rem 1rem;
+  color: var(--headingnonclickable)
+}
+textarea:hover {
+  border: 1px solid var(--menuHL)
 }
 td.bottom > font,
 td.bottom > form > p,
 td.bottom > p,
 td.bottom > p:first-child > font > a {
   background-color: var(--main);
-  border-radius: 1rem;
-  padding: .5rem 1rem;
-  font-size: 13px!important;
+  border-radius: var(--inputborderradius);
+  padding: .3rem 1rem;
+  font-size: .6875rem!important;
   box-sizing: border-box;
   width: min-content;
   white-space: nowrap;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   line-height: 1rem;
   justify-self: center;
   align-self: center;
-  gap: .5rem
+  gap: 0.5rem
 }
-td.bottom > form > p {
-  margin: .5rem 0
+body td.bottom > font.small {
+  font-size: .56375rem!important;
+  padding: .25rem .5rem;
+  border-radius: var(--inputborderradius)
 }
 font {
   font-size: inherit!important
+}
+table.main > tbody > tr > td.bottom > form[action="/log"] > p {
+  margin: auto;
+  font-size: 0!important;
+  border-radius: 0.7rem;
+  padding: .5rem
+}
+td.bottom > form[action="takeoffer.php"] > table > tbody {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem 0
+}
+td.bottom > form[action="takeoffer.php"] > table > tbody > tr:last-child {
+  align-self: center
+}
+td.bottom > form[action="takeoffer.php"] > table > tbody td.heading,
+td.bottom > form[action="takeoffer.php"] > table > tbody td.rowhead {
+  min-width: 5rem
+}
+.sources_table tbody div.center,
+form[action="/requests?open"] {
+  display: flex;
+  justify-content: center
+}
+body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align=center] + table.main:nth-of-type(2):last-child:nth-last-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) {
+  background: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 64rem
+}
+#table_open_requests,
+.lottery_charts,
+.lottery_table,
+.lottery_table2,
+.sources_table,
+body>table.main tbody>tr>td.bottom:nth-child(2)>table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align=center]+table.main:nth-of-type(2):last-child:nth-last-child(1)>tbody:nth-child(1)>tr:nth-child(1)>td.embedded:nth-child(1)>h1.center,
+div.lottery_forms,
+form[action="/requests?open"]>div {
+  background: var(--main);
+  border-radius: var(--maincolortableborderradius);
+  padding: .7rem;
+  max-width: 64rem
+}
+.sources_table input,
+.sources_table select {
+  width: 75%
+}
+.sources_table input.button2 {
+  max-width: max-content;
+  position: relative;
+  vertical-align: middle
+}
+.sources_table .imdbrating_select {
+  width: 50px
+}
+#table_open_requests,
+.lottery_table,
+.lottery_table2 {
+  margin: .5rem 0;
+  max-width: 64rem;
+  box-sizing: border-box;
+  border-spacing: 0;
+  width: auto!important
+}
+.lottery_table2 td:not(.contentlayouttd) {
+  padding: .15rem .075rem
+}
+#table_open_requests th:first-child,
+.lottery_table th:first-child {
+  border-top-left-radius: var(--innercardborderradius)
+}
+#table_open_requests tbody,
+.lottery_table tr > th {
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding: 0 .5rem;
+  border: 0
+}
+.lottery_table {
+  line-height: 1rem
+}
+.lottery_table tr > td,
+.lottery_table tr > th {
+  padding: .2rem .5rem!important
+}
+#table_open_requests tr > th,
+.lottery_table tr > th {
+  border-top: 1px solid var(--innerbordercolor);
+  border-spacing: 0;
+  background: var(--innerheadingrowcolor)
+}
+tr > td > strong > a[href*="/userdetails"] {
+  color: var(--user)
+}
+.lottery_charts g > text {
+  color: var(--white)!important
 }
 td.embedded > form[action="inbox.php"] {
   max-width: 64rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: auto;
-  background-color: var(--main);
   padding: 1rem;
-  border-radius: 1rem;
-  border-spacing: .2rem;
-  line-height: 1.5rem;
-  box-sizing: border-box
-}
-#inboxbody {
-  box-sizing: border-box
+  border-radius: var(--maincolortableborderradius);
+  border-spacing: 0.2rem
 }
 #inboxbody > tr > td {
   box-sizing: border-box;
-  border-top: 1px solid!important;
+  border-top: 1px solid var(--innerbordercolor)!important;
   padding: 0 1rem 0 0
 }
-.div_showhide > div:nth-child(1) {
+td.bottom > .tableb {
   max-width: 64rem;
+  padding: .5rem 1rem;
+  border-radius: var(--maincolortableborderradius);
+  filter: var(--filterdropshadow)
+}
+.tableb > tbody > tr:first-child > th {
+  font-size: 1rem;
+  color: var(--headingnonclickable);
+  padding-bottom: 0.5rem
+}
+table.tableb table {
+  width: auto;
+  padding: 0!important
+}
+tr.tableb > td[align=right] {
+  padding: 0 .5rem;
+  box-sizing: border-box
+}
+.tableb ul li {
+  color: var(--white)
+}
+tr.tableb > td {
+  border-top: 1px solid var(--innerbordercolor);
+  padding: .25rem .33rem
+}
+td.bottom > table.tableb > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > th {
+  border-top: 1px solid var(--innerbordercolor);
+  background: var(--innerheadingrowcolor);
+  padding: 0 .5rem
+}
+td.bottom > table.tableb > tbody:nth-child(1) > tr:nth-child(2) > td[style="padding: 10px;"] {
+  padding: 0!important
+}
+body > table.main > tbody > tr > td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(3):last-child {
+  display: flex;
+  padding: .5rem;
+  height: 55vh;
+  overflow-x: scroll;
+  text-align: left;
+  background: var(--main);
+  border-radius: var(--maincolortableborderradius);
+  background-clip: border-box
+}
+div.div_showhide {
+  display: none;
+  padding: .5rem;
+  border: 1px solid var(--innerbordercolor);
+  background: var(--innercardcolor);
+  max-width: 64rem;
+  border-radius: var(--maincolortableborderradius)
+}
+.div_showhide > div:nth-child(1) {
   max-width: 100%
 }
 html > body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) {
@@ -2294,27 +2917,33 @@ img.actorpic {
   width: 55px;
   height: 75px;
   background-position: center;
-  border-radius: .5rem;
+  border-radius: 0.35rem;
   background-clip: content-box;
   border: 0
 }
 a[href*="imdb.com/name/nm"] img {
   display: inline-block;
   margin: -4px 2px;
-  border-radius: .3rem;
+  border-radius: 0.2rem;
   padding: 1px 0;
   filter: brightness(50%)
 }
 hr,
 td[style="border: 1px black dashed"] {
-  border-color: var(--white)!important;
-  border: 1px solid!important;
+  border: 1px solid var(--innerbordercolor)!important;
   padding: .5rem;
-  border-radius: .7rem;
+  border-radius: var(--innercardborderradius);
   background-color: var(--innercardcolor)
 }
 pre {
-  padding: 1rem 0;
+  padding: .5rem 0;
   box-sizing: border-box;
   white-space: pre-wrap
+}
+.std-content > tbody > tr > td > table > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p:nth-child(2) {
+  font-family: Inconsolata,monospace;
+  margin: auto;
+  padding: .2rem;
+  text-align: right;
+  font-size: .6275rem
 }
