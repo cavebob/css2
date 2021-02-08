@@ -112,7 +112,8 @@ body {
   --maincolortableborderradius: 0.5625rem;
   --inputheight: 1.5rem;
   --basefontsize: 0.6875rem;
-  --innercardborderradius: 0.5rem
+  --innercardborderradius: 0.5rem;
+  --menuborderradius: 0.5rem;
 }
 * {
   margin: 0;
@@ -209,8 +210,11 @@ li {
 .popup a:hover,
 a:hover,
 li.selected,
-td.bottom>table>tbody>tr>td[width="20%"]>a[href^="/"]>b:hover {
+td.bottom>table>tbody>tr>td[width="20%"] a:hover {
   color: var(--menuHL)
+}
+td.bottom>table>tbody>tr>td[width="20%"] a{
+  display: contents;
 }
 body > table.main:nth-child(3) {
   position: relative;
@@ -251,7 +255,8 @@ body > table.main:nth-child(3) {
   background: var(--main);
   z-index: 59;
   top: calc(118px + 1rem);
-  font-size: 13px;
+  font-size: 0.8125rem;
+  font-weight: 700;
   border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
   filter: drop-shadow(0 10px 4px var(--dark))
 }
@@ -268,7 +273,7 @@ body > table.main:nth-child(3) {
 .menu a.normal {
   padding: 5px 0;
   display: block;
-  line-height: 15px
+  line-height: 1rem;
 }
 .menunavigation,
 .menunavigation_new {
@@ -563,7 +568,7 @@ td.bottom form[method=get][action=""][style="margin-bottom:20px;"]+table[cellpad
   text-align: right
 }
 div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"] {
-  font-size: 13px;
+  font-size: 0.8125rem;
   padding: 5px 15px;
   border: 1px solid var(--bordercolor);
   border-radius: var(--inputborderradius);
@@ -635,51 +640,71 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
 }
 #tabs {
   display: flex;
-  font-size: 13px;
+  font-size: 0.8125rem;
   max-width: 850px;
   width: 100%;
   justify-content: space-between;
   white-space: nowrap
 }
 #tabs > .tab a,
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1)
-  a {
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a,
+td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td[width="20%"] a {
   background-color: var(--main);
   display: inline-block;
-  margin: 5px;
+  /* margin: 5px; */
   border: 1px solid var(--bordercolor);
-  border-radius: 1rem;
-  min-width: 7rem;
-  padding: .4rem 1rem;
-  box-shadow: var(--bs);
+  border-radius: var(--menuborderradius);
+  min-width: 100%;
+  padding: .4rem 0;
+  box-shadow: 0;
   color: var(--menuFont);
   box-sizing: border-box;
   font-weight: 700
 }
+ul#tabs, td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1)  {
+  background: var(--main);
+  overflow: clip;
+  border-radius: var(--menuborderradius);
+  width: 800px;
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+ul#tabs {
+  margin-bottom: 1rem;
+}
+li.tab,
+td.bottom > table[width="800"] > tbody > tr > td[width="16%"][align="center"],
+td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td[width="20%"]  {
+  flex: 1;
+  width: 100%;
+  box-shadow: none;
+}
+li.tab a {
+  box-shadow: none;
+}
+
 #tabs > .tab a:hover,
 .tab\ selected a:hover,
-td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover,
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1)
-  a:hover {
+/* td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover, */
+td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a:hover,
+td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td[width="20%"] a:hover {
   border: 1px solid var(--borderhighlight);
-  border-radius: 1rem;
+  border-radius: var(--menuborderradius);
   color: var(--menuHL)
 }
-td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] {
+/* td.bottom > table > tbody > tr > td[width="20%"] > a[href*="/"] {
   background-color: var(--main);
   display: inline-block;
   margin: 5px;
-  border-radius: 1rem;
+  border-radius: var(--menuborderradius);
   box-shadow: var(--bs);
   border: 1px solid var(--bordercolor)
-}
-td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b {
-  padding: 5px 15px;
-  display: inline-block;
+} */
+td.bottom > table > tbody > tr > td[width="20%"] a{
   color: var(--menuFont);
-  font-size: 13px;
-  min-width: 100px;
-  border: 1px solid var(--bordercolor)
+}
+td.bottom > table > tbody > tr > td[width="20%"] a b {
+  color: inherit;
 }
 #searchbox {
   display: inline-flex;
@@ -708,7 +733,7 @@ td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"] > b {
 }
 html body table.main tbody tr td.bottom div#resultsarea p {
   margin: 10px 0;
-  font-size: 12px
+  font-size: 0.75rem
 }
 #searchbox > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(1) {
   padding: .4rem 0
@@ -1034,7 +1059,7 @@ html > body > table.main > tbody > tr >td.bottom  > table.main[width="737"]:only
   justify-self: self-start
 }
 #news h2 {
-  font-size: 18px
+  font-size: 1.125rem
 }
 #news>table:nth-child(2),
 #news>table:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1),
@@ -1047,7 +1072,7 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
   border: 0!important
 }
 #news h1 {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0 5px
 }
 #news p[id^="news"] {
@@ -1057,7 +1082,7 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
 }
 #news #showmore a:nth-child(1) {
   color: var(--menuFont);
-  font-size: 13px;
+  font-size: 0.8125rem;
   margin-top: -1px
 }
 #showmore b {
@@ -1124,12 +1149,18 @@ html > body > table.main > tbody > tr >td.bottom  > table.main:only-of-type:last
   border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
   filter: var(--filterdropshadow)
 }
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) {
+td.bottom:nth-child(2) > table[width="800"]:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1),
+td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   white-space: nowrap;
-  align-items: center
+  align-items: center;
+  width: 100%;
+  background: var(--main);
+}
+body table.main td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a{
+  box-shadow: none;
 }
 #inboxbody,
 .tableb input,
@@ -1362,7 +1393,7 @@ only screen and (min-resolution:1.5dppx) {
   background-size: 0;
   background-repeat: 0;
   line-height: default;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 500
 }
 .tag-content a {
@@ -1387,7 +1418,7 @@ only screen and (min-resolution:1.5dppx) {
 #details em {
   display: inline-block;
   text-align: justify;
-  font-size: 10px;
+  font-size: 0.625rem;
   padding: 1px 45px 0 8px
 }
 .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
@@ -1490,7 +1521,7 @@ div.chosen-container .search-choice {
   border: 1px solid var(--main);
   max-width: 100%;
   border-radius: 0;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 500;
   background-image: 0;
   background-size: 0;
@@ -1771,7 +1802,7 @@ button[onclick^="hidetorrent"],
 button[onclick^="ignoreShow"],
 button[onclick^="location"] {
   vertical-align: middle;
-  font-size: 8px;
+  font-size: 0.5rem;
   text-transform: uppercase;
   float: right;
   margin: 2px 0 0 2px;
@@ -1800,7 +1831,7 @@ button[onclick^="location"]:hover {
   background-color: rgba(255,255,255,.033);
   box-sizing: border-box;
   color: var(--completed);
-  font-size: 10px;
+  font-size: 0.625rem;
   filter: brightness(80%);
   text-transform: uppercase;
   border-radius: 0.25rem;
@@ -1836,7 +1867,7 @@ table#torrent-list tbody td:nth-child(7) {
   text-align: center
 }
 .genres a {
-  font-size: 9px
+  font-size: 0.5625rem
 }
 .tag {
   padding: .063rem .25rem;
@@ -1845,7 +1876,7 @@ table#torrent-list tbody td:nth-child(7) {
   border-radius: 0.3rem;
   margin: 0 0 0 4px;
   color: var(--dark);
-  font-size: 8px;
+  font-size: 0.5rem;
   font-weight: 500;
   font-variant: small-caps;
   text-align: top;
@@ -1888,7 +1919,7 @@ span.tag.tag_incomplete {
 #torrent-list a[title^="25%"]::after,
 #torrent-list a[title^="50%"]::after {
   float: right;
-  font-size: 10px;
+  font-size: 0.625rem;
   width: 34px;
   text-align: center;
   pointer-events: none
@@ -1900,7 +1931,7 @@ span.tag.tag_incomplete {
 #torrent-list a[title^="25%"]::after,
 #torrent-list a[title^="50%"]::after {
   color: var(--RatioBlue);
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 100;
   text-align: end;
   filter: brightness(80%)
@@ -1934,7 +1965,7 @@ html>body>table.main > tbody > tr > td.bottom:nth-child(2) > h1.internal:not(#fo
   border: 1px solid;
   border-radius: 0.5rem;
   margin: -5px 0 0 .5rem;
-  font-size: 8px;
+  font-size: 0.5rem;
   font-weight: 500;
   font-family: Arial,Helvetica,sans-serif;
   vertical-align: middle;
@@ -2261,7 +2292,7 @@ ul.showlinks {
   justify-content: center;
   gap: 1rem;
   filter: brightness(70%);
-  font-size: 10px
+  font-size: 0.625rem
 }
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] {
   background: var(--main);
@@ -2327,7 +2358,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 #details button,
 #details form:nth-child(2) > input {
-  font-size: 10px;
+  font-size: 0.625rem;
   border-radius: var(--inputborderradius);
   padding: 1px 5px;
   text-align: center;
@@ -2340,7 +2371,7 @@ table.tablesorter.table_other_copies > tbody > tr {
   border: 1px solid #4682b4;
   background-color: #4682b4;
   color: var(--dark);
-  font-size: 10px
+  font-size: 0.625rem
 }
 #details .js-tagcontent {
   display: flex;
@@ -2802,7 +2833,7 @@ body > table.main tbody>tr > td.bottom:nth-child(2) > table[width="800"][cellspa
 .lottery_table2,
 .sources_table,
 div.lottery_forms,
-form[action="/requests?open"]>div, 
+/* form[action="/requests?open"]>div,  */
 td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child  {
   background: var(--main);
   border-radius: var(--maincolortableborderradius);
@@ -3289,7 +3320,7 @@ div.rc__rating{
 	background-color: var(--main);
 	box-sizing: border-box;
 	color: var(--completed);
-	font-size: 10px;
+	font-size: 0.625rem;
 	filter: brightness(100%);
 	text-transform: uppercase;
 	border-radius: 0.25rem;
