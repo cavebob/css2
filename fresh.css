@@ -107,6 +107,7 @@ body {
   --innerheadingrowcolor: rgba(2, 2, 5, 0.500);
   --borderhighlight: var(--menuHL);
   --filterdropshadow: 0;
+  --bs: 0px 4px 5px 0px var(--dark); 
   --inputborderradius: 0.4rem;
   --maincolortableborderradius: 0.5625rem;
   --inputheight: 1.5rem;
@@ -412,7 +413,6 @@ div#logo {
   background-size: contain
 }
 .footer {
-  padding-bottom: 20px;
   text-align: 0;
   color: var(--menuFont);
   filter: brightness(80%);
@@ -2982,9 +2982,13 @@ body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-ch
 body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td font[color="red"] {
     color: var(--DownBonusRed);
 }
-input[type=text][border="0px;"][height=19px] {
+input[type=text][style="border: 0px; height: 19px"] {
   border: 1px solid var(--innerbordercolor)!important;
   height: var(--inputheight)!important
+}
+input[type=text][style="border: 0px; height: 19px"]:hover,
+input[type=text][style="border: 0px; height: 19px"]:focus {
+    border: 1px solid var(--menuHL) !important;
 }
 div.div_showhide {
   display: none;
@@ -3165,7 +3169,7 @@ td.bottom:nth-child(2)
 > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td > ul:only-child, */
 /* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
 td.bottom:nth-child(2) 
-> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td {
+> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2:not(h2:only-of-type) + table[width="100%"] > tbody > tr > td {
     border: 1px solid var(--innerbordercolor);
     border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
     border-top: 0;
@@ -3184,7 +3188,7 @@ td.bottom:nth-child(2)
 } */
 /* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
 td.bottom:nth-child(2) 
-> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2:not(p+h2) {
+> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2:not(td.embedded > p:first-child+h2:only-of-type) {
     border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
     border: 1px solid var(--innerbordercolor);
     background: var(--innercardcolor)
@@ -3216,4 +3220,150 @@ td.bottom:nth-child(2)
 td.bottom:nth-child(2) > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td ul,
 td.bottom:nth-child(2) > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td li {
     color: var(--white);
+}
+img[src*="star.gif"][alt="Donor"] {
+    display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url(star2.png) no-repeat;
+    width: 11px;
+    height: 10px;
+    padding-left: 11px;
+}
+img[src*="starbig.gif"] { 
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(star2.png) no-repeat;
+      width: 11px;
+      height: 10px;
+      padding-left: 11px;
+}
+td.embedded > p:first-child+h2:only-of-type:not(#details) {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.5rem;
+    margin: auto;
+    text-align: center;
+    color: var(--white);
+}
+.message td.rowhead {
+    padding: 0 0.3rem;
+    text-align: left;
+}
+.rc.js-rc {
+    background: var(--main);
+    border-radius: var(--maincolortableborderradius);
+    border: 1px solid var(--innerbordercolor);
+    overflow: clip;
+}
+.rc__header {
+    padding: 0.5rem 0;
+    color: var(--headingnonclickable);
+    background: var(--innerheadingrowcolor);
+    border-bottom: 1px solid var(--innerbordercolor);
+}
+.rc__container.js-rc-container {
+    background: var(--main);
+}
+.rc__toggle.js-rc-toggle {
+    background: var(--innercardcolor);
+    font-size: 1rem;
+    color: var(--menuHL);
+}
+.rc__toggle.js-rc-toggle:hover {
+    background: var(--menuFont);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+.rc__film__poster {
+    border-radius: 0.5rem;
+}
+div.rc__rating::before {
+	content: 'IMDb: ';
+}
+div.rc__rating{
+	vertical-align: middle;
+	margin: 0 1em 0 0;
+	padding: 1px 4px;
+	background-color: var(--main);
+	box-sizing: border-box;
+	color: var(--completed);
+	font-size: 10px;
+	filter: brightness(100%);
+	text-transform: uppercase;
+	border-radius: 0.25rem;
+	border: 1px solid var(--innerbordercolor);
+}
+a.rc__overlay{
+    border-radius: 0.5rem;
+    overflow:clip;
+}
+div.rc__downloads {
+	position: absolute;
+	bottom: 2px;
+    left: auto;
+	right: 2px;
+	padding: 2px 5px;
+	border-radius: 0.2rem;
+    border: 1px solid var(--innerbordercolor);
+	background-color: var(--main);
+	color: var(--menuFont);
+	font-size: 0.9rem;
+	opacity: 1;
+}
+.rc__actions-ignore:hover, .rc__actions-wishlist:hover {
+    background: var(--menuFont);
+    color: var(--dark);
+    border-color: var(--menuFont);
+    /* font-weight: 700; */
+}
+.tv-todownload {
+    display: flex;
+    box-sizing: border-box;
+    align-content: center;
+    min-width: min-content;
+    /* flex-grow: 0; */
+    width: 100%;
+    height: 70vh;
+    /* margin-bottom: 40vh; */
+    gap: 1rem;
+    margin: auto;
+}
+#tv-show-list {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-grow: 0;
+    flex-shrink: 1;
+    /* min-width: 50px; */
+    /* width: auto; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#tv-episode-list {
+    box-sizing: border-box;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    /* flex: 1; */
+    min-width: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.show-header {
+    padding: 0.5rem;
+    width: 500px;
+    object-fit:cover;
+    border-radius: 0.3rem;
+}
+.show-header img.show-banner {
+    width: 500px;
+    height: auto;
+    border-radius: 0.3rem;
+
 }
