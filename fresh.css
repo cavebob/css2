@@ -108,7 +108,7 @@ body {
   --borderhighlight: var(--menuHL);
   --filterdropshadow: 0;
   --inputborderradius: 0.4rem;
-  --maincolortableborderradius: 0.8rem;
+  --maincolortableborderradius: 0.5625rem;
   --inputheight: 1.5rem;
   --basefontsize: 0.6875rem;
   --innercardborderradius: 0.5rem
@@ -251,7 +251,7 @@ body > table.main:nth-child(3) {
   z-index: 59;
   top: calc(118px + 1rem);
   font-size: 13px;
-  border-radius: 0 0 1rem 1rem;
+  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
   filter: drop-shadow(0 10px 4px var(--dark))
 }
 .menu tbody tr {
@@ -3149,7 +3149,8 @@ body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cells
     border-top: 1px solid var(--innerbordercolor);
 }
 
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
+/* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
+td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] ul {
     list-style: inside;
     line-height: 1rem;
@@ -3162,7 +3163,8 @@ td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-c
 }
 /* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
 > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td > ul:only-child, */
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
+/* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
+td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td {
     border: 1px solid var(--innerbordercolor);
     border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
@@ -3180,35 +3182,38 @@ td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-c
     margin-bottom: 0.5rem;
     list-style: inside;
 } */
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
-> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 {
+/* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
+td.bottom:nth-child(2) 
+> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2:not(p+h2) {
     border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
     border: 1px solid var(--innerbordercolor);
     background: var(--innercardcolor)
 }
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
+/* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
+td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > table[width="100%"] + h2:not(h2:first-child),
-d.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
+/* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
+td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > a[name="uploadrules"] + h2 {
     margin-top: 0.5rem;
 }
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
+/* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
+td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td > ul > li {
     list-style: inside;
     color: var(--white);
 }
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
+/* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
+td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td > ul > li li {
     list-style: lower-roman;
     color: var(--white);
 }
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
+td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td br {
  display: none;
 }
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
-> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td ul,
-td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1), td.bottom:nth-child(2) 
-> table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td li {
+td.bottom:nth-child(2) > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td ul,
+td.bottom:nth-child(2) > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td li {
     color: var(--white);
 }
