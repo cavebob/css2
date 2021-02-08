@@ -165,7 +165,7 @@ td.embedded>table.std-content {
 .statbox,
 table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > form:nth-child(3) > table:nth-child(1),
 table.main:nth-child(9) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1),
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1),
+body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1),
 td.bottom:nth-child(2) > table:nth-child(5),
 td.bottom:nth-child(2) > table:nth-child(5),
 td.bottom:nth-child(2) > table:nth-child(5) > tbody:nth-child(1) {
@@ -552,11 +552,12 @@ div.curuser-stats:nth-child(1) > a[href*="my.php"] {
   margin-left: auto
 }
 .inbox {
+  -webkit-mask: url(mail.svg) center no-repeat;
   mask: url(mail.svg) center no-repeat;
   height: 23px;
   align-self: center;
   margin-bottom: 13px;
-  -webkit-mask: url(mail.svg) center no-repeat
+ 
 }
 #table_open_requests>tbody:nth-child(2)>tr>td:last-child,
 #table_open_requests>tbody:nth-child(2)>tr>td:nth-child(10),
@@ -592,10 +593,10 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"]:hover {
 div.curuser-stats:nth-child(1) > a[href*="my.php"] {
   grid-area: profile;
   font-size: 0;
+  -webkit-mask: url(profile.svg) center no-repeat;
   mask: url(profile.svg) center no-repeat;
   height: 20px;
   border: 1px solid var(--bordercolor);
-  -webkit-mask: url(profile.svg) center no-repeat
 }
 div.curuser-stats:nth-child(1) > a[href*="logout.php"],
 div.curuser-stats:nth-child(3) > a[href*="friends.php"],
@@ -609,8 +610,8 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
 div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   grid-area: logout;
   font-size: 0;
+  -webkit-mask: url(off1.svg) center no-repeat;
   mask: url(off1.svg) center no-repeat;
-  -webkit-mask: url(off1.svg) center no-repeat
 }
 .donor {
   grid-area: dnr;
@@ -624,14 +625,14 @@ img[src*="starbig.gif"] {
   background-image: url("star2.png")!important
 }
 div.curuser-stats:nth-child(3) > a[href*="friends.php"] {
-  mask: url(friends.svg) center no-repeat;
   -webkit-mask: url(friends.svg) center no-repeat;
+  mask: url(friends.svg) center no-repeat;
   margin-right: -1px;
   display: inline-block
 }
 div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
-  mask: url(mytorrents.svg) center no-repeat;
   -webkit-mask: url(mytorrents.svg) center no-repeat;
+  mask: url(mytorrents.svg) center no-repeat;
   margin-right: -10px;
   display: inline-block
 }
@@ -647,7 +648,7 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   white-space: nowrap
 }
 #tabs > .tab a,
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a,
+body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a,
 td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td[width="20%"] a {
   background-color: var(--main);
   display: inline-block;
@@ -686,7 +687,7 @@ li.tab a {
 #tabs > .tab a:hover,
 .tab\ selected a:hover,
 /* td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover, */
-td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a:hover,
+body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a:hover,
 td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td[width="20%"] a:hover {
   border: 1px solid var(--borderhighlight);
   border-radius: var(--menuborderradius);
@@ -1430,7 +1431,6 @@ only screen and (min-resolution:1.5dppx) {
   outline: 0;
   border: 0!important;
   background: 0 0!important;
-  -webkit-box-shadow: none;
   box-shadow: none;
   color: var(--menuFont);
   filter: brightness(70%);
@@ -1511,7 +1511,6 @@ div.chosen-container .search-choice {
 .chosen-container-active .chosen-choices {
   border: 1px solid var(--selected);
   background: var(--main);
-  -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: var(--inputborderradius) var(--inputborderradius) 0 0
 }
@@ -1529,7 +1528,6 @@ div.chosen-container .search-choice {
   background-size: 0;
   background-repeat: 0;
   background-clip: border-box;
-  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: default;
   border-radius: var(--inputborderradius)
@@ -2499,8 +2497,8 @@ td.text img {
 div.default_avatar {
   max-width: 150px;
   max-height: 150px;
+  -webkit-mask: url("defaultavatar.svg") center no-repeat;  
   mask: url("defaultavatar.svg") center no-repeat;
-  -webkit-mask: url("defaultavatar.svg") center no-repeat;
   background: rgba(51,96,133,.501);
   width: 150px;
   height: 150px
@@ -2718,6 +2716,7 @@ td.bottom > form[action="upload/upload"] > table {
   background-color: --main
 }
 #list-add-container,
+td.bottom > form[name="comment"],
 td.bottom > form[action="takeoffer.php"],
 td.bottom > form[action="upload/upload"] > table {
   background-color: var(--main);
@@ -2728,6 +2727,15 @@ td.bottom > form[action="upload/upload"] > table {
   border-radius: var(--maincolortableborderradius);
   filter: var(--filterdropshadow);
   border-spacing: 0.4rem
+}
+td.bottom > form[name="comment"] ~ table.main {
+  background-color: var(--main);
+  max-width: 64rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  line-height: 1rem;
+  border-radius: var(--maincolortableborderradius);
+  filter: var(--filterdropshadow);
 }
 td.bottom > .tableb,
 td.embedded > form[action="inbox.php"] {
@@ -3276,6 +3284,18 @@ img[src*="starbig.gif"] {
       height: 10px;
       padding-left: 11px;
 }
+img[src*="disabled.gif"] { 
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+    width: 11px;
+    height: 11px;
+    padding-left: 11px;
+    -webkit-mask: url("disabled.svg") center no-repeat;
+    mask: url("disabled.svg") center no-repeat;
+    background: rgb(200, 50, 50);
+    margin-bottom: -1px;
+}
 td.embedded > p:first-child+h2:only-of-type:not(#details) {
     font-size: 0.8125rem;
     padding: 0.5rem 0.5rem;
@@ -3413,4 +3433,136 @@ div.rc__toggle {
     height: auto;
     border-radius: 0.3rem;
 
+}
+/* buddylist */ 
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] {
+  background: var(--main);
+  padding: 1rem;
+  border-radius: var(--maincolortableborderradius);
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded {
+/* border: 1px solid var(--innerbordercolor); */
+border-radius: var(--innercardborderradius);
+overflow: clip;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded h2 {
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px solid var(--innerbordercolor);
+  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  background: var(--innerheadingrowcolor);
+  width: auto !important
+
+  /* border-collapse: collapse; */
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded br {
+  display: none;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table {
+  border: 1px solid var(--innerbordercolor);
+  border-top: 0;
+  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  background: var(--innercardcolor);
+  margin-bottom: 0.7rem;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* gap: 0.5rem; */
+  justify-content: center;
+  align-content: center;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] {
+ flex: 1 1 auto;
+ /* border-bottom: 1px solid var(--innerbordercolor); */
+ border-radius: 0;
+ border-collapse: collapse;
+} 
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] img[width="75"] {
+  object-fit: cover;
+  height: 80px;
+  width: 70px;
+  box-sizing: border-box;
+  display: inline-block;
+  /* border-radius: 0.25rem; */
+}
+div.default_avatar_small[style^="width:75px"] {
+  max-width: 150px;
+  max-height: 150px;
+  height: 80px;
+  width: 70px!important;
+  -webkit-mask: url("defaultavatar.svg") center no-repeat;
+  -webkit-mask-size: fill;
+  mask: url("defaultavatar.svg") center no-repeat;
+  mask-size: fill;
+  background: rgba(51,96,133,.501);
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] td.bottom {
+  /* padding: 0!important; */
+  /* margin: 0.5rem; */
+  
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom:first-child {
+  /* border-right: 1px solid var(--innerbordercolor); */
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main[height="75px"] { 
+  display: flex;
+  background: rgba(70, 131, 180, 0.025);
+  border-radius: var(--innercardborderradius);
+  border-collapse: collapse;
+  overflow: clip;
+  min-height: 100%!important;
+  height: 80px!important;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1;
+  border: 1px solid var(--innerbordercolor);
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main[height="75px"] tr[valign="top"] table.main > tbody > tr {
+  display: flex;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main[height="75px"] tr[valign="top"] table.main > tbody > tr td.embedded[width="80%"] br:nth-of-type(2){
+  display: inline ;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main[height="75px"] tr[valign="top"] table.main > tbody > tr a[href*="userdetails"] {
+  color: var(--user)
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main[height="75px"] tr[valign="top"] table.main > tbody > tr a[href*="userdetails"] b {
+  color: inherit;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main[height="75px"] tr[valign="top"] table.main > tbody > tr td.embedded[width="20%"] a{
+  display: block;
+  margin:  0.25rem auto;
+  text-transform: uppercase;
+  font-size: 0.5625rem;
+  padding: 0.0625rem;
+  border: 1px solid var(--innerbordercolor);
+  text-align: center;
+  border-radius: 0.25rem;
+  filter: brightness(80%)
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main[height="75px"] tr[valign="top"] table.main > tbody > tr td.embedded[width="20%"] a:hover {
+  border: 1px solid var(--menuHL);
+  /* color: inherit; */
+  filter: brightness(100%)
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main>tbody>tr[valign="top"] > td[width="75"] {
+  width: auto!important;
+  border-collapse: collapse;
+}
+td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table > tbody > tr > td table[style^="padding: 0px"] > tbody > tr > td.bottom
+table.main>tbody>tr[valign="top"] > td[width="75"] + td:last-child{
+  border-left: 1px solid var(--innerbordercolor);
+}
+td[style="padding: 10px;background-color: #ECE9D8;"] {
+  background: inherit !important;
 }
