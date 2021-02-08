@@ -2,7 +2,7 @@
 body {
   color: var(--white)
 }
-td.bottom>table,
+td.bottom>table:not(#torrent-list),
 td.bottom:nth-child(2) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
   max-width: 64rem;
   box-sizing: border-box
@@ -1376,38 +1376,40 @@ only screen and (min-resolution:1.5dppx) {
   .chosen-container-single .chosen-single abbr,
   .chosen-container-single .chosen-single div b,
   .chosen-rtl .chosen-search input[type="text"] {
-    background-image: url(/pic/chosen-sprite.png)!important;
-    background-size: 52px 37px!important;
-    background-repeat: no-repeat!important
+    background-image: url(/pic/chosen-sprite.png);
+    background-size: 52px 37px;
+    background-repeat: no-repeat
   }
 }
 .tag-content {
-  border: 1px solid var(--dark);
+  border: 1px solid var(--innerbordercolor);
   border-radius: 0;
   position: relative;
   margin: 0;
   padding: 1px 0 2px;
-  background-color: var(--dark);
+  background-color: var(--innercardcolor);
   box-shadow: none;
   background-image: none;
   background-size: 0;
   background-repeat: 0;
   line-height: default;
   font-size: 0.625rem;
-  font-weight: 500
+  font-weight: 700
 }
 .tag-content a {
-  color: var(--menuFont)!important;
-  padding: 3px 5px!important;
-  text-decoration: none!important
+  color: var(--menuFont);
+  padding: 3px 5px;
+  text-decoration: none 
 }
 .tag-content:hover {
-  background-color: var(--dark);
-  text-decoration: none
+  background-color: var(--innercardcolor);
+  text-decoration: none;
+  border: 1px solid var(--menuFont);
+  filter: brightness(120%)
 }
-.tag-content a:hover {
-  color: var(--menuHL)!important
-}
+/* .tag-content a:hover {
+  filter: brightness(110%)
+} */
 #tagassociate {
   padding: 2px 4px;
   width: 228px
@@ -1439,7 +1441,7 @@ only screen and (min-resolution:1.5dppx) {
   width: 25px
 }
 .chosen-container-active .chosen-choices li.search-field input[type="text"] {
-  color: var(--menuHL)!important;
+  color: var(--menuHL);
   filter: brightness(100%)
 }
 div.chosen-container.chosen-container-multi.chosen {
@@ -1956,20 +1958,19 @@ html>body>table.main > tbody > tr > td.bottom:nth-child(2) > h1.internal:not(#fo
   color: var(--internal);
   margin-bottom: -1.8rem
 }
-.main > tbody > tr > td.bottom > h1.internal::after {
+body .main > tbody > tr > td.bottom > h1.internal::after {
   display: inline-block;
   content: "INTERNAL";
   color: var(--internal);
-  background-color: var(--tagText);
-  padding: 1px 4px;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  margin: -5px 0 0 .5rem;
-  font-size: 0.5rem;
-  font-weight: 500;
-  font-family: Arial,Helvetica,sans-serif;
+	padding: .063rem .25rem;
+	border: 1px solid var(--innerbordercolor);
+	border-radius: 0.3rem;
+  margin: -3px 0 0 .25rem;
+	font-size: 0.5rem;
+	font-weight: 500;
+	font-variant: small-caps;
+	background: rgba(255,255,255,.033);
   vertical-align: middle;
-  filter: var(--filterdropshadow)
 }
 #details {
   border-radius: var(--maincolortableborderradius);
@@ -2025,7 +2026,7 @@ a.index.js-download {
   padding: .3rem .2rem;
   background-image: none;
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   align-items: center;
   filter: brightness(100%)
 }
@@ -2378,7 +2379,7 @@ table.tablesorter.table_other_copies > tbody > tr {
   gap: 0.2rem
 }
 #details .js-tagcontent > div.tag-content {
-  border-radius: 0.5rem
+  border-radius: var(--inputborderradius);
 }
 input#tagassociate {
   border-radius: var(--inputborderradius);
@@ -2787,6 +2788,11 @@ td.bottom > p:first-child > font > a {
   justify-self: center;
   align-self: center;
   gap: 0.5rem
+}
+td.bottom font[size="+1"] a:only-child {
+  font-weight: bold;
+  font-size: .6875rem!important;
+
 }
 body td.bottom > font.small {
   font-size: .56375rem!important;
@@ -3297,9 +3303,13 @@ td.embedded > p:first-child+h2:only-of-type:not(#details) {
     background: var(--main);
 }
 .rc__toggle.js-rc-toggle {
-    background: var(--innercardcolor);
+  /* border-top: 1px solid var(--innerbordercolor); */
+  background: var(--innerheadingrowcolor);
+filter: brightness(110%) contrast(110%);
+    /* background: var(--innercardcolor); */
     font-size: 1rem;
-    color: var(--menuHL);
+    color: steelblue;
+    font-weight: 700;
 }
 .rc__toggle.js-rc-toggle:hover {
     background: var(--menuFont);
@@ -3307,8 +3317,9 @@ td.embedded > p:first-child+h2:only-of-type:not(#details) {
     font-weight: bold;
     color: var(--dark);
 }
-.rc__film__poster {
+img.rc__film__poster {
     border-radius: 0.5rem;
+    object-fit: fill
 }
 div.rc__rating::before {
 	content: 'IMDb: ';
@@ -3360,6 +3371,11 @@ div.rc__downloads {
     /* margin-bottom: 40vh; */
     gap: 1rem;
     margin: auto;
+}
+div.rc__toggle {
+	line-height: 2.5rem;
+	text-align: center;
+	cursor: pointer;
 }
 #tv-show-list {
     box-sizing: border-box;
