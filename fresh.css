@@ -511,22 +511,23 @@ div.curuser-stats:nth-child(2) {
   position: absolute;
   z-index: 100;
   overflow-y: auto;
-width: 100vw;
-height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+width: 100%;
+height: 100%;
 background-color: rgba(0, 0, 0, 0.515);
 }
 .notification-frame.js-notification-frame {
-  position: absolute;
-  z-index: 100;
-  overflow-y: auto;
-  top: 1%;
-  left: 25%;
-  right: 25%;
+
+  max-width: 48rem;
   background-color: var(--main);
   padding: .3rem .5rem;
   border: 1px solid var(--innerbordercolor);
   filter: drop-shadow(0 0px 20px black) brightness(120%);
-  border-radius: 0.5rem
+  border-radius: 0.5rem;
+  margin: auto;
+  width: max-content;
 }
 .notification,
 .notification:hover,
@@ -543,6 +544,7 @@ background-color: rgba(0, 0, 0, 0.515);
 }
 .notification__body {
   max-width: 48rem;
+
   margin-right: .5rem
 }
 .notification,
@@ -551,7 +553,8 @@ background-color: rgba(0, 0, 0, 0.515);
   color: var(--white);
   padding: .4rem .6rem;
   border: 1px solid var(--innerbordercolor);
-  display: flex
+  display: flex;
+  gap: 1rem;
 }
 .inbox,
 div.curuser-stats:nth-child(1) > a[href*="my.php"] {
@@ -561,7 +564,9 @@ div.curuser-stats:nth-child(1) > a[href*="my.php"] {
 }
 .notification__delete {
   float: right;
-  margin-left: auto
+  margin-left: auto;
+  align-self: center;
+  /* padding: 0.1rem 0.25rem; */
 }
 .inbox {
   -webkit-mask: url(mail.svg) center no-repeat;
