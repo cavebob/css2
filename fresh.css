@@ -89,7 +89,7 @@ body {
   --white: rgb(142, 165, 191);
   --headingnonclickable: #ffa94dd7;
   --tagText: #000000;
-  --menuFont: #477CA4;
+  --menuFont: hsl(206, 40%, 50%);
   --menuHL: rgb(86, 182, 231);
   --input: rgba(255, 255, 255, 0.019);
   --searchDropdown: #ffffff07;
@@ -176,11 +176,15 @@ body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cells
 > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center,
 h1:not(#details h1, .lottery_table2 h1, div.hideablecontent h1, .film-info h1),
 h2:not(#sidebar-container h2, div#news h2),
-h3:not(#details h3, .lottery_table2 h3, div.hideablecontent h3, .film-info h3) {
+h3:not(#details h3, .lottery_table2 h3, div.hideablecontent h3, .film-info h3, h1+h3) {
   font-size: 1rem;
   box-sizing: border-box;
   color: var(--headingnonclickable);
   padding: .7rem 1rem
+}
+*h1 + h2, *h1 ~ h3, *h2 + h1, *h2 + h1, *h3 + h1, *h3 + h2, *h2 + h3, *h1 + h1, *h2 + h2, *h3 + h3 {
+  padding-top: 0.25rem;
+  /* padding-bottom: 0.25rem !important; */
 }
 table,
 td,
@@ -1028,12 +1032,12 @@ table.message:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child
 }
 body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
   display: flex;
-  grid-template-areas: "sidebar bottom";
-  grid-auto-columns: min-content auto;
-  grid-gap: 1rem
+  /* grid-template-areas: "sidebar bottom"; */
+  /* grid-auto-columns: min-content auto; */
+  /* grid-gap: 1rem */
 }
 body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) {
-  grid-area: bottom;
+  /* grid-area: bottom;  */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1043,22 +1047,31 @@ body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-c
   flex: 9999
 }
 html > body > table.main > tbody > tr >td.bottom  > table.main[width="737"]:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child {
-  display: grid;
+  /* display: grid;
   grid-template-areas: "news news" "pollh2 statsh2" "poll stats";
-  grid-gap: 1rem;
-  justify-items: center
+  grid-gap: 1rem; */
+  /* justify-items: center; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* column-gap: auto; */
 }
+
 #news {
-  grid-area: news;
+  /* grid-area: news; */
   display: flex;
   flex-direction: column;
   background-color: var(--main);
   border: 1px solid var(--bordercolor);
   border-radius: var(--maincolortableborderradius);
-  min-width: 30vw;
+  /* min-width: 30vw; */
   height: max-content;
-  justify-self: self-start
+  margin-bottom: 1rem;
+  max-width: 100%
+  /* justify-self: self-start */
 }
+
 #news h2 {
   font-size: 1.125rem
 }
@@ -1098,6 +1111,9 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
   flex-direction: column;
   justify-content: center
 }
+.text > form[method=post][action="/polls/answer"]:nth-child(2) br {
+  display: none;
+}
 input[type="radio"] {
   vertical-align: text-bottom;
   margin: -1px .2rem 0
@@ -1106,49 +1122,69 @@ input[type="radio"] {
   vertical-align: middle;
   margin: -2px .2rem 0
 }
-html > body > table.main > tbody > tr >td.bottom  > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(2) {
-  grid-area: pollh2;
-  column-gap: normal;
-  background-color: var(--main);
-  border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 8px 0;
-  color: var(--headingnonclickable);
-  z-index: 1
+html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(2) {
+	/* grid-area: pollh2; */
+	/* column-gap: normal; */
+	background-color: var(--main);
+	border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
+	/* width: 100%; */
+	height: 100%;
+	text-align: center;
+	/* padding: 8px 0; */
+	color: var(--headingnonclickable);
+	/* z-index: 1; */
+	flex: 1 1 68%;
+  max-width: 68%;
+	order: 1;
+  border-bottom: 1px solid var(--innerbordercolor);
+
 }
-html > body > table.main > tbody > tr >td.bottom  > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(4) {
-  grid-area: statsh2;
-  column-gap: normal;
-  background-color: var(--main);
-  border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 8px 0;
-  color: var(--headingnonclickable);
-  z-index: 1
+html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(4) {
+	/* grid-area: statsh2; */
+	/* column-gap: normal; */
+	background-color: var(--main);
+	border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
+	/* width: 100%; */
+	height: 100%;
+	text-align: center;
+	/* padding: 8px 0; */
+	color: var(--headingnonclickable);
+	z-index: 1;
+	flex: 0 1 30%;
+	order: 2;
+  max-width: 30%;
+  border-bottom: 1px solid var(--innerbordercolor);
 }
-html > body > table.main > tbody > tr >td.bottom  > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(3) {
-  grid-area: poll;
-  margin-top: -1rem;
-  align-self: stretch;
-  line-height: 15px;
-  padding: 1rem;
-  background-color: var(--main);
-  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
-  filter: var(--filterdropshadow)
+html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(3) {
+	/* grid-area: poll; */
+	/* margin-top: -1rem; */
+  /* width: auto!important; */
+
+	align-self: stretch;
+	line-height: 1rem;
+	padding: 1rem;
+	background-color: var(--main);
+	border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+	filter: var(--filterdropshadow);
+	flex: 1 1 68%;
+  max-width: 68%;
+	order: 3;
 }
-html > body > table.main > tbody > tr >td.bottom  > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(5) {
-  grid-area: stats;
-  margin-top: -1rem;
-  line-height: 15px;
-  padding: 1rem;
-  background-color: var(--main);
-  align-self: stretch;
-  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
-  filter: var(--filterdropshadow)
+html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(5) {
+	/* grid-area: stats; */
+	/* margin-top: -1rem; */
+  /* width: auto!important; */
+	line-height: 1rem;
+	padding: 1rem 0.5rem;
+	background-color: var(--main);
+	align-self: stretch;
+	border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+	filter: var(--filterdropshadow);
+	flex: 0 1 30%;
+	order: 4;
+  max-width: 30%;
+  max-height: 100%;
+  /* width: 100%; */
 }
 td.bottom:nth-child(2) > table[width="800"]:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1),
 td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) {
@@ -1169,19 +1205,22 @@ td.bottom:nth-child(2)>table:nth-child(1)>tbody:nth-child(1)>tr:nth-child(1) b {
   box-sizing: border-box
 }
 @media only screen and (max-width:64rem) {
-  body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
+  table.main td#sidebar-container + td.bottom > table.main:not(table.main[width="100%"]) {
+    width: 100%!important;
+  }
+  /* body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
     display: grid;
     grid-template-areas: "bottom";
     grid-auto-columns: auto;
     grid-gap: 1rem
-  }
+  } */
   #sidebar-container {
-    display: none
+    display: none;
   }
-  body > table.main:nth-child(2) {
+  /* body > table.main:nth-child(2) {
     min-width: 100vw;
     width: auto!important
-  }
+  } */
 }
 #moresearch5 > td:nth-child(1) {
   max-width: 800px;
