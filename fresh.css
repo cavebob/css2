@@ -86,7 +86,7 @@ body {
 :root {
   --main: rgb(16, 17, 22);
   --dark: rgb(6, 6, 7);
-  --white: rgb(142, 165, 191);
+  --white: hsl(212, 28%, 72%);
   --headingnonclickable: #ffa94dd7;
   --tagText: #000000;
   --menuFont: hsl(206, 40%, 50%);
@@ -511,7 +511,15 @@ div.curuser-stats:nth-child(2) {
   position: absolute;
   z-index: 100;
   overflow-y: auto;
-  top: 1vh;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.515);
+}
+.notification-frame.js-notification-frame {
+  position: absolute;
+  z-index: 100;
+  overflow-y: auto;
+  top: 1%;
   left: 25%;
   right: 25%;
   background-color: var(--main);
@@ -2071,13 +2079,16 @@ table#details > tbody > tr > td > span[style*="float:right"] {
   display: flex;
   flex: 1 0 max-content;
   justify-content: flex-end;
-  align-items: center
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
 }
 .lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent,
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent {
   padding: .5rem .7rem;
-  line-height: 1rem
+  line-height: 1rem;
 }
+
 .film-info > table.contentlayout,
 .lottery_table2 > tbody > tr:nth-child(2) > td > div[id^=c].hideablecontent
  
