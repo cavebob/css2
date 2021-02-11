@@ -421,15 +421,80 @@ textarea:focus {
   /* align-items: center; */
 }
 #header td.embedded > a[href*="/"] {
+  box-sizing: border-box;
   min-width: 100%;
   min-height: 100%;
 }
 div#logo {
-  height: 4rem;
-  margin: 1rem;
-  background-image: url("hdblogo.png");
-  background-repeat: no-repeat;
-  background-size: contain
+  display: flex;
+  height: 3.65rem;
+  width: 100%;
+  margin: 1.175rem;
+  /* padding: -1rem; */
+  background: linear-gradient(45turn,hsl(2, 72%, 70%),hsl(48, 75%, 75%));
+  background-size: 600%;
+  -webkit-mask: url(hdblogo2.svg) left no-repeat;
+  mask: url("hdblogo2.svg") left no-repeat ;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+/* margin-right: 100%;  */
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+/* background-image: linear-gradient(-45deg, #53D6FF, #666BE1, #E45372, #F07C63) !important;
+background-size: 400% !important;
+background-clip: text;
+-webkit-background-clip: text;
+text-fill-color: transparent;
+-webkit-text-fill-color: transparent;
+-webkit-animation: Gradient 10s ease infinite !important;
+-moz-animation: Gradient 10s ease infinite !important;
+animation: Gradient 10s ease infinite !important;
+} */
+
+@-webkit-keyframes Gradient {
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+@-moz-keyframes Gradient {
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+@keyframes Gradient { 
+0%{background-position:0% 50%}
+100%{background-position:100% 50%}
+}
+#header td.embedded > a[href*="/"]:hover > div#logo {
+  background: 
+ /* linear-gradient(345deg, 
+  hsl(48, 75%, 75%) 0%,
+  #ea817d 45%,
+  hsl(210, 75%, 75%)  55%,
+  #ea817d 75%,
+  hsl(48, 75%, 75%) 100%) */
+  linear-gradient(345deg, 
+  hsl(210, 75%, 75%) 0%,
+  #ea817d 45%,
+  hsl(210, 75%, 75%)  55%,
+  #ea817d 75%,
+  hsl(48, 75%, 75%) 100%);
+
+  /* linear-gradient(355deg,  hsl(48, 75%, 75%) 0%,  #ea817d 17%,  hsl(48, 75%, 75%) 33%,  #ea817d 50%,  hsl(48, 75%, 75%)  66%,
+  #ea817d 84%,  hsl(48, 75%, 75%) 92%,  hsl(48, 75%, 75%)100% ) */
+  /* linear-gradient(345deg, hsl(48, 75%, 75%) 0%, #ea817d 10%, hsl(48, 75%, 75%) 50%, #ea817d 75%, hsl(48, 75%, 75%)100% ) */; 
+background-size: 400%;
+-webkit-animation: Gradient 1s ease-in-out infinite ;
+-moz-animation: Gradient 1s ease-in-out infinite ;
+animation: Gradient 2s linear ;
 }
 .footer {
   text-align: 0;
@@ -744,18 +809,13 @@ img[src*="starbig.gif"] {
 div.curuser-stats:nth-child(3) > a[href*="friends.php"] {
   -webkit-mask: url(friends.svg) center no-repeat;
   mask: url(friends.svg) center no-repeat;
-  margin-right: -1px;
-  display: inline-block
+  display: flex
 }
 div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   -webkit-mask: url(mytorrents.svg) center no-repeat;
   mask: url(mytorrents.svg) center no-repeat;
-  /* margin-right: -10px; */
-  display: inline-block
+  display: flex
 }
-/* .alert-box {
-  float: left
-} */
 .alert-box--news {
   background-color: #663399;
   color: var(--white);
@@ -763,10 +823,29 @@ div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
   font-size: .6875rem
 }
 .alert-box--notifications {
-  background-color: var(--UploadGreen);
-  color: var(--white);
+  display: flex;
+  align-items: center;
+  background-color: #16171c;
+  color: hsla(135, 43%, 49%, 0.849);
   font-weight: 700;
-  font-size: .6875rem
+  font-size: .6875rem;
+  height: 1.1rem;
+  padding: 0 0.4rem;
+  gap: 0.25rem;
+  cursor: pointer;
+  border:1px solid var(--innerbordercolor)
+  /* filter: brightness(50%) */
+  /* padding: 0.4rem; */
+}
+.js-notifications-count {
+  color: inherit;
+}
+.alert-box--notifications:hover {
+  background-color: hsla(135, 43%, 49%, 0.849);
+  color: var(--dark);
+  transform: scale(1.12);
+  padding: 0 0.4rem;
+  transition: all ease-in-out .25s;
 }
 .notification-overlay {
   position: absolute;
@@ -1307,6 +1386,27 @@ table.main:nth-child(2)>tbody:nth-child(1)>tr:nth-child(1)>td:nth-child(1)>table
 }
 .text > form[method=post][action="/polls/answer"]:nth-child(2) br {
   display: none;
+}
+table.poll > tbody {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+table.poll > tbody > tr {
+  flex: 1 1 100%;
+  display: flex;
+}
+table.poll > tbody > tr > td:first-child {
+  flex: 1 1 40%;
+  overflow-wrap: break-word;
+}
+table.poll > tbody > tr > td:first-child > nobr {
+  white-space: normal; 
+overflow-wrap: break-word !important;
+}
+table.poll > tbody > tr > td:last-child {
+  flex: 1 1 60%;
+  text-align: right;
 }
 input[type="radio"] {
   vertical-align: text-bottom;
