@@ -291,36 +291,76 @@ body > table.main:nth-child(3) {
   /* flex-basis: 100px; */
   /* flex: 0 1 auto; */
   /* padding: 0 5px; */
-  border-bottom: 2px solid transparent;
-  -moz-transition: all 0.51s ease; 
-  -webkit-transition: all 0.51s ease; 
-  -o-transition: all 0.51s ease;
-  transition:all 0.51s ease;
+  border-bottom: 1px solid transparent;
+  -moz-transition: all 0.25s ease; 
+  -webkit-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease;
+  transition:all 0.25s ease;
+  width: max-content;
+}
+.menunavigation_new  {
+  /* margin-bottom: -2px; */
 }
 .menunavigation:hover > a.normal,
 .menunavigation_new:hover > a.normal{
   background: var(--svgbghover);
   border-radius: var(--inputborderradius);
   color: var(--dark);
-  border-bottom: 2px solid transparent;
-  -moz-transition: all 0.51s ease; 
-  -webkit-transition: all 0.51s ease; 
-  -o-transition: all 0.51s ease;
-  transition:all 0.51s ease;
+  /* border-bottom: 2px solid transparent; */
+  -moz-transition: all 0.25s ease; 
+  -webkit-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease;
+  transition:all 0.25s ease;
   /* border-bottom: 2px solid var(--menuHL) */
 }
-td.menunavigation_new a.normal:before {
+@-webkit-keyframes Gradient {
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+@-moz-keyframes Gradient {
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+@keyframes Gradient { 
+0%{background-position:0% 50%}
+100%{background-position:100% 50%}
+}
+td.menunavigation_new a.normal::after {
   content: "";
   position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
   height: 2px;
+  bottom: -4px;
+  margin-bottom: -2px;
+  transform: scaleX(120%);
+  border-radius: 3px;
   z-index: 99;
-  transform-origin: center;
-  transform: scaleX(1);
-  transition: transform .4s;
-  /* animation: 1.6s infinite alternate menuflash */
+  background: linear-gradient(345deg,hsl(225, 75%, 63%) 0%, hsl(210, 75%, 65%) 33.3%, hsl(225, 75%, 63%) 66.3%,hsl(210, 75%, 65%)  100%);
+  background-size: 300%;
+  opacity:1;
+  display: block;
+  -moz-transition: all 0.25s ease; 
+  -webkit-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease;
+  transition:all 0.3s ease;
+  animation: Gradient 2s ease infinite;
+
+}
+td.menunavigation_new:hover a.normal::after {
+  transform: scaleX(0%);
+  -moz-transition: all 0.25s ease; 
+  -webkit-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease;
+  transition:all 0.25s ease;
+}
+td.menunavigation_new:hover > a.normal{
+  background: linear-gradient(345deg,hsl(220, 76%, 70%) 0%, hsl(212, 75%, 70%) 33.3%, hsl(220, 76%, 70%) 66.3%,hsl(212, 75%, 70%)  100%);
+  background-size: 600%;
+  opacity:1;
+  animation: Gradient 2s ease infinite;
+  -moz-transition: all 0.25s ease; 
+  -webkit-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease;
+  transition:all 0.25s ease;
 }
 ul#searchselector {
   min-width: 277px
@@ -469,33 +509,22 @@ div#logo {
   width: 100%;
   margin: 1.175rem;
   background: linear-gradient(45turn,hsl(2, 72%, 70%),hsl(48, 75%, 75%));
-  background-size: 600%;
+
   -webkit-mask: url(hdblogo2.svg) left no-repeat;
   mask: url("hdblogo2.svg") left no-repeat ;
   -webkit-mask-size: contain;
   mask-size: contain;
 }
-@-webkit-keyframes Gradient {
-  0%{background-position:0% 50%}
-  100%{background-position:100% 50%}
-}
-@-moz-keyframes Gradient {
-  0%{background-position:0% 50%}
-  100%{background-position:100% 50%}
-}
-@keyframes Gradient { 
-0%{background-position:0% 50%}
-100%{background-position:100% 50%}
-}
+
 #header td.embedded > a[href*="/"]:hover > div#logo {
-  background:   linear-gradient(345deg,hsl(210, 75%, 75%) 0%,#ea817d 45%,hsl(210, 75%, 75%)  55%,#ea817d 75%,hsl(48, 75%, 75%) 100%);
+  background:   linear-gradient(345deg,hsl(48, 75%, 75%)  0%,#ea817d 25%,hsl(210, 75%, 75%)  50%,hsl(2, 72%, 70%) 75%,hsl(48, 75%, 75%) 100%);
  /* linear-gradient(345deg, hsl(48, 75%, 75%) 0%, #ea817d 45%, hsl(210, 75%, 75%)  55%, #ea817d 75%, hsl(48, 75%, 75%) 100%) */
   /* linear-gradient(355deg,  hsl(48, 75%, 75%) 0%,  #ea817d 17%,  hsl(48, 75%, 75%) 33%,  #ea817d 50%,  hsl(48, 75%, 75%)  66%,  #ea817d 84%,  hsl(48, 75%, 75%) 92%,  hsl(48, 75%, 75%)100% ) */
   /* linear-gradient(345deg, hsl(48, 75%, 75%) 0%, #ea817d 10%, hsl(48, 75%, 75%) 50%, #ea817d 75%, hsl(48, 75%, 75%)100% ) */
-background-size: 400%;
+background-size: 800%;
 -webkit-animation: Gradient 1s ease-in-out infinite ;
 -moz-animation: Gradient 1s ease-in-out infinite ;
-animation: Gradient 2s linear ;
+animation: Gradient 5s ease-in-out infinite;
 }
 .footer {
   text-align: 0;
