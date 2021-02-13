@@ -402,7 +402,8 @@ input[type=reset] {
 button:hover,
 input[type=button]:hover,
 input[type=submit]:hover,
-input[type=reset]:hover {
+input[type=reset]:hover,
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:hover {
 border-radius: var(--inputborderradius);
 background: var(--svgbghover);
 color: var(--dark);
@@ -528,8 +529,9 @@ animation: Gradient 5s ease-in-out infinite;
 .footer {
   text-align: 0;
   color: var(--menuFont);
-  filter: brightness(80%);
-  margin: 1rem
+  filter: brightness(75%);
+  margin: 1rem;
+  margin-bottom: 0;
 }
 div#sitesearch {
   display: flex;
@@ -840,11 +842,9 @@ img[src*="starbig.gif"] {
   transition:all 0.25s ease;
 }
 .mytorrents {
-
   background: var(--menuFont);
   -webkit-mask: url(mytorrents.svg) center no-repeat;
   mask: url(mytorrents.svg) center no-repeat;
-  /* padding: 0 5px; */
   width: 2.1875rem;
   height: 1.25rem;
   border-radius: var(--inputborderradius);
@@ -1280,13 +1280,12 @@ select[name=imdblt] {
   height: var(--inputheight)
 }
 #sidebar-container {
-  grid-area: sidebar;
   display: flex;
   max-width: 200px;
   border: 1px solid var(--bordercolor);
   border-radius: var(--maincolortableborderradius);
   padding-left: 0px!important;
-  top: calc(124px + 27px + 3em);
+  top: calc(118px + 25px + 1rem);
   height: min-content;
   position: sticky;
   background-color: var(--main);
@@ -1833,6 +1832,9 @@ only screen and (min-resolution:1.5dppx) {
   text-align: justify;
   font-size: 0.625rem;
   padding: 1px 45px 0 8px
+}
+.label.collapse {
+  cursor: default;
 }
 .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   margin: 0;
@@ -2804,12 +2806,83 @@ input#tagassociate {
   background-color: var(--main);
   border-radius: var(--maincolortableborderradius)
 }
+td.bottom > table[width="800"] + table.main + h2 + table[width="100%"]:nth-last-child(2),
+td.bottom > h1 + table[width="660"][cellpadding="4"] {
+  max-width: 64rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main);
+  border-radius: var(--maincolortableborderradius);
+  padding: 1rem;
+}
+
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:first-child {
+  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  background-color: var(--innerheadingrowcolor);
+  line-height: 1.5rem;
+  /* height: 2rem; */
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--innerbordercolor);
+  border-bottom: 0;
+  gap: 0 0.2rem;
+  /* padding: 0 1rem; */
+  margin: 0!important
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(2) > td {
+  background-color: var(--innerheadingrowcolor);
+  line-height: 1.25rem;
+  /* padding: 0 1rem; */
+  border: 1px solid var(--innerbordercolor);
+  border-top: 0;
+  width: 50%;
+  /* border-collapse: collapse; */
+
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(2) > td:first-child {
+  border-right: 0;
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(2) > td:last-child {
+  border-left: 0;
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(3) > td {
+  padding: 0.75rem;
+  border: 1px solid var(--innerbordercolor);
+  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-top: 0;
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4) > td > form {
+  display: flex;
+  gap: 0.5rem;
+
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0;
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font {
+  display: flex; 
+  gap: 0.25rem;
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a {
+  font-size: 0.6875rem;
+  line-height: 1.5rem;
+  border: 1px solid var(--innerbordercolor); 
+  padding: 0 0.4rem;
+  border-radius: var(--inputborderradius);
+  background: var(--input);
+}
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1),
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-last-child(2),
 html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) > tr:nth-child(1) 
 > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p.sub,
 td.comment > p.sub,
-td[style="border: 1px black dashed"] > p.sub {
+td[style="border: 1px black dashed"] > p.sub,
+td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody > tr > td > p.sub {
   border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
   background-color: var(--innerheadingrowcolor);
   height: 2rem;
@@ -2869,7 +2942,8 @@ td.bottom>p:first-child~table[cellpadding="3"]:first-of-type th {
 }
 .readpost,
 html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) 
-> tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main {
+> tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main,
+td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody > tr > td > p.sub + table.main {
   border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
   background-color: #0000003a;
   margin-bottom: .7rem;
@@ -4268,11 +4342,13 @@ button:focus,
 input[type=button]:focus,
 input[type=submit]:focus,
 input[type=reset]:focus,
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:focus,
 .btn:active,
 button:active,
 input[type=button]:active,
 input[type=submit]:active,
-input[type=reset]:active  {
+input[type=reset]:active,
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:active  {
   /* box-shadow: 0 0 2px 1px var(--focusinputbuttoncolor); */
   border: 1px solid var(--borderfocus);
   /* filter: invert(100); */
@@ -4337,4 +4413,15 @@ body > table.main > tbody > tr > td.bottom > h1.center + p + table[width="750"] 
 body > table.main > tbody > tr > td.bottom > p + table[width="750"] + p:empty + p + table[width="750"] td.text td.embedded[bgcolor="#ECE9D8"]:last-child {
   border-left: 0;
   border-radius: 0 var(--inputborderradius) var(--inputborderradius) 0 ;
+}
+img[src*="bar.gif"]::after {
+  content: "";
+  display: inline-block;
+background: red;
+width: 100px;
+height: 50px;
+position: relative;
+right: 0;
+bottom: 0;
+/* text-indent: -9999px; */
 }
