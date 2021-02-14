@@ -1,3 +1,39 @@
+:root {
+  --main: rgb(16, 17, 20);
+  --dark: rgb(6, 6, 7);
+  --white: hsl(212, 28%, 72%);
+  --headingnonclickable: #ffa94dd7;
+  --tagText: #000000;
+  --menuFont: #4d86b3;
+  --menuHL: rgb(86, 182, 231);
+  --input: rgba(255, 255, 255, 0.019);
+  --searchDropdown: #ffffff07;
+  --selected: #356286;
+  --user: #ffd56b;
+  --completed: #ffb86c;
+  --internal: #ffcd50;
+  --RatioBlue: #1685ca;
+  --UploadGreen: #50fa7b;
+  --DownBonusRed: #ff5555;
+  --border: 1px solid var(--bordercolor);
+  --bordercolor: transparent;
+  --innerbordercolor: rgba(57, 135, 199, 0.20);
+  --innercardcolor: rgba(5, 5, 5, 0.33);
+  --innerheadingrowcolor: rgba(2, 2, 5, 0.500);
+  --borderhighlight: var(--menuHL);
+  --filterdropshadow: 0;
+  --bs: 0px 4px 5px 0px var(--dark); 
+  --inputborderradius: 0.4rem;
+  --maincolortableborderradius: 0.5625rem;
+  --inputheight: 1.5rem;
+  --basefontsize: 0.6875rem;
+  --innercardborderradius: 0.5rem;
+  --menuborderradius: 0.5rem;
+  --svgbghover: linear-gradient(145deg, hsl(195, 76%, 49%), hsl(215, 76%, 63%));
+  --focusinputbuttoncolor: hsl(204, 50%, 50%);
+  --borderhover: hsla(207, 56%, 60%, 0.5);
+  --borderfocus: steelblue;
+}
 *,
 body {
   color: var(--white)
@@ -87,42 +123,7 @@ body {
 .std-content {
   border-collapse: collapse
 }
-:root {
-  --main: rgb(16, 17, 22);
-  --dark: rgb(6, 6, 7);
-  --white: hsl(212, 28%, 72%);
-  --headingnonclickable: #ffa94dd7;
-  --tagText: #000000;
-  --menuFont: #4d86b3;
-  --menuHL: rgb(86, 182, 231);
-  --input: rgba(255, 255, 255, 0.019);
-  --searchDropdown: #ffffff07;
-  --selected: #356286;
-  --user: #ffd56b;
-  --completed: #ffb86c;
-  --internal: #ffcd50;
-  --RatioBlue: #1685ca;
-  --UploadGreen: #50fa7b;
-  --DownBonusRed: #ff5555;
-  --border: 1px solid var(--bordercolor);
-  --bordercolor: transparent;
-  --innerbordercolor: rgba(57, 135, 199, 0.20);
-  --innercardcolor: rgba(5, 5, 5, 0.33);
-  --innerheadingrowcolor: rgba(2, 2, 5, 0.500);
-  --borderhighlight: var(--menuHL);
-  --filterdropshadow: 0;
-  --bs: 0px 4px 5px 0px var(--dark); 
-  --inputborderradius: 0.4rem;
-  --maincolortableborderradius: 0.5625rem;
-  --inputheight: 1.5rem;
-  --basefontsize: 0.6875rem;
-  --innercardborderradius: 0.5rem;
-  --menuborderradius: 0.5rem;
-  --svgbghover: linear-gradient(145deg, hsl(195, 76%, 49%), hsl(215, 76%, 63%));
-  --focusinputbuttoncolor: hsl(204, 50%, 50%);
-  --borderhover: hsla(207, 56%, 60%, 0.5);
-  --borderfocus: steelblue;
-}
+
 * {
   margin: 0;
   text-decoration: none;
@@ -373,6 +374,7 @@ ul#searchselector {
   padding: 3px 5px;
   cursor: default;
 }
+.button,
 button,
 input,
 select,
@@ -389,6 +391,7 @@ input[type=text] {
   padding: 0 .5rem
 }
 .btn,
+.button,
 button,
 input[type=button],
 input[type=submit],
@@ -399,6 +402,7 @@ input[type=reset] {
   height: var(--inputheight)
 }
 .btn:hover,
+.button:hover,
 button:hover,
 input[type=button]:hover,
 input[type=submit]:hover,
@@ -976,8 +980,8 @@ ul#tabs, td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbo
   background: var(--main);
   overflow: clip;
   border-radius: var(--menuborderradius);
-  width: 800px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 50rem;
   margin-bottom: 0.5rem;
 }
 ul#tabs {
@@ -4050,7 +4054,12 @@ div.rc__downloads {
 	font-size: 0.9rem;
 	opacity: 1;
 }
+.rc__actions-ignore, .rc__actions-wishlist {
+  text-transform: uppercase;
+  font-size: 0.6125rem;
+} 
 .rc__actions-ignore:hover, .rc__actions-wishlist:hover {
+  /* text-transform: uppercase; */
     background: var(--menuFont);
     color: var(--dark);
     border-color: var(--menuFont);
@@ -4067,6 +4076,7 @@ div.rc__downloads {
     /* margin-bottom: 40vh; */
     gap: 1rem;
     margin: auto;
+    margin-top: 0;
 }
 div.rc__toggle {
 	line-height: 2.5rem;
@@ -4075,7 +4085,6 @@ div.rc__toggle {
 }
 #tv-show-list {
     box-sizing: border-box;
-
     display: flex;
     flex-direction: row;
     max-width: 100%;
@@ -4083,14 +4092,16 @@ div.rc__toggle {
     justify-content: space-evenly;
     flex-grow: 0;
     flex-shrink: 1;
-    /* min-width: 50px; */
-    /* width: auto; */
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 1rem;
+    gap: 1rem;
+}
+#tv-show-list * {
+  box-sizing: border-box;
 }
 #tv-episode-list {
     box-sizing: border-box;
-
     flex-grow: 1;
     flex-shrink: 1;
     /* flex: 1; */
@@ -4099,10 +4110,11 @@ div.rc__toggle {
     overflow-x: hidden;
 }
 .show-header {
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     width: 500px;
     object-fit:cover;
     border-radius: 0.3rem;
+    position:relative;
 }
 .show-header img.show-banner {
     width: 500px;
@@ -4414,14 +4426,259 @@ body > table.main > tbody > tr > td.bottom > p + table[width="750"] + p:empty + 
   border-left: 0;
   border-radius: 0 var(--inputborderradius) var(--inputborderradius) 0 ;
 }
-img[src*="bar.gif"]::after {
-  content: "";
-  display: inline-block;
-background: red;
-width: 100px;
-height: 50px;
-position: relative;
-right: 0;
-bottom: 0;
-/* text-indent: -9999px; */
+
+div#searchbox {
+  display: flex;
+  flex-direction: column;
+  background:inherit;
+}
+div#searchbox #searchcriteria {
+  background: var(--main);
+  padding: 1rem;
+  border-radius: var(--maincolortableborderradius);
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.5rem;
+}
+#searchcriteria_film {
+  border-bottom: 1px solid var(--innerbordercolor);
+}
+#tvform, #filmform{
+  /* vertical-align: middle; */
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+div.searchgenres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  row-gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+div.searchgenres label {
+  min-width: 104px;
+  flex: 0 1 16%
+}
+div.searchgenres input {
+  min-width: 16px;
+  flex: 0 0 3%
+}
+#tvstatboxes {
+  display: flex !important;
+  flex-wrap:wrap;
+  gap: 1rem;
+  justify-content: center
+  /* flex-flow: row wrap; */
+}
+div.statbox {
+  background: var(--main);
+  border: 0;
+  padding: 0;
+  max-width: 52rem;
+  width: 100%;
+  margin: 0;
+  border: 1px solid var(--innerbordercolor);
+  overflow: clip;
+}
+h2.stattitle {
+  border-bottom: 1px solid var(--innerbordercolor);
+  margin: 0;
+  background: var(--innerheadingrowcolor);
+  flex: 100%;
+}
+#tvstatboxes .statbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#tvstatboxes .statbox_banners, #tvstatboxes .statbox_posters {
+	margin: auto;
+}
+#tvstatboxes .statbox_banners {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 1rem;
+  gap: 1rem;
+}
+.film_morelink, a.tv_morelink {
+	position: relative;
+	right: auto;
+	padding: 0;
+	font-size: 1rem;
+	background-color: var(--innercardcolor);
+	color: var(--menuFont);
+	bottom: auto;
+	cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  margin: 0 -1rem;
+  flex: 100%;
+  padding: 0.5rem;
+  border-top: 1px solid var(--innerbordercolor);
+  /* margin-top: 1rem; */
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.overlay-popupui > .button {
+  visibility: hidden;
+  background: var(--main);
+  position: relative;
+float: right;
+display:flex;
+align-items: flex-end;
+	opacity: 1;
+  width: max-content;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  height: auto;
+  margin: 0.25rem;
+}
+.overlay-popupui:hover > .button {
+	visibility: visible;
+  cursor: pointer;
+  opacity: 0.7
+}
+.overlay-popupui:hover > .button:hover {
+  /* filter: drop-shadow(0px 0px 50px black); */
+	background: var(--svgbghover);
+  opacity: 1;
+}
+div.statposter_views {
+	position: absolute;
+	bottom: 2px;
+	left: auto;
+	right: 2px;
+	padding: 2px 5px;
+	border-radius: 0.2rem;
+	border: 1px solid var(--innerbordercolor);
+	background-color: var(--main);
+	color: var(--menuFont);
+	font-size: 0.9rem;
+	opacity: 1;
+}
+img.statbanner{
+  border: 0;
+  border-radius: 0.3rem;
+}
+div.banner_container {
+  width: auto;
+  flex: 1 1 45%;
+}
+div.statbox_banners > div:first-child {
+  flex: 1 1 100%;
+  width: auto;
+}
+.statbox img, #tv-show-list img,  .rc.js-rc img{
+  object-fit: contain;
+  filter: brightness(85%) contrast(110%) 
+}
+div .bannertext {
+	font-size: 2rem;
+  text-align: center;
+}
+@media only screen and (max-width:64rem) {
+  div.statbox {
+    background: var(--main);
+    border: 0;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+
+  }
+}
+@media only screen and (max-width:720px) {
+  div.curuser-stats:nth-child(3) {
+font-size: 0;
+  }
+}
+div#tv-episode-list {
+  border: 0;
+  /* overflow: clip scroll; */
+}
+.show-torrents {
+  /* overflow: scroll; */
+  max-width: 400px;
+}
+.show-title {
+  position: sticky;
+  top: 0vh;
+  height: 2.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  font-weight: 700;
+  font-size: 1rem;
+  background: #09090c;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--innerbordercolor);
+  z-index: 1;
+  /* overflow: hidden; */
+  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+}
+.show-preference {
+  position: sticky;
+  top: 2.5rem;
+  background: #09090c;
+  line-height: 1.5rem;
+  border: 1px solid var(--innerbordercolor);
+  border-top: 0
+}
+.show-season {
+  padding: 0.5rem;
+  line-height: 1rem;
+}
+.show-season .season-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.25rem;
+  border: 1px solid var(--innerbordercolor);
+  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  background: var(--innercardcolor)
+}
+.show-season .season-torrents, .season-packs:last-child {
+  text-align: left;
+  border: 1px solid var(--innerbordercolor);
+  border-top: 0;
+  padding: 0.25rem;
+  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+}
+.season-packs {
+  text-align: left;
+  border: 1px solid var(--innerbordercolor);
+  border-top: 0;
+  padding: 0.25rem;
+}
+.tv-torrent {
+  padding-left: 0.5rem;
+}
+.tv-torrent:last-child {
+  padding-bottom: 0.25rem;
+}
+.season-torrents {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.season-episode {
+
+  border-bottom: 1px solid var(--innerbordercolor)
+}
+.season-episode:last-child {
+  border-bottom: 0
+}
+.season-episode .episode-title{
+  padding-left: 0.25rem;
+  font-weight: 700;
 }
