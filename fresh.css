@@ -105,8 +105,9 @@ a.js-wishlistdel:hover,
 a[href*="imdb.com/name/nm"] img:hover,
 span.genres:hover,
 ul.showlinks:hover,
-a[href*="javascript:addRss"]:hover  {
-  filter: brightness(100%)
+a[href*="javascript:addRss"]:hover,
+#details > tbody:nth-child(1) > tr:nth-child(1) > td > a[id^="rss"]:hover  {
+  filter: brightness(120%)
 }
 #news h1,
 #news h2 {
@@ -514,8 +515,7 @@ div#logo {
   width: 100%;
   margin: 1.175rem;
   background: linear-gradient(45turn,hsl(2, 72%, 70%),hsl(48, 75%, 75%));
-
-  -webkit-mask: url(hdblogo2.svg) left no-repeat;
+  -webkit-mask: url("hdblogo2.svg") left no-repeat;
   mask: url("hdblogo2.svg") left no-repeat ;
   -webkit-mask-size: contain;
   mask-size: contain;
@@ -626,6 +626,10 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"] {
   height: 1.5rem;
   padding: 0 0.5rem;
   gap: 1rem;
+  /* font-weight: 500; */
+  /* background: var(--svgbghover);
+  background-clip: text;
+  text-rendering:auto; */
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -635,14 +639,15 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"]:ho
   border-radius: var(--inputborderradius);
   background: var(--svgbghover);
   color: var(--dark);
+  /* background-clip: initial; */
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
   transition:all 0.25s ease;
 }
 .inbox, .inboxnew {
-  -webkit-mask: url(mail.svg) center no-repeat;
-  mask: url(mail.svg) center no-repeat;
+  -webkit-mask: url(mailoptimized.svg) center no-repeat;
+  mask: url(mailoptimized.svg) center no-repeat;
   height: 1.5rem;
   align-self: center;
 }
@@ -651,9 +656,10 @@ div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   border-radius: var(--inputborderradius);
 }
 .inbox{
-  background: var(--menuFont);
+  background: var(--svgbghover);
   border-radius: var(--inputborderradius);
   width: 2.1875rem;
+  filter: brightness(80%);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -764,12 +770,14 @@ div.curuser-stats:nth-child(1) > a[href*="my.php"]:hover {
 div.curuser-stats:nth-child(1) > a[href*="my.php"]::before {
   content: "";
   display: flex;
-  background: var(--menuFont);
-  -webkit-mask: url(profile.svg) center no-repeat;
-  mask: url(profile.svg) center no-repeat;
-  transform: scale(1.1);
+  background: var(--svgbghover);
+  -webkit-mask: url(profileo.svg) center no-repeat;
+  mask: url(profileo.svg) center no-repeat;
+  -webkit-mask-size: 70%;
+  mask-size: 70%;
   width: 2.1875rem;
   height: 1.25rem;
+  filter: brightness(85%);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -778,12 +786,14 @@ div.curuser-stats:nth-child(1) > a[href*="my.php"]::before {
 div.curuser-stats:nth-child(1) > a[href*="logout.php"]::before {
   content: "";
   display: flex;
-  background: var(--menuFont);
+  background: var(--svgbghover);
   -webkit-mask: url(off1.svg) center no-repeat;
   mask: url(off1.svg) center no-repeat;
+  -webkit-mask-size: 70%;
   mask-size: 55%;
   width: 2.1875rem;
   height: 1.25rem;
+  filter: brightness(85%);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -835,24 +845,26 @@ img[src*="starbig.gif"] {
   background-image: url("star2.png")!important
 }
 .buddylist {
-  background: var(--menuFont);
+  background: var(--svgbghover);
   -webkit-mask: url(friends.svg) center no-repeat;
   mask: url(friends.svg) center no-repeat;
   width: 2.1875rem;
   height: 1.25rem;
   border-radius: var(--inputborderradius);
+  filter: brightness(85%);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
   transition:all 0.25s ease;
 }
 .mytorrents {
-  background: var(--menuFont);
-  -webkit-mask: url(mytorrents.svg) center no-repeat;
-  mask: url(mytorrents.svg) center no-repeat;
+  background: var(--svgbghover);
+  -webkit-mask: url(mytorren+ts7.svg) center no-repeat;
+  mask: url(mytorrents7.svg) center no-repeat;
   width: 2.1875rem;
   height: 1.25rem;
   border-radius: var(--inputborderradius);
+  filter: brightness(85%);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -2171,34 +2183,68 @@ a[href*="javascript:delBookmark"],
 a[href*="javascript:addRss"]  {
   margin-top: 3px;
   display: inline-block;
-  /* height: 16px; */
-  filter: brightness(70%);
-  margin-right: 2px;
+  /* margin-right: 2px; */
   cursor: pointer;
-  vertical-align: bottom
+  vertical-align: bottom;
+  filter: brightness(90%);
 }
 a.js-download {
-  background-image: url("download.png")
+  background: var(--svgbghover);
+  -webkit-mask: url(download.svg) center no-repeat;
+  mask: url(download.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%)
 }
 a.js-rssadd {
-  background-image: url("rssadd.png")
+  background: var(--svgbghover);
+  -webkit-mask: url(rss2.svg) center no-repeat;
+  mask: url(rss2.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%);
 }
 a.js-rssdel {
-  background-image: url("rssdel.png")
+  background: var(--DownBonusRed);
+  -webkit-mask: url(rss2.svg) center no-repeat;
+  mask: url(rss2.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%);
 }
 a.js-bookmarkadd {
-  background-image: url("bookmarkadd.png")
+  /* vertical-align:middle; */
+  background: var(--svgbghover);
+  -webkit-mask: url(bookmark.svg) center no-repeat;
+  mask: url(bookmark.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%)
 }
 a.js-bookmarkdel,
 a[href*="javascript:delBookmark"] {
-  background-image: url("bookmarkdel.png");
-  background-repeat: no-repeat
+  background: var(--DownBonusRed);
+  -webkit-mask: url(bookmark.svg) center no-repeat;
+  mask: url(bookmark.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%)
 }
 a.js-wishlistadd {
-  background-image: url("wishlist.png")
+  -webkit-mask: url(list2.svg) center no-repeat;
+  mask: url(list2.svg) center no-repeat;
+  background: var(--svgbghover);
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%)
 }
 a.js-wishlistdel {
-  background-image: url("wishlistdel.png")
+  background: var(--DownBonusRed);
+  -webkit-mask: url("list2.svg") center no-repeat;
+  mask: url("list2.svg") center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%)
 }
 #details table.fourcell>tbody>tr>td,
 #torrent-list td:hover button[onclick^=hidetorrent],
@@ -2434,16 +2480,24 @@ a.index.js-download {
   margin: 0
 }
 #details > tbody:nth-child(1) > tr:nth-child(1) > td > a[id^="rss"] {
-  background-image: url(rssadd.png);
+  background: var(--svgbghover);
+  -webkit-mask: url(rss2.svg) center no-repeat;
+  mask: url(rss2.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%);
   margin-right: 3px
 }
 a.index.js-download {
   display: flex;
   padding: .3rem .2rem;
   background-image: none;
+  -webkit-mask: none;
+  mask: none;
   text-align: center;
   font-weight: 700;
   align-items: center;
+  width: auto;
   filter: brightness(100%)
 }
 table#details > tbody > tr > td > span[style*="float:right"] {
@@ -2776,7 +2830,7 @@ table.tablesorter.table_other_copies > tbody > tr {
   padding-bottom: 0.2rem;
   box-sizing: border-box
 }
-#details button,
+/* #details button,
 #details form:nth-child(2) > input {
   font-size: 0.625rem;
   border-radius: var(--inputborderradius);
@@ -2792,7 +2846,7 @@ table.tablesorter.table_other_copies > tbody > tr {
   background-color: #4682b4;
   color: var(--dark);
   font-size: 0.625rem
-}
+} */
 #details .js-tagcontent {
   display: flex;
   gap: 0.2rem
@@ -4650,7 +4704,11 @@ div#tv-episode-list {
   padding: 0.25rem;
 }
 .tv-torrent {
-  padding-left: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.25rem;
+  align-items: center;
+  padding: 0.15rem 0 0.15rem 0.5rem;
 }
 .tv-torrent:last-child {
   padding-bottom: 0.25rem;
@@ -4777,23 +4835,100 @@ li.notorrents h3:not(#details) {
 #showpage img[src*="/download.gif"], #showpage img.minicon {
   display: none;
 }
-#showpage a.js-download {
+#showpage a.js-download, .torrent-download.js-download {
   margin: 0;
-  background-image: url("download.png");
-  width: 16px;
-  height: 16px;
+  background: var(--svgbghover);
+  -webkit-mask: url(download.svg) center no-repeat;
+  mask: url(download.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%)
+}
+.tv-torrent-watched,
+.season-watched {
+  display: inline-block;
+  background: var(--svgbghover);
+  -webkit-mask: url(watched5.svg) center no-repeat;
+  mask: url(watched5.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--inputborderradius);
+  /* -moz-transition: all 0.25s ease; 
+  -webkit-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease;
+  transition:all 0.25s ease; */
+  vertical-align: middle;
+ margin: 0;
+ cursor: pointer;
+ filter: brightness(90%)
+}
+.tv-torrent-watched:hover,
+.season-watched:hover {
+  filter: brightness(120%)
 }
 a[href*="javascript:addRss"] {
   display: inline-block;
   margin: 0;
-  background-image: url("rssadd.png");
-  width: 16px;
-  height: 16px;
+  background: var(--svgbghover);
+  -webkit-mask: url(rss2.svg) center no-repeat;
+  mask: url(rss2.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%);
   vertical-align: middle;
 }
 a.js-rssdel {
   margin: 0;
-  background-image: url("rssdel.png");
-  width: 16px;
-  height: 16px;
+  background: var(--DownBonusRed);
+  -webkit-mask: url(rss2.svg) center no-repeat;
+  mask: url(rss2.svg) center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%);
+}
+div#list-container {
+
+}
+h1#list-title:not(#details) {
+  color: var(--white);
+}
+span.list-name {
+  color: var(--headingnonclickable);
+  font-size: 1.25rem;
+}
+div.list-description {
+  background: var(--main);
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: var(--maincolortableborderradius);
+  /* display: flex;
+  flex-flow: row wrap; */
+  gap: 0.5rem;
+  max-width: 64rem;
+}
+div.item {
+	margin: 0.5rem;;
+	/* display: flex; */
+	width: 750px;
+	vertical-align: text-bottom;
+}
+div.item > h2 {
+  background-color: var(--innerheadingrowcolor);
+  border: 1px solid var(--innerbordercolor);
+  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+}
+div.item-body {
+  background: var(--main);
+  box-sizing: border-box;
+  /* padding: 1rem; */
+  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+  border: 1px solid var(--innerbordercolor);
+border-top: 0;
+  /* display: flex;
+  flex-flow: row wrap; */
+  gap: 0.5rem;
+  max-width: 64rem;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
 }
