@@ -3855,13 +3855,25 @@ img[src*="starbig.gif"][alt="Donor"] {
       height: 10px;
       padding-left: 11px;
 }
-img[src*="disabled.gif"][alt="Disabled"] { 
+img[src*="disabled.gif"] { 
   display: inline-block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
     width: 11px;
     height: 11px;
     padding-left: 11px;
+    -webkit-mask: url("disabled.svg") center no-repeat;
+    mask: url("disabled.svg") center no-repeat;
+    background: rgb(200, 50, 50);
+    margin-bottom: -1px;
+}
+img[src*="disabledbig.gif"] { 
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    padding-left: 16px;
     -webkit-mask: url("disabled.svg") center no-repeat;
     mask: url("disabled.svg") center no-repeat;
     background: rgb(200, 50, 50);
@@ -3874,6 +3886,18 @@ img[src*="warned.gif"][alt="Warned"] {
     width: 13px;
     height: 13px;
     padding-left: 13px;
+    -webkit-mask: url("warned.svg") center no-repeat;
+    mask: url("warned.svg") center no-repeat;
+    background: rgb(200, 50, 50);
+    /* margin-bottom: -1px; */
+}
+img[src*="warnedbig.gif"][alt="Warned"] { 
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    padding-left: 16px;
     -webkit-mask: url("warned.svg") center no-repeat;
     mask: url("warned.svg") center no-repeat;
     background: rgb(200, 50, 50);
