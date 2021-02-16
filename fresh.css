@@ -2,7 +2,7 @@
   --main: rgb(16, 17, 20);
   --dark: rgb(6, 6, 7);
   --white: hsl(212, 28%, 72%);
-  --headingnonclickable: #ffa94dd7;
+  --headingnonclickable: hsla(31, 100%, 65%, 0.843);
   --tagText: #000000;
   --menuFont: #4d86b3;
   --menuHL: rgb(86, 182, 231);
@@ -29,7 +29,7 @@
   --basefontsize: 0.6875rem;
   --innercardborderradius: 0.5rem;
   --menuborderradius: 0.5rem;
-  --svgbghover: linear-gradient(145deg, hsl(195, 76%, 49%), hsl(215, 76%, 63%));
+  --svgbghover: linear-gradient(145deg, hsl(195, 76%, 49%), #5995e8);
   --focusinputbuttoncolor: hsl(204, 50%, 50%);
   --borderhover: hsla(207, 56%, 60%, 0.5);
   --borderfocus: steelblue;
@@ -409,7 +409,8 @@ button:hover,
 input[type=button]:hover,
 input[type=submit]:hover,
 input[type=reset]:hover,
-td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:hover {
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:hover,
+div.list-links > a:hover {
 border-radius: var(--inputborderradius);
 background: var(--svgbghover);
 color: var(--dark);
@@ -991,7 +992,7 @@ td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-ch
 }
 ul#tabs, td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1)  {
   background: var(--main);
-  overflow: clip;
+  overflow: hidden;
   border-radius: var(--menuborderradius);
   width: 100%;
   max-width: 50rem;
@@ -2523,7 +2524,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
   display: flex;
   border-radius: var(--innercardborderradius);
   height: 300px;
-  overflow: clip
+  overflow: hidden
 }
 #details table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"],
 .film-info > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a[href*="imdb.com/title"],
@@ -2629,7 +2630,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
 #details > tbody:nth-child(1) > tr:nth-child(3) > td > div.hideablecontent > div.grid {
   display: inline-flex;
   border-radius: var(--innercardborderradius);
-  overflow: clip;
+  overflow: hidden;
   background-color: var(--innercardcolor);
   border: 1px solid rgba(70,131,180,.082);
   box-sizing: border-box
@@ -2672,7 +2673,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
   border: 1px solid var(--innerbordercolor);
   border-radius: var(--innercardborderradius);
   background-color: var(--innercardcolor);
-  overflow: clip
+  overflow: hidden
 }
 div.film-info {
   padding: .6875rem;
@@ -3008,7 +3009,7 @@ td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody >
   background-color: #0000003a;
   margin-bottom: .7rem;
   border: 1px solid var(--innerbordercolor);
-  overflow: clip;
+  overflow: hidden;
   min-height: 150px;
   min-width: 48rem;
   max-width: 64rem
@@ -3018,7 +3019,7 @@ td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody >
   background-color: rgba(57,135,199,.015);
   margin-bottom: .5rem;
   border: 1px solid var(--innerbordercolor);
-  overflow: clip;
+  overflow: hidden;
   min-height: 150px;
   min-width: 48rem
 }
@@ -4047,7 +4048,7 @@ td.embedded > p:first-child+h2:only-of-type:not(#details) {
     background: var(--main);
     border-radius: var(--maincolortableborderradius);
     border: 1px solid var(--innerbordercolor);
-    overflow: clip;
+    overflow: hidden;
 }
 .rc__header {
     padding: 0.5rem 0;
@@ -4095,7 +4096,7 @@ div.rc__rating{
 }
 a.rc__overlay{
     border-radius: 0.5rem;
-    overflow:clip;
+    overflow: hidden;
 }
 div.rc__downloads {
 	position: absolute;
@@ -4187,7 +4188,7 @@ td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] {
 td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded {
 /* border: 1px solid var(--innerbordercolor); */
 border-radius: var(--innercardborderradius);
-overflow: clip;
+overflow: hidden;
 }
 td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded h2 {
   text-align: center;
@@ -4248,7 +4249,7 @@ table.main[height="75px"] {
   background: rgba(70, 131, 180, 0.025);
   border-radius: var(--innercardborderradius);
   border-collapse: collapse;
-  overflow: clip;
+  overflow: hidden;
   min-height: 100%!important;
   height: 80px!important;
   justify-content: center;
@@ -4329,7 +4330,7 @@ td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) > tbody > tr:nth-child(2n) > td:first-child {
   border-top-left-radius: var(--innercardborderradius);
   border-left: 1px solid var(--innerbordercolor);
-  overflow:clip;
+  overflow: hidden;
 
 }
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) th:last-child,
@@ -4416,7 +4417,8 @@ button:active,
 input[type=button]:active,
 input[type=submit]:active,
 input[type=reset]:active,
-td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:active  {
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:active,
+div.list-links > a:active  {
   border: 1px solid var(--borderfocus);
   animation: gradient 300ms;
   background: linear-gradient(45deg, #7b81ec, #3bd1d3);
@@ -4523,6 +4525,7 @@ div.searchgenres input {
   justify-content: center
 }
 div.statbox {
+  box-sizing: border-box;
   background: var(--main);
   border: 0;
   padding: 0;
@@ -4530,7 +4533,7 @@ div.statbox {
   width: 100%;
   margin: 0;
   border: 1px solid var(--innerbordercolor);
-  overflow: clip;
+  overflow: hidden;
 }
 h2.stattitle {
   border-bottom: 1px solid var(--innerbordercolor);
@@ -4538,6 +4541,9 @@ h2.stattitle {
   background: var(--innerheadingrowcolor);
   flex: 100%;
   max-height: 2.675rem
+}
+.statbox_banners > div.banner_container:last-child {
+  margin-bottom: 1rem;
 }
 #tvstatboxes .statbox {
   display: flex;
@@ -4777,11 +4783,11 @@ div.contentelement:nth-child(3) .contentcontent img {
   padding: 0.5rem;
   border: 1px solid var(--innerbordercolor);
   border-top: 0;
-  overflow: clip;
+  overflow: hidden;
   border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
 }
 #overview {
-  overflow: clip;
+  overflow: hidden;
 }
 #showpage h2 {
   background-color: var(--innerheadingrowcolor);
@@ -4800,7 +4806,7 @@ ul.showseasons > li {
   border-radius: var(--innercardborderradius) var(--innercardborderradius);
   flex: 1 0 max-content;
   height: min-content;
-  overflow: clip;
+  overflow: hidden;
 }
 #showpage ul.showseasons > li h2 {
   background-color: var(--innerheadingrowcolor);
@@ -4886,8 +4892,8 @@ a.js-rssdel {
   height: 1rem;
   filter: brightness(90%);
 }
-div#list-container {
-
+div#list-container * {
+  box-sizing: border-box;
 }
 h1#list-title:not(#details) {
   color: var(--white);
@@ -4911,24 +4917,123 @@ div.item {
 	/* display: flex; */
 	width: 750px;
 	vertical-align: text-bottom;
+  border: 1px solid rgba(70, 131, 180, 0.1);
 }
 div.item > h2 {
-  background-color: var(--innerheadingrowcolor);
-  border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  display: none;
 }
 div.item-body {
-  background: var(--main);
+  background: rgb(27, 27, 36);
+  background: linear-gradient(335deg, hsl(240, 50%, 7%), hsl(205, 70%, 25%));
+  /* background-size: 150%; */
   box-sizing: border-box;
-  /* padding: 1rem; */
+  padding: 0;
   border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
-  border: 1px solid var(--innerbordercolor);
-border-top: 0;
-  /* display: flex;
-  flex-flow: row wrap; */
-  gap: 0.5rem;
+border: 0;
+  display: flex;
+  flex-flow: row wrap;
+  height: 12rem;
   max-width: 64rem;
-	overflow: hidden;
+	overflow: visible;
 	position: relative;
 	text-align: left;
+}
+
+div.item > .item-body > .rank {
+	font-size: 1.5rem;
+  text-align: center;
+	font-weight: 400;
+  padding: 1rem 0;
+	min-width: 2.2rem;
+	margin-left: 0;
+  position: relative;
+  float: right;
+  left: 0px;
+  color: var(--headingnonclickable);
+  order: 0;
+  /* background: linear-gradient(125deg, hsl(195, 50%, 50%, 0.8), hsl(220,50%,50%, 0.8) ); */
+  /* background: rgb(26,36,51); */
+  background: #000000bb;
+  /* border-right: 1px solid var(--innerbordercolor); */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+div.item.imdb {
+  border-radius: var(--innercardborderradius);
+  overflow: hidden;
+  /* border:1px solid rgba(70, 131, 180, 0.508);  */
+}
+.item-body > div.rank + a[href*="imdb.com/title/tt"] {
+  order: 0;
+  height: 12rem;
+  width: 135px;
+  position: relative;
+  object-fit:cover;
+  overflow: clip;
+  bottom: 0px;
+  z-index:1;
+}
+.item-body > div.rank + a[href*="imdb.com/title/tt"] img.movie-banner  {
+  width: 100%;
+  height: 100%;
+  max-height: 12rem;
+  max-width: 135px;
+  bottom: 42px;
+
+}
+.item > .item-body > div.description {
+	width: 32rem;
+	text-align: left;
+	margin-left: 0;
+	max-height: 100%;
+	overflow: auto;
+  font-size: 0.875rem;
+  position: relative;
+  padding-left: 0.5rem;
+  /* background:rgb(27, 27, 36); */
+}
+.item > .item-body > div.description > .item-title {
+  display: flex;
+	font-weight: bold;
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin-left: -0.5rem;
+  background: #09090c;
+}
+div.description a.js-wishlistadd {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+div.description a.js-wishlistadd img {
+  display: none;
+}
+div.movie-rating {
+  display: inline-block;
+  /* float: left; */
+  padding: 0.5rem 0;
+  color: var(--headingnonclickable);
+  font-weight: bold;
+}
+.item-body > div.list-links {
+	position: absolute;
+	right: 0;
+	top: 0;
+	list-style: none;
+  padding: 1rem;
+  background: #09090c;
+}
+div.item-description {
+  font-size: 0.8125rem;
+  padding-left: 0.5rem;
+}
+div.list-links > a {
+	display: block;
+	padding: 4.5px 6px;
+	border: 1px solid var(--innerbordercolor);
+	text-decoration: none;
+	border-radius: var(--inputborderradius);
+  background: var(--input);
+  color: var(--menuFont);
+	/* margin: 5px 0; */
+	/* margin: auto; */
 }
