@@ -4917,7 +4917,7 @@ div.item {
 	/* display: flex; */
 	width: 750px;
 	vertical-align: text-bottom;
-  border: 1px solid rgba(70, 131, 180, 0.1);
+  border: 1px solid rgba(19, 71, 108, 0.17);
 }
 div.item > h2 {
   display: none;
@@ -4929,6 +4929,7 @@ div.item-body {
   box-sizing: border-box;
   padding: 0;
   border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+  /* border: 1px solid var(--innerbordercolor); */
 border: 0;
   display: flex;
   flex-flow: row wrap;
@@ -4953,14 +4954,15 @@ div.item > .item-body > .rank {
   order: 0;
   /* background: linear-gradient(125deg, hsl(195, 50%, 50%, 0.8), hsl(220,50%,50%, 0.8) ); */
   /* background: rgb(26,36,51); */
-  background: #000000bb;
+  background: rgba(6, 6, 8, 0.85);
   /* border-right: 1px solid var(--innerbordercolor); */
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
 }
 div.item.imdb {
   border-radius: var(--innercardborderradius);
   overflow: hidden;
-  /* border:1px solid rgba(70, 131, 180, 0.508);  */
+  /* border:double 1px steelblue/red;  */
 }
 .item-body > div.rank + a[href*="imdb.com/title/tt"] {
   order: 0;
@@ -4989,7 +4991,6 @@ div.item.imdb {
   font-size: 0.875rem;
   position: relative;
   padding-left: 0.5rem;
-  /* background:rgb(27, 27, 36); */
 }
 .item > .item-body > div.description > .item-title {
   display: flex;
@@ -5009,7 +5010,6 @@ div.description a.js-wishlistadd img {
 }
 div.movie-rating {
   display: inline-block;
-  /* float: left; */
   padding: 0.5rem 0;
   color: var(--headingnonclickable);
   font-weight: bold;
@@ -5034,6 +5034,5 @@ div.list-links > a {
 	border-radius: var(--inputborderradius);
   background: var(--input);
   color: var(--menuFont);
-	/* margin: 5px 0; */
-	/* margin: auto; */
+	margin: auto;
 }
