@@ -2,7 +2,7 @@
   --main: rgb(16, 17, 20);
   --dark: rgb(6, 6, 7);
   --white: hsl(212, 28%, 72%);
-  --headingnonclickable: hsla(31, 100%, 65%, 0.843);
+  --heading: hsla(31, 100%, 65%, 0.843);
   --tagText: #000000;
   --menuFont: #4d86b3;
   --menuHL: rgb(86, 182, 231);
@@ -15,22 +15,22 @@
   --RatioBlue: #1685ca;
   --UploadGreen: #50fa7b;
   --DownBonusRed: #ff5555;
-  --border: 1px solid var(--bordercolor);
+  /* --border: 1px solid var(--bordercolor); */
   --bordercolor: transparent;
   --innerbordercolor: rgba(57, 135, 199, 0.20);
   --innercardcolor: rgba(5, 5, 5, 0.33);
-  --innerheadingrowcolor: rgba(2, 2, 5, 0.500);
+  --innerhcolor: rgba(2, 2, 5, 0.500);
+  --innerbr: 0.5rem;
   --borderhighlight: var(--menuHL);
   --filterdropshadow: 0;
   --bs: 0px 4px 5px 0px var(--dark); 
-  --inputborderradius: 0.4rem;
-  --maincolortableborderradius: 0.5625rem;
+  --inputbr: 0.4rem;
+  --mainbr: 0.5625rem;
   --inputheight: 1.5rem;
-  --basefontsize: 0.6875rem;
-  --innercardborderradius: 0.5rem;
-  --menuborderradius: 0.5rem;
+  --fsize: 0.6875rem;
+  --menubr: 0.5rem;
   --svgbghover: linear-gradient(145deg, hsl(195, 76%, 49%), #5995e8);
-  --focusinputbuttoncolor: hsl(204, 50%, 50%);
+  --focusbtnclr: hsl(204, 50%, 50%);
   --borderhover: hsla(207, 56%, 60%, 0.5);
   --borderfocus: steelblue;
 }
@@ -42,11 +42,7 @@ td.bottom>table:not(#torrent-list),
 td.bottom:nth-child(2) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded {
   max-width: 64rem;
   box-sizing: border-box;
-  /* width: auto; */
 }
-/* td {
-  overflow-wrap: anywhere;
-} */
 #header,
 * {
   padding: 0
@@ -79,7 +75,7 @@ button,
 input,
 select,
 textarea {
-  font-size: var(--basefontsize)
+  font-size: var(--fsize)
 }
 #header,
 .menu,
@@ -111,7 +107,7 @@ a[href*="javascript:addRss"]:hover,
 }
 #news h1,
 #news h2 {
-  color: var(--headingnonclickable)
+  color: var(--heading)
 }
 .tag,
 body {
@@ -125,7 +121,6 @@ body {
 .std-content {
   border-collapse: collapse
 }
-
 * {
   margin: 0;
   text-decoration: none;
@@ -160,7 +155,6 @@ body {
 .statbox,
 .tab a,
 .tab\ selected a,
-/* table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > form:nth-child(3) > table:nth-child(1), */
 td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-child(5) {
   background-color: var(--main);
@@ -181,7 +175,7 @@ td.bottom:nth-child(2) > table:nth-child(5),
 td.bottom:nth-child(2) > table:nth-child(5),
 td.bottom:nth-child(2) > table:nth-child(5) > tbody:nth-child(1) {
   border: 1px solid var(--bordercolor);
-  border-radius: var(--maincolortableborderradius)
+  border-radius: var(--mainbr)
 }
 body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
 > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h1.center,
@@ -190,12 +184,11 @@ h2:not(#sidebar-container h2, div#news h2),
 h3:not(#details h3, .lottery_table2 h3, div.hideablecontent h3, .film-info h3, h1+h3) {
   font-size: 1rem;
   box-sizing: border-box;
-  color: var(--headingnonclickable);
+  color: var(--heading);
   padding: .7rem 1rem
 }
-*h1 + h2, *h1 ~ h3, *h2 + h1, *h2 + h1, *h3 + h1, *h3 + h2, *h2 + h3, *h1 + h1, *h2 + h2, *h3 + h3 {
+h1 + h2, *h1 ~ h3, *h2 + h1, *h2 + h1, *h3 + h1, *h3 + h2, *h2 + h3, *h1 + h1, *h2 + h2, *h3 + h3 {
   padding-top: 0.25rem;
-  /* padding-bottom: 0.25rem !important; */
 }
 table,
 td,
@@ -206,7 +199,7 @@ tr {
 }
 table,
 table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > form:nth-child(1) {
-  border-radius: var(--maincolortableborderradius)
+  border-radius: var(--mainbr)
 }
 li {
   list-style: none
@@ -238,7 +231,7 @@ body > table.main:nth-child(3) {
   border-collapse: collapse
 }
 #header {
-  border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
+  border-radius: var(--mainbr) var(--mainbr) 0 0;
   margin-bottom: 0!important;
   background-color: var(--main);
   min-height: 80px;
@@ -260,7 +253,6 @@ body > table.main:nth-child(3) {
 #searchselector {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
   justify-content: space-between;
   align-content: center;
   flex-direction: row
@@ -272,7 +264,7 @@ body > table.main:nth-child(3) {
   top: 118px;
   font-size: 0.8125rem;
   font-weight: 700;
-  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+  border-radius: 0 0 var(--mainbr) var(--mainbr);
   filter: drop-shadow(0 10px 4px var(--dark))
 }
 .menu tbody tr {
@@ -293,9 +285,6 @@ body > table.main:nth-child(3) {
 .menunavigation,
 .menunavigation_new {
   align-self: center;
-  /* flex-basis: 100px; */
-  /* flex: 0 1 auto; */
-  /* padding: 0 5px; */
   border-bottom: 1px solid transparent;
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
@@ -303,20 +292,15 @@ body > table.main:nth-child(3) {
   transition:all 0.25s ease;
   width: max-content;
 }
-.menunavigation_new  {
-  /* margin-bottom: -2px; */
-}
 .menunavigation:hover > a.normal,
 .menunavigation_new:hover > a.normal{
   background: var(--svgbghover);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   color: var(--dark);
-  /* border-bottom: 2px solid transparent; */
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
   transition:all 0.25s ease;
-  /* border-bottom: 2px solid var(--menuHL) */
 }
 @-webkit-keyframes Gradient {
   0%{background-position:0% 50%}
@@ -386,7 +370,7 @@ textarea {
   background-color: var(--input);
   color: var(--menuFont);
   height: var(--inputheight);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   box-sizing: border-box
 }
 input[type=text] {
@@ -398,7 +382,7 @@ button,
 input[type=button],
 input[type=submit],
 input[type=reset] {
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   padding: 0 10px;
   text-align: center;
   height: var(--inputheight)
@@ -411,7 +395,7 @@ input[type=submit]:hover,
 input[type=reset]:hover,
 td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child td font a:hover,
 div.list-links > a:hover {
-border-radius: var(--inputborderradius);
+border-radius: var(--inputbr);
 background: var(--svgbghover);
 color: var(--dark);
 -moz-transition: all 0.25s ease; 
@@ -428,7 +412,7 @@ input[type="checkbox"] {
 #search,
 #sitesearchinput {
   width: 275px;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   height: var(--inputheight)
 }
 
@@ -448,12 +432,12 @@ input#sitesearchinput:focus,
 textarea:focus,
 input[type="text"]:focus {
   /* outline: 1px solid var(--borderfocus); */
-  /* border-radius: var(--inputborderradius); */
+  /* border-radius: var(--inputbr); */
   border: 1px solid var(--borderfocus);
   background-color: var(--main);
   color: var(--menuHL);
   filter: brightness(100%);
-  /* box-shadow: 0 0 5px 1px var(--focusinputbuttoncolor); */
+  /* box-shadow: 0 0 5px 1px var(--focusbtnclr); */
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -463,12 +447,12 @@ input[type="text"]:focus {
 #sitesearchsubmit.searchicon {
   display: inline-block;
   padding: 10px;
-  margin-left: -22px;
-  background: url(https://i.hdbits.org/o8Ps0IT.png) center no-repeat rgba(0,0,0,.13);
+  margin-left: -1.5rem;
+  background: url(https://i.hdbits.org/o8Ps0IT.png) center no-repeat;
   filter: brightness(50%);
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: var(--inputborderradius)
+  border-radius: var(--inputbr)
 }
 #sitesearchform {
   /* flex: 1 0 auto; */
@@ -487,7 +471,7 @@ input[type="text"]:focus {
 .alert-box,
 .notification,
 .popup {
-  border-radius: var(--inputborderradius)
+  border-radius: var(--inputbr)
 }
 .autocomplete-suggestion {
   padding: .15rem .3rem;
@@ -521,12 +505,8 @@ div#logo {
   -webkit-mask-size: contain;
   mask-size: contain;
 }
-
 #header td.embedded > a[href*="/"]:hover > div#logo {
-  background:   linear-gradient(345deg,hsl(48, 75%, 75%)  0%,#ea817d 25%,hsl(210, 75%, 75%)  50%,hsl(2, 72%, 70%) 75%,hsl(48, 75%, 75%) 100%);
- /* linear-gradient(345deg, hsl(48, 75%, 75%) 0%, #ea817d 45%, hsl(210, 75%, 75%)  55%, #ea817d 75%, hsl(48, 75%, 75%) 100%) */
-  /* linear-gradient(355deg,  hsl(48, 75%, 75%) 0%,  #ea817d 17%,  hsl(48, 75%, 75%) 33%,  #ea817d 50%,  hsl(48, 75%, 75%)  66%,  #ea817d 84%,  hsl(48, 75%, 75%) 92%,  hsl(48, 75%, 75%)100% ) */
-  /* linear-gradient(345deg, hsl(48, 75%, 75%) 0%, #ea817d 10%, hsl(48, 75%, 75%) 50%, #ea817d 75%, hsl(48, 75%, 75%)100% ) */
+  background:   linear-gradient(345deg,hsl(48, 75%, 75%)  0%,hsl(2, 72%, 70%) 25%,hsl(210, 75%, 75%)  50%,hsl(2, 72%, 70%) 75%,hsl(48, 75%, 75%) 100%);
 background-size: 800%;
 -webkit-animation: Gradient 1s ease-in-out infinite ;
 -moz-animation: Gradient 1s ease-in-out infinite ;
@@ -581,7 +561,6 @@ tr.tableb:nth-child(8)>td:nth-child(3)>br {
   margin-right: .5%;
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
-  /* white-space: nowrap; */
   overflow-wrap: break-word;
 }
 div.curuser-stats:nth-child(1) {
@@ -607,18 +586,7 @@ div.curuser-stats:nth-child(3) {
   justify-content:flex-end;
   flex-direction: row;
   flex-wrap: wrap;
-  /* max-height: 33%; */
-  /* height: 2rem; */
   gap: 0.1rem;
-}
-div.curuser-stats:nth-child(3) > font[color="#1900D1"],
-div.curuser-stats:nth-child(3) > font[color="#000000"],
-div.curuser-stats:nth-child(3) > font[color="darkred"]:last-of-type,
-div.curuser-stats:nth-child(3) > a[href*="/bonus"]{
-  gap:initial ;
-  /* height: 45%; */
-  flex: 0 1 min-content;
-  order: -2;
 }
 div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"] {
   display: flex;
@@ -627,20 +595,15 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"] {
   height: 1.5rem;
   padding: 0 0.5rem;
   gap: 1rem;
-  /* font-weight: 500; */
-  /* background: var(--svgbghover);
-  background-clip: text;
-  text-rendering:auto; */
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
   transition:all 0.25s ease;
 }
 div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"]:hover {
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   background: var(--svgbghover);
   color: var(--dark);
-  /* background-clip: initial; */
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -654,11 +617,11 @@ div.curuser-stats:nth-child(1) > b:nth-child(1) > a[href*="userdetails.php?"]:ho
 }
 div.curuser-stats:nth-child(1) > a[href*="my.php"],
 div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
 }
 .inbox{
   background: var(--svgbghover);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   width: 2.1875rem;
   filter: brightness(80%);
   -moz-transition: all 0.25s ease; 
@@ -668,7 +631,7 @@ div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
 }
 .inboxnew {
   background: var(--DownBonusRed);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   width: 2.1875rem;
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
@@ -698,9 +661,7 @@ div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   font-size: 0;
   padding-right: 0px;
   height: 1.5rem;
-
-  /* border: 1px solid var(--bordercolor);  */
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -718,7 +679,7 @@ div.curuser-stats:nth-child(1) > a[href*="logout.php"] {
   border: 1px solid var(--svgbghover); 
   background: var(--svgbghover);
   color: var(--dark);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -760,7 +721,7 @@ div.curuser-stats:nth-child(1) > a[href*="my.php"]:hover {
   background: var(--svgbghover);
    color: var(--dark);
    border: 1px solid var(--svgbghover); 
-   border-radius: var(--inputborderradius);
+   border-radius: var(--inputbr);
    -moz-transition: all 0.25s ease; 
    -webkit-transition: all 0.25s ease; 
    -o-transition: all 0.25s ease;
@@ -823,10 +784,10 @@ div.curuser-stats:nth-child(3) > a[href*="friends.php"]:hover,
 div.curuser-stats:nth-child(3) > a[href*="mytorrents.php"]:hover {
   display: flex;
   align-items: center;
-  background: /*hsl(204, 50%, 50%)*/ var(--svgbghover);
+  background: var(--svgbghover);
   width: 2.1875rem;
   height: 1.5rem;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   gap: 0.3rem;
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
@@ -851,7 +812,7 @@ img[src*="starbig.gif"] {
   mask: url(friends.svg) center no-repeat;
   width: 2.1875rem;
   height: 1.25rem;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   filter: brightness(85%);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
@@ -864,7 +825,7 @@ img[src*="starbig.gif"] {
   mask: url(mytorrents7.svg) center no-repeat;
   width: 2.1875rem;
   height: 1.25rem;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   filter: brightness(85%);
   -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
@@ -896,7 +857,6 @@ img[src*="starbig.gif"] {
 .alert-box--notifications:active{
   background-color: hsla(135, 43%, 49%, 0.849);
   color: var(--dark);
-  transform: scale(1.12);
   padding: 0 0.4rem;
   transition: all ease-in-out .25s;
 }
@@ -912,7 +872,6 @@ height: 100%;
 background-color: rgba(0, 0, 0, 0.515);
 }
 .notification-frame.js-notification-frame {
-
   max-width: 48rem;
   background-color: var(--main);
   padding: .3rem .5rem;
@@ -937,7 +896,6 @@ background-color: rgba(0, 0, 0, 0.515);
 }
 .notification__body {
   max-width: 48rem;
-
   margin-right: .5rem
 }
 .notification,
@@ -953,7 +911,6 @@ background-color: rgba(0, 0, 0, 0.515);
   float: right;
   margin-left: auto;
   align-self: center;
-  /* padding: 0.1rem 0.25rem; */
 }
 #table_open_requests>tbody:nth-child(2)>tr>td:last-child,
 #table_open_requests>tbody:nth-child(2)>tr>td:nth-child(10),
@@ -980,9 +937,8 @@ body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(1) > t
 td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td[width="20%"] a {
   background-color: var(--main);
   display: inline-block;
-  /* margin: 5px; */
   border: 1px solid var(--bordercolor);
-  border-radius: var(--menuborderradius);
+  border-radius: var(--menubr);
   min-width: 100%;
   padding: .4rem 0;
   box-shadow: 0;
@@ -993,7 +949,7 @@ td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-ch
 ul#tabs, td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1)  {
   background: var(--main);
   overflow: hidden;
-  border-radius: var(--menuborderradius);
+  border-radius: var(--menubr);
   width: 100%;
   max-width: 50rem;
   margin-bottom: 0.5rem;
@@ -1016,11 +972,9 @@ li.tab a {
 
 #tabs > .tab a:hover,
 .tab\ selected a:hover,
-/* td.bottom > table > tbody > tr > td[width="20%"] > a[href^="/"]:hover, */
 body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) a:hover,
 td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td[width="20%"] a:hover {
-  /* border: 1px solid var(--borderhighlight); */
-  border-radius: var(--menuborderradius);
+  border-radius: var(--menubr);
   color: var(--dark);
   background: var(--svgbghover);
   -moz-transition: all 0.25s ease; 
@@ -1028,14 +982,6 @@ td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-ch
   -o-transition: all 0.25s ease;
   transition:all 0.25s ease;
 }
-/* td.bottom > table > tbody > tr > td[width="20%"] > a[href*="/"] {
-  background-color: var(--main);
-  display: inline-block;
-  margin: 5px;
-  border-radius: var(--menuborderradius);
-  box-shadow: var(--bs);
-  border: 1px solid var(--bordercolor)
-} */
 td.bottom > table > tbody > tr > td[width="20%"] a{
   color: var(--menuFont);
   -moz-transition: all 0.25s ease; 
@@ -1049,7 +995,7 @@ td.bottom > table > tbody > tr > td[width="20%"] a b {
 #searchbox {
   display: inline-flex;
   border: 1px solid var(--bordercolor);
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   max-width: 850px;
   justify-content: space-evenly
 }
@@ -1068,7 +1014,7 @@ td.bottom > table > tbody > tr > td[width="20%"] a b {
 }
 #torrent-list {
   border: 1px solid var(--bordercolor);
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   padding: 10px
 }
 html body table.main tbody tr td.bottom div#resultsarea p {
@@ -1094,7 +1040,7 @@ html body table.main tbody tr td.bottom div#resultsarea p {
 }
 #moresearch3 > td:nth-child(2) > select {
   width: 102px!important;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   height: var(--inputheight);
   text-align: center
 }
@@ -1181,7 +1127,7 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-ch
   padding: 4px 8px;
   color: var(--menuFont);
   background: var(--input);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   border: 1px solid var(--innerbordercolor);
   box-sizing: border-box;
   height: 1.5rem;
@@ -1204,7 +1150,7 @@ table.bottom > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(8) > a:nth-ch
   text-align: center
 }
 #moresearch1 input {
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   height: var(--inputheight)
 }
 #moresearch1 td select {
@@ -1229,12 +1175,12 @@ form[action="dox.php"]>table>tbody>tr>td[style="border:black solid 1px;"] {
 #yearlt,
 select[name=imdbgt],
 select[name=imdblt] {
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   height: var(--inputheight)
 }
 #searchbox input[type="button"],
 #searchbox input[type="submit"] {
-  font-size: var(--basefontsize);
+  font-size: var(--fsize);
   padding: 0 10px;
   min-width: 50px;
   cursor: pointer;
@@ -1269,7 +1215,7 @@ td.bottom:nth-child(9) {
 #moresearch4 > td:nth-child(1) > label:nth-child(1) > select:nth-child(1) {
   min-width: 120px;
   height: var(--inputheight);
-  border-radius: var(--inputborderradius)
+  border-radius: var(--inputbr)
 }
 #moresearch4 {
   width: 350px;
@@ -1301,7 +1247,7 @@ select[name=imdblt] {
   display: flex;
   max-width: 200px;
   border: 1px solid var(--bordercolor);
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   padding-left: 0px!important;
   top: calc(118px + 25px + 1rem);
   height: min-content;
@@ -1340,7 +1286,7 @@ select[name=imdblt] {
 #sidebar-container table.message tbody tr td a[href] {
   padding: 5px 0!important;
   display: inline-block;
-  font-size: var(--basefontsize)
+  font-size: var(--fsize)
 }
 #sidebar-container td table tbody tr td a[href]:hover,
 #torrent-list tr.featured,
@@ -1349,7 +1295,7 @@ select[name=imdblt] {
 }
 #sidebar-container td.embedded h2:hover {
   border: 1px solid var(--borderhighlight);
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   background: var(--innercardcolor);
   box-sizing: border-box
 }
@@ -1359,9 +1305,9 @@ table.message:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child
 }
 #sidebar-container select[name="forumid"] {
   text-align: center;
-  font-size: var(--basefontsize);
+  font-size: var(--fsize);
   width: 100%;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   height: var(--inputheight)
 }
 body > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) {
@@ -1398,7 +1344,7 @@ html > body > table.main > tbody > tr >td.bottom  > table.main[width="737"]:only
   flex-direction: column;
   background-color: var(--main);
   border: 1px solid var(--bordercolor);
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   height: max-content;
   margin-bottom: 1rem;
   max-width: 100%;
@@ -1489,10 +1435,10 @@ input[type="radio"] {
 }
 html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(2) {
 	background-color: var(--main);
-	border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
+	border-radius: var(--mainbr) var(--mainbr) 0 0;
 	height: 100%;
 	text-align: center;
-	color: var(--headingnonclickable);
+	color: var(--heading);
 	flex: 1 1 68%;
   max-width: 68%;
 	order: 1;
@@ -1501,10 +1447,10 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
 }
 html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > h2:nth-child(4) {
 	background-color: var(--main);
-	border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
+	border-radius: var(--mainbr) var(--mainbr) 0 0;
 	height: 100%;
 	text-align: center;
-	color: var(--headingnonclickable);
+	color: var(--heading);
 	z-index: 1;
 	flex: 0 1 30%;
 	order: 2;
@@ -1516,7 +1462,7 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
 	line-height: 1rem;
 	padding: 1rem;
 	background-color: var(--main);
-	border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+	border-radius: 0 0 var(--mainbr) var(--mainbr);
 	filter: var(--filterdropshadow);
 	flex: 1 1 68%;
   max-width: 68%;
@@ -1527,7 +1473,7 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
 	padding: 1rem 0.5rem;
 	background-color: var(--main);
 	align-self: stretch;
-	border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+	border-radius: 0 0 var(--mainbr) var(--mainbr);
 	filter: var(--filterdropshadow);
 	flex: 0 1 30%;
 	order: 4;
@@ -1625,7 +1571,7 @@ td.bottom:nth-child(2)>table:nth-child(1)>tbody:nth-child(1)>tr:nth-child(1) b {
   justify-self: end;
   height: var(--inputheight);
   text-align: center;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   margin-top: 0!important
 }
 div.chosen-container\ chosen-container-single {
@@ -1633,7 +1579,7 @@ div.chosen-container\ chosen-container-single {
 }
 div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-container-active {
   min-width: max-content;
-  border-radius: var(--inputborderradius) var(--inputborderradius) 0 0!important
+  border-radius: var(--inputbr) var(--inputbr) 0 0!important
 }
 .chosen-container * {
   -webkit-box-sizing: border-box;
@@ -1648,7 +1594,7 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   clip: rect(0,0,0,0);
   -webkit-clip-path: inset(100% 100%);
   clip-path: inset(100% 100%);
-  border-radius: 0 0 var(--inputborderradius) var(--inputborderradius)
+  border-radius: 0 0 var(--inputbr) var(--inputbr)
 }
 .chosen-container.chosen-with-drop .chosen-drop {
   -webkit-clip-path: none;
@@ -1777,7 +1723,7 @@ div.chosen-container.chosen-container-multi.chosen.chosen-with-drop.chosen-conta
   white-space: nowrap
 }
 .chosen-container-multi .chosen-choices li.search-choice span {
-  word-wrap: break-word
+  overflow-wrap: break-word
 }
 .chosen-container-active.chosen-with-drop .chosen-single div {
   border-left: 0;
@@ -1934,7 +1880,7 @@ div.chosen-container .search-choice {
   background-color: var(--searchDropdown);
   background-image: none;
   cursor: text;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   max-width: 360px;
   box-sizing: border-box
 }
@@ -1942,7 +1888,7 @@ div.chosen-container .search-choice {
   border: 1px solid var(--selected);
   background: var(--main);
   box-shadow: none;
-  border-radius: var(--inputborderradius) var(--inputborderradius) 0 0
+  border-radius: var(--inputbr) var(--inputbr) 0 0
 }
 .chosen-container-multi .chosen-choices li.search-choice {
   position: relative;
@@ -1960,7 +1906,7 @@ div.chosen-container .search-choice {
   background-clip: border-box;
   box-shadow: none;
   cursor: default;
-  border-radius: var(--inputborderradius)
+  border-radius: var(--inputbr)
 }
 .chosen-container .chosen-results {
   display: flex;
@@ -1972,9 +1918,9 @@ div.chosen-container .search-choice {
   margin: -2px -1px -1px;
   padding: 0;
   max-height: auto;
-  font-size: var(--basefontsize);
+  font-size: var(--fsize);
   -webkit-overflow-scrolling: auto;
-  border-radius: 0 0 var(--inputborderradius) var(--inputborderradius)
+  border-radius: 0 0 var(--inputbr) var(--inputbr)
 }
 .chosen-container.chosen-with-drop .chosen-drop {
   clip: auto;
@@ -1985,7 +1931,6 @@ div.chosen-container .search-choice {
 }
 .chosen-container .chosen-results li {
   display: none;
-  word-wrap: break-word;
   -webkit-touch-callout: none;
   display: flex;
   align-content: center;
@@ -1995,8 +1940,7 @@ div.chosen-container .search-choice {
   padding: 2px 9px;
   list-style: none;
   line-height: 18px;
-  word-wrap: break-word;
-  -webkit-touch-callout: none;
+  overflow-wrap: break-word;
   border-bottom: 2px solid var(--dark)
 }
 .chosen-container .chosen-results li.highlighted {
@@ -2016,19 +1960,19 @@ div.dhtmlxcalendar_yahoolike .dxcaldlabel td {
   box-sizing: border-box;
   background: var(--main);
   font-family: Inconsolata,monospace;
-  font-size: var(--basefontsize);
+  font-size: var(--fsize);
   text-align: center
 }
 div > div.dhtmlxcalendar_yahoolike {
   background: var(--main);
   border: 1px solid var(--innerbordercolor);
   font-family: Inconsolata,monospace;
-  font-size: var(--basefontsize);
+  font-size: var(--fsize);
   width: auto;
   height: auto;
   padding: .3rem;
   z-index: 99;
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   filter: drop-shadow(0 0 2rem black)
 }
 tr > td > div[id].label,
@@ -2123,7 +2067,7 @@ div.dhtmlxcalendar_yahoolike div.planeYear:hover {
   opacity: 1;
   font-weight: 500;
   box-sizing: border-box;
-  border-radius: var(--innercardborderradius)
+  border-radius: var(--innerbr)
 }
 .dhtmlxcalendar_yahoolike .dxcaldays > tbody > tr > td.othermonth {
   color: rgba(142,165,191,.274)
@@ -2331,7 +2275,7 @@ table#torrent-list tbody td:nth-child(7) {
   text-align: center
 }
 #torrent-list td:nth-child(7) > a:nth-child(1) {
-  font-size: var(--basefontsize);
+  font-size: var(--fsize);
   text-align: center
 }
 .genres a {
@@ -2439,7 +2383,7 @@ body .main > tbody > tr > td.bottom > h1.internal::after {
   vertical-align: middle;
 }
 #details {
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   max-width: 64rem;
   margin-top: .5rem
 }
@@ -2456,7 +2400,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
 #details > tbody tr td,
 .lottery_table2 > tbody tr td:not(form td, .lottery_forms),
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] > tbody tr td {
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   flex: 1;
   align-self: center
 }
@@ -2472,7 +2416,7 @@ tr > td > div[id].label {
   box-sizing: border-box;
   padding: 0 1rem;
   text-align: center;
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   background: var(--innercardcolor);
   display: flex;
   align-items: center;
@@ -2525,7 +2469,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
 .lottery_table2 div.hideablecontent > table.contentlayout,
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] .contentlayout {
   display: flex;
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   height: 300px;
   overflow: hidden
 }
@@ -2622,7 +2566,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
   display: block;
   width: 60px;
   height: auto;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   word-break: break-word;
   text-align: center;
   margin-bottom: .1rem
@@ -2632,7 +2576,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
 }
 #details > tbody:nth-child(1) > tr:nth-child(3) > td > div.hideablecontent > div.grid {
   display: inline-flex;
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   overflow: hidden;
   background-color: var(--innercardcolor);
   border: 1px solid rgba(70,131,180,.082);
@@ -2674,14 +2618,14 @@ div.list-overview__text {
 table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-block;"]:nth-child(5) ~ table[width="930"][cellpadding="5"] div.hideablecontent {
   display: flex;
   border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   background-color: var(--innercardcolor);
   overflow: hidden
 }
 div.film-info {
   padding: .6875rem;
   background: var(--main);
-  border-radius: var(--maincolortableborderradius)
+  border-radius: var(--mainbr)
 }
 #details table.fourcell > tbody > tr,
 .lottery_table2 table.fourcell > tbody > tr,
@@ -2725,7 +2669,7 @@ td.heading {
   box-sizing: border-box;
   padding: 0 .5rem;
   border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   background-color: var(--innercardcolor)
 }
 img[src*="pic/flag"] {
@@ -2781,7 +2725,7 @@ table.main > tbody > tr > td.bottom:nth-child(2) > h1[style="display:inline-bloc
 table.tablesorter.table_other_copies:nth-child(2) {
   padding: .5rem .8rem;
   background-color: var(--innercardcolor);
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   border: 1px solid var(--innerbordercolor)
 }
 #details th.header {
@@ -2808,7 +2752,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 #table_detail_files {
   border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   padding: .5rem .8rem;
   background-color: var(--innercardcolor);
   line-height: 1rem
@@ -2837,7 +2781,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 /* #details button,
 #details form:nth-child(2) > input {
   font-size: 0.625rem;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   padding: 1px 5px;
   text-align: center;
   font-weight: 500;
@@ -2856,10 +2800,10 @@ table.tablesorter.table_other_copies > tbody > tr {
   gap: 0.2rem
 }
 #details .js-tagcontent > div.tag-content {
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
 }
 input#tagassociate {
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   text-indent: .5rem
 }
 .std-content {
@@ -2868,7 +2812,7 @@ input#tagassociate {
   display: flex;
   flex-direction: column;
   background-color: var(--main);
-  border-radius: var(--maincolortableborderradius)
+  border-radius: var(--mainbr)
 }
 td.bottom > table[width="800"] + table.main + h2 + table[width="100%"]:nth-last-child(2),
 td.bottom > h1 + table[width="660"][cellpadding="4"] {
@@ -2877,13 +2821,13 @@ td.bottom > h1 + table[width="660"][cellpadding="4"] {
   display: flex;
   flex-direction: column;
   background-color: var(--main);
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   padding: 1rem;
 }
 
 td.bottom > h1 + table[width="660"][cellpadding="4"] tr:first-child {
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
-  background-color: var(--innerheadingrowcolor);
+  border-radius: var(--innerbr) var(--innerbr) 0 0;
+  background-color: var(--innerhcolor);
   line-height: 1.5rem;
   /* height: 2rem; */
   display: flex;
@@ -2895,7 +2839,7 @@ td.bottom > h1 + table[width="660"][cellpadding="4"] tr:first-child {
   margin: 0!important
 }
 td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(2) > td {
-  background-color: var(--innerheadingrowcolor);
+  background-color: var(--innerhcolor);
   line-height: 1.25rem;
   /* padding: 0 1rem; */
   border: 1px solid var(--innerbordercolor);
@@ -2913,7 +2857,7 @@ td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(2) > td:last-c
 td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(3) > td {
   padding: 0.75rem;
   border: 1px solid var(--innerbordercolor);
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
   border-top: 0;
 }
 td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4) > td > form {
@@ -2937,7 +2881,7 @@ td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(4):last-child 
   line-height: 1.5rem;
   border: 1px solid var(--innerbordercolor); 
   padding: 0 0.4rem;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   background: var(--input);
 }
 .std-content > tbody:nth-child(1) > tr:nth-child(1) > td > table:nth-child(3n-1),
@@ -2947,8 +2891,8 @@ html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-chil
 td.comment > p.sub,
 td[style="border: 1px black dashed"] > p.sub,
 td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody > tr > td > p.sub {
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
-  background-color: var(--innerheadingrowcolor);
+  border-radius: var(--innerbr) var(--innerbr) 0 0;
+  background-color: var(--innerhcolor);
   height: 2rem;
   display: flex;
   align-items: center;
@@ -3008,7 +2952,7 @@ td.bottom>p:first-child~table[cellpadding="3"]:first-of-type th {
 html body table.main tbody tr td.bottom table.main:last-of-type > tbody:nth-child(1) 
 > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table.main,
 td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody > tr > td > p.sub + table.main {
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
   background-color: #0000003a;
   margin-bottom: .7rem;
   border: 1px solid var(--innerbordercolor);
@@ -3018,7 +2962,7 @@ td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody >
   max-width: 64rem
 }
 .std-content >tbody >tr >td > table.main {
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
   background-color: rgba(57,135,199,.015);
   margin-bottom: .5rem;
   border: 1px solid var(--innerbordercolor);
@@ -3029,12 +2973,12 @@ td.bottom > table[width="800"] + table.main + h2 + table[width="100%"] > tbody >
 #profilesettings input,
 #profilesettings select,
 textarea {
-  border-radius: var(--inputborderradius)
+  border-radius: var(--inputbr)
 }
 table.main > tbody > tr > td.text {
   line-height: 1.1rem;
-  word-wrap: break-word;
-  word-break: break-all;
+  overflow-wrap: break-word;
+  word-break: break-word;
   object-fit: contain
 }
 .div_showhide img,
@@ -3096,7 +3040,7 @@ td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th {
   padding: .3rem;
-  background-color: var(--innerheadingrowcolor);
+  background-color: var(--innerhcolor);
   border-top: 1px solid var(--innerbordercolor)
 }
 #profilesettings,
@@ -3108,7 +3052,7 @@ td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) {
   padding: 1rem
 }
 #torrent-list thead th {
-  background-color: var(--innerheadingrowcolor);
+  background-color: var(--innerhcolor);
   border-top: 1px solid var(--innerbordercolor);
   white-space: nowrap
 }
@@ -3119,7 +3063,7 @@ td.bottom:nth-child(2) > table:nth-child(5):not(#details) > tbody > tr >th:first
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:first-child,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:first-child {
   border-left: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius) 0 0 0;
+  border-radius: var(--innerbr) 0 0 0;
   padding: 0 .5rem
 }
 #latest_posts > table:nth-child(1) > tbody > tr > th:last-child,
@@ -3129,13 +3073,13 @@ td.bottom:nth-child(2) > table:nth-child(5) > tbody > tr >th:last-child,
 td.bottom:nth-child(2) > table:nth-last-child(10) > tbody > tr > th:last-child,
 td.bottom:nth-child(2) > table[cellpadding="5"]:nth-last-child(9) > tbody > tr > th:last-child {
   border-right: 1px solid var(--innerbordercolor);
-  border-radius: 0 var(--innercardborderradius) 0 0
+  border-radius: 0 var(--innerbr) 0 0
 }
 html > body > table.main > tbody > tr > td.bottom > form[action="/log"] ~ table > thead:first-child > tr:first-child > th,
 body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child tr:first-child > td.colhead,
 body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
 > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"][cellpadding="10"][border="1"] td.colhead  {
-  background-color: var(--innerheadingrowcolor);
+  background-color: var(--innerhcolor);
   border-top: 1px solid var(--innerbordercolor);
   white-space: nowrap;
   line-height: 1rem;
@@ -3162,7 +3106,7 @@ td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:
 body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td.colhead:first-child,
 body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
 > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"][cellpadding="10"][border="1"] td.colhead:first-child {
-  border-top-left-radius: var(--innercardborderradius);
+  border-top-left-radius: var(--innerbr);
   border-left: 1px solid var(--innerbordercolor)
 }
 #table_open_requests th:last-child,
@@ -3172,7 +3116,7 @@ td.bottom>table.tableb>tbody:nth-child(1)>tr:nth-child(2)>td:nth-child(1)>table:
 body > table.main > tbody > tr > td.bottom:nth-child(2) > p[align=center]:nth-child(2) + table[cellpadding="5"][border="1"]:nth-child(3):last-child td.colhead:last-child,
 body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
 > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"][cellpadding="10"][border="1"] td.colhead:last-child {
-  border-top-right-radius: var(--innercardborderradius);
+  border-top-right-radius: var(--innerbr);
   border-right: 1px solid var(--innerbordercolor)
 }
 tr.logentry:hover {
@@ -3196,7 +3140,7 @@ td.bottom > p:first-child ~ table[cellpadding="3"]:first-of-type {
   min-width: 16rem
 }
 #offerstable > thead th {
-  background: var(--innerheadingrowcolor);
+  background: var(--innerhcolor);
   border-top: 1px solid var(--innerbordercolor);
   line-height: 1.5rem
 }
@@ -3211,7 +3155,7 @@ td.bottom > p:first-child ~ table[cellpadding="3"]:first-of-type {
   padding: 0!important
 }
 #profilesettings {
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   filter: var(--filterdropshadow);
   line-height: 1rem
 }
@@ -3240,7 +3184,7 @@ textarea {
   height: auto;
   max-width: 64rem;
   padding: .5rem;
-  font-size: var(--basefontsize);
+  font-size: var(--fsize);
   box-sizing: border-box
 }
 td.embedded:nth-of-type(2)> img[src*="/pic/flag/"]:only-child {
@@ -3265,7 +3209,7 @@ td.bottom:nth-child(2) > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth
   background-color: var(--main);
   filter: var(--filterdropshadow);
   padding: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   max-width: 64rem;
   box-sizing: border-box
 }
@@ -3295,7 +3239,7 @@ td.bottom > form[action="upload/upload"] > table {
   padding: 1rem;
   box-sizing: border-box;
   line-height: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   filter: var(--filterdropshadow);
   border-spacing: 0.4rem
 }
@@ -3305,7 +3249,7 @@ td.bottom > form[name="comment"] ~ table.main {
   padding: 1rem;
   box-sizing: border-box;
   line-height: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   filter: var(--filterdropshadow);
 }
 td.bottom > .tableb,
@@ -3343,9 +3287,9 @@ div#list-items {
   padding: 0 .2rem
 }
 td.bottom > ul#tabs:nth-child(3) + h3:nth-child(4) {
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   padding: .5rem 1rem;
-  color: var(--headingnonclickable)
+  color: var(--heading)
 }
 /* textarea:hover {
   border: 1px solid var(--menuHL)
@@ -3355,7 +3299,7 @@ td.bottom > form > p,
 td.bottom > p,
 td.bottom > p:first-child > font > a {
   background-color: var(--main);
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   padding: .3rem 1rem;
   font-size: .6875rem!important;
   box-sizing: border-box;
@@ -3379,7 +3323,7 @@ tr > td.heading + td > textarea + br + span + pre {
 body td.bottom > font.small {
   font-size: .56375rem!important;
   padding: .25rem .5rem;
-  border-radius: var(--inputborderradius)
+  border-radius: var(--inputbr)
 }
 font {
   font-size: inherit!important
@@ -3424,7 +3368,7 @@ div.lottery_forms,
 /* form[action="/requests?open"]>div,  */
 td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child  {
   background: var(--main);
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   padding: .7rem;
   max-width: 64rem
 }
@@ -3433,12 +3377,12 @@ td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child {
 }
 td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child h2 {
     text-align: center;
-    color: var(--headingnonclickable);
+    color: var(--heading);
     border-bottom: 1px solid var(--innerbordercolor);
     margin-top: -0.5rem;
 }
 td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child h2 a{
-    color: var(--headingnonclickable);
+    color: var(--heading);
 }
 td.bottom > form[action="dox.php"] ~ table.main:nth-of-type(3):last-child > tbody > tr > td.embedded > table:nth-child(2) div[align="left"] {
     border-bottom: 1px solid var(--innerbordercolor);
@@ -3494,7 +3438,7 @@ tr>td>strong>a[href*="/userdetails"] {
 }
 #table_open_requests th:first-child,
 .lottery_table th:first-child {
-  border-top-left-radius: var(--innercardborderradius)
+  border-top-left-radius: var(--innerbr)
 }
 #table_open_requests tbody,
 .lottery_table tr > th {
@@ -3515,7 +3459,7 @@ td.bottom form[method="get"][action=""][style="margin-bottom:20px;"] + table[cel
 .lottery_table tr > th {
   border-top: 1px solid var(--innerbordercolor);
   border-spacing: 0;
-  background: var(--innerheadingrowcolor)
+  background: var(--innerhcolor)
 }
 .lottery_charts g > text {
   color: var(--white)!important
@@ -3526,7 +3470,7 @@ td.embedded > form[action="inbox.php"] {
   white-space: nowrap;
   width: auto;
   padding: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   border-spacing: 0.2rem
 }
 #inboxbody > tr > td {
@@ -3537,12 +3481,12 @@ td.embedded > form[action="inbox.php"] {
 td.bottom > .tableb {
   max-width: 64rem;
   padding: .5rem 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   filter: var(--filterdropshadow)
 }
 .tableb > tbody > tr:first-child > th {
   font-size: 1rem;
-  color: var(--headingnonclickable);
+  color: var(--heading);
   padding-bottom: 0.5rem
 }
 table.tableb table {
@@ -3562,7 +3506,7 @@ tr.tableb > td {
 }
 td.bottom > table.tableb > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > th {
   border-top: 1px solid var(--innerbordercolor);
-  background: var(--innerheadingrowcolor);
+  background: var(--innerhcolor);
   padding: 0 .5rem
 }
 td.bottom > table.tableb > tbody:nth-child(1) > tr:nth-child(2) > td[style="padding: 10px;"] {
@@ -3575,7 +3519,7 @@ body > table.main > tbody > tr > td.bottom:nth-child(2) > table[cellpadding="5"]
   /* overflow-y: scroll; */
   text-align: left;
   background: var(--main);
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   background-clip: border-box;
   line-height: 1rem;;
 }
@@ -3615,7 +3559,7 @@ div.div_showhide {
   border: 1px solid var(--innerbordercolor);
   background: var(--innercardcolor);
   max-width: 64rem;
-  border-radius: var(--maincolortableborderradius)
+  border-radius: var(--mainbr)
 }
 .div_showhide > div:nth-child(1) {
   max-width: 100%
@@ -3646,7 +3590,7 @@ hr,
 td[style="border: 1px black dashed"] {
   border: 1px solid var(--innerbordercolor)!important;
   padding: .5rem;
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   background-color: var(--innercardcolor)
 }
 pre {
@@ -3676,7 +3620,7 @@ div[style="width: 900px; text-align: left"] > table#torrent-list + div[style="fo
     text-align: center;
     background-color: var(--innercardcolor);
     border: 1px solid var(--innerbordercolor);
-    border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
+    border-radius: var(--mainbr) var(--mainbr) 0 0;
     font-size: 1rem !important;
     padding: 0.25rem;
     max-width: 100%;
@@ -3698,7 +3642,7 @@ div[style="width: 900px; text-align: left"] a[href*="/lists/view"] + br {
     display: none;
 }
 div[style="width: 900px; text-align: left"] > a[href*="/lists/view"]:last-of-type {
-    border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+    border-radius: 0 0 var(--mainbr) var(--mainbr);
 }
 html body table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.bottom:nth-child(2) > table.main:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1):last-child{
     width: 36rem;
@@ -3720,7 +3664,7 @@ body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cells
     margin-top: 0.5rem;
 background: var(--main);
 font-size: 0.75rem;
-border-radius: var(--innercardborderradius);
+border-radius: var(--innerbr);
 /* width: 40rem; */
 text-align: center;
 padding: 0.4rem 0.7rem;
@@ -3752,7 +3696,7 @@ body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cells
 }
 body > table.main tbody > tr > td.bottom:nth-child(2) > table[width="800"][cellspacing="0"][cellpadding="10"][border="1"][align="center"] + table.main:nth-of-type(2):last-child:nth-last-child(1) 
 > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"][cellpadding="10"][border="1"] {
-    border-radius: var(--maincolortableborderradius);
+    border-radius: var(--mainbr);
     background: var(--main);
     /* width: 40rem; */
     padding: 0.5rem;
@@ -3778,7 +3722,7 @@ td.bottom:nth-child(2)
     list-style: inside;
     line-height: 1rem;
 	padding: 0.25rem 1rem;
-	/* border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius); */
+	/* border-radius: 0 0 var(--mainbr) var(--mainbr); */
 	box-sizing: border-box;
     /* border: 1px solid var(--innerbordercolor); */
     color: var(--white);
@@ -3790,7 +3734,7 @@ td.bottom:nth-child(2)
 td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2:not(h2:only-of-type) + table[width="100%"] > tbody > tr > td {
     border: 1px solid var(--innerbordercolor);
-    border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+    border-radius: 0 0 var(--mainbr) var(--mainbr);
     border-top: 0;
     margin-bottom: 0.5rem;
      list-style: inside;
@@ -3801,14 +3745,14 @@ td.bottom:nth-child(2)
 > table.main:nth-of-type(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2 + table[width="100%"] > tbody > tr > td > ul ~ ul:last-child {
     border: 1px solid var(--innerbordercolor);
     border-top: 0;
-    border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+    border-radius: 0 0 var(--mainbr) var(--mainbr);
     margin-bottom: 0.5rem;
     list-style: inside;
 } */
 /* td.bottom:nth-child(2) > table.main:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1),  */
 td.bottom:nth-child(2) 
 > table.main:nth-of-type(2):nth-last-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td.embedded:nth-child(1) > h2:not(td.embedded > p:first-child+h2:only-of-type) {
-    border-radius: var(--maincolortableborderradius) var(--maincolortableborderradius) 0 0;
+    border-radius: var(--mainbr) var(--mainbr) 0 0;
     border: 1px solid var(--innerbordercolor);
     background: var(--innercardcolor)
 }
@@ -4073,14 +4017,14 @@ td.embedded > p:first-child+h2:only-of-type:not(#details) {
 }
 .rc.js-rc {
     background: var(--main);
-    border-radius: var(--maincolortableborderradius);
+    border-radius: var(--mainbr);
     border: 1px solid var(--innerbordercolor);
     overflow: hidden;
 }
 .rc__header {
     padding: 0.5rem 0;
-    color: var(--headingnonclickable);
-    background: var(--innerheadingrowcolor);
+    color: var(--heading);
+    background: var(--innerhcolor);
     border-bottom: 1px solid var(--innerbordercolor);
 }
 .rc__container.js-rc-container {
@@ -4088,7 +4032,7 @@ td.embedded > p:first-child+h2:only-of-type:not(#details) {
 }
 .rc__toggle.js-rc-toggle {
   /* border-top: 1px solid var(--innerbordercolor); */
-  background: var(--innerheadingrowcolor);
+  background: var(--innerhcolor);
 filter: brightness(110%) contrast(110%);
     /* background: var(--innercardcolor); */
     font-size: 1rem;
@@ -4210,19 +4154,19 @@ div.rc__toggle {
 td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] {
   background: var(--main);
   padding: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
 }
 td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded {
 /* border: 1px solid var(--innerbordercolor); */
-border-radius: var(--innercardborderradius);
+border-radius: var(--innerbr);
 overflow: hidden;
 }
 td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded h2 {
   text-align: center;
   padding: 0.5rem;
   border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
-  background: var(--innerheadingrowcolor);
+  border-radius: var(--innerbr) var(--innerbr) 0 0;
+  background: var(--innerhcolor);
   width: auto !important
 
   /* border-collapse: collapse; */
@@ -4233,7 +4177,7 @@ td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbod
 td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbody > tr > td.embedded > table {
   border: 1px solid var(--innerbordercolor);
   border-top: 0;
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
   background: var(--innercardcolor);
   margin-bottom: 0.7rem;
 }
@@ -4274,7 +4218,7 @@ td.bottom > table.main:nth-of-type(2) + p:empty + table.main[width="750"] > tbod
 table.main[height="75px"] { 
   display: flex;
   background: rgba(70, 131, 180, 0.025);
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   border-collapse: collapse;
   overflow: hidden;
   min-height: 100%!important;
@@ -4333,10 +4277,10 @@ td[style="padding: 10px;background-color: #ECE9D8;"] {
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) {
   background: var(--main);
   padding: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
 }
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) th{
-  background: var(--innerheadingrowcolor);
+  background: var(--innerhcolor);
   border: 1px solid var(--innerbordercolor);
   border-left: 0;
   border-right: 0;
@@ -4351,18 +4295,18 @@ td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:
   border-bottom: 1px solid var(--innerbordercolor);
   background: var(--innercardcolor);
 
-  /* border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0; */
+  /* border-radius: var(--innerbr) var(--innerbr) 0 0; */
 }
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) th:first-child,
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) > tbody > tr:nth-child(2n) > td:first-child {
-  border-top-left-radius: var(--innercardborderradius);
+  border-top-left-radius: var(--innerbr);
   border-left: 1px solid var(--innerbordercolor);
   overflow: hidden;
 
 }
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) th:last-child,
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) > tbody > tr:nth-child(2n) > td:last-child {
-  border-top-right-radius: var(--innercardborderradius);
+  border-top-right-radius: var(--innerbr);
   border-right: 1px solid var(--innerbordercolor);
 }
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) td {
@@ -4390,7 +4334,7 @@ td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:
 }
 td.bottom > form[action^="/forums/search"] ~ table[cellpadding="5"][border="1"]:nth-child(6) > tbody > tr:nth-child(2n+1) > td {
   border-bottom: 1px solid var(--innerbordercolor);
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
   border-spacing: 1rem;
   width: 100%;
   border-bottom: 0;
@@ -4495,7 +4439,7 @@ body > table.main > tbody > tr > td.bottom > h1.center + p + table[width="750"] 
 body > table.main > tbody > tr > td.bottom > p + table[width="750"] + p:empty + p + table[width="750"] td.text td.embedded[bgcolor="#ECE9D8"]:first-child {
   box-sizing: content-box;
   border-right: 0;
-  border-radius: var(--inputborderradius) 0 0  var(--inputborderradius);
+  border-radius: var(--inputbr) 0 0  var(--inputbr);
   margin-left: -0.25rem;
   padding-left: 0.25rem;
 }
@@ -4503,7 +4447,7 @@ body > table.main > tbody > tr > td.bottom > p + table[width="750"] + p:empty + 
 body > table.main > tbody > tr > td.bottom > h1.center + p + table[width="750"] td.text td.embedded[bgcolor="#ECE9D8"]:last-child,
 body > table.main > tbody > tr > td.bottom > p + table[width="750"] + p:empty + p + table[width="750"] td.text td.embedded[bgcolor="#ECE9D8"]:last-child {
   border-left: 0;
-  border-radius: 0 var(--inputborderradius) var(--inputborderradius) 0 ;
+  border-radius: 0 var(--inputbr) var(--inputbr) 0 ;
 }
 
 div#searchbox {
@@ -4514,7 +4458,7 @@ div#searchbox {
 div#searchbox #searchcriteria {
   background: var(--main);
   padding: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   display: flex;
   flex-flow: column wrap;
   gap: 0.5rem;
@@ -4565,7 +4509,7 @@ div.statbox {
 h2.stattitle {
   border-bottom: 1px solid var(--innerbordercolor);
   margin: 0;
-  background: var(--innerheadingrowcolor);
+  background: var(--innerhcolor);
   flex: 100%;
   max-height: 2.675rem
 }
@@ -4701,7 +4645,7 @@ div#tv-episode-list {
   padding: 0.7rem 1rem;
   border: 1px solid var(--innerbordercolor);
   z-index: 1;
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  border-radius: var(--innerbr) var(--innerbr) 0 0;
 }
 .show-preference {
   position: sticky;
@@ -4720,7 +4664,7 @@ div#tv-episode-list {
   font-weight: 700;
   padding: 0.25rem 0.25rem;
   border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  border-radius: var(--innerbr) var(--innerbr) 0 0;
   background: var(--innercardcolor)
 }
 .show-season .season-torrents, .season-packs:last-child {
@@ -4728,7 +4672,7 @@ div#tv-episode-list {
   border: 1px solid var(--innerbordercolor);
   border-top: 0;
   padding: 0.25rem;
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
 }
 .season-packs {
   text-align: left;
@@ -4765,7 +4709,7 @@ div#tv-episode-list {
   background: var(--main);
   box-sizing: border-box;
   padding: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   display: flex;
   flex-flow: row wrap;
   gap: 0.5rem;
@@ -4788,7 +4732,7 @@ div#tv-episode-list {
   border: 1px solid var(--innerbordercolor);
   padding: 0.5rem;
   border-top: 0;
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
 }
 div.contentelement:nth-child(3) .contentcontent img {
   width: 100%;
@@ -4811,15 +4755,15 @@ div.contentelement:nth-child(3) .contentcontent img {
   border: 1px solid var(--innerbordercolor);
   border-top: 0;
   overflow: hidden;
-  border-radius: 0 0 var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: 0 0 var(--innerbr) var(--innerbr);
 }
 #overview {
   overflow: hidden;
 }
 #showpage h2 {
-  background-color: var(--innerheadingrowcolor);
+  background-color: var(--innerhcolor);
   border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  border-radius: var(--innerbr) var(--innerbr) 0 0;
 }
 ul.showseasons {
   display: flex;
@@ -4830,15 +4774,15 @@ ul.showseasons > li {
   display: table-cell;
   border-collapse: collapse;
   border: 1px solid var(--innerbordercolor);
-  border-radius: var(--innercardborderradius) var(--innercardborderradius);
+  border-radius: var(--innerbr) var(--innerbr);
   flex: 1 0 max-content;
   height: min-content;
   overflow: hidden;
 }
 #showpage ul.showseasons > li h2 {
-  background-color: var(--innerheadingrowcolor);
+  background-color: var(--innerhcolor);
   border: 0;
-  border-radius: var(--innercardborderradius) var(--innercardborderradius) 0 0;
+  border-radius: var(--innerbr) var(--innerbr) 0 0;
 }
 ul.showseasons > li > ul {
   text-align: left;
@@ -4885,7 +4829,7 @@ li.notorrents h3:not(#details) {
   mask: url(watched5.svg) center no-repeat;
   width: 1rem;
   height: 1rem;
-  border-radius: var(--inputborderradius);
+  border-radius: var(--inputbr);
   /* -moz-transition: all 0.25s ease; 
   -webkit-transition: all 0.25s ease; 
   -o-transition: all 0.25s ease;
@@ -4931,7 +4875,7 @@ h1#list-title:not(#details) {
   color: var(--white);
 }
 span.list-name {
-  color: var(--headingnonclickable);
+  color: var(--heading);
   font-size: 1.25rem;
 }
 div#list-container > h1#list-title, div#list-container > h3, div.list-description { 
@@ -4941,7 +4885,7 @@ div.list-description {
   background: var(--main);
   box-sizing: border-box;
   padding: 1rem;
-  border-radius: var(--maincolortableborderradius);
+  border-radius: var(--mainbr);
   /* display: flex;
   flex-flow: row wrap; */
   gap: 0.5rem;
@@ -4971,7 +4915,7 @@ div.item-body {
   /* background-size: 150%; */
   box-sizing: border-box;
   padding: 0;
-  border-radius: 0 0 var(--maincolortableborderradius) var(--maincolortableborderradius);
+  border-radius: 0 0 var(--mainbr) var(--mainbr);
   /* border: 1px solid var(--innerbordercolor); */
 border: 0;
   display: flex;
@@ -4993,13 +4937,13 @@ div.item > .item-body > .rank {
   position: relative;
   float: right;
   left: 0px;
-  color: var(--headingnonclickable);
+  color: var(--heading);
   order: 0;
   background: rgba(6, 6, 8, 0.85);
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 div.item.imdb {
-  border-radius: var(--innercardborderradius);
+  border-radius: var(--innerbr);
   overflow: hidden;
   max-width: 52rem;
   width: 100%;
@@ -5053,7 +4997,7 @@ div.description a.js-wishlistadd img {
 div.movie-rating {
   display: inline-block;
   padding: 0.5rem 0;
-  color: var(--headingnonclickable);
+  color: var(--heading);
   font-weight: bold;
 }
 .item-body > div.list-links {
@@ -5073,7 +5017,7 @@ div.list-links > a {
 	padding: 4.5px 6px;
 	border: 1px solid var(--innerbordercolor);
 	text-decoration: none;
-	border-radius: var(--inputborderradius);
+	border-radius: var(--inputbr);
   background: var(--input);
   color: var(--menuFont);
 	margin: auto;
@@ -5118,14 +5062,14 @@ div.list-links > a {
  }
  div.film-list-container {
    box-sizing: border-box;
-   /* max-width: max-content; */
-  background: var(--main);
-  border-radius: var(--maincolortableborderradius);
+   max-width: 100%;
+  /* background: var(--main); */
+  border-radius: var(--mainbr);
   padding: 1rem;
   margin: auto;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 1rem;
  }
  img.cast__img {
@@ -5137,14 +5081,15 @@ div.list-links > a {
    max-width: 36rem;
    width: 100%;
    border: 1px solid var(--innerbordercolor);
-   border-radius: var(--innercardborderradius);
+   border-radius: var(--innerbr);
    display: grid;
    grid-template-areas: "img text"
                         "img cast";
   grid-template-columns: 175px auto;
   gap: 0.5rem;
   overflow: hidden;
-  /* grid-auto-flow: dense; */
+  background: rgb(27, 27, 36);
+  background: linear-gradient(335deg, hsl(240, 50%, 7%) 15%, hsl(205, 70%, 25%));
  }
  div.info_row {
   border-bottom: 0;
@@ -5152,7 +5097,12 @@ div.list-links > a {
  }
  div.info__img {
   width:175px;
+  object-fit: cover;
   grid-area: img;
+ }
+ div.info__img img {
+   width: 100%;
+   height: calc(175px * 1.5)
  }
  div.info__text {
   width: auto!important;
@@ -5166,11 +5116,10 @@ div.list-links > a {
   align-items:flex-start
  }
 a.info__title {
-  /* align-self: center; */
-   width: 100%;
+  width: 100%;
   font-size:1.25rem ;
   padding: 0.5rem 0;
-  background: var(--innerheadingrowcolor);
+  background: var(--innerhcolor);
   margin-left: -.5rem;
   padding-left: .5rem;
   text-indent: 0.25rem;;
@@ -5180,7 +5129,7 @@ a.info__title {
   width: 100%;
   font-size:1.25rem ;
   padding: 0.5rem 0;
-  background: var(--innerheadingrowcolor);
+  background: var(--innerhcolor);
   margin-left: -.5rem;
   padding-left: .5rem;
   flex: 100%;
@@ -5201,7 +5150,7 @@ a.info__title {
  span.info__rating {
   white-space:nowrap;
   font-size: 0.75rem;
-  color: var(--headingnonclickable);
+  color: var(--heading);
   font-weight: 700;
  }
  span.info__genres {
