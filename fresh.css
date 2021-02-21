@@ -1,5 +1,5 @@
 :root {
-  --main: rgb(16, 17, 20);
+  --main: rgba(16,17,21);
   --dark: rgb(6, 6, 7);
   --white: hsl(212, 28%, 72%);
   --heading: hsla(31, 100%, 65%, 0.843);
@@ -32,7 +32,7 @@
   --svgbghover: linear-gradient(145deg, hsl(195, 76%, 49%), #5995e8);
   --focusbtnclr: hsl(204, 50%, 50%);
   --borderhover: hsla(207, 56%, 60%, 0.5);
-  --borderfocus: steelblue;
+  --borderfocus: #4682b4;
 }
 *,
 body {
@@ -1449,7 +1449,7 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
 	order: 3;
 }
 html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last-child:nth-child(2) > tbody:only-child > tr:only-child > td.embedded:only-child > table:nth-child(5) {
-	line-height: 1rem;
+	line-height: 1.25rem;
 	padding: 1rem 0.5rem;
 	background-color: var(--main);
 	align-self: stretch;
@@ -1460,6 +1460,19 @@ html > body > table.main > tbody > tr > td.bottom > table.main:only-of-type:last
   max-width: 30%;
   max-height: 100%;
 }
+.interiortable > tbody > tr > td {
+  border-bottom: 1px solid var(--innerbordercolor);
+} 
+.interiortable > tbody > tr:last-child > td {
+  border-bottom: 0;
+} 
+.interiortable > tbody > tr td.rowhead {
+  padding-right: 0.7rem;
+}
+.interiortable + br + font.small {
+  font-family: 'Courier New', Courier, monospace
+}
+.interiortable > tbody > tr
 td.bottom > table[width="500"] > tbody > tr:only-child,
 td.bottom:nth-child(2) > table[width="800"]:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1),
 td.bottom:nth-child(2) > script + table[width="800"]:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) {
@@ -1483,57 +1496,57 @@ td.bottom:nth-child(2)>table:nth-child(1)>tbody:nth-child(1)>tr:nth-child(1) b {
   box-sizing: border-box
 }
 @media only screen and (max-width:64rem) {
-  table.main td#sidebar-container + td.bottom > table.main:not(table.main[width="100%"]) {
-    width: 100%!important;
-  }
-  .menu {
-    top: 155px;
-  }
-  #sidebar-container {
-    display: none;
-  }
-  #header.main tbody tr td.embedded {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 50%;
-    min-width: 300px;
-    display: flex;
-  }
-  #header.main tbody tr td.embedded:nth-child(3) {
-    order: -1;
-    flex: 1 1 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    align-items: flex-end;
-    margin: 0.5rem 0.5rem 0 0.5rem;
-    overflow-wrap: break-word;
-    gap: 0.5rem;
-    border-bottom: 1px solid var(--innerbordercolor);
-  }
-  div#logo {
-    width: auto;
-    mask-position: center;
-  }
-  td.embedded .curuser-stats {
-    flex: 0 1 auto;
-   margin-bottom: 0.25rem;
-  }
-  .curuser-stats:nth-child(1) {
-    margin-left: auto;
-    justify-content: flex-end;
-    order: 3;
-  }
-  .curuser-stats:nth-child(2) {
-    order: 1;
-  } 
-  .curuser-stats:nth-child(3) {
-  order: 2
-  }
-  .curuser-stats:nth-child(3) > a[href*="friends.php"],
-  .curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
-    order: -10;
-  }
+    table.main td#sidebar-container + td.bottom > table.main:not(table.main[width="100%"]) {
+      width: 100%!important;
+    }
+    .menu {
+      top: 155px;
+    }
+    #sidebar-container {
+      display: none;
+    }
+    #header.main tbody tr td.embedded {
+      flex-grow: 1;
+     flex-shrink: 1;
+     flex-basis: 50%;
+     min-width: 300px;
+     display: flex;
+   }
+   #header.main tbody tr td.embedded:nth-child(3) {
+     order: -1;
+     flex: 1 1 100%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap-reverse;
+     align-items: flex-end;
+     margin: 0.5rem 0.5rem 0 0.5rem;
+     overflow-wrap: break-word;
+     gap: 0.5rem;
+     border-bottom: 1px solid var(--innerbordercolor);
+   }
+   div#logo {
+     width: auto;
+     mask-position: center;
+   }
+   td.embedded .curuser-stats {
+     flex: 0 1 auto;
+    margin-bottom: 0.25rem;
+   }
+   .curuser-stats:nth-child(1) {
+     margin-left: auto;
+     justify-content: flex-end;
+     order: 3;
+   }
+   .curuser-stats:nth-child(2) {
+     order: 1;
+   } 
+   .curuser-stats:nth-child(3) {
+   order: 2
+   }
+   .curuser-stats:nth-child(3) > a[href*="friends.php"],
+   .curuser-stats:nth-child(3) > a[href*="mytorrents.php"] {
+     order: -10;
+   }
 }
 #moresearch5 > td:nth-child(1) {
   max-width: 800px;
@@ -1761,7 +1774,7 @@ only screen and (min-resolution:1.5dppx) {
   filter: brightness(120%)
 }
 #tagassociate {
-  padding: 2px 4px;
+  /* padding: 2px 4px; */
   width: 228px
 }
 #tagassociate::placeholder {
@@ -2161,13 +2174,30 @@ a.js-wishlistadd, img.info__wishlist {
 img.info__wishlist {
   padding-left: 1rem;
 }
-a.js-wishlistdel {
+a.js-wishlistdel,
+a[onclick*="delWishlist"] {
   background: var(--DownBonusRed);
   -webkit-mask: url("list2.svg") center no-repeat;
   mask: url("list2.svg") center no-repeat;
   width: 1rem;
   height: 1rem;
   filter: brightness(90%)
+}
+
+a[onclick*="delWishlist"],
+a[href*="javascript:unignoreshow"]  {
+  display: inline-block;
+  background: var(--DownBonusRed);
+  -webkit-mask: url("list2.svg") center no-repeat;
+  mask: url("list2.svg") center no-repeat;
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(90%);
+  vertical-align: bottom;
+}
+a[onclick*="delWishlist"] > img,
+a[href*="javascript:unignoreshow"] > img {
+  display: none;
 }
 #details table.fourcell>tbody>tr>td,
 #torrent-list td:hover button[onclick^=hidetorrent],
@@ -2762,7 +2792,7 @@ table.tablesorter.table_other_copies > tbody > tr {
 }
 input#tagassociate {
   border-radius: var(--inputbr);
-  text-indent: .5rem
+  /* text-indent: .5rem */
 }
 .std-content {
   max-width: 64rem;
@@ -2782,7 +2812,14 @@ td.bottom > h1 + table[width="660"][cellpadding="4"] {
   border-radius: var(--mainbr);
   padding: 1rem;
 }
-
+td.bottom > h1 + table[width="660"][cellpadding="4"] > tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] > tbody {
+  flex: 1 0 100%;
+}
 td.bottom > h1 + table[width="660"][cellpadding="4"] tr:first-child {
   border-radius: var(--innerbr) var(--innerbr) 0 0;
   background-color: var(--innerhcolor);
@@ -2793,6 +2830,10 @@ td.bottom > h1 + table[width="660"][cellpadding="4"] tr:first-child {
   border-bottom: 0;
   gap: 0 0.2rem;
   margin: 0!important
+}
+td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(2) {
+  display: flex;
+  align-items: center;
 }
 td.bottom > h1 + table[width="660"][cellpadding="4"] tr:nth-child(2) > td {
   background-color: var(--innerhcolor);
@@ -3885,15 +3926,34 @@ td.embedded > p:first-child+h2:only-of-type:not(#details) {
 .rc__toggle.js-rc-toggle {
   background: var(--innerhcolor);
   filter: brightness(110%) contrast(110%);
-    font-size: 1rem;
+    font-size: 0.6875rem;
     color: steelblue;
     font-weight: 700;
+    text-transform: uppercase;
+    border-top: 1px solid var(--innerbordercolor);
+
 }
-.rc__toggle.js-rc-toggle:hover {
-    background: var(--menuFont);
-    font-size: 1rem;
+.rc__toggle.js-rc-toggle:hover,
+.film_morelink:hover, a.tv_morelink:hover  {
+    background: var(--svgbghover);
+    font-size: 0.8125rem;
     font-weight: bold;
     color: var(--dark);
+    -moz-transition: all 0.25s ease; 
+    -webkit-transition: all 0.25s ease; 
+    -o-transition: all 0.25s ease;
+    transition:all 0.5s ease; 
+}
+.rc__toggle.js-rc-toggle:active,
+.film_morelink:active, a.tv_morelink:active  {
+  animation: gradient 300ms;
+  background: linear-gradient(45deg, #7b81ec, #3bd1d3);
+  color: var(--dark);
+  box-shadow: none;
+  -moz-transition: all 0.25s ease; 
+  -webkit-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease;
+  transition:all 0.5s ease; 
 }
 img.rc__film__poster {
     border-radius: 0.5rem;
@@ -4336,6 +4396,7 @@ h2.stattitle {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  align-content: flex-start;
 }
 #tvstatboxes .statbox_banners, #tvstatboxes .statbox_posters {
 	margin: auto;
@@ -4350,8 +4411,10 @@ h2.stattitle {
 	position: relative;
 	right: auto;
 	padding: 0;
-	font-size: 1rem;
+	font-size: 0.6875rem;
+  font-weight: 700;
 	background-color: var(--innercardcolor);
+  text-transform: uppercase;
 	color: var(--menuFont);
 	bottom: auto;
 	cursor: pointer;
@@ -4359,7 +4422,8 @@ h2.stattitle {
   box-sizing: border-box;
   margin: 0 -1rem;
   flex: 100%;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
+  line-height: 2.5rem;
   border-top: 1px solid var(--innerbordercolor);
 }
 .overlay {
@@ -4622,7 +4686,7 @@ ul.showseasons > li > ul h3:not(#details) {
   padding: 0.1rem 0.2rem;
   font-size: 0.8125rem;
 }
-li.notorrents h3:not(#details) {
+li.notorrents h3, li.notorrents h2 {
   filter: grayscale(100%) brightness(100%) opacity(0.5);
 }
 #showpage img[src*="/download.gif"], #showpage img.minicon {
@@ -4970,4 +5034,22 @@ a.info__title {
   margin-top: 0;
   grid-area: cast;
   align-self: end;
+ }
+ td.embedded > div[align=center]:only-child > h1:first-child {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+ }
+ body > table.main > tbody > tr > td.bottom:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) td.embedded > div[align=center]:only-child > h1:first-child > a {
+  min-width: min-content;
+  background: inherit;
+ }
+ td.embedded > div[align=center]:only-child > form {
+ background: var(--main);
+ box-sizing: border-box;
+ padding: 1rem;
+ border-radius: var(--mainbr);
+ max-width: 64rem;
+ min-width: max-content;
  }
